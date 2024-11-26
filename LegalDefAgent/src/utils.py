@@ -3,12 +3,7 @@ from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv, find_dotenv
-from pymilvus import connections
 from IPython.display import Image, display
-from langchain_milvus import Milvus
-from pymilvus.model.hybrid import BGEM3EmbeddingFunction
-from langchain.embeddings.base import Embeddings
-from torch.cuda import is_available as cuda_available
 
 load_dotenv(find_dotenv())
 
@@ -44,47 +39,6 @@ def merge_dicts(*dicts: dict) -> dict:
     for dict_ in dicts:
         _.update(dict_)
     return _
-
-
-def drop_all_connections():
-    """
-    Drops all connections to the Milvus database.
-    """
-    for alias, conn in connections.list_connections():
-        connections.remove_connection(alias)
- 
-
-def setup_vectorstore(k: int = 10):
-    class BGEMilvusEmbeddings(Embeddings):
-        def __init__(self):
-            self.model = BGEM3EmbeddingFunction(
-                model_name='BAAI/bge-m3',
-                device='cuda' if cuda_available() else 'cpu',
-                use_fp16=True if cuda_available() else False #set to false if device='cpu'
-            )
-
-        def embed_documents(self, texts):
-            embeddings = self.model.encode_documents(texts)
-            return [i.tolist() for i in embeddings["dense"]]
-
-        def embed_query(self, text):
-            embedding = self.model.encode_queries([text])
-            return embedding["dense"][0].tolist()
-
-    MILVUS_URI = "../vec_db/definitions_vectors.db"
-    MILVUS_COLLECTION_NAME = 'Definitions'
-
-    vectorstore = Milvus(
-        embedding_function=BGEMilvusEmbeddings(),
-        connection_args={"uri": MILVUS_URI},
-        collection_name=MILVUS_COLLECTION_NAME,
-        vector_field="dense_vector",
-        text_field="definition_text",
-    )
-
-    retriever = vectorstore.as_retriever(search_kwargs={"k": k})
-
-    return retriever
 
 
 def doc_to_json(doc):

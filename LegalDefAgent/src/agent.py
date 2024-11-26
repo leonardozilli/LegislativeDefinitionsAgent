@@ -4,6 +4,7 @@ from typing import Annotated, Literal, Sequence, List, Any, Dict
 from typing_extensions import TypedDict
 from pprint import pprint
 
+from pydantic import BaseModel, Field
 from langchain_core.messages import BaseMessage
 from langgraph.graph.message import add_messages
 from langchain_core.output_parsers import StrOutputParser
@@ -13,42 +14,9 @@ from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.callbacks.base import BaseCallbackHandler
 
-from langchain_ollama.chat_models import ChatOllama
-from langchain_core.messages import HumanMessage
-from langgraph.checkpoint.memory import MemorySaver
-from langgraph.prebuilt import create_react_agent
-from langchain_milvus import Milvus
-from pymilvus.model.hybrid import BGEM3EmbeddingFunction
-from langchain.embeddings.base import Embeddings
+import src.retriever as retriever
+import src.tools as tools
 
-import sys
-sys.path.insert(1, '../DefAgent/src')
-
-import os
-from dotenv import load_dotenv, find_dotenv
-load_dotenv(find_dotenv())
-
-import prompts as prompts
-import utils as utils
-import tools as modelTools
-
-from pydantic import BaseModel, Field
-
-from langchain_openai import ChatOpenAI
-
-gpt = ChatOpenAI(model="gpt-4o-mini-2024-07-18", api_key=os.environ['OPENAI_API_KEY'])
-
-from langchain_groq import ChatGroq
-
-groq = ChatGroq(model="llama3-8b-8192")
-
-from langchain_mistralai import ChatMistralAI
-
-mix = ChatMistralAI(model="open-mistral-nemo", api_key=os.environ['MISTRAL_API_KEY'])
-
-gemma = ChatOllama(model="gemma2:2b")
-
-llama32 = ChatOllama(model='llama3.2')
 
 class CustomHandler(BaseCallbackHandler):
     def on_llm_start(
@@ -65,11 +33,11 @@ class AgentState(TypedDict):
     messages: Annotated[Sequence[BaseMessage], add_messages]
 
 
-class DefAgent:
+class LegalDefAgent:
     def __init__(self, model):
         self.model = model
-        #self.retriever_tool = modelTools.retriever_tool()
-        self.retriever_tool = modelTools.vector_search()
+        self.vectorstore = retriever.setup_vectorstore()
+        self.retriever_tool = tools.create_vector_search_tool(self.vectorstore)
         self.tools = [self.retriever_tool]
         self.workflow = self.setup_workflow()
 
@@ -273,6 +241,3 @@ class DefAgent:
                 print(f"<- OUTPUT from node '{key}':\n")
                 print(value['messages'][-1])#, indent=2, width=80, depth=None)
             print("\n---\n")
-
-model = groq
-defagent = DefAgent(model)
