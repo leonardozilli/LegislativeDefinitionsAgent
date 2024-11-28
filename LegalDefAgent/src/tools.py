@@ -3,7 +3,7 @@ from langchain_core.tools import BaseTool, StructuredTool, tool, InjectedToolArg
 from langchain.tools.retriever import create_retriever_tool
 from typing import List , Annotated
 
-from src.retriever import setup_vectorstore
+from LegalDefAgent.src.retriever import setup_vectorstore
 
 def create_vector_search_tool(vectorstore):
     @tool

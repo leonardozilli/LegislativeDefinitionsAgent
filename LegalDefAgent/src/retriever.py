@@ -4,7 +4,7 @@ from pymilvus.model.hybrid import BGEM3EmbeddingFunction
 from langchain.embeddings.base import Embeddings
 from torch.cuda import is_available as cuda_available
 
-import src.config as config
+import LegalDefAgent.src.config as config
 
 def setup_vectorstore(k: int = 10):
     class BGEMilvusEmbeddings(Embeddings):

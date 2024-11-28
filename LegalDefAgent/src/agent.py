@@ -4,8 +4,7 @@ from typing import Annotated, Literal, Sequence, List, Any, Dict
 from typing_extensions import TypedDict
 from pprint import pprint
 
-from pydantic import BaseModel, Field
-from langchain_core.messages import BaseMessage
+from langchain_core.messages import BaseMessage, AIMessage
 from langgraph.graph.message import add_messages
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
@@ -13,9 +12,11 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.prebuilt import ToolNode, tools_condition
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.callbacks.base import BaseCallbackHandler
+from langgraph.checkpoint.memory import MemorySaver
 
-import src.retriever as retriever
-import src.tools as tools
+import LegalDefAgent.src.retriever as retriever
+import LegalDefAgent.src.tools as tools
+import LegalDefAgent.src.schema as schema
 
 
 class CustomHandler(BaseCallbackHandler):
@@ -29,8 +30,9 @@ class CustomHandler(BaseCallbackHandler):
 class AgentState(TypedDict):
     # The add_messages function defines how an update should be processed
     # Default is to replace. add_messages says "append"
-    input_query: str
+    question: str
     messages: Annotated[Sequence[BaseMessage], add_messages]
+    answer: AIMessage
 
 
 class LegalDefAgent:
@@ -39,6 +41,7 @@ class LegalDefAgent:
         self.vectorstore = retriever.setup_vectorstore()
         self.retriever_tool = tools.create_vector_search_tool(self.vectorstore)
         self.tools = [self.retriever_tool]
+        self.model_with_tools = self.model.bind_tools(self.tools)
         self.workflow = self.setup_workflow()
 
     def agent(self, state):
@@ -52,13 +55,12 @@ class LegalDefAgent:
         Returns:
             dict: The updated state with the agent response appended to messages
         """
-        print("---QURY AGENT---")
-        model = self.model.bind_tools(self.tools)
-        input_query = state["input_query"]
+        print("---QUERY AGENT---")
+        question = state["question"]
         messages = state["messages"]
-        response = model.invoke(messages, config={"callbacks": [CustomHandler()]})
+        response = self.model_with_tools.invoke(messages, config={"callbacks": [CustomHandler()]})
         # We return a list, because this will get added to the existing list
-        return {"messages": [response], "input_query": input_query}
+        return {"messages": [response], "question": question}
     
 
     def filter_definitions(self, state) -> Literal["generate"]:
@@ -74,21 +76,8 @@ class LegalDefAgent:
 
         print("---FILTER DEFINITIONS---")
 
-        class DefinitionMetadata(BaseModel):
-            id: int = Field(description="the unique identifier of the definition")
-            dataset: str = Field(description="the dataset the definition is from")
-            document_id: str = Field(description="the document id the definition is from")
-            references: List[str] = Field(description="the references mentioned the definition.")
-
-        class Definition(BaseModel):
-            metadata: DefinitionMetadata
-            definition_text: str = Field(description="the full text of the definition")  # Changed from 'definition'
-
-        class DefinitionsList(BaseModel):
-            relevant_definitions: List[Definition] = Field(description="a list of relevant definitions")
-
         # Set up a parser + inject instructions into the prompt template.
-        parser = PydanticOutputParser(pydantic_object=DefinitionsList)
+        parser = PydanticOutputParser(pydantic_object=schema.DefinitionsList)
 
         # Prompt
         prompt = PromptTemplate(
@@ -106,7 +95,7 @@ class LegalDefAgent:
         )
 
         def format_docs(docs):
-            return "\nxXx".join(doc.page_content for doc in docs)
+            return "\n\n".join(doc.page_content for doc in docs)
 
 
         # Chain
@@ -115,7 +104,7 @@ class LegalDefAgent:
         messages = state["messages"]
         last_message = messages[-1]
 
-        question = state["input_query"]
+        question = state["question"]
         docs = last_message.content
 
         response = chain.invoke({"question": question, "context": docs}, config={"callbacks": [CustomHandler()]})
@@ -136,7 +125,7 @@ class LegalDefAgent:
         """
         print("---GENERATE---")
         messages = state["messages"]
-        question = state["input_query"]
+        question = state["question"]
         last_message = messages[-1]
 
         docs = last_message.content
@@ -167,7 +156,7 @@ class LegalDefAgent:
 
         # Run
         response = rag_chain.invoke({"context": docs, "question": question}, config={"callbacks": [CustomHandler()]})
-        return {"messages": [response]}
+        return {"messages": [response], "answer": response}
     
 
     def eurlex_agent(self, state):
@@ -194,23 +183,16 @@ class LegalDefAgent:
         #workflow.add_node("PDL agent", self.pdl_agent)
 
 
-        # Define the edges between the nodes
-        # Call agent node to decide to retrieve or not
         workflow.add_edge(START, "agent")
-
-        # Decide whether to retrieve
         workflow.add_conditional_edges(
             "agent",
-            # Assess agent decision
             tools_condition,
             {
-                # Translate the condition outputs to nodes in our graph
                 "tools": "retrieve",
                 END: END,
             },
         )
 
-        # Edges taken after the `action` node is called.
         workflow.add_edge("retrieve", "filter")
         #workflow.add_edge("filter", "RefResolver")
         workflow.add_edge("filter", "generate")
@@ -222,22 +204,23 @@ class LegalDefAgent:
         #workflow.add_edge("PDL agent", END)
         workflow.add_edge("generate", END)
 
-        # Compile
-        self.graph = workflow.compile()
+        #memory = MemorySaver()
+        self.graph = workflow.compile()#checkpointer=memory)
 
         return workflow
+
     
-    def invoke(self, query):
+    def invoke(self, question):
         inputs = {
-            "input_query": query,
+            "question": question,
             "messages": [
                 ("system", ''),
-                ("user", query),
+                ("user", question),
             ]
         }
 
         for output in self.graph.stream(inputs):
             for key, value in output.items():
                 print(f"<- OUTPUT from node '{key}':\n")
-                print(value['messages'][-1])#, indent=2, width=80, depth=None)
+                print(value["messages"][-1])#, indent=2, width=80, depth=None)
             print("\n---\n")
