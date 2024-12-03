@@ -1,10 +1,11 @@
-from dotenv import load_dotenv
 import os
+from dotenv import find_dotenv, load_dotenv
+from functools import lru_cache
 
-load_dotenv()
+load_dotenv(find_dotenv())
 
 LOG_PATH = os.getenv("LOG_PATH", "logs/")
-MILVUSDB_URI = os.getenv("MILVUSDB_URI", "./vec_db/definitions_vectors.db")
+MILVUSDB_URI = os.getenv("MILVUSDB_URI", "/home/leo/Desktop/dhdk/Master thesis/.project/LegalDefAgent/vec_db/definitions_vectors.db")
 MILVUSDB_COLLECTION_NAME = os.getenv("MILVUSDB_COLLECTION_NAME", "Definitions")
 
 LANGCHAIN_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")

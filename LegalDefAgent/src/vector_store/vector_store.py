@@ -4,9 +4,12 @@ from pymilvus.model.hybrid import BGEM3EmbeddingFunction
 from langchain.embeddings.base import Embeddings
 from torch.cuda import is_available as cuda_available
 
-import LegalDefAgent.src.config as config
+from functools import lru_cache
 
-def setup_vectorstore(k: int = 10):
+from ..config import MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
+
+@lru_cache
+def setup_vectorstore():
     class BGEMilvusEmbeddings(Embeddings):
         def __init__(self):
             self.model = BGEM3EmbeddingFunction(
@@ -25,20 +28,11 @@ def setup_vectorstore(k: int = 10):
 
     vectorstore = Milvus(
         embedding_function=BGEMilvusEmbeddings(),
-        connection_args={"uri": config.MILVUSDB_URI},#MILVUS_URI},
-        collection_name=config.MILVUSDB_COLLECTION_NAME,
+        connection_args={"uri": MILVUSDB_URI},
+        collection_name=MILVUSDB_COLLECTION_NAME,
         vector_field="dense_vector",
         text_field="definition_text",
     )
 
-    retriever = vectorstore.as_retriever(search_kwargs={"k": k})
 
-    return retriever
-
-
-def drop_all_connections():
-    """
-    Drops all connections to the Milvus database.
-    """
-    for alias, conn in connections.list_connections():
-        connections.remove_connection(alias)
+    return vectorstore

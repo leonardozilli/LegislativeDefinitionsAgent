@@ -1,6 +1,7 @@
 import tiktoken
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
+from langchain_core.messages import AIMessage
 from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv, find_dotenv
 from IPython.display import Image, display
@@ -28,7 +29,8 @@ def chatqa(query: str, llm_name: str) -> str:
     """
 
     llm = ChatOpenAI(model_name=llm_name, temperature=0)
-    chain = LLMChain(llm=llm, prompt=PromptTemplate(template="""{q}""", input_variables=["q"]))
+    chain = LLMChain(llm=llm, prompt=PromptTemplate(
+        template="""{q}""", input_variables=["q"]))
     res = chain.apply([{'q': query}])[0]['text']
 
     return res
@@ -43,6 +45,12 @@ def merge_dicts(*dicts: dict) -> dict:
 
 def doc_to_json(doc):
     return {'metadata': doc.metadata, 'definition': doc.page_content}
+
+
+def convert_to_aimessage(parsed_output):
+    """Convert parsed output back to AIMessage."""
+    content = f"{parsed_output}"
+    return AIMessage(content=content)
 
 
 def draw_graph(graph):
