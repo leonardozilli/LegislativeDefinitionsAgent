@@ -9,7 +9,7 @@ from functools import lru_cache
 from ..config import MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
 
 @lru_cache
-def setup_vectorstore():
+def setup_vectorstore(milvusdb_uri=None):
     class BGEMilvusEmbeddings(Embeddings):
         def __init__(self):
             self.model = BGEM3EmbeddingFunction(
@@ -28,7 +28,7 @@ def setup_vectorstore():
 
     vectorstore = Milvus(
         embedding_function=BGEMilvusEmbeddings(),
-        connection_args={"uri": MILVUSDB_URI},
+        connection_args={"uri": MILVUSDB_URI if milvusdb_uri is None else milvusdb_uri},
         collection_name=MILVUSDB_COLLECTION_NAME,
         vector_field="dense_vector",
         text_field="definition_text",

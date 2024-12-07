@@ -23,7 +23,7 @@ from LegalDefAgent.src import tools as modelTools
 from LegalDefAgent.src import models
 from LegalDefAgent.src import schema
 from LegalDefAgent.src.agent import LegalDefAgent
-from LegalDefAgent.src.vector_store import vector_store
+from LegalDefAgent.src.retriever import vector_store
 
 
 class AgentState(MessagesState, total=False):
