@@ -2,17 +2,23 @@ from pymilvus import connections, utility, FieldSchema, CollectionSchema, DataTy
 import logging
 from typing import Any
 import polars as pl
+from pymilvus.model.hybrid import BGEM3EmbeddingFunction
 from ..config import DB_CONFIG, MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
+from torch.cuda import is_available as cuda_available
 
 logger = logging.getLogger(__name__)
 
 class VectorDBBuilder:
-    def __init__(self, embedding_function: Any):
+    def __init__(self):
         self.config = DB_CONFIG
         self.milvus_uri = MILVUSDB_URI
         self.collection_name = MILVUSDB_COLLECTION_NAME
         self.batch_size = self.config['BATCH_SIZE']
-        self.ef = embedding_function
+        self.ef = BGEM3EmbeddingFunction(
+                model_name='BAAI/bge-m3',
+                device='cuda' if cuda_available() else 'cpu',
+                use_fp16=True if cuda_available() else False #set to false if device='cpu'
+            )
         self.dense_dim = self.ef.dim["dense"]
         
     def setup_collection(self) -> Collection:
@@ -75,19 +81,20 @@ class VectorDBBuilder:
         collection.load()
         
         return collection
-
+    
     def build_vector_db(self, df: pl.DataFrame) -> None:
         """Build vector database from processed definitions."""
+        logger.info("Building vector database...")
         try:
             # Connect to Milvus
-            connections.connect(uri=self.config.milvus_url)
+            connections.connect(uri=self.milvus_uri)
             
             # Setup collection
             collection = self.setup_collection()
             
             # Generate embeddings and insert in batches
-            for i in range(0, len(df), self.config.batch_size):
-                batch_df = df.slice(i, self.config.batch_size)
+            for i in range(0, len(df), self.batch_size):
+                batch_df = df.slice(i, self.batch_size)
                 
                 # Generate embeddings for the batch
                 batch_texts = batch_df['definition_text'].to_list()
@@ -105,7 +112,7 @@ class VectorDBBuilder:
                 # Insert batch
                 collection.insert(batch_data)
                 
-            logger.info(f"Number of entities inserted: {collection.num_entities}")
+            logger.info(f"Number of entities inserted into vector database: {collection.num_entities}")
             
         except Exception as e:
             logger.error(f"Error building vector database: {e}")

@@ -15,9 +15,6 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "legal-def-agent=app.app:main",  # Example CLI entry point
-            "build-defdb=LegalDefAgent.src.db.builder:build_database"
-
         ]
     },
 )

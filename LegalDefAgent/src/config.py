@@ -15,8 +15,9 @@ HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN", "")
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY", "")
 
 DB_CONFIG = {
-    'DATA_DIR': os.getenv("DB_DATA_DIR", "data/datasets/"),
-    'OUTPUT_DIR': os.getenv("DB_OUTPUT_DIR", "data/definitions/"),
+    'XML_DATA_DIR': os.getenv("XML_DATA_DIR", "data/datasets/"),
+    'DEFINITIONS_OUTPUT_DIR': os.getenv("DEFINITIONS_OUTPUT_DIR", "data/definitions2/"),
+    'VDB_OUTPUT_DIR': os.getenv("VDB_OUTPUT_DIR", "data/vdb/"),
     'DATASETS': ['EurLex', 'Normattiva', 'PDL'],
     'MAX_DEFINITION_LENGTH': int(os.getenv("MAX_DEFINITION_LENGTH", "5000")),
     'BATCH_SIZE': int(os.getenv("DB_BATCH_SIZE", "50")),

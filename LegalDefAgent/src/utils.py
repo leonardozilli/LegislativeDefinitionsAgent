@@ -5,6 +5,8 @@ from langchain_core.messages import AIMessage
 from langchain_community.chat_models import ChatOpenAI
 from dotenv import load_dotenv, find_dotenv
 from IPython.display import Image, display
+import logging
+import sys
 
 load_dotenv(find_dotenv())
 
@@ -204,3 +206,24 @@ def resolve_reference(uri, references_dir, date=None, lang="it"):
             return
         print("resolved")
         return qualified_elements[0]
+
+
+def setup_logging(log_level=logging.DEBUG):
+    """
+    Configures logging to output messages directly in Jupyter Notebook cells.
+
+    Args:
+        log_level (int): Logging level (e.g., logging.DEBUG, logging.INFO).
+    """
+    # Remove any existing handlers attached to the root logger
+    for handler in logging.root.handlers[:]:
+        logging.root.removeHandler(handler)
+
+    # Configure the logging system
+    logging.basicConfig(
+        level=log_level,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[
+            logging.StreamHandler(sys.stdout)  # Ensure logs are shown in notebook output
+        ],
+    )

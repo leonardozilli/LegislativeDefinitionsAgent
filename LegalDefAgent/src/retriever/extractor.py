@@ -5,6 +5,7 @@ from pathlib import Path
 import logging
 import polars as pl
 from typing import List, Dict, Optional, Tuple
+from tqdm import tqdm
 
 from ..config import DB_CONFIG
 
@@ -14,16 +15,18 @@ logger = logging.getLogger(__name__)
 class DefinitionExtractor:
     def __init__(self):
         self.config = DB_CONFIG
-        self.data_dir = Path(self.config['DATA_DIR'])
-        self.output_dir = Path(self.config['OUTPUT_DIR'])
+        self.data_dir = Path(self.config['XML_DATA_DIR'])
+        #self.output_dir = Path(self.config['OUTPUT_DIR'])
+        self.definitions_output_dir = Path(self.config['DEFINITIONS_OUTPUT_DIR'])
         self.namespaces = self.config['NAMESPACES']
 
-    def extract_all(self) -> pl.DataFrame:
+    def extract_and_filter(self) -> pl.DataFrame:
         """Extract definitions from all datasets directly into a DataFrame."""
         all_definitions = []
         extracted, errors, total = 0, 0, 0
         
         for dataset in self.config['DATASETS']:
+            logger.info(f"Extracting definitions from XML files in dataset {dataset}...")
             target = self.data_dir / dataset
             for file in target.rglob('*.xml'):
                 total += 1
@@ -65,9 +68,9 @@ class DefinitionExtractor:
                 pl.col('document').alias('document_id'),
                 pl.col('references'),
             )
-            .with_columns([
-                pl.col('references').map_elements(eval, return_dtype=pl.List(pl.String))
-            ])
+            #.with_columns([
+                #pl.col('references').map_elements(eval, return_dtype=pl.List(pl.String))
+            #])
             .with_row_index('id')
         )
         
@@ -77,7 +80,7 @@ class DefinitionExtractor:
         try:
             tree = ET.parse(xml_file)
             root = tree.getroot()
-            namespace = self.config.namespaces[dataset]
+            namespace = self.namespaces[dataset]
             
             definitions_el = root.findall('.//akn:definitions', namespace)
             if not definitions_el:
@@ -90,6 +93,7 @@ class DefinitionExtractor:
                         definition, root, namespace
                     )
                     definitions.append({
+                        'def_n': definition.find('.//akn:definitionHead', namespace).attrib.get('href', ''),
                         'label': definition.find('.//akn:definitionHead', namespace).attrib.get('refersTo', ''),
                         'definendum': self._clean_definendum(definendum),
                         'definiens': self._clean_definiens(definiens),
@@ -99,7 +103,8 @@ class DefinitionExtractor:
                         'document': xml_file.name
                     })
                 except Exception as e:
-                    logger.error(f"Error parsing definition in {xml_file}: {e}")
+                    #logger.error(f"Error parsing definition in {xml_file}: {e}")
+                    pass
                     
             return definitions
         except Exception as e:
@@ -162,18 +167,17 @@ class DefinitionExtractor:
     def extract_all(self) -> None:
         """Extract definitions from all datasets."""
         extracted, errors, total = 0, 0, 0
+        self.definitions_output_dir.mkdir(parents=True, exist_ok=True)
         
-        self.config.output_dir.mkdir(parents=True, exist_ok=True)
-        
-        for dataset in self.config.datasets:
-            target = self.config.data_dir / dataset
+        for dataset in self.config['DATASETS']:
+            target = Path(self.data_dir / dataset)
             for file in target.rglob('*.xml'):
                 total += 1
                 try:
                     definitions = self.parse_xml(file, dataset)
                     if definitions:
                         extracted += 1
-                        output_file = self.config.output_dir / file.name.replace('.xml', '.tsv')
+                        output_file = self.definitions_output_dir / file.name.replace('.xml', '.tsv')
                         self._save_definitions(definitions, output_file)
                 except Exception as e:
                     errors += 1

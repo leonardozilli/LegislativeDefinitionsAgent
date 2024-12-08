@@ -10,13 +10,11 @@ class DefinitionProcessor:
         
     def process_definitions(self, tsv_files: List[Path]) -> pl.DataFrame:
         """Process and transform definition data from TSV files."""
-        # Read all TSV files into a single DataFrame
         df = pl.concat([
             pl.read_csv(f, separator='\t') 
             for f in tsv_files
         ])
         
-        # Process and transform the data
         processed_df = (
             df.with_columns(
                 pl.when(
@@ -30,11 +28,12 @@ class DefinitionProcessor:
                     )
                 ).alias("joined_definition")
             )
-            .filter(pl.col('full_definition').str.len_chars() < self.config.max_definition_length)
+            .filter(pl.col('full_definition').str.len_chars() < self.max_length)
             .select(
                 pl.col('joined_definition').alias('definition_text'),
                 pl.col('provenance').alias('dataset'),
                 pl.col('document').alias('document_id'),
+                pl.col('def_n'),
                 pl.col('references'),
             )
             .with_columns([
