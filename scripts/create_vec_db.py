@@ -10,7 +10,7 @@ from LegalDefAgent.src.retriever.embedder import VectorDBBuilder
 setup_logging()
 
 
-def build_database(
+def extract_process_embed_defs(
     #embedding_function: Any,
     datasets: Optional[List[str]] = None,
 ) -> None:
@@ -22,15 +22,9 @@ def build_database(
         datasets: Optional list of datasets to process. If None, uses all configured datasets.
     """
     try:
-        # Extract definitions
+        # Extract and process definitions
         extractor = DefinitionExtractor()
         processed_df = extractor.extract_and_filter()
-
-        # Process definitions
-        #logger.info("Processing extracted definitions...")
-        #processor = DefinitionProcessor()
-        #tsv_files = list(Path(DB_CONFIG['DEFINITIONS_OUTPUT_DIR']).glob('*.tsv'))
-        #processed_df = processor.process_definitions(tsv_files)
 
         # Build vector database
         db_builder = VectorDBBuilder()
@@ -40,7 +34,7 @@ def build_database(
         logging.error(f"Error building database: {e}")
         raise
 
-def save_definitions_to_pickle(datasets=None, output_file='definitions.pkl'):
+def save_definitions_list_to_pickle(datasets=None, output_file='definitions.pkl'):
     extractor = DefinitionExtractor()
     processed_df = extractor.extract_and_filter(datasets=datasets)
     definitions_list = processed_df['definition_text'].tolist()
@@ -48,11 +42,16 @@ def save_definitions_to_pickle(datasets=None, output_file='definitions.pkl'):
         pickle.dump(definitions_list, f)
     print(f"Definitions list saved to {output_file}")
 
-def main(only_definitions=False, datasets=None):
+def insert_definitions_into_db(defs_df, defs_embeddings):
+    pass
+
+def main(only_definitions=False, insert_defs=False, datasets=None):
     if only_definitions:
-        save_definitions_to_pickle(datasets=datasets)
+        save_definitions_list_to_pickle(datasets=datasets)
+    elif insert_defs:
+        pass
     else:
-        build_database(datasets=datasets)
+        extract_process_embed_defs(datasets=datasets)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build the vector database of legal definitions.")

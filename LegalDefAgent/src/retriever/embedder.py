@@ -28,13 +28,18 @@ class VectorDBBuilder:
                 name="id", 
                 dtype=DataType.INT64,
                 is_primary=True, 
-                auto_id=True, 
-                max_length=100
+                #auto_id=True, 
+                #max_length=100
             ),
             FieldSchema(
                 name="definition_text", 
                 dtype=DataType.VARCHAR, 
                 max_length=5000
+            ),
+            FieldSchema(
+                name="def_n", 
+                dtype=DataType.VARCHAR, 
+                max_length=10
             ),
             FieldSchema(
                 name="dataset", 
@@ -82,7 +87,7 @@ class VectorDBBuilder:
         
         return collection
     
-    def build_vector_db(self, df: pl.DataFrame) -> None:
+    def build_vector_db(self, df: pl.DataFrame, defs_embeddings=None) -> None:
         """Build vector database from processed definitions."""
         logger.info("Building vector database...")
         try:
@@ -98,7 +103,10 @@ class VectorDBBuilder:
                 
                 # Generate embeddings for the batch
                 batch_texts = batch_df['definition_text'].to_list()
-                batch_embeddings = self.ef(batch_texts)
+                if not defs_embeddings:
+                    batch_embeddings = self.ef(batch_texts)
+                else:
+                    batch_embeddings = defs_embeddings[i:i+self.batch_size]
                 
                 # Prepare batch data
                 batch_data = [

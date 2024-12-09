@@ -227,3 +227,5 @@ def setup_logging(log_level=logging.DEBUG):
             logging.StreamHandler(sys.stdout)  # Ensure logs are shown in notebook output
         ],
     )
+
+    logging.info("Logging configured")

@@ -64,6 +64,7 @@ class DefinitionExtractor:
             .filter(pl.col('full_definition').str.len_chars() < self.config['MAX_DEFINITION_LENGTH'])
             .select(
                 pl.col('joined_definition').alias('definition_text'),
+                pl.col('def_n'),
                 pl.col('provenance').alias('dataset'),
                 pl.col('document').alias('document_id'),
                 pl.col('references'),
