@@ -1,14 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="LegalDefAgent",  # Name of your package
-    version="0.1.0",       # Initial version
+    name="LegalDefAgent",
+    version="0.2.0",
     #description="A legal definition retrieval and generation system.",
-    #author="Your Name",
-    #author_email="your.email@example.com",
-    #url="https://github.com/yourusername/LegalDefAgent",  # Replace with your repository URL
-    packages=find_packages(),  # Automatically find packages in your directory structure
-    include_package_data=True, # Include files listed in MANIFEST.in
+    #author="Leonardo Zilli",
+    url="https://github.com/leonardozilli/LegalDefAgent",
+    packages=find_packages(include=['LegalDefAgent*']),
+    include_package_data=True,
     install_requires=[
         "polars",
         "pymilvus"

@@ -1,24 +1,22 @@
-from typing import Annotated, Literal, Sequence, List, Dict, Any
+from typing import Annotated, Literal, Sequence, Dict, Any
 from typing_extensions import TypedDict
-from pprint import pprint
-
-from langchain_core.messages import BaseMessage, AIMessage, SystemMessage, HumanMessage
-from langgraph.graph.message import add_messages
-from langchain_core.tools import tool, StructuredTool
-from langchain_core.output_parsers import StrOutputParser, JsonOutputParser
-from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
-from langgraph.graph import StateGraph, START, END
-from langgraph.prebuilt import ToolNode, tools_condition
-from langchain_core.callbacks.base import BaseCallbackHandler
-from langgraph.checkpoint.memory import MemorySaver
-from pydantic import BaseModel, Field
-from langchain.agents.react.agent import create_react_agent
-from langchain_core.callbacks import adispatch_custom_event
-
-from LegalDefAgent.src import tools, schema, utils
-from LegalDefAgent.src.retriever import vector_store
-
 import uuid
+
+from langchain_core.messages import BaseMessage, AIMessage, HumanMessage
+from langgraph.graph.message import add_messages
+from langchain_core.output_parsers import JsonOutputParser
+from langchain_core.prompts import PromptTemplate
+from langgraph.graph import StateGraph, START, END
+from langgraph.checkpoint.memory import MemorySaver
+from langchain_core.callbacks import dispatch_custom_event
+from langchain_core.runnables import RunnableConfig
+
+
+from . import models, tools, schema, utils
+from .retriever import vector_store
+
+
+from .schema import Task
 
 
 class AgentState(TypedDict):
@@ -28,7 +26,7 @@ class AgentState(TypedDict):
     definendum: str
     retrieved_definitions: str
     relevant_defs: str
-    def_missing: bool
+    answer_def: str
     task: str
 
 
@@ -41,43 +39,9 @@ class LegalDefAgent:
         #self.tools = [self.retriever_tool]
         #self.model_with_tools = self.model.bind_tools(self.tools)
         #self.tasks_tools = [self.definition_agent]
+        #self.db_agents = [self.eurlex_agent, self.normattiva_agent, self.pdl_agent]
+        #self.db_agents_tools = [tools.extract_definition_from_xmldb]
         self.workflow = self.setup_workflow()
-
-    def LegalAgent(self, state: AgentState) -> Literal["DefinitionsAgent",]:
-        """
-        Invokes the master agent that invokes the task-related agents.
-        Args:
-            state (AgentState): The current state
-        Returns:
-            str: The name of the task-agent
-        """
-
-        available_tasks = ["definition",]
-
-        prompt = PromptTemplate(
-            template="""
-                You are a legal drafting assistant.
-                You have at your disposal a number of tools to aid a user in the legal drafting process.
-                Given a user's question, your job is to find the best tool to use to answer the question.
-                The tools at your disposal are:
-                * "definition": a tool that retrieves the definition of a term.
-                E.g.: 
-                * "What is the definition of a contract?" -> "definition"
-                * "What is a fishing net?" -> "definition"
-                * "house" -> "definition"
-                VERY IMPORTANT NOTES:
-                * You should output only the single definendum, without any additional text.
-                * If you don't find the right tool, simply answer with "I can't help you with that yet!"
-                Here is the user question: {question}
-            """,
-            input_variables=["question"],
-        )
-
-        chain = prompt | self.model
-        input_question = state["messages"][-1].content
-        response = chain.invoke({"question": input_question})
-
-        return response.content.lower() if response.content.lower() in available_tasks else END
 
     def task_manager(self, state: AgentState):
         """Analyze the user's query and determine the appropriate routing.
@@ -92,12 +56,6 @@ class LegalDefAgent:
         Returns:
             dict[str, Router]: A dictionary containing the 'task' key with the classification result (classification type and logic).
         """
-
-        class task(BaseModel):
-            """The task to perform."""
-
-            task: str = Field(description="The task to perform. (e.g. 'definition')")
-
 
         prompt = PromptTemplate(
             template="""
@@ -120,7 +78,7 @@ class LegalDefAgent:
             input_variables=["question"],
         )
 
-        chain = prompt | self.model#.bind_tools(self.tasks_tools, parallel_tool_calls=False)
+        chain = prompt | self.model
 
         input_question = state["messages"][-1].content
         response = chain.invoke({"question": input_question})
@@ -128,7 +86,7 @@ class LegalDefAgent:
         return {"task": response.content.lower(), "question": input_question}
 
 
-    def route_task(self, state: AgentState) -> str:
+    def route_task(self, state: AgentState) -> Literal["definition", "no_task"]:
         """
         Routes the task to the appropriate agent.
         Args:
@@ -141,7 +99,7 @@ class LegalDefAgent:
         else:
             return "no_task"
 
-    def extract_definendum(self, state: AgentState) -> Dict[str, Any]:
+    async def extract_definendum(self, state: AgentState, config: RunnableConfig) -> AgentState:
         """
         Extracts the definendum from the user's question.
         Args:
@@ -149,6 +107,7 @@ class LegalDefAgent:
         Returns:
             dict: Updated state with the definendum
         """
+        task = Task("Extract definendum")
         prompt = PromptTemplate(
             template="""
                 You are a legal drafting assistant.
@@ -169,9 +128,11 @@ class LegalDefAgent:
         input_question = state["question"]
         response = chain.invoke({"question": input_question})
 
+        await task.start(data={"input": input_question}, config=config)
+        await task.finish(result="success", data={"output": response.content}, config=config)
         return {"messages": [response], "definendum": response.content}
 
-    def query_vectorstore(self, state: AgentState) -> Dict[str, Any]:
+    async def query_vectorstore(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """
         Retrieves definitions from the vector store based on the definendum.
         Args:
@@ -180,10 +141,13 @@ class LegalDefAgent:
             dict: Updated state with retrieved definitions
         """
         definendum = state["definendum"]
+        await Task("Query vector store").start(data={"input": state['definendum']}, config=config)
         retrieved_definitions = self.retriever.invoke(definendum)
+
+        await Task("Query vector store").finish(result="success", data={"output": str(retrieved_definitions)}, config=config)
         return {"retrieved_definitions": str(retrieved_definitions)}
 
-    def filter_definitions(self, state: AgentState) -> Dict[str, Any]:
+    async def filter_definitions(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """
         Filters the retrieved definitions based on their relevance to the question.
         Args:
@@ -194,17 +158,17 @@ class LegalDefAgent:
         parser = JsonOutputParser(pydantic_object=schema.DefinitionsList)
         prompt = PromptTemplate(
             template="""
-            You are a legal expert API assessing the relevance of legal definitions to a user question.
-            You can only answer with valid, directly parsable json.
-            Your job is to filter the list of definitions provided to you keeping only the relevant ones.
+            You are a legal expert assessing the relevance of legal definitions to a user question.
+            Below you will find a list of definitions that were automatically retrieved.
+            Your task is to filter the list of definitions provided to you keeping only the relevant ones.
             If the text of the definition contains keyword(s) or semantic meaning related to the user's question, keep it. Otherwise discard it.
             Output only the relevant definitions using the formatting instructions provided.
             VERY IMPORTANT NOTES:
+            * You can only answer with valid, directly parsable json.
             * You should output only the formatted relevant definitions, without any additional text.
-            * If none of the definitions are relevant, you should output an empty list.
             Here are the formatting instructions: {format_instructions}
             Here are the retrieved definitions: {context}
-            Here is the user's question: {question}
+            Here is the term asked by the user: {question}
             """,
             input_variables=["context", "question"],
             partial_variables={"format_instructions": parser.get_format_instructions()}
@@ -212,9 +176,12 @@ class LegalDefAgent:
 
         chain = prompt | self.model | parser
         question = state["question"]
+        definendum = state["definendum"]
         retrieved_definitions = state["retrieved_definitions"]
-        response = chain.invoke({"question": question, "context": retrieved_definitions})
+        await Task("Filter definitions").start(data={"input": retrieved_definitions}, config=config)
+        response = chain.invoke({"context": retrieved_definitions, "question": definendum})
 
+        await Task("Filter definitions").finish(result="success", data={"output": response['relevant_definitions']}, config=config)
         return {"messages": [utils.json_to_aimessage(response)], "relevant_defs": response['relevant_definitions']}
     
     def empty_list(self, state: AgentState) -> bool:
@@ -227,9 +194,9 @@ class LegalDefAgent:
         """
         boo = len(list(state["relevant_defs"])) > 1
 
-        return "more than one definition" if boo else "empty or single definition"
+        return "definitions found" if boo else "no definitions"
 
-    def rank_definitions(self, state: AgentState) -> Dict[str, Any]:
+    async def rank_definitions(self, state: AgentState, config: RunnableConfig) -> AgentState:
         """
         Rank the definitions based on their relevance to the question.
         Args:
@@ -237,35 +204,63 @@ class LegalDefAgent:
         Returns:
             dict: Updated state with the ranked definitions
         """
-        return state
+        await Task("Rank definitions").start(config=config)
+        parser = JsonOutputParser(pydantic_object=schema.DefinitionsList)
+        prompt = PromptTemplate(
+            template="""
+            You are a legal expert ordering legal definitions based on their source.
+            Your job is to order the list of definitions provided to you following the hierarchy provided.
+            You can only answer with valid, directly parsable json.
+            Here are the formatting instructions: {format_instructions}
+            Here are the definitions to rank: {context}
+            Here are the hierarchical schema instructions:
+                * EurLex definitions should be ranked first.
+                * If the user question is in Italian, Normattiva and PDL definitions should be ranked first
+            """,
+            input_variables=["context"],
+            partial_variables={"format_instructions": parser.get_format_instructions()}
+        )
 
-    def answer(self, state: AgentState) -> Dict[str, Any]:
+        chain = prompt | self.model | parser
+        response = chain.invoke({"context": state["relevant_defs"]})
+
+        await Task("Rank definitions").finish(result="success", data={"output": response['relevant_definitions']}, config=config)
+        return {"messages": [utils.json_to_aimessage(response)], "relevant_defs": response['relevant_definitions']}
+    
+    async def pick_definition(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """
-        Answer user with a definition.
+        Picks the most relevant definition from a list of definitions.
         Args:
             state (AgentState): The current state
         Returns:
-            dict: Updated state with the answer
+            dict: Updated state with the best definition
         """
+        await Task("Pick definition").start(config=config, data={"input": (state["relevant_defs"])})
+        parser = JsonOutputParser(pydantic_object=schema.Definition)
         prompt = PromptTemplate(
             template="""
-            You are a legal expert and your job is to find the accurate legal definition for a term.
-            Find in the retrieved definitions the one that answers the user's question.
-            Keep the answer concise and straight to the point, giving only the definition.
-            VERY IMPORTANT NOTES:
-            * You should output only the string with the definition, without any additional text.
-            * If you don't find a definition for the user's question, you should answer with: "I can't find a definition for that. Do you want me to generate one for you?"
-            User Question: {question}
-            Retrieved definitions: {context}
+            You are a legal expert evaluating legal definitions.
+            Your job is to pick the SINGLE most appropriate definition from the list provided to you in response to a user's query.
+            You can only answer with valid, directly parsable json containe ONE definition.
+            Here are the formatting instructions: {format_instructions}
+            Here are the definitions to rank: {context}
+            Here are some info to base your decision on:
+                * EurLex is the European Union's legal database.
+                * Normattiva is the Italian legal database.
+                * PDL is the Italian Parliament's legal database.
+                * If the user's query is in Italian or asks about the Italian legislation, Normattiva and PDL definitions should preferred.
+                * If the user'asks about the European legislation, EurLex definitions should preferred.
             """,
-            input_variables=["context", "question"]
+            input_variables=["context"],
+            partial_variables={"format_instructions": parser.get_format_instructions()}
         )
 
-        chain = prompt | self.model
-        response = chain.invoke({"context": state['relevant_defs'], "question": state['question']})
-        def_missing = response.content == "I can't find a definition for that. Do you want me to generate one for you?"
+        chain = prompt | self.model | parser
+        response = chain.invoke({"context": state["relevant_defs"]})
 
-        return {"messages": [response], "def_missing": def_missing}
+        await Task("Pick definition").finish(result="success", data={"output": str(response)}, config=config)
+        return {"messages": [utils.json_to_aimessage(response)], "answer_def": response}
+ 
 
     def generate_definition(self, state: AgentState) -> Dict[str, Any]:
         """
@@ -281,13 +276,15 @@ class LegalDefAgent:
             Keep the answer concise and straight to the point, giving only the definition.
             User Question: {question}
             VERY IMPORTANT NOTES:
-            * You should answer with "Here's the generated definition:" followed by the generated definition.
+            * You should answer with "I couldn't find a definition for "{definendum}", so here's a generated one:" followed by the generated definition.
             """,
-            input_variables=["question"]
+            input_variables=["question", "definendum"]
         )
 
+        definendum = state["definendum"]
+        question = state["question"]
         chain = prompt | self.model
-        response = chain.invoke({"question": state['question']})
+        response = chain.invoke({"question": question, "definendum": definendum})
 
         return {"messages": [response]}
 
@@ -311,7 +308,6 @@ class LegalDefAgent:
             bool: True if the agent should generate a definition, False otherwise
         """
         return state["def_missing"]
-
 
     def perform_task(self, state: AgentState) -> bool:
         """
@@ -339,6 +335,73 @@ class LegalDefAgent:
         print("---ask_to_generate---")
         return {"messages": [AIMessage(content="Do you want me to generate a definition for you?")]}
 
+    async def eurlex_agent(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
+        """
+        The interface agent for the Eurlex database.
+        """
+        await Task("Eurlex agent").start(data={"input": state["answer_def"]["metadata"]},config=config)
+
+        content = tools.extract_definition_from_xmldb(state["answer_def"]['metadata'])
+        await Task("Eurlex agent").finish(result="success", data={"output": content}, config=config)
+        return {"messages": [AIMessage(content)]}
+
+    async def normattiva_agent(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
+        """
+        The interface agent for the Normattiva database.
+        """
+        await Task("Normattiva agent").start(config=config)
+        model = self.model.bind_tools(self.db_agents_tools, parallel_tool_calls=False)
+        response = model.invoke(state["answer_def"])
+
+        await Task("Normattiva agent").finish(result="success", data={"output": response}, config=config)
+        return {"messages": [response]}
+
+    async def pdl_agent(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
+        """
+        The interface agent for the PDL database.
+        """
+        await Task("PDL agent").start(config=config)
+        model = self.model.bind_tools(self.db_agents_tools, parallel_tool_calls=False)
+        response = model.invoke(state["answer_def"])
+
+        await Task("PDL agent").finish(result="success", data={"output": response}, config=config)
+        return {"messages": [response]}
+
+    def call_db_agents(self, state: AgentState) -> Literal["Eurlex", "Normattiva", "PDL"]:
+
+        return state["answer_def"]['metadata']['dataset']
+
+    def answer(self, state: AgentState) -> Dict[str, Any]:
+        """
+        Answer user with a definition.
+        Args:
+            state (AgentState): The current state
+        Returns:
+            dict: Updated state with the answer
+        """
+        prompt = PromptTemplate(
+            template="""
+            You are a legal expert part of a legal workflow and your job is to provide the final answer to the user.
+            You are provided with the content of a definition and some metadata.
+            If the definition is directly available, you should answer with "I found the definition:" followed by the definition and the metadata.
+            Else, if the definition is not exactly what the user asked for, you should answer with "I couldn't find the exact definition, but here is a related one:" followed by the definition and the metadata.
+            Lastly, if the definition is empty, you should ask the user if they want you to generate one.
+            VERY IMPORTANT NOTES:
+            * You should provide the metadata to the user using natural language.
+            User Question: {definendum}
+            definition_metadata: {metadata}
+            definition_content: {context}
+            """,
+            input_variables=["context", "definendum", "metadata"]
+        )
+
+        chain = prompt | self.model
+        response = chain.invoke({"context": state["messages"][-1].content, "metadata": state['answer_def']['metadata'], "definendum": state['definendum']})
+
+        dispatch_custom_event("answering", {"foo": "bar"})
+        return {"messages": [response]}
+
+
     def setup_workflow(self) -> StateGraph:
         """
         Setup the workflow for the agent.
@@ -353,9 +416,13 @@ class LegalDefAgent:
         workflow.add_node("extract_definendum", self.extract_definendum)
         workflow.add_node("query_vectorstore", self.query_vectorstore)
         workflow.add_node("filter_definitions", self.filter_definitions)
-        workflow.add_node("rank_definitions", self.rank_definitions)
+        #workflow.add_node("rank_definitions", self.rank_definitions)
+        workflow.add_node("pick_definition", self.pick_definition)
+        workflow.add_node("eurlex_agent", self.eurlex_agent)
+        workflow.add_node("normattiva_agent", self.normattiva_agent)
+        workflow.add_node("pdl_agent", self.pdl_agent)
         workflow.add_node("answer", self.answer)
-        workflow.add_node("ask_to_generate", self.ask_to_generate)
+        #workflow.add_node("ask_to_generate", self.ask_to_generate)
         workflow.add_node("generate_definition", self.generate_definition)
 
         # Edges
@@ -368,25 +435,43 @@ class LegalDefAgent:
                                         })
         workflow.add_edge("extract_definendum", 'query_vectorstore')
         workflow.add_edge("query_vectorstore", 'filter_definitions')
+        #workflow.add_conditional_edges("filter_definitions",
+                                        #self.empty_list,
+                                        #{
+                                             #"empty or single definition": "answer",
+                                             #"more than one definition": "rank_definitions"
+                                        #})
+        #workflow.add_edge("filter_definitions", "pick_definition")
         workflow.add_conditional_edges("filter_definitions",
-                                        self.empty_list,
-                                        {
-                                             "empty or single definition": "ask_to_generate",
-                                             "more than one definition": "rank_definitions"
-                                        })
-        workflow.add_edge("rank_definitions", "answer")
-        workflow.add_conditional_edges("ask_to_generate",
-                                       self.evaluate_user_confirmation,
+                                       self.empty_list,
                                        {
-                                           True: "generate_definition",
-                                           False: END
-                                       })
+                                           "definitions found": "pick_definition",
+                                           "no definitions": "generate_definition"
+                                       }
+                                       )
+        #workflow.add_edge("rank_definitions", "pick_definition")
+        workflow.add_conditional_edges("pick_definition",
+                                        self.call_db_agents,
+                                        {
+                                             "EurLex": "eurlex_agent",
+                                             "Normattiva": "normattiva_agent",
+                                             "PDL": "pdl_agent"
+                                        })
+        #workflow.add_conditional_edges("ask_to_generate",
+                                       #self.evaluate_user_confirmation,
+                                       #{
+                                           #True: "generate_definition",
+                                           #False: END
+                                       #})
         workflow.add_edge("generate_definition", END)
+        workflow.add_edge("eurlex_agent", "answer")
+        workflow.add_edge("normattiva_agent", "answer")
+        workflow.add_edge("pdl_agent", "answer")
         workflow.add_edge("answer", END)
         workflow.add_edge("model", END)
 
         memory = MemorySaver()
-        self.graph_runnable = workflow.compile(checkpointer=memory, interrupt_after=["ask_to_generate"])
+        self.graph_runnable = workflow.compile(checkpointer=memory)#, interrupt_after=["ask_to_generate"])
 
         return workflow
 
@@ -427,3 +512,6 @@ class LegalDefAgent:
                 {"messages": [HumanMessage(content=user)]}, config=config, stream_mode="values"
             ):
                 utils._print_event(output, _printed)
+
+
+#defagent = LegalDefAgent(model=models._get_model('groq', streaming=True)).graph_runnable

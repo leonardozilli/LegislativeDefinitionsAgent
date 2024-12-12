@@ -1,7 +1,8 @@
-from pymilvus import connections, utility, FieldSchema, CollectionSchema, DataType, Collection
+from pymilvus import connections, utility, FieldSchema, CollectionSchema, DataType, Collection, MilvusClient
 import logging
 from typing import Any
 import polars as pl
+from pathlib import Path
 from pymilvus.model.hybrid import BGEM3EmbeddingFunction
 from ..config import DB_CONFIG, MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
 from torch.cuda import is_available as cuda_available
@@ -91,7 +92,11 @@ class VectorDBBuilder:
         """Build vector database from processed definitions."""
         logger.info("Building vector database...")
         try:
-            # Connect to Milvus
+
+            Path(self.milvus_uri).parent.mkdir(parents=True, exist_ok=True)
+            client = MilvusClient(
+                uri=self.milvus_uri
+            )
             connections.connect(uri=self.milvus_uri)
             
             # Setup collection
@@ -106,21 +111,23 @@ class VectorDBBuilder:
                 if not defs_embeddings:
                     batch_embeddings = self.ef(batch_texts)
                 else:
-                    batch_embeddings = defs_embeddings[i:i+self.batch_size]
+                    batch_embeddings = defs_embeddings['dense'][i:i+self.batch_size]
                 
                 # Prepare batch data
                 batch_data = [
+                    batch_df['id'].to_list(),
                     batch_df['definition_text'].to_list(),
+                    batch_df['def_n'].to_list(),
                     batch_df['dataset'].to_list(),
                     batch_df['document_id'].to_list(),
                     batch_df['references'].to_list(),
-                    batch_embeddings["dense"],
+                    batch_embeddings,
                 ]
                 
                 # Insert batch
                 collection.insert(batch_data)
                 
-            logger.info(f"Number of entities inserted into vector database: {collection.num_entities}")
+            logger.info(f"Inserted {collection.num_entities} entities into vector database")
             
         except Exception as e:
             logger.error(f"Error building vector database: {e}")

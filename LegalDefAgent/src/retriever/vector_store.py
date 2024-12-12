@@ -6,10 +6,18 @@ from torch.cuda import is_available as cuda_available
 
 from functools import lru_cache
 
-from ..config import MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
+from LegalDefAgent.src.config import MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
+from LegalDefAgent.src.utils import setup_logging
+
 
 @lru_cache
 def setup_vectorstore(milvusdb_uri=None):
+    #logger.info(f"Setting up vector store with URI: {milvusdb_uri}")
+    #import traceback
+    #logger.info("Vector store setup called from:")
+    #for line in traceback.format_stack():
+        #logger.info(line.strip())
+
     class BGEMilvusEmbeddings(Embeddings):
         def __init__(self):
             self.model = BGEM3EmbeddingFunction(

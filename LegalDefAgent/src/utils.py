@@ -55,6 +55,10 @@ def json_to_aimessage(parsed_output):
     return AIMessage(content=content)
 
 
+def definition_obj_to_path(definition_obj):
+    return os.path.join(definition_obj['dataset'], definition_obj['document_id'])
+
+
 def draw_graph(graph):
     try:
         display(Image(graph.get_graph(xray=True).draw_mermaid_png()))

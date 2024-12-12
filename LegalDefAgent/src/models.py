@@ -9,9 +9,9 @@ from langchain_groq import ChatGroq
 from langchain_mistralai import ChatMistralAI
 from langchain_ollama.chat_models import ChatOllama
 
-import LegalDefAgent.src.config as config
+from . import config
 
-from typing import Annotated, Literal, Sequence, List, Any, Dict
+from typing import List, Any, Dict
 from langchain_core.callbacks.base import BaseCallbackHandler
 
 class CustomHandler(BaseCallbackHandler):
