@@ -7,25 +7,24 @@ import polars as pl
 from typing import List, Dict, Optional, Tuple
 from tqdm import tqdm
 
-from ..config import DB_CONFIG
+from  ..settings import settings
 
 
 logger = logging.getLogger(__name__)
 
 class DefinitionExtractor:
     def __init__(self):
-        self.config = DB_CONFIG
-        self.data_dir = Path(self.config['XML_DATA_DIR'])
-        #self.output_dir = Path(self.config['OUTPUT_DIR'])
-        self.definitions_output_dir = Path(self.config['DEFINITIONS_OUTPUT_DIR'])
-        self.namespaces = self.config['NAMESPACES']
+        self.config = settings.DB_CONFIG
+        self.data_dir = Path(self.config.XML_DATA_DIR)
+        self.definitions_output_dir = Path(self.config.DEFINITIONS_OUTPUT_DIR)
+        self.namespaces = self.config.NAMESPACES
 
     def extract_and_filter(self) -> pl.DataFrame:
         """Extract definitions from all datasets directly into a DataFrame."""
         all_definitions = []
         extracted, errors, total = 0, 0, 0
         
-        for dataset in self.config['DATASETS']:
+        for dataset in self.config.DATASETS:
             logger.info(f"Extracting definitions from XML files in dataset {dataset}...")
             target = self.data_dir / dataset
             for file in target.rglob('*.xml'):
@@ -61,7 +60,7 @@ class DefinitionExtractor:
                     )
                 ).alias("joined_definition")
             )
-            .filter(pl.col('full_definition').str.len_chars() < self.config['MAX_DEFINITION_LENGTH'])
+            .filter(pl.col('full_definition').str.len_chars() < self.config.MAX_DEFINITION_LENGTH)
             .select(
                 pl.col('joined_definition').alias('definition_text'),
                 pl.col('def_n'),
@@ -170,7 +169,7 @@ class DefinitionExtractor:
         extracted, errors, total = 0, 0, 0
         self.definitions_output_dir.mkdir(parents=True, exist_ok=True)
         
-        for dataset in self.config['DATASETS']:
+        for dataset in self.config.DATASETS:
             target = Path(self.data_dir / dataset)
             for file in target.rglob('*.xml'):
                 total += 1

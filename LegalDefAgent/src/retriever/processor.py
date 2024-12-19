@@ -1,12 +1,12 @@
 import polars as pl
 from pathlib import Path
 from typing import List
-from ..config import DB_CONFIG
+from .. import settings 
 
 class DefinitionProcessor:
     def __init__(self):
-        self.config = DB_CONFIG
-        self.max_length = self.config['MAX_DEFINITION_LENGTH']
+        self.config = settings.DB_CONFIG
+        self.max_length = self.config.MAX_DEFINITION_LENGTH
         
     def process_definitions(self, tsv_files: List[Path]) -> pl.DataFrame:
         """Process and transform definition data from TSV files."""

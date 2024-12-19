@@ -12,15 +12,10 @@
 # copies or substantial portions of the Software.
 
 import uvicorn
-from dotenv import load_dotenv
 
-load_dotenv()
-
-import importlib  
-
-settings = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.core.settings').settings
-service = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.service')
+import os
+from LegalDefAgent.src.settings import settings
 
 
 if __name__ == "__main__":
-    uvicorn.run("LegalDefAgent.agent-service-toolkit.src.service.service:app", host=settings.HOST, port=settings.PORT)
+    uvicorn.run("LegalDefAgent.agent_service_toolkit.src.service.service:app", host=settings.HOST, port=settings.PORT, reload=settings.is_dev())

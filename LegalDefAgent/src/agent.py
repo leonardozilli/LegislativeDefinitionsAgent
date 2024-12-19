@@ -12,11 +12,11 @@ from langchain_core.callbacks import dispatch_custom_event
 from langchain_core.runnables import RunnableConfig
 
 
-from . import models, tools, schema, utils
+from . import llm, tools, utils
 from .retriever import vector_store
-
-
-from .schema import Task
+from .settings import settings
+from .schema.task_data import Task
+from .schema.definition import DefinitionsList, Definition
 
 
 class AgentState(TypedDict):
@@ -31,7 +31,7 @@ class AgentState(TypedDict):
 
 
 class LegalDefAgent:
-    def __init__(self, model,milvusdb_uri=None, search_k=7):
+    def __init__(self, model, milvusdb_uri=None, search_k=7):
         self.model = model
         self.vectorstore = vector_store.setup_vectorstore(milvusdb_uri=milvusdb_uri)
         self.retriever = self.vectorstore.as_retriever(search_kwargs={"k": search_k})
@@ -155,7 +155,7 @@ class LegalDefAgent:
         Returns:
             dict: Updated state with relevant definitions
         """
-        parser = JsonOutputParser(pydantic_object=schema.DefinitionsList)
+        parser = JsonOutputParser(pydantic_object=DefinitionsList)
         prompt = PromptTemplate(
             template="""
             You are a legal expert assessing the relevance of legal definitions to a user question.
@@ -166,23 +166,23 @@ class LegalDefAgent:
             VERY IMPORTANT NOTES:
             * You can only answer with valid, directly parsable json.
             * You should output only the formatted relevant definitions, without any additional text.
-            Here are the formatting instructions: {format_instructions}
+            * If you can't find any relevant definitions, you should output this: {{"relevant_definitions": []}}\n\n
             Here are the retrieved definitions: {context}
             Here is the term asked by the user: {question}
             """,
             input_variables=["context", "question"],
-            partial_variables={"format_instructions": parser.get_format_instructions()}
+            #partial_variables={"format_instructions": parser.get_format_instructions()}
         )
 
-        chain = prompt | self.model | parser
+        chain = prompt | self.model.with_structured_output(DefinitionsList)# | parser
         question = state["question"]
         definendum = state["definendum"]
         retrieved_definitions = state["retrieved_definitions"]
         await Task("Filter definitions").start(data={"input": retrieved_definitions}, config=config)
-        response = chain.invoke({"context": retrieved_definitions, "question": definendum})
+        response = chain.invoke({"context": retrieved_definitions, "question": definendum}) # definendum or question??
 
-        await Task("Filter definitions").finish(result="success", data={"output": response['relevant_definitions']}, config=config)
-        return {"messages": [utils.json_to_aimessage(response)], "relevant_defs": response['relevant_definitions']}
+        await Task("Filter definitions").finish(result="success", data={"output": response}, config=config)
+        return {"messages": [utils.json_to_aimessage(response)], "relevant_defs": response}
     
     def empty_list(self, state: AgentState) -> bool:
         """
@@ -192,7 +192,7 @@ class LegalDefAgent:
         Returns:
             bool: True if the list is empty, False otherwise
         """
-        boo = len(list(state["relevant_defs"])) > 1
+        boo = len(list(state["relevant_defs"])) > 0
 
         return "definitions found" if boo else "no definitions"
 
@@ -236,7 +236,7 @@ class LegalDefAgent:
             dict: Updated state with the best definition
         """
         await Task("Pick definition").start(config=config, data={"input": (state["relevant_defs"])})
-        parser = JsonOutputParser(pydantic_object=schema.Definition)
+        parser = JsonOutputParser(pydantic_object=Definition)
         prompt = PromptTemplate(
             template="""
             You are a legal expert evaluating legal definitions.
@@ -249,7 +249,7 @@ class LegalDefAgent:
                 * Normattiva is the Italian legal database.
                 * PDL is the Italian Parliament's legal database.
                 * If the user's query is in Italian or asks about the Italian legislation, Normattiva and PDL definitions should preferred.
-                * If the user'asks about the European legislation, EurLex definitions should preferred.
+                * If the user asks about the European legislation, EurLex definitions should preferred.
             """,
             input_variables=["context"],
             partial_variables={"format_instructions": parser.get_format_instructions()}
@@ -339,7 +339,7 @@ class LegalDefAgent:
         """
         The interface agent for the Eurlex database.
         """
-        await Task("Eurlex agent").start(data={"input": state["answer_def"]["metadata"]},config=config)
+        await Task("Eurlex agent").start(data={"input": state["answer_def"]["metadata"]}, config=config)
 
         content = tools.extract_definition_from_xmldb(state["answer_def"]['metadata'])
         await Task("Eurlex agent").finish(result="success", data={"output": content}, config=config)
@@ -349,23 +349,21 @@ class LegalDefAgent:
         """
         The interface agent for the Normattiva database.
         """
-        await Task("Normattiva agent").start(config=config)
-        model = self.model.bind_tools(self.db_agents_tools, parallel_tool_calls=False)
-        response = model.invoke(state["answer_def"])
+        await Task("Normattiva agent").start(data={"input": state["answer_def"]["metadata"]}, config=config)
+        content = tools.extract_definition_from_xmldb(state["answer_def"]['metadata'])
 
-        await Task("Normattiva agent").finish(result="success", data={"output": response}, config=config)
-        return {"messages": [response]}
+        await Task("Normattiva agent").finish(result="success", data={"output": content}, config=config)
+        return {"messages": [AIMessage(content)]}
 
     async def pdl_agent(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """
         The interface agent for the PDL database.
         """
-        await Task("PDL agent").start(config=config)
-        model = self.model.bind_tools(self.db_agents_tools, parallel_tool_calls=False)
-        response = model.invoke(state["answer_def"])
+        await Task("PDL agent").start(data={"input": state["answer_def"]["metadata"]}, config=config)
+        content = tools.extract_definition_from_xmldb(state["answer_def"]['metadata'])
 
-        await Task("PDL agent").finish(result="success", data={"output": response}, config=config)
-        return {"messages": [response]}
+        await Task("PDL agent").finish(result="success", data={"output": content}, config=config)
+        return {"messages": [AIMessage(content)]}
 
     def call_db_agents(self, state: AgentState) -> Literal["Eurlex", "Normattiva", "PDL"]:
 
@@ -383,10 +381,11 @@ class LegalDefAgent:
             template="""
             You are a legal expert part of a legal workflow and your job is to provide the final answer to the user.
             You are provided with the content of a definition and some metadata.
-            If the definition is directly available, you should answer with "I found the definition:" followed by the definition and the metadata.
+            If the definition to the exact term that the user asked for is available, you should answer the definition and the metadata.
             Else, if the definition is not exactly what the user asked for, you should answer with "I couldn't find the exact definition, but here is a related one:" followed by the definition and the metadata.
             Lastly, if the definition is empty, you should ask the user if they want you to generate one.
             VERY IMPORTANT NOTES:
+            * You should answer in the same language as the user's question (e.g. if the user asked in Italian, you should answer in Italian. If the definition is in English, you should explain that it has been translated).
             * You should provide the metadata to the user using natural language.
             User Question: {definendum}
             definition_metadata: {metadata}
@@ -416,7 +415,6 @@ class LegalDefAgent:
         workflow.add_node("extract_definendum", self.extract_definendum)
         workflow.add_node("query_vectorstore", self.query_vectorstore)
         workflow.add_node("filter_definitions", self.filter_definitions)
-        #workflow.add_node("rank_definitions", self.rank_definitions)
         workflow.add_node("pick_definition", self.pick_definition)
         workflow.add_node("eurlex_agent", self.eurlex_agent)
         workflow.add_node("normattiva_agent", self.normattiva_agent)
@@ -514,4 +512,4 @@ class LegalDefAgent:
                 utils._print_event(output, _printed)
 
 
-#defagent = LegalDefAgent(model=models._get_model('groq', streaming=True)).graph_runnable
+defagent = LegalDefAgent(model=llm.get_model(settings.DEFAULT_MODEL)).graph_runnable

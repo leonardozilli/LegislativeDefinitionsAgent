@@ -3,6 +3,6 @@ __pycache__/
 .env
 data/
 logs/
-*.db
+*.db*
 *.egg-info/
 *.lock

@@ -19,19 +19,12 @@ import streamlit as st
 from dotenv import load_dotenv
 from pydantic import ValidationError
 from streamlit.runtime.scriptrunner import get_script_run_ctx
-import importlib  
 
-
-AgentClient = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.client.client').AgentClient
-ChatMessage = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.schema').ChatMessage
-ChatHistory = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.schema').ChatHistory
-AnthropicModelName = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.models').AnthropicModelName
-AWSModelName = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.models').AWSModelName
-GoogleModelName = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.models').GoogleModelName
-GroqModelName = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.models').GroqModelName
-OpenAIModelName = importlib.import_module('LegalDefAgent.agent-service-toolkit.src.schema.models').OpenAIModelName
-
-from LegalDefAgent.src.schema import TaskData, TaskDataStatus
+from LegalDefAgent.agent_service_toolkit.src.client.client import AgentClient
+from LegalDefAgent.agent_service_toolkit.src.schema.schema import ChatMessage, ChatHistory
+from LegalDefAgent.src.schema.models import AnthropicModelName, AWSModelName, GoogleModelName, GroqModelName, OpenAIModelName, MistralModelName
+from LegalDefAgent.src.schema.task_data import TaskData, TaskDataStatus
+from LegalDefAgent.src.settings import settings
 
 
 # A Streamlit app for interacting with the langgraph agent via a simple chat interface.
@@ -66,32 +59,28 @@ async def main() -> None:
     )
 
     # Hide the streamlit upper-right chrome
-    st.html(
-        """
-        <style>
-        [data-testid="stStatusWidget"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-            }
-        </style>
-        """,
-    )
-    if st.get_option("client.toolbarMode") != "minimal":
-        st.set_option("client.toolbarMode", "minimal")
-        await asyncio.sleep(0.1)
-        st.rerun()
+    #st.html(
+        #"""
+        #<style>
+        #[data-testid="stStatusWidget"] {
+                #visibility: hidden;
+                #height: 0%;
+                #position: fixed;
+            #}
+        #</style>
+        #""",
+    #)
+    #if st.get_option("client.toolbarMode") != "minimal":
+        #st.set_option("client.toolbarMode", "minimal")
+        #await asyncio.sleep(0.1)
+        #st.rerun()
     
     if "expander_open" not in st.session_state:
         st.session_state.expander_open = True
 
     with st.expander(label="Legal Definitions Agent", expanded=st.session_state.expander_open):
         """
-        In this example, we're going to be creating our own events handler to stream our [_LangGraph_](https://langchain-ai.github.io/langgraph/)
-        invocations with via [`astream_events (v2)`](https://langchain-ai.github.io/langgraph/how-tos/streaming-from-final-node/).
-        This one is does not use any callbacks or external streamlit libraries and is asynchronous.
-        we've implemented `on_llm_new_token`, a method that run on every new generation of a token from the ChatLLM model, and
-        `on_tool_start` a method that runs on every tool call invocation even multiple tool calls, and `on_tool_end` giving final result of tool call.
+        Master thesis project
         """
 
     if "agent_client" not in st.session_state:
@@ -116,21 +105,27 @@ async def main() -> None:
         st.session_state.thread_id = thread_id
 
     models = {
-        "llama-3.1-70b on Groq": GroqModelName.LLAMA_31_70B,
-        "OpenAI GPT-4o-mini (streaming)": OpenAIModelName.GPT_4O_MINI,
+        "llama-3-70b on Groq": GroqModelName.LLAMA_3_70B,
+        "llama-3-8b on Groq": GroqModelName.LLAMA_3_8B,
+        "llama-3-8b-tool on Groq": GroqModelName.LLAMA_3_8B_TOOL,
+        "llama-3.3-70b on Groq": GroqModelName.LLAMA_3_70B,
+        "Mistral NeMo": MistralModelName.NEMO_12B,
+        "OpenAI GPT-4o-mini": OpenAIModelName.GPT_4O_MINI,
+        "OpenAI GPT-4o": OpenAIModelName.GPT_4O_MINI,
     }
     # Config options
     with st.sidebar:
-        st.header(f"{APP_ICON} {APP_TITLE}")
+        st.header(f"{APP_TITLE}")
         ""
         "Legal Definition Retrieval Agent"
         with st.popover(":material/settings: Settings", use_container_width=True):
-            m = st.radio("LLM to use", options=models.keys())
+            m = st.radio("LLM to use", options=models.keys(), index=list(models.values()).index(settings.DEFAULT_MODEL))
             model = models[m]
             agent_client.agent = st.selectbox(
                 "Agent to use",
                 options=[
                     "LegalDefAgent",
+                    "LegalDefAgent2",
                 ],
             )
             use_streaming = st.toggle("Stream results", value=True)

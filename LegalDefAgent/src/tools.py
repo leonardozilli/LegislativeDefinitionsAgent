@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from .retriever import vector_store
-from .config import DB_CONFIG
+from .settings import settings
 from .utils import definition_obj_to_path
 
 
@@ -53,13 +53,13 @@ def extract_definition_from_xmldb(definition_metadata: dict) -> str:
         str: The text content of the matching element, or None if no match is found.
     """
 
-    namespace = DB_CONFIG['NAMESPACES'][definition_metadata['dataset']]
+    namespace = settings.DB_CONFIG.NAMESPACES[definition_metadata['dataset']]
 
     file_path = definition_obj_to_path(definition_metadata)
     def_n = definition_metadata['def_n']
     try:
         # Parse the XML file
-        tree = ET.parse(Path(DB_CONFIG['XML_DATA_DIR']) / file_path)
+        tree = ET.parse(Path(settings.DB_CONFIG.XML_DATA_DIR) / file_path)
         root = tree.getroot()
 
         # Find the element with the specified defines attribute

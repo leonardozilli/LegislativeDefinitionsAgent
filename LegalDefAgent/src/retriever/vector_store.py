@@ -6,7 +6,7 @@ from torch.cuda import is_available as cuda_available
 
 from functools import lru_cache
 
-from LegalDefAgent.src.config import MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
+from LegalDefAgent.src.settings import settings
 from LegalDefAgent.src.utils import setup_logging
 
 
@@ -36,8 +36,8 @@ def setup_vectorstore(milvusdb_uri=None):
 
     vectorstore = Milvus(
         embedding_function=BGEMilvusEmbeddings(),
-        connection_args={"uri": MILVUSDB_URI if milvusdb_uri is None else milvusdb_uri},
-        collection_name=MILVUSDB_COLLECTION_NAME,
+        connection_args={"uri": settings.MILVUSDB_URI if milvusdb_uri is None else milvusdb_uri},
+        collection_name=settings.MILVUSDB_COLLECTION_NAME,
         vector_field="dense_vector",
         text_field="definition_text",
     )

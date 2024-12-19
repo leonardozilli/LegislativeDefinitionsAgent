@@ -4,17 +4,17 @@ from typing import Any
 import polars as pl
 from pathlib import Path
 from pymilvus.model.hybrid import BGEM3EmbeddingFunction
-from ..config import DB_CONFIG, MILVUSDB_URI, MILVUSDB_COLLECTION_NAME
+from .. import settings
 from torch.cuda import is_available as cuda_available
 
 logger = logging.getLogger(__name__)
 
 class VectorDBBuilder:
     def __init__(self):
-        self.config = DB_CONFIG
-        self.milvus_uri = MILVUSDB_URI
-        self.collection_name = MILVUSDB_COLLECTION_NAME
-        self.batch_size = self.config['BATCH_SIZE']
+        self.config = settings.DB_CONFIG
+        self.milvus_uri = self.config.MILVUSDB_URI
+        self.collection_name = self.config.MILVUSDB_COLLECTION_NAME
+        self.batch_size = self.config.BATCH_SIZE
         self.ef = BGEM3EmbeddingFunction(
                 model_name='BAAI/bge-m3',
                 device='cuda' if cuda_available() else 'cpu',
