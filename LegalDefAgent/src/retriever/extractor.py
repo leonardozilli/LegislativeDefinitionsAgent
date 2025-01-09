@@ -8,6 +8,7 @@ from typing import List, Dict, Optional, Tuple
 from tqdm import tqdm
 
 from  ..settings import settings
+from LegalDefAgent.src.ref_resolver.ref_resolver import resolve_reference
 
 
 logger = logging.getLogger(__name__)
@@ -30,10 +31,10 @@ class DefinitionExtractor:
             for file in target.rglob('*.xml'):
                 total += 1
                 try:
-                    definitions = self.parse_xml(file, dataset)
-                    if definitions:
+                    data = self.parse_xml(file, dataset)
+                    if data:
                         extracted += 1
-                        all_definitions.extend(definitions)
+                        all_definitions.extend(data)
                 except Exception as e:
                     errors += 1
                     logger.error(f"Error processing {file}: {e}")
@@ -48,7 +49,8 @@ class DefinitionExtractor:
         
         # Process and transform the data
         processed_df = (
-            df.with_columns(
+            df
+            .with_columns(
                 pl.when(
                     pl.col("definendum").is_null() | pl.col("definiens").is_null()
                 ).then(
@@ -60,20 +62,25 @@ class DefinitionExtractor:
                     )
                 ).alias("joined_definition")
             )
-            .filter(pl.col('full_definition').str.len_chars() < self.config.MAX_DEFINITION_LENGTH)
+            .with_columns(
+                pl.struct(pl.col('joined_definition'), pl.col('references'), pl.col('provenance'))
+                .map_elements(self.append_refs, return_dtype=pl.String)
+                .alias("def_with_refs")
+            )
+            .filter(pl.col('def_with_refs').str.len_chars() < self.config.MAX_DEFINITION_LENGTH)
             .select(
-                pl.col('joined_definition').alias('definition_text'),
+                pl.col('def_with_refs').alias('definition_text'),
                 pl.col('def_n'),
+                pl.col('label'),
                 pl.col('provenance').alias('dataset'),
                 pl.col('document').alias('document_id'),
                 pl.col('references'),
+                pl.col('frbr_work'),
+                pl.col('frbr_expression'),
             )
-            #.with_columns([
-                #pl.col('references').map_elements(eval, return_dtype=pl.List(pl.String))
-            #])
             .with_row_index('id')
         )
-        
+
         return processed_df
         
     def parse_xml(self, xml_file: Path, dataset: str) -> Optional[List[Dict]]:
@@ -81,6 +88,9 @@ class DefinitionExtractor:
             tree = ET.parse(xml_file)
             root = tree.getroot()
             namespace = self.namespaces[dataset]
+
+            frbr_work = root.find('.//akn:FRBRWork', namespace).find('.//akn:FRBRthis', namespace).attrib.get('value', '')
+            frbr_expression = root.find('.//akn:FRBRExpression', namespace).find('.//akn:FRBRthis', namespace).attrib.get('value', '')
             
             definitions_el = root.findall('.//akn:definitions', namespace)
             if not definitions_el:
@@ -92,16 +102,19 @@ class DefinitionExtractor:
                     definendum, definiens, references, full_def = self._parse_definition(
                         definition, root, namespace
                     )
-                    definitions.append({
-                        'def_n': definition.find('.//akn:definitionHead', namespace).attrib.get('href', ''),
-                        'label': definition.find('.//akn:definitionHead', namespace).attrib.get('refersTo', ''),
-                        'definendum': self._clean_definendum(definendum),
-                        'definiens': self._clean_definiens(definiens),
-                        'full_definition': self._clean_full_def(full_def),
-                        'references': references,
-                        'provenance': dataset,
-                        'document': xml_file.name
-                    })
+                    if definendum:
+                        definitions.append({
+                            'def_n': definition.find('.//akn:definitionHead', namespace).attrib.get('href', ''),
+                            'label': definition.find('.//akn:definitionHead', namespace).attrib.get('refersTo', ''),
+                            'definendum': self._clean_definendum(definendum),
+                            'definiens': self._clean_definiens(definiens),
+                            'full_definition': self._clean_full_def(full_def),
+                            'references': references,
+                            'provenance': dataset,
+                            'document': xml_file.name,
+                            'frbr_work': frbr_work,
+                            'frbr_expression': frbr_expression,
+                        })
                 except Exception as e:
                     #logger.error(f"Error parsing definition in {xml_file}: {e}")
                     pass
@@ -117,7 +130,10 @@ class DefinitionExtractor:
         definition_body_elements = definition.findall('.//akn:definitionBody', namespace)
         
         definendum_id = definition_head.attrib.get('href', '').lstrip('#')
-        definendum = root.find(f".//akn:def[@eId='{definendum_id}']", namespace).text
+        try:
+            definendum = root.find(f".//akn:def[@eId='{definendum_id}']", namespace).text
+        except AttributeError as e:
+            definendum = None
         
         try:
             full_def = "".join(root.find(f".//*[@defines='#{definendum_id}']").itertext())
@@ -128,22 +144,42 @@ class DefinitionExtractor:
         references = []
         for body in definition_body_elements:
             body_text, body_refs = self._extract_body_and_references(body, root, namespace)
-            definiens.append(body_text)
-            references.extend(body_refs)
+            if body_text:
+                definiens.append(body_text)
+                references.extend(body_refs)
             
         return definendum, ' '.join(definiens), references, full_def
+    
+    @staticmethod
+    def append_refs(row):
+        definition = row['joined_definition']
+        references = row['references']
+        dataset = row['provenance']
+        def_with_refs = definition + '\n\n' + 'References: \n'
+        resolved_refs = []
+        for ref in references:
+            res = resolve_reference(ref, dataset)
+            if res:
+                resolved_refs.append(res)
+
+        if resolved_refs:
+            def_with_refs += '\n'.join(resolved_refs)
+            return def_with_refs
+        else:
+            return definition
 
     @staticmethod
     def _extract_body_and_references(body, root, namespace) -> Tuple[str, List[str]]:
         """Extract text and references from definition body."""
         body_id = body.attrib.get('href', '').lstrip('#')
         body_element = root.find(f".//akn:defBody[@eId='{body_id}']", namespace)
-        body_text = ''.join(body_element.itertext())
-        references = [
-            ref.attrib.get('href', '') 
-            for ref in body_element.findall('.//akn:ref', namespace)
-        ]
-        return body_text, references
+        if body_element is not None:
+            body_text = ''.join(body_element.itertext())
+            references = [
+                ref.attrib.get('href', '') for ref in body_element.findall('.//akn:ref', namespace)
+            ]
+            return body_text, references
+        return None, None
 
     @staticmethod
     def _clean_definendum(text: str) -> str:

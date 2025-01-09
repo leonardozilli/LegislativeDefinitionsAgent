@@ -3,18 +3,18 @@ import logging
 from typing import Any
 import polars as pl
 from pathlib import Path
-from pymilvus.model.hybrid import BGEM3EmbeddingFunction
-from .. import settings
+from milvus_model.hybrid import BGEM3EmbeddingFunction
+from ..settings import settings
 from torch.cuda import is_available as cuda_available
 
 logger = logging.getLogger(__name__)
 
 class VectorDBBuilder:
     def __init__(self):
-        self.config = settings.DB_CONFIG
+        self.config = settings
         self.milvus_uri = self.config.MILVUSDB_URI
         self.collection_name = self.config.MILVUSDB_COLLECTION_NAME
-        self.batch_size = self.config.BATCH_SIZE
+        self.batch_size = self.config.DB_CONFIG.BATCH_SIZE
         self.ef = BGEM3EmbeddingFunction(
                 model_name='BAAI/bge-m3',
                 device='cuda' if cuda_available() else 'cpu',
@@ -38,6 +38,11 @@ class VectorDBBuilder:
                 max_length=5000
             ),
             FieldSchema(
+                name="definendum_label", 
+                dtype=DataType.VARCHAR, 
+                max_length=256
+            ),
+            FieldSchema(
                 name="def_n", 
                 dtype=DataType.VARCHAR, 
                 max_length=10
@@ -53,10 +58,18 @@ class VectorDBBuilder:
                 max_length=40
             ),
             FieldSchema(
-                name="references", 
-                dtype=DataType.ARRAY, 
-                element_type=DataType.VARCHAR, 
-                max_capacity=20
+                name="frbr_work", 
+                dtype=DataType.VARCHAR, 
+                max_length=120
+            ),
+            FieldSchema(
+                name="frbr_expression", 
+                dtype=DataType.VARCHAR, 
+                max_length=120
+            ),
+            FieldSchema(
+                name="sparse_vector", 
+                dtype=DataType.SPARSE_FLOAT_VECTOR,
             ),
             FieldSchema(
                 name="dense_vector", 
@@ -79,10 +92,15 @@ class VectorDBBuilder:
         )
         
         # Create and load index
-        dense_index = {
-            "index_type": "AUTOINDEX", 
+        sparse_index = {
+            "index_type": "SPARSE_INVERTED_INDEX", 
             "metric_type": "IP"
         }
+        dense_index = {
+            "index_type": "FLAT", 
+            "metric_type": "COSINE"
+        }
+        collection.create_index("sparse_vector", sparse_index)
         collection.create_index("dense_vector", dense_index)
         collection.load()
         
@@ -111,17 +129,21 @@ class VectorDBBuilder:
                 if not defs_embeddings:
                     batch_embeddings = self.ef(batch_texts)
                 else:
-                    batch_embeddings = defs_embeddings['dense'][i:i+self.batch_size]
+                    batch_sparse_embeddings = defs_embeddings['sparse'][i:i+self.batch_size]
+                    batch_dense_embeddings = defs_embeddings['dense'][i:i+self.batch_size]
                 
                 # Prepare batch data
                 batch_data = [
                     batch_df['id'].to_list(),
                     batch_df['definition_text'].to_list(),
+                    batch_df['label'].to_list(),
                     batch_df['def_n'].to_list(),
                     batch_df['dataset'].to_list(),
                     batch_df['document_id'].to_list(),
-                    batch_df['references'].to_list(),
-                    batch_embeddings,
+                    batch_df['frbr_work'].to_list(),
+                    batch_df['frbr_expression'].to_list(),
+                    batch_sparse_embeddings,
+                    batch_dense_embeddings
                 ]
                 
                 # Insert batch

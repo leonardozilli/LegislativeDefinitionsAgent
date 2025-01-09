@@ -43,7 +43,7 @@ APP_ICON = "🧰"
 
 INTERMEDIATE_NODES = ['__start__',
  'eurlex_agent',
- 'extract_definendum',
+ 'extract_query',
  'filter_definitions',
  'normattiva_agent',
  'pdl_agent',

@@ -36,6 +36,23 @@ class DBConfig(BaseSettings):
         'PDL': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17'}
     }
 
+class eXistDBConfig(BaseSettings):
+    XDB_HOST: str = "0.0.0.0"
+    XDB_PORT: int = 8080
+    XDB_USER: str | None = None
+    XDB_PASSWORD: str | None = None
+    DATASETS: List[str] = ['EurLex', 'NormaAttiva', 'portal-camera']
+    NAMESPACES: Dict[str, Dict[str, str]] = {
+        'EurLex': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'},
+        'NormaAttiva': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'},
+        'portal-camera': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17'}
+    }
+    COLLECTION_NAMES_MAP: Dict[str, str] = {
+        'EurLex': 'EurLex',
+        'Normattiva': 'NormaAttiva',
+        'PDL': 'portal-camera'
+    }
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=find_dotenv(),
@@ -50,9 +67,10 @@ class Settings(BaseSettings):
     MILVUSDB_COLLECTION_NAME: str | None = None
 
     DB_CONFIG: DBConfig = DBConfig()
+    EXIST_CONFIG: eXistDBConfig = eXistDBConfig()
 
     HOST: str = "0.0.0.0"
-    PORT: int = 8080
+    PORT: int = 8000
 
     AUTH_SECRET: SecretStr | None = None
 

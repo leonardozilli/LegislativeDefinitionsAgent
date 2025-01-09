@@ -1,6 +1,7 @@
 from typing import Annotated, Literal, Sequence, Dict, Any
 from typing_extensions import TypedDict
 import uuid
+from datetime import date
 
 from langchain_core.messages import BaseMessage, AIMessage, HumanMessage
 from langgraph.graph.message import add_messages
@@ -13,10 +14,12 @@ from langchain_core.runnables import RunnableConfig
 
 
 from . import llm, tools, utils
-from .retriever import vector_store
+from .retriever import vector_store, exist_db
 from .settings import settings
 from .schema.task_data import Task
 from .schema.definition import DefinitionsList, Definition
+from .schema.grader import DefinitionRelevance
+from .schema.query import Query
 
 
 class AgentState(TypedDict):
@@ -28,6 +31,7 @@ class AgentState(TypedDict):
     relevant_defs: str
     answer_def: str
     task: str
+    query_filters: Dict[str, Any]
 
 
 class LegalDefAgent:
@@ -85,7 +89,6 @@ class LegalDefAgent:
 
         return {"task": response.content.lower(), "question": input_question}
 
-
     def route_task(self, state: AgentState) -> Literal["definition", "no_task"]:
         """
         Routes the task to the appropriate agent.
@@ -99,38 +102,52 @@ class LegalDefAgent:
         else:
             return "no_task"
 
-    async def extract_definendum(self, state: AgentState, config: RunnableConfig) -> AgentState:
+    async def extract_query(self, state: AgentState, config: RunnableConfig) -> AgentState:
         """
-        Extracts the definendum from the user's question.
+        Extracts the definendum and date from the user's question.
         Args:
             state (AgentState): The current state
         Returns:
-            dict: Updated state with the definendum
+            dict: Updated state with the definendum and date
         """
-        task = Task("Extract definendum")
+        task = Task("Extract query")
+        parser = JsonOutputParser(pydantic_object=Query)
         prompt = PromptTemplate(
             template="""
-                You are a legal drafting assistant.
-                Your job is to extract the definendum, that is the term that is to be defined, out of a sentence.
-                E.g.: 
-                * "What is the definition of a contract?" -> "contract"
-                * "What is a fishing net?" -> "fishing net"
-                * "What's the definition of 'vessel'" -> "vessel"
-                VERY IMPORTANT NOTES:
-                * You should output only the single definendum, without any additional text.
-                * If you don't find a definendum in the sentence, you should output: "None"
-                Input sentence: {question}
+            Your tasks are to extract information about the definendum and date from the input sentence. 
+            \n
+            1. Extract the definendum, which is the term to be defined, from the sentence.
+            Examples:
+            * "What is the definition of a contract?" -> "contract"
+            * "What is a fishing net?" -> "fishing net"
+            * "What's the definition of 'vessel'?" -> "vessel"
+            \n
+            2. Extract possible dates from the sentence. The dates should fit into one of the following fields of the Pydantic model:
+                - time_point: for specific dates (e.g., '2021-01-01')
+                - from_date and to_date: for date ranges (e.g., 'from_date': '2010-01-01', 'to_date': '2015-12-31')
+            Examples:
+            * "What is the definition of a contract in 2015?" -> "time_point": "2015-01-01"
+            * "What was the definition of 'bear' between 2010 and 2015?" -> "from_date": "2010-01-01", "to_date": "2015-12-31"
+            * "What is a fishing net?" -> "time_point": None, "from_date": None, "to_date": None
+            \n
+            IMPORTANT NOTES:
+            * If you don't find a definendum in the sentence, fill the definendum with: "None"
+            * If you don't find a date or a date range in the sentence, fill their spots with: "None"
+            * You should interpret single years as a date range. E.g., "2015" should be interpreted as from_date: "2015-01-01", to_date: "2015-12-31"
+            * Follow the following formatting instructions: {format_instructions}
+            \n
+            Input sentence: {question}
             """,
             input_variables=["question"],
-        )
+            ).partial(format_instructions=parser.get_format_instructions())
 
-        chain = prompt | self.model
+        chain = prompt | self.model | parser
         input_question = state["question"]
         response = chain.invoke({"question": input_question})
 
         await task.start(data={"input": input_question}, config=config)
-        await task.finish(result="success", data={"output": response.content}, config=config)
-        return {"messages": [response], "definendum": response.content}
+        await task.finish(result="success", data={"output": response}, config=config)
+        return {"messages": [utils.json_to_aimessage(response)], "definendum": response.get('definendum', None), "query_filters": {k:v for k,v in response.items() if k != 'definendum'} }
 
     async def query_vectorstore(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
         """
@@ -147,42 +164,70 @@ class LegalDefAgent:
         await Task("Query vector store").finish(result="success", data={"output": str(retrieved_definitions)}, config=config)
         return {"retrieved_definitions": str(retrieved_definitions)}
 
-    async def filter_definitions(self, state: AgentState, config: RunnableConfig) -> Dict[str, Any]:
+    async def grade_definitions(self, state: AgentState, config: RunnableConfig) -> AgentState:
         """
-        Filters the retrieved definitions based on their relevance to the question.
+        Determines whether the retrieved definitions answer the user's question.
         Args:
             state (AgentState): The current state
         Returns:
-            dict: Updated state with relevant definitions
+            dict: Updated state with the definitions
         """
-        parser = JsonOutputParser(pydantic_object=DefinitionsList)
+        await Task("Grade definitions").start(config=config, data={"input": (state["retrieved_definitions"])})
+
+        #parser = JsonOutputParser(pydantic_object=DefinitionRelevance)
         prompt = PromptTemplate(
             template="""
-            You are a legal expert assessing the relevance of legal definitions to a user question.
-            Below you will find a list of definitions that were automatically retrieved.
-            Your task is to filter the list of definitions provided to you keeping only the relevant ones.
-            If the text of the definition contains keyword(s) or semantic meaning related to the user's question, keep it. Otherwise discard it.
-            Output only the relevant definitions using the formatting instructions provided.
-            VERY IMPORTANT NOTES:
-            * You can only answer with valid, directly parsable json.
-            * You should output only the formatted relevant definitions, without any additional text.
-            * If you can't find any relevant definitions, you should output this: {{"relevant_definitions": []}}\n\n
-            Here are the retrieved definitions: {context}
-            Here is the term asked by the user: {question}
+            You are a legal expert with the task of assessing whether a retrieved legal definition is the correct one answer to a user's question.
+            Give a binary score 'yes' or 'no' score to indicate whether the definition is relevant to the question. \n
+            Here is the user question: {question}
+            Here is the retrieved definition: {definition}
             """,
-            input_variables=["context", "question"],
-            #partial_variables={"format_instructions": parser.get_format_instructions()}
+            input_variables=["question", "definition"],
         )
 
-        chain = prompt | self.model.with_structured_output(DefinitionsList)# | parser
+        print("---CHECK DOCUMENT RELEVANCE TO QUESTION---")
         question = state["question"]
-        definendum = state["definendum"]
-        retrieved_definitions = state["retrieved_definitions"]
-        await Task("Filter definitions").start(data={"input": retrieved_definitions}, config=config)
-        response = chain.invoke({"context": retrieved_definitions, "question": definendum}) # definendum or question??
 
-        await Task("Filter definitions").finish(result="success", data={"output": response}, config=config)
-        return {"messages": [utils.json_to_aimessage(response)], "relevant_defs": response}
+        date_filter = utils.parse_date_filters(state["query_filters"])
+
+        # Score each doc
+        relevant_defs = []
+        for doc in state["relevant_defs"]:
+            print(doc.page_content)
+
+            if not date_filter:
+                pass
+            else:
+                doc_date = exist_db.retrieve_doc_date(doc)
+                if isinstance(date_filter, date):
+                    if doc_date == date_filter:
+                        pass
+                    else:
+                        continue
+                elif isinstance(date_filter, tuple):
+                    if date_filter[0] <= doc_date <= date_filter[1]:
+                        pass
+                    else:
+                        continue
+
+
+
+                structured_llm_grader = self.model.with_structured_output(DefinitionRelevance)
+                grader_chain = prompt | structured_llm_grader
+
+                score = grader_chain.invoke(
+                    {"question": question, "definition": doc}
+                )
+                grade = score.binary_score
+                if grade == "yes":
+                    print("---GRADE: DOCUMENT RELEVANT---")
+                    relevant_defs.append(doc)
+                else:
+                    print("---GRADE: DOCUMENT NOT RELEVANT---")
+                    continue
+
+        await Task("Grade definitions").finish(result="success", data={"output": (relevant_defs)}, config=config)
+        return {"relevant_defs": relevant_defs}
     
     def empty_list(self, state: AgentState) -> bool:
         """
@@ -272,7 +317,7 @@ class LegalDefAgent:
         """
         prompt = PromptTemplate(
             template="""
-            You are a legal expert and your job is to generate legal definitions.
+            You are a lawyer and your job is to generate legal definitions.
             Keep the answer concise and straight to the point, giving only the definition.
             User Question: {question}
             VERY IMPORTANT NOTES:
@@ -412,7 +457,7 @@ class LegalDefAgent:
         # Nodes
         workflow.add_node("model", self._call_model)
         workflow.add_node("task_manager", self.task_manager)
-        workflow.add_node("extract_definendum", self.extract_definendum)
+        workflow.add_node("extract_query", self.extract_query)
         workflow.add_node("query_vectorstore", self.query_vectorstore)
         workflow.add_node("filter_definitions", self.filter_definitions)
         workflow.add_node("pick_definition", self.pick_definition)
@@ -428,10 +473,10 @@ class LegalDefAgent:
         workflow.add_conditional_edges("task_manager",
                                         self.route_task,
                                         {
-                                            "definition": "extract_definendum",
+                                            "definition": "extract_query",
                                             "no_task": "model"
                                         })
-        workflow.add_edge("extract_definendum", 'query_vectorstore')
+        workflow.add_edge("extract_query", 'query_vectorstore')
         workflow.add_edge("query_vectorstore", 'filter_definitions')
         #workflow.add_conditional_edges("filter_definitions",
                                         #self.empty_list,
@@ -510,6 +555,5 @@ class LegalDefAgent:
                 {"messages": [HumanMessage(content=user)]}, config=config, stream_mode="values"
             ):
                 utils._print_event(output, _printed)
-
 
 defagent = LegalDefAgent(model=llm.get_model(settings.DEFAULT_MODEL)).graph_runnable

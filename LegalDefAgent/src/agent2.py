@@ -246,8 +246,7 @@ class LegalDefAgent:
 
         # Score each doc
         answer_defs = []
-        for d in state["relevant_defs"]:
-            print(d)
+        for doc in state["relevant_defs"]:
             score = grader_chain.invoke(
                 {"question": question, "definition": d}
             )

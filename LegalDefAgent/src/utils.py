@@ -7,8 +7,67 @@ from dotenv import load_dotenv, find_dotenv
 from IPython.display import Image, display
 import logging
 import sys
+import os
+from datetime import datetime
+from .settings import settings
+
+existdb_settings = settings.EXIST_CONFIG
 
 load_dotenv(find_dotenv())
+
+from typing import List, Optional, Any
+from pyexistdb import db
+
+
+class ExistDBHandler:
+    """Handler for executing XQueries against an eXist-db instance."""
+    
+    def __init__(self, server_url: str, username: str, password: str):
+        """
+        Initialize connection to eXist-db.
+        
+        Args:
+            server_url: Full URL to eXist-db server
+            username: eXist-db username
+            password: eXist-db password
+        """
+        self.db = db.ExistDB(server_url, username, password)
+    
+    def execute_query(self, query: str) -> List[str]:
+        """
+        Execute an XQuery and return all results.
+        
+        Args:
+            query: XQuery string to execute
+            
+        Returns:
+            List of results as strings
+            
+        Raises:
+            Exception: If query execution fails
+        """
+        try:
+            results = []
+            query_result = self.db.executeQuery(query)
+            hits = self.db.getHits(query_result)
+            
+            for i in range(hits):
+                result = self.db.retrieve(query_result, i)
+                results.append(result)
+                
+            return results
+            
+        except Exception as e:
+            raise Exception(f"Query execution failed: {str(e)}")
+
+
+def get_exist_handler():
+    EXISTDB_SERVER_URL = f"http://{existdb_settings.XDB_HOST}:{existdb_settings.XDB_PORT}/exist/"
+    return ExistDBHandler(
+        server_url=EXISTDB_SERVER_URL,
+        username=existdb_settings.XDB_USER,
+        password=existdb_settings.XDB_PASSWORD
+    )
 
 
 def get_token_count(string: str, llm_name: str) -> int:
@@ -43,6 +102,20 @@ def merge_dicts(*dicts: dict) -> dict:
     for dict_ in dicts:
         _.update(dict_)
     return _
+
+def parse_date_filters(date_filters):
+    time_point = date_filters.get('time_point')
+    from_date = date_filters.get('from_date')
+    to_date = date_filters.get('to_date')
+    
+    if time_point:
+        return datetime.strptime(time_point, '%Y-%m-%d').date()
+    elif from_date and to_date:
+        return datetime.strptime(from_date, '%Y-%m-%d').date(), datetime.strptime(to_date, '%Y-%m-%d').date()
+    elif from_date:
+        return datetime.strptime(from_date, '%Y-%m-%d').date(), datetime.today().date()
+    elif to_date:
+        return datetime.strptime('0001-01-01', '%Y-%m-%d').date(), datetime.strptime(to_date, '%Y-%m-%d').date()
 
 
 def docs_to_json(docs):
@@ -84,132 +157,11 @@ def _print_event(event: dict, _printed: set, max_length=1500):
             _printed.add(message.id)
 
 
-#utils
-import re
-import csv
-import os
-from lxml import etree
-
-AKN_NAMESPACE = "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
-AKN_PREFIX = "{" + AKN_NAMESPACE + "}"
-AKN_PREFIX_XPATH = {"akomaNtoso": AKN_NAMESPACE}
-
-
-
-
-frbr_map = {}
-file_map = {}
-
-frbr_map["it"] = {}
-file_map["it"] = {}
-
-def res():
-    with open("./metadata/filename_mapping_normattiva.csv") as f:
-        reader = csv.DictReader(f)
-        for line in reader:
-            frbrwork = line["FRBRWork"]
-            frbrshort = line["FRBRShort"]
-            frbrexpression = line["FRBRExpression"]
-            filename = line["filename"]
-            if frbrwork not in frbr_map["it"]:
-                frbr_map["it"][frbrwork] = []
-            frbr_map["it"][frbrwork].append(frbrexpression)
-            if frbrshort not in frbr_map["it"]:
-                frbr_map["it"][frbrshort] = []
-            frbr_map["it"][frbrshort].append(frbrexpression)
-
-            file_map["it"][frbrexpression] = filename
-
-
-    frbr_map["en"] = {}
-    file_map["en"] = {}
-
-
-    with open("./metadata/filename_mapping_leos.csv") as f:
-        reader = csv.DictReader(f)
-        for line in reader:
-            frbrwork = line["FRBRWork"]
-            frbrshort = line["FRBRShort"]
-            frbrexpression = line["FRBRExpression"]
-            filename = line["filename"]
-            if frbrwork not in frbr_map["en"]:
-                frbr_map["en"][frbrwork] = []
-            frbr_map["en"][frbrwork].append(frbrexpression)
-            if frbrshort not in frbr_map["en"]:
-                frbr_map["en"][frbrshort] = []
-            frbr_map["en"][frbrshort].append(frbrexpression)
-
-            file_map["en"][frbrexpression] = filename
-
-    for lang in ["it", "en"]:
-        for expressions in frbr_map[lang].values():
-            expressions.sort()
-
-
 def get_uri_date(uri):
     at_split = uri.split("@")[-1]
     date = at_split.split("/")[0]
     return date
 
-
-def resolve_reference(uri, references_dir, date=None, lang="it"):
-    if lang == "it":
-        uri = uri.lower()
-        title_name = "docTitle"
-    elif lang == "en":
-        uri = re.sub(r"/ep/", "/", uri)
-        title_name = "longTitle"
-
-    else:
-        raise NotImplementedError
-
-    if "@" in uri:
-        date = get_uri_date(uri)
-        uri = uri.split("@")[-1]
-        uri = "/".join(uri.split("/")[:-1])
-    print(f"resolving {uri}")
-    if "#" in uri and lang == "it":
-        uri, qualifiers = uri.split("#")
-        qualifiers = re.sub("-", "__", qualifiers)
-    elif "~" in uri and lang == "en":
-        uri, qualifiers = uri.split("~")
-    else:
-        qualifiers = ""
-
-    if uri not in frbr_map[lang]:
-        print(f"could not resolve reference {uri}")
-        return
-    frbrexpressions = frbr_map[lang][uri]
-
-    # select work based on date, for now i get the last
-    if date is None:
-        frbrexpression = frbrexpressions[-1]
-    else:
-        frbrexpression = None
-        for curr_expression in frbrexpressions:
-            if curr_expression < date:
-                frbrexpression = curr_expression
-
-    file_name = file_map[lang][frbrexpression]
-    file_path = os.path.join(references_dir, file_name)
-    print(f"found ref file {file_name}")
-    file_tree = etree.parse(file_path)
-    if qualifiers == "":
-        title = file_tree.xpath(
-            f".//akomaNtoso:{title_name}", namespaces=AKN_PREFIX_XPATH
-        )[0]
-        articles = file_tree.xpath(
-            ".//akomaNtoso:article", namespaces=AKN_PREFIX_XPATH
-        )
-        print("resolved")
-        return title, articles[0]
-    else:
-        qualified_elements = file_tree.xpath(f".//*[@eId='{qualifiers}']")
-        if qualified_elements is None or not len(qualified_elements):
-            print("could not resolve, uri mistake")
-            return
-        print("resolved")
-        return qualified_elements[0]
 
 
 def setup_logging(log_level=logging.DEBUG):
