@@ -43,11 +43,6 @@ class VectorDBBuilder:
                 max_length=256
             ),
             FieldSchema(
-                name="def_n", 
-                dtype=DataType.VARCHAR, 
-                max_length=10
-            ),
-            FieldSchema(
                 name="dataset", 
                 dtype=DataType.VARCHAR, 
                 max_length=10
@@ -137,7 +132,6 @@ class VectorDBBuilder:
                     batch_df['id'].to_list(),
                     batch_df['definition_text'].to_list(),
                     batch_df['label'].to_list(),
-                    batch_df['def_n'].to_list(),
                     batch_df['dataset'].to_list(),
                     batch_df['document_id'].to_list(),
                     batch_df['frbr_work'].to_list(),

@@ -81,9 +81,9 @@ def setup_retriever():
         collection=Collection(settings.MILVUSDB_COLLECTION_NAME),
         rerank=WeightedRanker(1.0, 0.7),
         anns_fields=["dense_vector", "sparse_vector"],
-        field_embeddings=[BGEMilvusDenseEmbeddings(), BGEMilvusDenseEmbeddings()],
+        field_embeddings=[BGEMilvusDenseEmbeddings(), BGEMilvusSparseEmbeddings()],
         field_search_params=[dense_search_params, sparse_search_params],
-        top_k=7,
+        top_k=10,
         text_field="definition_text",
     )
 

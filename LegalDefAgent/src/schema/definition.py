@@ -6,6 +6,7 @@ class DefinitionMetadata(BaseModel):
     id: int = Field(description="the identifier of the definition in the database")
     dataset: str = Field(description="the dataset the definition is from")
     document_id: str = Field(description="the document id the definition is from")
+    definendum_label: str = Field(description="the definendum label as it appears in the document")
     def_n: str = Field(description="the identifier of the definition in the document")
     #references: List[str] = Field(description="the references mentioned the definition.")
     frbr_work: str = Field(description="the frbr work uri of the definition")
@@ -17,5 +18,5 @@ class Definition(BaseModel):
 class DefinitionsList(BaseModel):
     relevant_definitions: List[Definition] = Field(description="a dict of relevant definitions")
 
-class Test(BaseModel):
+class RelevantDefinitionsIDList(BaseModel):
     relevant_definitions: List[int] = Field(description="a list containing the ids of relevant definitions")

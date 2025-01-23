@@ -30,7 +30,7 @@ class NodeMessage(AIMessage):
         self.node_name = node_name
 
 
-def langchain_to_chat_message(message: BaseMessage, event_name: str) -> ChatMessage:
+def langchain_to_chat_message(message: BaseMessage) -> ChatMessage:
     """Create a ChatMessage from a LangChain message."""
     match message:
         case HumanMessage():
@@ -43,7 +43,7 @@ def langchain_to_chat_message(message: BaseMessage, event_name: str) -> ChatMess
             ai_message = ChatMessage(
                 type="ai",
                 content=convert_message_content_to_string(message.content),
-                custom_data={"node_name": event_name},
+                #custom_data={"node_name": event_name},
             )
             if message.tool_calls:
                 ai_message.tool_calls = message.tool_calls
@@ -55,6 +55,7 @@ def langchain_to_chat_message(message: BaseMessage, event_name: str) -> ChatMess
                 type="tool",
                 content=convert_message_content_to_string(message.content),
                 tool_call_id=message.tool_call_id,
+                status=message.status,
             )
             return tool_message
         case LangchainChatMessage():

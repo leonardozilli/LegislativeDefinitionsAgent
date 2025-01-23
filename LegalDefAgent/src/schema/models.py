@@ -37,10 +37,9 @@ class GoogleModelName(StrEnum):
 class GroqModelName(StrEnum):
     """https://console.groq.com/docs/models"""
 
-    LLAMA_3_8B = "groq-llama3-8b-8192"
-    LLAMA_3_70B = "groq-llama3-70b-8192"
-    LLAMA_3_8B_TOOL = "groq-llama3-groq-8b-8192-tool-use-preview"
     LLAMA_33_70B = "groq-llama-3.3-70b-versatile"
+    LLAMA_31_8B = "groq-llama-3.1-8b-instant"
+    GEMMA2_9B_IT = "groq-gemma2-9b-it"
 
 
 class MistralModelName(StrEnum):

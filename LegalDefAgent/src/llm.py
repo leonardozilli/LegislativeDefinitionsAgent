@@ -40,15 +40,11 @@ from .schema.models import (
 _MODEL_TABLE = {
     OpenAIModelName.GPT_4O_MINI: "gpt-4o-mini",
     OpenAIModelName.GPT_4O: "gpt-4o",
-    GroqModelName.LLAMA_3_8B: "llama3-8b-8192",
-    GroqModelName.LLAMA_3_70B: "llama3-70b-8192",
-    GroqModelName.LLAMA_3_8B_TOOL: "llama3-groq-8b-8192-tool-use-preview",
     GroqModelName.LLAMA_33_70B: "llama-3.3-70b-versatile",
+    GroqModelName.LLAMA_31_8B: "llama-3.1-8b-instant",
+    GroqModelName.GEMMA2_9B_IT: "gemma2-9b-it",
     MistralModelName.NEMO_12B: "open-mistral-nemo",
-    OllamaModelName.GEMMA2_2B: "gemma2:2b",
     OllamaModelName.LLAMA_32_3B: "llama3.2",
-    OllamaModelName.PHI3_4B: "phi3",
-    FakeModelName.FAKE: "fake",
 }
 
 ModelT: TypeAlias = ChatOpenAI | ChatGroq | ChatMistralAI | ChatOllama

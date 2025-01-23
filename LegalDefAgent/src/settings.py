@@ -6,10 +6,6 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from .schema.models import (
     AllModelEnum,
-    AnthropicModelName,
-    AWSModelName,
-    MistralModelName,
-    GoogleModelName,
     GroqModelName,
     OpenAIModelName,
     Provider,
@@ -78,10 +74,9 @@ class Settings(BaseSettings):
     GROQ_API_KEY: SecretStr | None = None
     MISTRAL_API_KEY: SecretStr | None = None
 
-
     # If DEFAULT_MODEL is None, it will be set in model_post_init
     DEFAULT_MODEL: AllModelEnum | None = None  # type: ignore[assignment]
-
+    AVAILABLE_MODELS: set[AllModelEnum] = set()  # type: ignore[assignment]
 
     LANGCHAIN_TRACING_V2: bool | None = None
     LANGCHAIN_PROJECT: str | None = None
@@ -94,29 +89,23 @@ class Settings(BaseSettings):
         api_keys = {
             Provider.OPENAI: self.OPENAI_API_KEY,
             Provider.GROQ: self.GROQ_API_KEY,
-            Provider.MISTRAL: self.MISTRAL_API_KEY,
         }
-        active_keys = {k for k, v in api_keys.items() if v}
+        active_keys = [k for k, v in api_keys.items() if v]
         if not active_keys:
             raise ValueError("At least one LLM API key must be provided.")
 
-        if self.DEFAULT_MODEL is None:
-            first_provider = next(iter(active_keys))
-            match first_provider:
+        for provider in active_keys:
+            match provider:
                 case Provider.GROQ:
-                    self.DEFAULT_MODEL = GroqModelName.LLAMA_3_8B
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = GroqModelName.LLAMA_31_8B
+                    self.AVAILABLE_MODELS.update(set(GroqModelName))
                 case Provider.OPENAI:
-                    self.DEFAULT_MODEL = OpenAIModelName.GPT_4O_MINI
-                case Provider.MISTRAL:
-                    self.DEFAULT_MODEL = MistralModelName.NEMO_12B
-                case Provider.ANTHROPIC:
-                    self.DEFAULT_MODEL = AnthropicModelName.HAIKU_3
-                case Provider.GOOGLE:
-                    self.DEFAULT_MODEL = GoogleModelName.GEMINI_15_FLASH
-                case Provider.AWS:
-                    self.DEFAULT_MODEL = AWSModelName.BEDROCK_HAIKU
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = OpenAIModelName.GPT_4O_MINI
+                    self.AVAILABLE_MODELS.update(set(OpenAIModelName))
                 case _:
-                    raise ValueError(f"Unknown provider: {first_provider}")
+                    raise ValueError(f"Unknown provider: {provider}")
 
 
     def is_dev(self) -> bool:

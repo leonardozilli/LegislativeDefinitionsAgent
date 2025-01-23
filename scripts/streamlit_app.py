@@ -14,6 +14,7 @@
 import asyncio
 import os
 from collections.abc import AsyncGenerator
+import urllib
 
 import streamlit as st
 from dotenv import load_dotenv
@@ -23,6 +24,7 @@ from streamlit.runtime.scriptrunner import get_script_run_ctx
 from LegalDefAgent.agent_service_toolkit.src.client.client import AgentClient
 from LegalDefAgent.agent_service_toolkit.src.schema.schema import ChatMessage, ChatHistory
 from LegalDefAgent.src.schema.models import AnthropicModelName, AWSModelName, GoogleModelName, GroqModelName, OpenAIModelName, MistralModelName
+from LegalDefAgent.src.llm import _MODEL_TABLE
 from LegalDefAgent.src.schema.task_data import TaskData, TaskDataStatus
 from LegalDefAgent.src.settings import settings
 
@@ -104,29 +106,22 @@ async def main() -> None:
         st.session_state.messages = messages
         st.session_state.thread_id = thread_id
 
-    models = {
-        "llama-3-70b on Groq": GroqModelName.LLAMA_3_70B,
-        "llama-3-8b on Groq": GroqModelName.LLAMA_3_8B,
-        "llama-3-8b-tool on Groq": GroqModelName.LLAMA_3_8B_TOOL,
-        "llama-3.3-70b on Groq": GroqModelName.LLAMA_3_70B,
-        "Mistral NeMo": MistralModelName.NEMO_12B,
-        "OpenAI GPT-4o-mini": OpenAIModelName.GPT_4O_MINI,
-        "OpenAI GPT-4o": OpenAIModelName.GPT_4O_MINI,
-    }
+    models = {v: k for k, v in _MODEL_TABLE.items()}
+
     # Config options
     with st.sidebar:
         st.header(f"{APP_TITLE}")
         ""
-        "Legal Definition Retrieval Agent"
+        "Legal Definition Retrieval and Generation Agent"
         with st.popover(":material/settings: Settings", use_container_width=True):
-            m = st.radio("LLM to use", options=models.keys(), index=list(models.values()).index(settings.DEFAULT_MODEL))
-            model = models[m]
+            model_idx = agent_client.info.models.index(agent_client.info.default_model)
+            model = st.radio("LLM to use", options=agent_client.info.models, index=model_idx)
+            agent_list = [a.key for a in agent_client.info.agents]
+            agent_idx = agent_list.index(agent_client.info.default_agent)
             agent_client.agent = st.selectbox(
                 "Agent to use",
-                options=[
-                    "LegalDefAgent",
-                    "LegalDefAgent2",
-                ],
+                options=agent_list,
+                index=agent_idx,
             )
             use_streaming = st.toggle("Stream results", value=True)
 
@@ -144,6 +139,23 @@ async def main() -> None:
             st.write(
                 "Prompts, responses and feedback in this app are anonymously recorded and saved to LangSmith for product evaluation and improvement purposes only."
             )
+
+        @st.dialog("Share/resume chat")
+        def share_chat_dialog() -> None:
+            session = st.runtime.get_instance()._session_mgr.list_active_sessions()[0]
+            st_base_url = urllib.parse.urlunparse(
+                [session.client.request.protocol, session.client.request.host, "", "", "", ""]
+            )
+            # if it's not localhost, switch to https by default
+            if not st_base_url.startswith("https") and "localhost" not in st_base_url:
+                st_base_url = st_base_url.replace("http", "https")
+            chat_url = f"{st_base_url}?thread_id={st.session_state.thread_id}"
+            st.markdown(f"**Chat URL:**\n```text\n{chat_url}\n```")
+            st.info("Copy the above URL to share or revisit this chat")
+
+        if st.button(":material/upload: Share/resume chat", use_container_width=True):
+            share_chat_dialog()
+
 
         st.markdown(
             f"Thread ID: **{st.session_state.thread_id}**",
@@ -259,6 +271,11 @@ async def draw_messages(
             st.write(msg)
             st.stop()
         match msg.type:
+            case "tool":
+                if msg.status == "error":
+                    st.error(f"Tool encountered an error:\n{msg.content}")
+                    st.stop()
+                continue
             # A message from the user, the easiest case
             case "human":
                 last_message_type = "human"
@@ -267,13 +284,9 @@ async def draw_messages(
             # A message from the agent is the most complex case, since we need to
             # handle streaming tokens and tool calls.
             case "ai":
-                # Update the last node name
-                last_node_name = msg.custom_data.get("node_name")
-                
-                # Skip messages from intermediate nodes
-                if last_node_name in INTERMEDIATE_NODES:
+                if msg.tool_calls:
                     continue
-                
+
                 # If we're rendering new messages, store the message in session state
                 if is_new:
                     st.session_state.messages.append(msg)
@@ -294,37 +307,6 @@ async def draw_messages(
                         else:
                             st.write(msg.content)
 
-                    if msg.tool_calls:
-                        # Create a status container for each tool call and store the
-                        # status container by ID to ensure results are mapped to the
-                        # correct status container.
-                        call_results = {}
-                        for tool_call in msg.tool_calls:
-                            status = st.status(
-                                f"""Tool Call: {tool_call["name"]}""",
-                                state="running" if is_new else "complete",
-                            )
-                            call_results[tool_call["id"]] = status
-                            status.write("Input:")
-                            status.write(tool_call["args"])
-
-                        # Expect one ToolMessage for each tool call.
-                        for _ in range(len(call_results)):
-                            tool_result: ChatMessage = await anext(messages_agen)
-                            if tool_result.type != "tool":
-                                st.error(f"Unexpected ChatMessage type: {tool_result.type}")
-                                st.write(tool_result)
-                                st.stop()
-
-                            # Record the message if it's new, and update the correct
-                            # status container with the result
-                            if is_new:
-                                st.session_state.messages.append(tool_result)
-                            status = call_results[tool_result.tool_call_id]
-                            status.write("Output:")
-                            status.write(tool_result.content)
-                            status.update(state="complete")
-
             case "custom":
                 # CustomData example used by the bg-task-agent
                 # See:
@@ -339,12 +321,9 @@ async def draw_messages(
 
                 if is_new:
                     st.session_state.messages.append(msg)
-                
-                task_name = msg.custom_data["name"]
 
-                if last_task_name != task_name:
+                if last_message_type != "task":
                     last_message_type = "task"
-                    last_task_name = task_name
                     st.session_state.last_message = st.chat_message(
                         name="task", avatar=":material/manufacturing:"
                     )
@@ -352,7 +331,6 @@ async def draw_messages(
                         status = TaskDataStatus()
 
                 status.add_and_draw_task_data(task_data)
-
 
             # In case of an unexpected message type, log an error and stop
             case _:

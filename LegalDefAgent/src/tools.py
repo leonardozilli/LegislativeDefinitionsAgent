@@ -4,6 +4,7 @@ from langchain.tools.retriever import create_retriever_tool
 from typing import List , Annotated
 import xml.etree.ElementTree as ET
 from pathlib import Path
+import re
 
 from .retriever import vector_store
 from .settings import settings
@@ -65,7 +66,8 @@ def extract_definition_from_xmldb(definition_metadata: dict) -> str:
         # Find the element with the specified defines attribute
         res = root.find(f".//akn:*[@defines='{def_n}']", namespace)
         if res is not None:
-            return ''.join(res.itertext()).strip()
+            text = ''.join(res.itertext()).strip()
+            return re.sub(r'\s+', ' ', text)
         # Return None if no match is found
         return None
 

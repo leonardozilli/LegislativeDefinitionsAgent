@@ -1,6 +1,6 @@
 import re
 
-from LegalDefAgent.src.utils import get_exist_handler
+from LegalDefAgent.src.utils import setup_existdb_handler
 from LegalDefAgent.src.settings import settings
 
 
@@ -65,7 +65,7 @@ def resolve_reference(reference, dataset):
     return $res
     """
 
-    exist_handler = get_exist_handler()
+    exist_handler = setup_existdb_handler()
     ns = settings.DB_CONFIG.NAMESPACES
     coll_names = settings.EXIST_CONFIG.COLLECTION_NAMES_MAP
     namespace = ns[dataset]['akn']
@@ -91,7 +91,3 @@ def resolve_reference(reference, dataset):
             else:
                return None
     return None
-
-
-if __name__ == '__main__':
-    print(resolve_reference('/akn/it/act/decretoLegislativo/stato/2010-01-27/39/!main#art_16-com1', 'Normattiva'))
