@@ -2,67 +2,26 @@ from typing import Literal
 
 from langchain_core.runnables import RunnableConfig, RunnableLambda, RunnableSerializable
 from langchain_core.language_models.chat_models import BaseChatModel
-from langchain_core.messages import AIMessage, SystemMessage
+from langchain_core.messages import AIMessage, SystemMessage, trim_messages
 from langchain_core.prompts import PromptTemplate
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, MessagesState, StateGraph
 from langgraph.managed import RemainingSteps
 from langgraph.prebuilt import ToolNode
 
-from .llm import get_model
-from .settings import settings
-from .definition_search import definition_search
+from ..llm import get_model
+from ..settings import settings
+from ..utils import json_to_aimessage
+from ..tools import definition_search
 
 
 class AgentState(MessagesState, total=False):
     remaining_steps: RemainingSteps
-#    relevant_definitions: list[str]
-    #definendum: str
-    #question: str
+    retrieved_definitions: str
+    query: dict
 
 
-def answer(state: AgentState, config: RunnableConfig):
-    """
-    Generate a definition.
-    Args:
-        state (AgentState): The current state
-    Returns:
-        dict: Updated state with the generated definition
-    """
-    model = get_model(config["configurable"].get("model", settings.DEFAULT_MODEL))
-    prompt = PromptTemplate(
-        template="""
-        You are a lawyer and your job is to provide legal definitions in response to user questions.
-
-        User Question: {question}
-        Retrieved_definitions: {retrieved_definitions}
-        ### IMPORTANT NOTES
-        - You can answer the user's questions ONLY using the information provided by the tools at your disposal. Do NOT use any pre-existing knowledge or external sources.
-        - When answering the user, you should act as a professional legal assistant and provide the user with the details of each definition.\n In the list of retrieved definitions to use as the sole basis for your answer, you should illustrate the following details:
-            * The definition itself
-            * The source of the definition
-            * The date of the definition
-            * Eventual changes in the definition over time
-        Use the following template to answer the user's questions, without adding any additional comment:
-        I found the following definitions for "{definendum}":\n
-            1. Definition: \n
-                Source: \n
-                Date: \n
-            2. Definition: \n
-        """,
-        input_variables=["question", "definendum", "retrieved_definitions"]
-    )
-
-    definendum = state["definendum"]
-    question = state["question"]
-    retrieved_definitions = state["relevant_definitions"]
-    chain = prompt | model
-    response = chain.invoke({"question": question, "definendum": definendum, "retrieved_definitions": retrieved_definitions})
-
-    return {"messages": [response]}
-
-
-def generate_definition(state: AgentState, config: RunnableConfig, definendum: str, question: str):
+def generate_definition(state: AgentState, config: RunnableConfig):
     """
     Generate a definition for a given term.
 
@@ -80,25 +39,68 @@ def generate_definition(state: AgentState, config: RunnableConfig, definendum: s
     prompt = PromptTemplate(
     template="""
         You are a legal expert specialized in legal definitions. Your job is to draft a legal definition for a specific term.
-        Provide a definition for the term "{definendum}" to answer the user's question provided below following the style and formatting of the definitions provided as examples.
+        Provide a definition for the term "{definendum}" to answer the user's question provided below. 
+        Your generated definition has to follow the style, length and formatting of the definitions provided as examples.
+
         User Question: {question}
+
         Example definitions: 
         \n{examples}\n
 
         ### IMPORTANT NOTES:
-        * You should answer with "I couldn't find a definition for "{definendum}", so here's a generated one:" followed by the generated definition.
-        * If you use explicit text from the examples, you should provide the source of the definition used.
         """,
-        input_variables=["question", "definendum", "examples"]
+        input_variables=["question", "definendum", "examples"],
     )
 
     chain = prompt | model
-    response = chain.invoke({"question": question, "definendum": definendum, "examples": state['relevant_definitions']})
+    response = chain.invoke({"question": state['query']['question'], "definendum": state['query']['definendum'], "examples": state['retrieved_definitions']})
+
+    return {"messages": [json_to_aimessage(response)]}
+
+
+def pick_definition(state: AgentState, config: RunnableConfig):
+    """
+    Pick a definition from the list of retrieved definitions.
+
+    Args:
+        state (AgentState): The current state
+        config (RunnableConfig): The configuration of the agent
+
+    Returns:
+        dict: Updated state with the picked definition
+    """
+    model = get_model(config["configurable"].get("model", settings.DEFAULT_MODEL))
+    prompt = PromptTemplate(
+        template="""
+        You are a legal expert specialized in legal definitions. Your job is to select the most relevant definition from a list of retrieved definitions.
+        You will be provided with a set of legal definitions, along with associated metadata. Your goal is to choose the definition that best answers the user's question while considering the context provided by the legislation and keywords.
+        
+        Here is the user's question: {question}
+
+        The term to be defined is: {definendum}
+
+        Here are the retrieved definitions to choose from: {retrieved_definitions}
+
+        To select the most relevant definition:
+
+        1. Analyze the user's question to identify the key concept or term they are asking about.
+        2. Review each legal definition and assess its relevance to the user's question.
+        3. Examine the EuroVoc keywords associated with each definition. Definitions with keywords that align closely with the question's subject matter should be considered more relevant.
+        4. If there are multiple definitions that could be relevant, choose the one from the EU legislation (EurLex).
+        5. If there are multiple definitions, choose the one with the most recent date.
+        6. Evaluate the specificity and comprehensiveness of each definition in relation to the user's question.
+
+        Remember to consider all provided information carefully to ensure you select the most appropriate and relevant definition for the user's question.
+        """,
+        input_variables=["question", "definendum", "retrieved_definitions"],
+    )
+
+    chain = prompt | model
+    response = chain.invoke({"question": state['query']['question'], "definendum": state['query']['definendum'], "retrieved_definitions": state['retrieved_definitions']})
 
     return {"messages": [response]}
 
 
-tools = [definition_search]
 
 instructions = f"""
     You are an AI legal assistant specializing in providing accurate definitions for legal terms and concepts. Your primary function is to answer user queries about legal definitions using only the information available through the tools at your disposal.
@@ -114,8 +116,6 @@ instructions = f"""
 
     2. Use the definition_search tool with the extracted information to retrieve relevant definitions.
         a. If the definition_search tool does not find any results, a generated definition will be provided instead.
-
-    3. Analyze the retrieved definitions and present them in a clear, concise response to the user.
 
 
     ### AVAILABLE TOOLS
@@ -137,26 +137,7 @@ instructions = f"""
             * "What has been the definition of a contract up to 2015?" -> (None, "2015-12-31")
             * "What was the definition of 'bear' between 2010 and 2015?" -> ("2010-01-01", "2015-12-31")
 
-        The definition_search tool will return the most relevant definitions along with their metadata in a list with the following structure:
 
-        [
-            {{
-                "definition": "The text of the definition",
-                "source": "The source of the definition",
-                "date": "The date of the definition"
-            }},
-            ...
-        ]
-
-        In case the tool does not find any results, a generated definition will be provided instead. 
-
-        
-    ### RESPONSE FORMAT
-    Once you have the list of definitions, you should present them to the user
-        1. Specify the search performed
-        2. Consider any potential ambiguities or edge cases in the query.
-        3. If the definition provided by the definition_search tool is generated, state that you couldn't find a definition and provide the generated one.
-    
     ### IMPORTANT NOTES
     Remember to use ONLY the information provided by the tools described. Do not rely on or include any external knowledge in your response.
 
@@ -191,12 +172,21 @@ def acall_model(state: AgentState, config: RunnableConfig) -> AgentState:
     return {"messages": [response]}
 
 
-# Define the graph
+def state_cleanup(state: AgentState) -> AgentState:
+    state['messages'] = trim_messages(state['messages'], token_counter=len, strategy="last", max_tokens=1)
+    state['messages'] = state['messages'][-1:]
+
+    return {"messages": ""}
+
+
+tools = [definition_search]
+
 agent = StateGraph(AgentState)
 agent.add_node("supervisor", acall_model)
 agent.add_node("tools", ToolNode(tools))
-#agent.add_node("answer", answer)
-#agent.add_node("generate_definition", generate_definition)
+agent.add_node("state_cleanup", state_cleanup)
+agent.add_node("generate_definition", generate_definition)
+agent.add_node("pick_definition", pick_definition)
 
 # After "superviros", if there are tool calls, run "tools". Otherwise END.
 def pending_tool_calls(state: AgentState) -> Literal["tools", "done"]:
@@ -207,12 +197,26 @@ def pending_tool_calls(state: AgentState) -> Literal["tools", "done"]:
         return "tools"
     return "done"
 
+def router(state: AgentState) -> str:
+    retrieved_definitions = state['retrieved_definitions']
+
+    if len(retrieved_definitions) > 0:
+        return "pick_definition"
+    else:
+        return "generate_definition"
+
+
+#agent.add_node("router", router)
+
 
 agent.set_entry_point("supervisor")
 agent.add_conditional_edges("supervisor", pending_tool_calls, {"tools": "tools", "done": END})
 # Always run "supervisor" after "tools"
-agent.add_edge("tools", "supervisor")
-#agent.add_edge("answer", END)
+#agent.add_edge("tools", "supervisor")
+#agent.add_conditional_edges("tools", router, {"pick_definition": "pick_definition", "generate_definition": "generate_definition"})
+agent.add_edge("pick_definition", "state_cleanup")
+agent.add_edge("generate_definition", "state_cleanup")
+agent.add_edge("state_cleanup", END)
 #agent.add_edge("generate_definition", END)
 
 

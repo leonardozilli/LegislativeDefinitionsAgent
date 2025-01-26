@@ -1,15 +1,13 @@
 from pymilvus import connections, WeightedRanker, Collection
-from langchain_milvus import Milvus
 from langchain.embeddings.base import Embeddings
 from torch.cuda import is_available as cuda_available
 from milvus_model.hybrid import BGEM3EmbeddingFunction
 from langchain_milvus.retrievers import MilvusCollectionHybridSearchRetriever
-from langchain_milvus.utils.sparse import BM25SparseEmbedding
-
 from functools import lru_cache
 
-from LegalDefAgent.src.settings import settings
-from LegalDefAgent.src.utils import setup_logging
+from ..settings import settings
+from ..utils import setup_logging
+from .utils import connect_to_milvus
 
 
 class BGEMilvusDenseEmbeddings(Embeddings):
@@ -17,7 +15,7 @@ class BGEMilvusDenseEmbeddings(Embeddings):
         self.model = BGEM3EmbeddingFunction(
             model_name='BAAI/bge-m3',
             device='cuda' if cuda_available() else 'cpu',
-            use_fp16=True if cuda_available() else False #set to false if device='cpu'
+            use_fp16=True if cuda_available() else False  # set to false if device='cpu'
         )
 
     def embed_documents(self, texts):
@@ -34,7 +32,7 @@ class BGEMilvusSparseEmbeddings(Embeddings):
         self.model = BGEM3EmbeddingFunction(
             model_name='BAAI/bge-m3',
             device='cuda' if cuda_available() else 'cpu',
-            use_fp16=True if cuda_available() else False #set to false if device='cpu'
+            use_fp16=True if cuda_available() else False  # set to false if device='cpu'
         )
 
     def embed_documents(self, texts):
@@ -47,32 +45,7 @@ class BGEMilvusSparseEmbeddings(Embeddings):
 
 
 @lru_cache
-def setup_vectorstore(milvusdb_uri=None):
-    #logger.info(f"Setting up vector store with URI: {milvusdb_uri}")
-    #import traceback
-    #logger.info("Vector store setup called from:")
-    #for line in traceback.format_stack():
-        #logger.info(line.strip())
-    
-    vectorstore = Milvus(
-        embedding_function=BGEMilvusDenseEmbeddings(),
-        connection_args={"uri": settings.MILVUSDB_URI if milvusdb_uri is None else milvusdb_uri},
-        collection_name=settings.MILVUSDB_COLLECTION_NAME,
-        vector_field="dense_vector",
-        text_field="definition_text",
-        index_params={"metric_type": "COSINE", "index_type": "FLAT"},
-        search_params={"metric_type": "COSINE"},
-    )
-
-    return vectorstore
-
-
-def connect_to_milvus(uri):
-    connections.connect(uri=uri)
-
-
-@lru_cache
-def setup_retriever():
+def setup_retriever(k=10):
     connect_to_milvus(settings.MILVUSDB_URI)
 
     sparse_search_params = {"metric_type": "IP"}
@@ -81,11 +54,11 @@ def setup_retriever():
         collection=Collection(settings.MILVUSDB_COLLECTION_NAME),
         rerank=WeightedRanker(1.0, 0.7),
         anns_fields=["dense_vector", "sparse_vector"],
-        field_embeddings=[BGEMilvusDenseEmbeddings(), BGEMilvusSparseEmbeddings()],
+        field_embeddings=[
+            BGEMilvusDenseEmbeddings(), BGEMilvusSparseEmbeddings()],
         field_search_params=[dense_search_params, sparse_search_params],
-        top_k=10,
+        top_k=k,
         text_field="definition_text",
     )
 
     return retriever
-

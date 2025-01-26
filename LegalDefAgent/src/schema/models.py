@@ -9,6 +9,7 @@ class Provider(StrEnum):
     GROQ = auto()
     OLLAMA = auto()
     MISTRAL = auto()
+    DEEPSEEK = auto()
     AWS = auto()
     FAKE = auto()
 
@@ -20,18 +21,25 @@ class OpenAIModelName(StrEnum):
     GPT_4O = "gpt-4o"
 
 
+class DeepSeekModelName(StrEnum):
+    """https://api-docs.deepseek.com/quick_start/pricing/"""
+
+    DEEPSEEK_CHAT = "deepseek-chat"
+
+
 class AnthropicModelName(StrEnum):
     """https://docs.anthropic.com/en/docs/about-claude/models#model-names"""
 
-    HAIKU_3 = "claude-3-haiku"
-    HAIKU_35 = "claude-3.5-haiku"
-    SONNET_35 = "claude-3.5-sonnet"
+    HAIKU_35 = "claude-3-5-haiku-20241022"
+    SONNET_35 = "claude-3-5-sonnet-20241022"
 
 
 class GoogleModelName(StrEnum):
     """https://ai.google.dev/gemini-api/docs/models/gemini"""
 
     GEMINI_15_FLASH = "gemini-1.5-flash"
+    GEMINI_15_FLASH_8B = "gemini-1.5-flash-8b"
+    GEMINI_15_PRO = "gemini-1.5-pro"
 
 
 class GroqModelName(StrEnum):
@@ -39,7 +47,7 @@ class GroqModelName(StrEnum):
 
     LLAMA_33_70B = "groq-llama-3.3-70b-versatile"
     LLAMA_31_8B = "groq-llama-3.1-8b-instant"
-    GEMMA2_9B_IT = "groq-gemma2-9b-it"
+    #GEMMA2_9B_IT = "groq-gemma2-9b-it"
 
 
 class MistralModelName(StrEnum):
@@ -77,4 +85,5 @@ AllModelEnum: TypeAlias = (
     | FakeModelName
     | MistralModelName
     | OllamaModelName
+    | DeepSeekModelName
 )

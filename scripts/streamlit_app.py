@@ -23,7 +23,6 @@ from streamlit.runtime.scriptrunner import get_script_run_ctx
 
 from LegalDefAgent.agent_service_toolkit.src.client.client import AgentClient
 from LegalDefAgent.agent_service_toolkit.src.schema.schema import ChatMessage, ChatHistory
-from LegalDefAgent.src.schema.models import AnthropicModelName, AWSModelName, GoogleModelName, GroqModelName, OpenAIModelName, MistralModelName
 from LegalDefAgent.src.llm import _MODEL_TABLE
 from LegalDefAgent.src.schema.task_data import TaskData, TaskDataStatus
 from LegalDefAgent.src.settings import settings
@@ -115,7 +114,8 @@ async def main() -> None:
         "Legal Definition Retrieval and Generation Agent"
         with st.popover(":material/settings: Settings", use_container_width=True):
             model_idx = agent_client.info.models.index(agent_client.info.default_model)
-            model = st.radio("LLM to use", options=agent_client.info.models, index=model_idx)
+            #model = st.radio("LLM to use", options=agent_client.info.models, index=model_idx)
+            model = st.selectbox("LLM to use", options=agent_client.info.models, index=model_idx)
             agent_list = [a.key for a in agent_client.info.agents]
             agent_idx = agent_list.index(agent_client.info.default_agent)
             agent_client.agent = st.selectbox(

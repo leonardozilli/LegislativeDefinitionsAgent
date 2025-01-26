@@ -5,10 +5,13 @@ from functools import cache
 load_dotenv(find_dotenv())
 
 from langchain_openai import ChatOpenAI
+from langchain_openai.chat_models.base import BaseChatOpenAI
 from langchain_groq import ChatGroq
 from langchain_mistralai import ChatMistralAI
 from langchain_ollama.chat_models import ChatOllama
 from langchain_community.chat_models import FakeListChatModel
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_anthropic import ChatAnthropic
 
 from .schema.models import (
     AllModelEnum,
@@ -17,34 +20,26 @@ from .schema.models import (
     GroqModelName,
     OpenAIModelName,
     OllamaModelName,
+    DeepSeekModelName,
+    GoogleModelName,
+    AnthropicModelName,
 )
-
-#def _get_model(model_name: str, streaming: bool = False):
-    #match model_name:
-        #case "gpt":
-            #return ChatOpenAI(model="gpt-4o-mini", api_key=config.OPENAI_API_KEY, temperature=0, streaming=streaming)
-        #case "groq":
-            #return ChatGroq(model="llama3-70b-8192", api_key=config.GROQ_API_KEY, temperature=0, streaming=streaming)
-        #case "groq_tool":
-            #return ChatGroq(model="llama3-groq-8b-8192-tool-use-preview", api_key=config.GROQ_API_KEY, temperature=0, streaming=streaming)
-        #case "mistral":
-            #return ChatMistralAI(model="open-mistral-nemo", api_key=config.MISTRAL_API_KEY, temperature=0, streaming=streaming)
-        #case "gemma":
-            #return ChatOllama(model="gemma2:2b", temperature=0)
-        #case "llama32":
-            #return ChatOllama(model='llama3.2', temperature=0)
-        #case _:
-            #raise ValueError(f"Unsupported model type: {model_name}")
-
+from .settings import settings
 
 _MODEL_TABLE = {
     OpenAIModelName.GPT_4O_MINI: "gpt-4o-mini",
     OpenAIModelName.GPT_4O: "gpt-4o",
     GroqModelName.LLAMA_33_70B: "llama-3.3-70b-versatile",
     GroqModelName.LLAMA_31_8B: "llama-3.1-8b-instant",
-    GroqModelName.GEMMA2_9B_IT: "gemma2-9b-it",
+    #GroqModelName.GEMMA2_9B_IT: "gemma2-9b-it",
     MistralModelName.NEMO_12B: "open-mistral-nemo",
     OllamaModelName.LLAMA_32_3B: "llama3.2",
+    DeepSeekModelName.DEEPSEEK_CHAT: "deepseek-chat",
+    GoogleModelName.GEMINI_15_FLASH: "gemini-1.5-flash",
+    GoogleModelName.GEMINI_15_FLASH_8B: "gemini-1.5-flash-8b",
+    GoogleModelName.GEMINI_15_PRO: "gemini-1.5-pro",
+    AnthropicModelName.HAIKU_35: "claude-3-5-haiku-20241022",
+    AnthropicModelName.SONNET_35: "claude-3-5-sonnet-20241022",
 }
 
 ModelT: TypeAlias = ChatOpenAI | ChatGroq | ChatMistralAI | ChatOllama
@@ -60,12 +55,18 @@ def get_model(model_name: AllModelEnum, /) -> ModelT:
         raise ValueError(f"Unsupported model: {model_name}")
 
     if model_name in OpenAIModelName:
-        return ChatOpenAI(model=api_model_name, temperature=0, streaming=True)
+        return ChatOpenAI(model=api_model_name, temperature=0.3, streaming=True)
     if model_name in GroqModelName:
-        return ChatGroq(model=api_model_name, temperature=0, streaming=True)
+        return ChatGroq(model=api_model_name, temperature=0.3, streaming=True)
+    if model_name in DeepSeekModelName:
+        return BaseChatOpenAI(model=api_model_name, openai_api_key=settings.DEEPSEEK_API_KEY,  openai_api_base='https://api.deepseek.com', max_tokens=1024)
     if model_name in MistralModelName:
-        return ChatMistralAI(model=api_model_name, temperature=0, streaming=True)
+        return ChatMistralAI(model=api_model_name, temperature=0.3, streaming=True)
     if model_name in OllamaModelName:
-        return ChatOllama(model=api_model_name, temperature=0)
+        return ChatOllama(model=api_model_name, temperature=0.3)
     if model_name in FakeModelName:
         return FakeListChatModel(responses=["This is a test response from the fake model."])
+    if model_name in GoogleModelName:
+        return ChatGoogleGenerativeAI(model=api_model_name)
+    if model_name in AnthropicModelName:
+        return ChatAnthropic(model=api_model_name)

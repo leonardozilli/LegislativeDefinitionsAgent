@@ -4,7 +4,7 @@ from langgraph.graph.state import CompiledStateGraph
 
 from ..schema import AgentInfo
 
-from LegalDefAgent.src.agent import definitions_agent
+from LegalDefAgent.src.agents import definitions_agent, definitions_agent_eval
 
 
 DEFAULT_AGENT = "LegalDefAgent"
@@ -17,7 +17,10 @@ class Agent:
 
 agents: dict[str, Agent] = {
     "LegalDefAgent": Agent(
-        description="A research assistant with web search and calculator.", graph=definitions_agent
+        description="A legal assistant for definition Retrieval and Generation", graph=definitions_agent
+    ),
+    "LegalDefAgentEval": Agent(
+        description="A legal assistant for definition Retrieval and Generation. Returns a json output for evaluation purposes.", graph=definitions_agent_eval
     )
 }
 

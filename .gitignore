@@ -1,8 +1,9 @@
 .vscode/
 __pycache__/
 .env
-data/
 logs/
 *.db*
 *.egg-info/
 *.lock
+*.old
+build/

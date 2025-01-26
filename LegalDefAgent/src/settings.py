@@ -7,7 +7,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 from .schema.models import (
     AllModelEnum,
     GroqModelName,
+    GoogleModelName,
+    MistralModelName,
+    AnthropicModelName,
     OpenAIModelName,
+    DeepSeekModelName,
     Provider,
 )
 
@@ -24,7 +28,6 @@ class DBConfig(BaseSettings):
     DEFINITIONS_OUTPUT_DIR: str | None = None
     VDB_OUTPUT_DIR: str | None = None
     DATASETS: List[str] = ['EurLex', 'Normattiva', 'PDL']
-    MAX_DEFINITION_LENGTH: int = 5000
     BATCH_SIZE: int = 50
     NAMESPACES: Dict[str, Dict[str, str]] = {
         'EurLex': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'},
@@ -73,6 +76,9 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: SecretStr | None = None
     GROQ_API_KEY: SecretStr | None = None
     MISTRAL_API_KEY: SecretStr | None = None
+    ANTHROPIC_API_KEY: SecretStr | None = None
+    GOOGLE_API_KEY: SecretStr | None = None
+    DEEPSEEK_API_KEY: SecretStr | None = None
 
     # If DEFAULT_MODEL is None, it will be set in model_post_init
     DEFAULT_MODEL: AllModelEnum | None = None  # type: ignore[assignment]
@@ -89,6 +95,10 @@ class Settings(BaseSettings):
         api_keys = {
             Provider.OPENAI: self.OPENAI_API_KEY,
             Provider.GROQ: self.GROQ_API_KEY,
+            Provider.DEEPSEEK: self.DEEPSEEK_API_KEY,
+            Provider.MISTRAL: self.MISTRAL_API_KEY,
+            Provider.ANTHROPIC: self.ANTHROPIC_API_KEY,
+            Provider.GOOGLE: self.GOOGLE_API_KEY,
         }
         active_keys = [k for k, v in api_keys.items() if v]
         if not active_keys:
@@ -100,10 +110,26 @@ class Settings(BaseSettings):
                     if self.DEFAULT_MODEL is None:
                         self.DEFAULT_MODEL = GroqModelName.LLAMA_31_8B
                     self.AVAILABLE_MODELS.update(set(GroqModelName))
+                case Provider.GOOGLE:
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = GoogleModelName.GEMINI_15_FLASH
+                    self.AVAILABLE_MODELS.update(set(GoogleModelName))
                 case Provider.OPENAI:
                     if self.DEFAULT_MODEL is None:
                         self.DEFAULT_MODEL = OpenAIModelName.GPT_4O_MINI
                     self.AVAILABLE_MODELS.update(set(OpenAIModelName))
+                case Provider.DEEPSEEK:
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = DeepSeekModelName.DEEPSEEK_CHAT
+                    self.AVAILABLE_MODELS.update(set(DeepSeekModelName))
+                case Provider.MISTRAL:
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = MistralModelName.NEMO_12B
+                    self.AVAILABLE_MODELS.update(set(MistralModelName))
+                case Provider.ANTHROPIC:
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = AnthropicModelName.HAIKU_35
+                    self.AVAILABLE_MODELS.update(set(AnthropicModelName))
                 case _:
                     raise ValueError(f"Unknown provider: {provider}")
 
