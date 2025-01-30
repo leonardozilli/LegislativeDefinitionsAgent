@@ -20,8 +20,6 @@ def setup_collection(collection_name, dense_dim) -> Collection:
             name="id", 
             dtype=DataType.INT64,
             is_primary=True, 
-            #auto_id=True, 
-            #max_length=100
         ),
         FieldSchema(
             name="definition_text", 

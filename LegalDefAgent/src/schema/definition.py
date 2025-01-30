@@ -25,4 +25,4 @@ class GeneratedDefinition(BaseModel):
     generated_definition: str = Field(description="the generated definition")
 
 class AnswerDefinition(BaseModel):
-    most_relevant_definition: dict = Field(description="a containing the single, most relevant definition and its metadata")
+    most_relevant_definition_text: str = Field(description="the text of the most relevant definition")

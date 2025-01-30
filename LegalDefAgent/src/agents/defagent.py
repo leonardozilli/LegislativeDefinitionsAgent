@@ -73,13 +73,7 @@ def pick_definition(state: AgentState, config: RunnableConfig):
     prompt = PromptTemplate(
         template="""
         You are a legal expert specialized in legal definitions. Your job is to select the most relevant definition from a list of retrieved definitions.
-        You will be provided with a set of legal definitions, along with associated metadata. Your goal is to choose the definition that best answers the user's question while considering the context provided by the legislation and keywords.
-        
-        Here is the user's question: {question}
-
-        The term to be defined is: {definendum}
-
-        Here are the retrieved definitions to choose from: {retrieved_definitions}
+        You will be provided with a dictionary of legal definitions, along with associated metadata. Your goal is to choose the definition that best answers the user's question while considering the context provided by metadata and keywords.
 
         To select the most relevant definition:
 
@@ -90,7 +84,22 @@ def pick_definition(state: AgentState, config: RunnableConfig):
         5. If there are multiple definitions, choose the one with the most recent date.
         6. Evaluate the specificity and comprehensiveness of each definition in relation to the user's question.
 
+        If none of the retrieved definitions are fit to answer the user's question, you should output an empty dictionary, e.g., `{"most_relevant_definition": {}}`.
+        
+        Here is the user's question: {question}
+
+        The term to be defined is: {definendum}
+
+        Here are the retrieved definitions to choose from: {retrieved_definitions}
+
         Remember to consider all provided information carefully to ensure you select the most appropriate and relevant definition for the user's question.
+
+
+        You should present the most relevant definition to the user with the date of the definition and the identifier of the document.
+
+        ### IMPORTANT NOTES
+        - ONLY use the information provided in the dictionary. Do not rely on or include any external knowledge in your response.
+        - Output only the required data. Do not output your thought process.
         """,
         input_variables=["question", "definendum", "retrieved_definitions"],
     )

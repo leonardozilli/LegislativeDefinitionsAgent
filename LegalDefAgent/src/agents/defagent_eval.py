@@ -6,6 +6,7 @@ from langchain_core.messages import AIMessage, SystemMessage, trim_messages
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import JsonOutputParser
 from langgraph.checkpoint.memory import MemorySaver
+from langgraph.types import Command
 from langgraph.graph import END, MessagesState, StateGraph
 from langgraph.managed import RemainingSteps
 from langgraph.prebuilt import ToolNode
@@ -21,6 +22,7 @@ class AgentState(MessagesState, total=False):
     remaining_steps: RemainingSteps
     retrieved_definitions: str
     query: dict
+    response: dict = None
 
 
 def generate_definition(state: AgentState, config: RunnableConfig):
@@ -45,6 +47,8 @@ def generate_definition(state: AgentState, config: RunnableConfig):
         Provide a definition for the term "{definendum}" to answer the user's question provided below. 
         Your generated definition has to follow the style, length and formatting of the definitions provided as examples.
 
+        Format instructions: {format_instructions}
+
         User Question: {question}
 
         Example definitions: 
@@ -60,7 +64,12 @@ def generate_definition(state: AgentState, config: RunnableConfig):
     chain = prompt | model | parser
     response = chain.invoke({"question": state['query']['question'], "definendum": state['query']['definendum'], "examples": state['retrieved_definitions']})
 
-    return {"messages": [json_to_aimessage(response)]}
+    return Command(
+            update={
+                "response": response,
+                "messages": [json_to_aimessage(response)],
+            }
+        )
 
 
 def pick_definition(state: AgentState, config: RunnableConfig):
@@ -79,7 +88,18 @@ def pick_definition(state: AgentState, config: RunnableConfig):
     prompt = PromptTemplate(
         template="""
         You are a legal expert specialized in legal definitions. Your job is to select the most relevant definition from a list of retrieved definitions.
-        You will be provided with a set of legal definitions, along with associated metadata. Your goal is to choose the definition that best answers the user's question while considering the context provided by the legislation and keywords.
+        You will be provided with a dictionary of legal definitions, along with associated metadata. Your goal is to choose the definition that best answers the user's question while considering the context provided by metadata and keywords.
+
+        To select the most relevant definition:
+
+        1. Analyze the user's question to identify the key concept or term they are asking about.
+        2. Review each legal definition and assess its relevance to the user's question.
+        3. Examine the EuroVoc keywords associated with each definition. Definitions with keywords that align closely with the question's subject matter should be considered more relevant.
+        4. If there are multiple definitions that could be relevant, choose the one from the EU legislation (EurLex).
+        5. Evaluate the specificity and comprehensiveness of each definition in relation to the user's question.
+        6. Format your response according to the provided formatting instructions.
+
+        If none of the retrieved definitions are fit to answer the user's question, you should output an empty string.
         
         Here are the formatting instructions: {format_instructions}
 
@@ -89,20 +109,13 @@ def pick_definition(state: AgentState, config: RunnableConfig):
 
         Here are the retrieved definitions to choose from: {retrieved_definitions}
 
-        To select the most relevant definition:
-
-        1. Analyze the user's question to identify the key concept or term they are asking about.
-        2. Review each legal definition and assess its relevance to the user's question.
-        3. Examine the EuroVoc keywords associated with each definition. Definitions with keywords that align closely with the question's subject matter should be considered more relevant.
-        4. If there are multiple definitions that could be relevant, choose the one from the EU legislation (EurLex).
-        5. If there are multiple definitions, choose the one with the most recent date.
-        6. Evaluate the specificity and comprehensiveness of each definition in relation to the user's question.
-        7. Format your response according to the provided formatting instructions.
+        If none of the retrieved definitions are fit to answer the user's question, you should output an empty dictionary.
 
         Remember to consider all provided information carefully to ensure you select the most appropriate and relevant definition for the user's question.
         
         ### IMPORTANT NOTES
         - Your final output must be valid, directly parsable JSON.
+        - ONLY use the information provided in the dictionary. Do not rely on or include any external knowledge in your response.
         """,
         input_variables=["question", "definendum", "retrieved_definitions"],
         partial_variables={"format_instructions": parser.get_format_instructions()}
@@ -111,7 +124,20 @@ def pick_definition(state: AgentState, config: RunnableConfig):
     chain = prompt | model | parser
     response = chain.invoke({"question": state['query']['question'], "definendum": state['query']['definendum'], "retrieved_definitions": state['retrieved_definitions']})
 
-    return {"messages": [json_to_aimessage(response)]}
+    if response["most_relevant_definition_text"] == '':
+        return Command(
+            update={
+                "messages": [AIMessage(f"I couldn't find an appropriate definition.")],
+            },
+            goto="generate_definition"
+        )
+    
+    return Command(
+            update={
+                "response": response,
+                "messages": [json_to_aimessage(response)],
+            }
+        )
 
 tools = [definition_search]
 

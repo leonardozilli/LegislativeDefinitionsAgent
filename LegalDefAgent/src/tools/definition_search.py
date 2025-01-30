@@ -11,6 +11,7 @@ from langgraph.prebuilt import InjectedState
 from langchain_core.tools.base import InjectedToolCallId
 
 from .. import utils
+from ..existdb import existdb_handler
 from ..vectorstore import retriever as retriever_
 from ..settings import settings
 from ..schema.task_data import Task
@@ -22,8 +23,6 @@ logger = logging.getLogger(__name__)
 
 
 retriever = retriever_.setup_retriever(k=10)
-existdb_handler = utils.setup_existdb_handler()
-
 
 def query_vectorstore(query: str):
     retrieved_definitions = retriever.invoke(query)
@@ -37,16 +36,10 @@ def get_relevant_definitions_id(config: RunnableConfig, retrieved_definitions: l
     parser = JsonOutputParser(pydantic_object=RelevantDefinitionsIDList)
     prompt = PromptTemplate(
         template="""
-        You are an AI legal expert tasked with assessing the relevance of multilingul legal definitions to a user's question. Your primary goal is to filter a list of provided definitions, keeping only those that are relevant to the user's query.
-        You will be provided with a dictionary containing definitions that were automatically retrieved. Your task is to perform the following steps:
-
-            1. Carefully read and understand the user's question.
-            2. Review each definition provided in the dictionary.
-            3. For each definition, determine its relevance to the user's question by considering:
-                a. Whether the definition contains keywords from the question.
-                b. Whether the semantic meaning of the definition relates to the question's topic, even if in another language from the user's question.
-            4. Keep relevant definitions and discard irrelevant ones.
-            5. Format the relevant definitions following the formatting instructions provided.
+        You are an AI legal expert tasked with assessing the relevance of multilingul legal definitions to a user's question. Your primary goal is to filter a list of provided definitions, finding the id of those that are relevant to the user's query.
+        You will be provided with a dictionary containing definitions that were automatically retrieved. Your task is to check the relevance of each definition to the user's question and provide the id of the relevant definitions.
+        If a definition contains keywords from the user's question or if its semantic meaning relates to the question's topic, even if in another language, it should be considered relevant.
+        Format the relevant definitions following the formatting instructions provided.
         
         ### VERY IMPORTANT NOTES:
             - The retrieved definition dictionary can contain definitions in English and Italian. You must consider both languages when filtering the definitions.
@@ -166,18 +159,19 @@ async def definition_search(state: Annotated[dict, InjectedState], tool_call_id:
 
     # Retrieve definitions from the vector store
     await Task("Query vector store").start(data={"input": definendum}, config=config)
-    retrieved_definitions = query_vectorstore(definendum)
+    retrieved_definitions = query_vectorstore(question)
     logger.info(f"Retrieved definitions: {len(retrieved_definitions)}")
     await Task("Query vector store").finish(result="success", data={"retrieved_definitions": retrieved_definitions}, config=config)
 
     # Ask the llm to filter them
-    stripped_definitions = [{'id': x['metadata']['id'], 'definition': x['definition_text']} for x in retrieved_definitions]
-    await Task("Semantic filtering").start(data={"retrieved_definitions": stripped_definitions}, config=config)
-    relevant_definitions_ids = get_relevant_definitions_id(config, retrieved_definitions, question)
-    logger.info(f"Relevant definitions IDs: {relevant_definitions_ids}")
-    relevant_definitions = [definition for definition in retrieved_definitions if definition['metadata']['id'] in relevant_definitions_ids]
-    logger.info(f"Relevant definitions: {relevant_definitions}")
-    await Task("Semantic filtering").finish(result="success", data={"relevant_definitions": relevant_definitions}, config=config)
+    #stripped_definitions = [{'id': x['metadata']['id'], 'definition': x['definition_text']} for x in retrieved_definitions]
+    #await Task("Semantic filtering").start(data={"retrieved_definitions": stripped_definitions}, config=config)
+    #relevant_definitions_ids = get_relevant_definitions_id(config, retrieved_definitions, question)
+    #logger.info(f"Relevant definitions IDs: {relevant_definitions_ids}")
+    #relevant_definitions = [definition for definition in retrieved_definitions if definition['metadata']['id'] in relevant_definitions_ids]
+    #logger.info(f"Relevant definitions: {relevant_definitions}")
+    #await Task("Semantic filtering").finish(result="success", data={"relevant_definitions": relevant_definitions}, config=config)
+    relevant_definitions = retrieved_definitions
 
     # If a legislation filter is provided, filter the definitions
     if legislation:
