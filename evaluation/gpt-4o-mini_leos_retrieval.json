@@ -1,0 +1,77 @@
+[
+  {
+    "CELEX_ID": "32014L0065",
+    "Term": "National Competition Authority",
+    "#": 1,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0001",
+          "date": "2018-12-11",
+          "definition": "(1) \" national competition authority \" means an authority designated by a Member State pursuant to Article 35 of Regulation (EC) No 1/2003 as being responsible for the application of Articles 101 and 102"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32015L0412",
+    "Term": "Organic Product",
+    "#": 2,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R0848",
+          "date": "2018-06-14",
+          "definition": "(2) \" organic product \" means a product resulting from organic production, other than a product produced during the conversion period referred to in Article 10. The products of hunting or fishing of wild animals are not considered as organic products;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R1628",
+    "Term": "Electric Vehicle",
+    "#": 3,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32014L0094",
+          "date": "2020-05-24",
+          "definition": "(2) \" electric vehicle \" means a motor vehicle equipped with a powertrain containing at least one non-peripheral electric machine as energy converter with an electric rechargeable energy storage system, which can be recharged externally;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R1630",
+    "Term": "Hybrid Vehicle",
+    "#": 4,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0168",
+          "date": "2016-01-01",
+          "definition": "(32) \" hybrid vehicle \" means a powered vehicle equipped with at least two different energy converters and two different energy storage systems (on-vehicle) for the purpose of vehicle propulsion;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016L0685",
+    "Term": "Traffic Data",
+    "#": 5,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010L0040",
+          "date": "2018-01-09",
+          "definition": "(15) \" traffic data \" means historic and real-time data on road traffic characteristics;"
+        }
+      ]
+    }
+  }
+]

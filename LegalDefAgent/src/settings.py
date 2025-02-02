@@ -1,7 +1,7 @@
 from typing import Annotated, Any, List, Dict
 
 from dotenv import find_dotenv, load_dotenv
-from pydantic import BeforeValidator, HttpUrl, SecretStr, TypeAdapter, computed_field
+from pydantic import BeforeValidator, HttpUrl, SecretStr, TypeAdapter
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from .schema.models import (
@@ -12,6 +12,7 @@ from .schema.models import (
     AnthropicModelName,
     OpenAIModelName,
     DeepSeekModelName,
+    TogetherModelName,
     Provider,
 )
 
@@ -22,6 +23,7 @@ load_dotenv(find_dotenv(raise_error_if_not_found=True))
 def check_str_is_http(x: str) -> str:
     http_url_adapter = TypeAdapter(HttpUrl)
     return str(http_url_adapter.validate_python(x))
+
 
 class DBConfig(BaseSettings):
     XML_DATA_DIR: str | None = None
@@ -34,6 +36,7 @@ class DBConfig(BaseSettings):
         'Normattiva': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0'},
         'PDL': {'akn': 'http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17'}
     }
+
 
 class eXistDBConfig(BaseSettings):
     XDB_HOST: str = "0.0.0.0"
@@ -51,6 +54,7 @@ class eXistDBConfig(BaseSettings):
         'Normattiva': 'NormaAttiva',
         'PDL': 'portal-camera'
     }
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -79,6 +83,7 @@ class Settings(BaseSettings):
     ANTHROPIC_API_KEY: SecretStr | None = None
     GOOGLE_API_KEY: SecretStr | None = None
     DEEPSEEK_API_KEY: SecretStr | None = None
+    TOGETHER_API_KEY: SecretStr | None = None
 
     # If DEFAULT_MODEL is None, it will be set in model_post_init
     DEFAULT_MODEL: AllModelEnum | None = None  # type: ignore[assignment]
@@ -99,6 +104,7 @@ class Settings(BaseSettings):
             Provider.MISTRAL: self.MISTRAL_API_KEY,
             Provider.ANTHROPIC: self.ANTHROPIC_API_KEY,
             Provider.GOOGLE: self.GOOGLE_API_KEY,
+            Provider.TOGETHER: self.TOGETHER_API_KEY,
         }
         active_keys = [k for k, v in api_keys.items() if v]
         if not active_keys:
@@ -110,6 +116,10 @@ class Settings(BaseSettings):
                     if self.DEFAULT_MODEL is None:
                         self.DEFAULT_MODEL = GroqModelName.LLAMA_31_8B
                     self.AVAILABLE_MODELS.update(set(GroqModelName))
+                case Provider.TOGETHER:
+                    if self.DEFAULT_MODEL is None:
+                        self.DEFAULT_MODEL = TogetherModelName.LLAMA_33_70B
+                    self.AVAILABLE_MODELS.update(set(TogetherModelName))
                 case Provider.GOOGLE:
                     if self.DEFAULT_MODEL is None:
                         self.DEFAULT_MODEL = GoogleModelName.GEMINI_15_FLASH
@@ -132,7 +142,6 @@ class Settings(BaseSettings):
                     self.AVAILABLE_MODELS.update(set(AnthropicModelName))
                 case _:
                     raise ValueError(f"Unknown provider: {provider}")
-
 
     def is_dev(self) -> bool:
         return self.MODE == "dev"

@@ -1,12 +1,12 @@
-from pymilvus import connections, WeightedRanker, Collection
+from functools import lru_cache
+
+from pymilvus import WeightedRanker, Collection
 from langchain.embeddings.base import Embeddings
 from torch.cuda import is_available as cuda_available
 from milvus_model.hybrid import BGEM3EmbeddingFunction
 from langchain_milvus.retrievers import MilvusCollectionHybridSearchRetriever
-from functools import lru_cache
 
 from ..settings import settings
-from ..utils import setup_logging
 from .utils import connect_to_milvus
 
 
@@ -44,13 +44,26 @@ class BGEMilvusSparseEmbeddings(Embeddings):
         return embedding["sparse"]._getrow(0)
 
 
+class CustomMilvusHybridSearchRetriever(MilvusCollectionHybridSearchRetriever):
+    def _process_search_result(self, search_results):
+        documents = []
+        for result in search_results[0]:
+            # if result.distance > 0.8:
+            data = {field: result.entity.get(field)
+                    for field in self.output_fields}
+            doc = self._parse_document(data)
+            documents.append(doc)
+        return documents
+
+
 @lru_cache
 def setup_retriever(k=10):
     connect_to_milvus(settings.MILVUSDB_URI)
 
     sparse_search_params = {"metric_type": "IP"}
     dense_search_params = {"metric_type": "COSINE", "params": {}}
-    retriever = MilvusCollectionHybridSearchRetriever(
+
+    retriever = CustomMilvusHybridSearchRetriever(
         collection=Collection(settings.MILVUSDB_COLLECTION_NAME),
         rerank=WeightedRanker(1.0, 0.7),
         anns_fields=["dense_vector", "sparse_vector"],

@@ -12,6 +12,7 @@ class Provider(StrEnum):
     DEEPSEEK = auto()
     AWS = auto()
     FAKE = auto()
+    TOGETHER = auto()
 
 
 class OpenAIModelName(StrEnum):
@@ -47,7 +48,15 @@ class GroqModelName(StrEnum):
 
     LLAMA_33_70B = "groq-llama-3.3-70b-versatile"
     LLAMA_31_8B = "groq-llama-3.1-8b-instant"
-    #GEMMA2_9B_IT = "groq-gemma2-9b-it"
+    GEMMA2_9B_IT = "groq-gemma2-9b-it"
+
+
+class TogetherModelName(StrEnum):
+    """https://console.groq.com/docs/models"""
+
+    LLAMA_33_70B = "together-llama-3.3-70B-Instruct-Turbo"
+    LLAMA_31_8B = "together-llama-3.1-8b-Instruct-Turbo"
+    NEMOTRON_70B = "together-nemotron-70b-Instruct"
 
 
 class MistralModelName(StrEnum):
@@ -76,6 +85,17 @@ class FakeModelName(StrEnum):
     FAKE = "fake"
 
 
+class GoogleModelName(StrEnum):
+    """https://ai.google.dev/gemini-api/docs/models/gemini"""
+
+    GEMINI_15_FLASH = "gemini-1.5-flash"
+    GEMINI_15_FLASH_8B = "gemini-1.5-flash-8b"
+    GEMINI_15_PRO = "gemini-1.5-pro"
+    GEMMA2_9B_IT = "gemma2-9b-it"
+    GEMMA2_27B_IT = "gemma2-27b-it"
+    GEMMA2_2B_IT = "gemma2-2b-it"
+
+
 AllModelEnum: TypeAlias = (
     OpenAIModelName
     | AnthropicModelName
@@ -86,4 +106,5 @@ AllModelEnum: TypeAlias = (
     | MistralModelName
     | OllamaModelName
     | DeepSeekModelName
+    | TogetherModelName
 )

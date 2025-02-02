@@ -1,13 +1,13 @@
 # Portions of this file are covered by the MIT License
 # Copyright (c) 2024 Joshua Carroll
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in all
 # copies or substantial portions of the Software.from pydantic import BaseModel, Field
 
@@ -44,6 +44,7 @@ class CustomData(BaseModel):
             config=merge_configs(config, dispatch_config),
         )
 
+
 class Task:
     def __init__(self, task_name: str) -> None:
         self.name = task_name
@@ -52,7 +53,8 @@ class Task:
         self.result: Literal["success", "error"] | None = None
 
     async def _generate_and_dispatch_message(self, config: RunnableConfig, data: dict):
-        task_data = TaskData(name=self.name, run_id=self.id, state=self.state, data=data)
+        task_data = TaskData(name=self.name, run_id=self.id,
+                             state=self.state, data=data)
         if self.result:
             task_data.result = self.result
         task_custom_data = CustomData(
@@ -81,6 +83,7 @@ class Task:
         self.result = result
         task_message = await self._generate_and_dispatch_message(config, data)
         return task_message
+
 
 class TaskData(BaseModel):
     name: str | None = Field(

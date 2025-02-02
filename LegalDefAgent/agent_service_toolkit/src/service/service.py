@@ -16,6 +16,8 @@ from langgraph.checkpoint.sqlite.aio import AsyncSqliteSaver
 from langgraph.graph.state import CompiledStateGraph
 from langsmith import Client as LangsmithClient
 
+from LegalDefAgent.src.settings import settings
+
 from ..agents import DEFAULT_AGENT, get_agent, get_all_agent_info
 from ..schema import (
     ChatHistory,
@@ -32,8 +34,6 @@ from .utils import (
     langchain_to_chat_message,
     remove_tool_calls,
 )
-
-from LegalDefAgent.src.settings import settings
 
 
 warnings.filterwarnings("ignore", category=LangChainBetaWarning)
@@ -236,7 +236,6 @@ def history(input: ChatHistoryInput) -> ChatHistory:
     """
     Get chat history.
     """
-    # TODO: Hard-coding DEFAULT_AGENT here is wonky
     agent: CompiledStateGraph = get_agent(DEFAULT_AGENT)
     try:
         state_snapshot = agent.get_state(

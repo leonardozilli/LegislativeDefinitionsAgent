@@ -1,45 +1,27 @@
 from typing import List
-from pyexistdb import db
 from datetime import datetime
-import xml.etree.ElementTree as ET
 import re
 
-from ..settings import settings
+import xml.etree.ElementTree as ET
+from pyexistdb import db
+
+from ..settings import settings as settings
 
 
 class ExistDBHandler:
     """Handler for executing XQueries against an eXist-db instance."""
 
     def __init__(self, settings: dict):
-        """
-        Initialize connection to eXist-db.
-        
-        Args:
-            server_url: Full URL to eXist-db server
-            username: eXist-db username
-            password: eXist-db password
-        """
         self.settings = settings
         self.db = db.ExistDB(
-            server_url=f"http://{self.settings.XDB_HOST}:{self.settings.XDB_PORT}/exist/",
+            server_url=f"http://{self.settings.XDB_HOST}:{
+                self.settings.XDB_PORT}/exist/",
             username=self.settings.XDB_USER,
             password=self.settings.XDB_PASSWORD)
         self.namespaces = settings.NAMESPACES
         self.collection_names_map = self.settings.COLLECTION_NAMES_MAP
 
     def _execute_query(self, query: str) -> List[str]:
-        """
-        Execute an XQuery and return all results.
-        
-        Args:
-            query: XQuery string to execute
-            
-        Returns:
-            List of results as strings
-            
-        Raises:
-            Exception: If query execution fails
-        """
         try:
             results = []
             query_result = self.db.executeQuery(query)
@@ -106,7 +88,7 @@ class ExistDBHandler:
                 return
                     <results>{{$results}}</results>
             """
-        elif def_metadata['dataset'] == 'Normattiva':
+        else:
             ARTICLE_REF_QUERY = r"""
                 xquery version "3.1";
                 declare namespace akn = "{namespace}";
@@ -159,7 +141,7 @@ class ExistDBHandler:
 
             let $docs := collection('/db/EurLex-Consolidati')[replace(.//akn:FRBRWork/akn:FRBRuri/@value,"-\d{{2}}-\d{{2}}","")=$aknShort]
 
-            let $results := 
+            let $results :=
                 for $doc in $docs
                 let $expdate := $doc//akn:FRBRExpression/akn:FRBRdate/@date/string()
                 let $def := $doc//akn:definitionHead[@refersTo="{definendum_label}"]/@href/string()
@@ -189,18 +171,18 @@ class ExistDBHandler:
         for result in results:
             date = result.find('date')
             definition = result.find('definition')
-            if definition.text is not None and date.text is not None and date.text != '' and definition.text != '':
-                result_list.append({'date': datetime.strptime(date.text.split(
-                    ' ')[0], '%Y-%m-%d'), 'definition': self.clean_exist_result(definition.text)})
+            if definition is not None:
+                if definition.text is not None and date.text is not None and date.text != '' and definition.text != '':
+                    result_list.append({'date': datetime.strptime(date.text.split(
+                        ' ')[0], '%Y-%m-%d'), 'definition': self.clean_exist_result(definition.text)})
 
         return result_list
-    
+
     def resolve_reference(self, reference, dataset):
         REF_QUERY_EURLEX = r"""
         xquery version "3.1";
         declare namespace akn = "{namespace}";
         
-
         let $full_ref:="{reference}"
         let $split:=tokenize($full_ref,"~")
 
@@ -240,7 +222,7 @@ class ExistDBHandler:
 
         dataset = self.collection_names_map[dataset]
         namespace = self.namespaces[dataset]['akn']
-    
+
         if dataset == 'EurLex':
             if '~' in reference and '__' in reference:
                 query = REF_QUERY_EURLEX.format(
@@ -264,21 +246,12 @@ class ExistDBHandler:
         return None
 
     def clean_resolved_ref(self, binary_text: str) -> str:
-        """
-        Clean legal text by removing unnecessary whitespace, tabs, and quotes.
-        
-        Args:
-            text (str): The input text to clean
-            
-        Returns:
-            str: The cleaned text
-        """
 
         text = binary_text.decode('utf-8')
         lines = text.split('\n')
         cleaned_text = ' '.join(lines)
         cleaned_text = ' '.join(cleaned_text.split())
-        
+
         return cleaned_text.strip()
 
     def clean_exist_result(self, text):

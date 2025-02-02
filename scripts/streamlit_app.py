@@ -81,7 +81,9 @@ async def main() -> None:
 
     with st.expander(label="Legal Definitions Agent", expanded=st.session_state.expander_open):
         """
-        Master thesis project
+        This chatbot can help you retrieve legal definitions from various sources.\n
+        Ask for the definition of a legal term, and the chatbot will provide you with the most relevant definition, or generate a novel one.\n
+        You can restrict the search to a specific source, such as the European Union's legal database (EUR-Lex), the Italian legal database (Normattiva), or the Italian Parliament's legislative proposals (PDLs), or specify a time period for the search by simply mentioning it in your query.
         """
 
     if "agent_client" not in st.session_state:

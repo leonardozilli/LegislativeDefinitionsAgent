@@ -151,6 +151,7 @@ class AgentInfo(BaseModel):
         examples=["A research assistant for generating research papers."],
     )
 
+
 class ServiceMetadata(BaseModel):
     """Metadata about the service including available agents and models."""
 

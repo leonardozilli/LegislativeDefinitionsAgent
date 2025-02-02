@@ -1,204 +1,234 @@
+from datetime import datetime, date
+from typing import List, Dict, Any, Union, Optional, Set, Tuple
+import logging
+import sys
+import os
+import re
+from pathlib import Path
+
 import tiktoken
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_core.messages import AIMessage
 from langchain_community.chat_models import ChatOpenAI
+from langchain_core.documents import Document
 from dotenv import load_dotenv, find_dotenv
 from IPython.display import Image, display
-import logging
-import sys
-import os
-import re
-from datetime import datetime, date
 
+# Load environment variables
 load_dotenv(find_dotenv())
 
 
-def get_token_count(string: str, llm_name: str) -> int:
-    """
-    Returns the number of tokens in a given string for a specified language model.
-    :param string: The input text to be tokenized.
-    :param llm_name: The name of the language model to determine the encoding.
-    :return: The count of tokens in the input string.
-    """
-    encoding = tiktoken.encoding_for_model(llm_name)
-    return len(encoding.encode(string))
-
-
-def chatqa(query: str, llm_name: str) -> str:
-    """
-    Basic OpenAI inference through langchain.
-    :param query: The user's query.
-    :param llm_name: The name of the OpenAI model to be used.
-    :return: The model's output
-    """
-
-    llm = ChatOpenAI(model_name=llm_name, temperature=0)
-    chain = LLMChain(llm=llm, prompt=PromptTemplate(
-        template="""{q}""", input_variables=["q"]))
-    res = chain.apply([{'q': query}])[0]['text']
-
-    return res
-
-
-def merge_dicts(*dicts: dict) -> dict:
-    _ = {}
-    for dict_ in dicts:
-        _.update(dict_)
-    return _
-
-
-def parse_date_filters(date_filters):
-    from_date = date_filters[0]
-    to_date = date_filters[1]
-
-    if from_date == to_date:
-        return datetime.strptime(from_date, '%Y-%m-%d').date()
-    else:
-        if not from_date:
-            return datetime.strptime('0001-01-01', '%Y-%m-%d').date(), datetime.strptime(to_date, '%Y-%m-%d').date()
-        elif not to_date:
-            return datetime.strptime(from_date, '%Y-%m-%d').date(), datetime.today().date()
-        else:
-            return datetime.strptime(from_date, '%Y-%m-%d').date(), datetime.strptime(to_date, '%Y-%m-%d').date()
-
-
-def parse_date(date):
-    return datetime.strptime(date, '%Y-%m-%d').date()
-
-
-def doc_to_json(doc):
-    json_doc = doc.to_json().get('kwargs')
-    json_doc['definition_text'] = json_doc.pop('page_content')
-    del json_doc['type']
-
-    return json_doc
-
-
-def docs_list_to_json_list(docs):
-    json_list = [doc_to_json(doc) for doc in docs]
-
-    return json_list
-
-
-def get_frbr_uri_date(frbr_uri):
-    date = re.search(r'(\d{4}-\d{2}-\d{2})', frbr_uri).group(1)
-
-    return date
-
-
-def json_to_aimessage(parsed_output):
-    """Convert parsed output back to AIMessage."""
-    content = f"{parsed_output}"
-    return AIMessage(content=content)
-
-
-def definition_obj_to_path(definition_obj):
-    return os.path.join(definition_obj['dataset'], definition_obj['document_id'])
-
-
-def draw_graph(graph):
-    try:
-        display(Image(graph.get_graph(xray=True).draw_mermaid_png()))
-    except Exception:
-        # This requires some extra dependencies and is optional
-        pass
-
-
-def _print_event(event: dict, _printed: set, max_length=1500):
-    current_state = event.get("dialog_state")
-    if current_state:
-        print("Currently in: ", current_state[-1])
-    message = event.get("messages")
-    node = event
-    if message:
-        if isinstance(message, list):
-            message = message[-1]
-        if message.id not in _printed:
-            msg_repr = message.pretty_repr(html=True)
-            if len(msg_repr) > max_length:
-                msg_repr = msg_repr[:max_length] + " ... (truncated)"
-            print(msg_repr)
-            _printed.add(message.id)
-
-
-def get_uri_date(uri):
-    at_split = uri.split("@")[-1]
-    date = at_split.split("/")[0]
-    return date
-
-
-def setup_logging(log_level=logging.DEBUG):
-    """
-    Configures logging to output messages directly in Jupyter Notebook cells.
-
-    Args:
-        log_level (int): Logging level (e.g., logging.DEBUG, logging.INFO).
-    """
-    # Remove any existing handlers attached to the root logger
+def setup_logging(log_level: int = logging.INFO) -> None:
+    """Configure logging for Jupyter Notebook cells."""
+    # Clear existing handlers
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
 
-    # Configure the logging system
     logging.basicConfig(
         level=log_level,
         format="%(asctime)s - %(levelname)s - %(message)s",
-        handlers=[
-            # Ensure logs are shown in notebook output
-            logging.StreamHandler(sys.stdout)
-        ],
+        handlers=[logging.StreamHandler(sys.stdout)]
     )
-
     logging.info("Logging configured")
 
 
-def filter_defs_list(original_list, relevant_ids):
-    return [doc for doc in original_list if doc.metadata['id'] in relevant_ids]
+def get_token_count(text: str, model_name: str) -> int:
+    """Count tokens for a given text using specified model's tokenizer."""
+    encoding = tiktoken.encoding_for_model(model_name)
+    return len(encoding.encode(text))
 
 
-def filter_documents_by_legislation(docs, legislation_filter):
-    if not legislation_filter:
-        return docs
-
-    legislation_dataset_map = {
-        'EU': ['EurLex'],
-        'IT': ['Normattiva', 'PDL'],
-    }
-
-    return [doc for doc in docs if doc.metadata['dataset'] in legislation_dataset_map[legislation_filter]]
+def chatqa(query: str, model_name: str, temperature: float = 0) -> str:
+    """Execute OpenAI inference through LangChain."""
+    llm = ChatOpenAI(model_name=model_name, temperature=temperature)
+    chain = LLMChain(
+        llm=llm,
+        prompt=PromptTemplate(template="{q}", input_variables=["q"])
+    )
+    return chain.apply([{'q': query}])[0]['text']
 
 
-def get_frbr_expression_date(expression_uri):
-
-    work_date = re.search(r'(\d{4}-\d{2}-\d{2})', expression_uri).group(1)
-
-    return work_date
+def merge_dicts(*dicts: Dict) -> Dict:
+    """Merge multiple dictionaries into one."""
+    return {k: v for d in dicts for k, v in d.items()}
 
 
-def filter_documents_by_date(docs, date_filters):
+def parse_date_filters(date_filters: Tuple[str, str]) -> Union[date, Tuple[date, date]]:
+    """Parse date filters into either a single date or a date range."""
+    from_date, to_date = date_filters
+
+    if from_date == to_date:
+        return datetime.strptime(from_date, '%Y-%m-%d').date()
+
+    if not from_date:
+        start = datetime.strptime('0001-01-01', '%Y-%m-%d').date()
+    else:
+        start = datetime.strptime(from_date, '%Y-%m-%d').date()
+
+    if not to_date:
+        end = datetime.today().date()
+    else:
+        end = datetime.strptime(to_date, '%Y-%m-%d').date()
+
+    return start, end
+
+
+def parse_date(date_str: str) -> date:
+    """Convert date string to date object."""
+    return datetime.strptime(date_str, '%Y-%m-%d').date()
+
+
+def doc_to_json(doc: Document) -> Dict[str, Any]:
+    """Convert LangChain Document to JSON format."""
+    json_doc = doc.to_json().get('kwargs')
+    json_doc['definition_text'] = json_doc.pop('page_content')
+    json_doc.pop('type', None)
+    return json_doc
+
+
+def docs_list_to_json_list(docs: List[Document]) -> List[Dict[str, Any]]:
+    """Convert list of LangChain Documents to JSON list."""
+    return [doc_to_json(doc) for doc in docs]
+
+
+def extract_date_from_uri(uri: str) -> str:
+    """Extract date from FRBR URI."""
+    date_match = re.search(r'(\d{4}-\d{2}-\d{2})', uri)
+    if not date_match:
+        raise ValueError(f"No date found in URI: {uri}")
+    return date_match.group(1)
+
+
+def json_to_aimessage(parsed_output: Dict[str, Any]) -> AIMessage:
+    """Convert parsed output to AIMessage format."""
+    return AIMessage(content=str(parsed_output))
+
+
+def definition_obj_to_path(definition_obj: Dict[str, str]) -> Path:
+    """Convert definition object to filesystem path."""
+    return Path(definition_obj['dataset']) / definition_obj['document_id']
+
+
+def draw_graph(graph: Any) -> None:
+    """Draw a Mermaid graph if dependencies are available."""
+    try:
+        display(Image(graph.get_graph(xray=True).draw_mermaid_png()))
+    except Exception as e:
+        logging.warning(f"Failed to draw graph: {e}")
+
+
+def print_event(event: Dict[str, Any], printed_ids: Set[str], max_length: int = 1500) -> None:
+    """Print event information with truncation if necessary."""
+    if current_state := event.get("dialog_state"):
+        print(f"Currently in: {current_state[-1]}")
+
+    if message := event.get("messages"):
+        if isinstance(message, list):
+            message = message[-1]
+        if message.id not in printed_ids:
+            msg_repr = message.pretty_repr(html=True)
+            if len(msg_repr) > max_length:
+                msg_repr = f"{msg_repr[:max_length]} ... (truncated)"
+            print(msg_repr)
+            printed_ids.add(message.id)
+
+
+def filter_definitions(docs: List[Document],
+                       relevant_ids: Optional[List[str]] = None,
+                       legislation: Optional[str] = None) -> List[Document]:
+    """Filter definitions based on IDs and legislation."""
+    filtered_docs = docs
+
+    if relevant_ids:
+        filtered_docs = [doc for doc in filtered_docs
+                         if doc.metadata['id'] in relevant_ids]
+
+    if legislation:
+        legislation_datasets = {
+            'EU': ['EurLex'],
+            'IT': ['Normattiva', 'PDL'],
+        }
+        filtered_docs = [doc for doc in filtered_docs
+                         if doc.metadata['dataset'] in legislation_datasets[legislation]]
+
+    return filtered_docs
+
+
+def filter_documents_by_date(docs: List[Document],
+                             date_filters: Optional[Tuple[str, str]]) -> List[Document]:
+    """Filter documents based on date criteria."""
     if not date_filters:
         return docs
 
     date_filter = parse_date_filters(date_filters)
+    filtered_docs = []
 
-    filtered_defs = []
     for doc in docs:
-        doc_date = datetime.strptime(get_frbr_expression_date(
-            doc.metadata['frbr_expression']), '%Y-%m-%d').date()
+        doc_date = parse_date(extract_date_from_uri(
+            doc.metadata['frbr_expression']))
 
         if isinstance(date_filter, date):
             if doc_date == date_filter:
-                filtered_defs.append(doc)
+                filtered_docs.append(doc)
         elif isinstance(date_filter, tuple):
             if date_filter[0] <= doc_date <= date_filter[1]:
-                filtered_defs.append(doc)
+                filtered_docs.append(doc)
 
-    return filtered_defs
+    return filtered_docs
 
 
-def retrieved_docs_list_to_dict(doc_list):
-    return {
-        doc.metadata['id']: {
-            'definition_text': doc.page_content}
-        for doc in doc_list
-    }
+def format_definitions_dict(data: List[Dict[str, Any]],
+                       include_keywords: bool = True) -> str:
+    """Format definition data into readable string."""
+    formatted_parts = []
+
+    for entry in data:
+        metadata = entry['metadata']
+        parts = [
+            f"ID: {metadata['id']}",
+            f"Dataset: {metadata['dataset']}",
+            "\nTimeline:"
+        ]
+
+        for i, timeline_entry in enumerate(entry['timeline'], 1):
+            parts.extend([
+                f"{i}. Date: {timeline_entry['date']}",
+                f"   Definition: {timeline_entry['definition']}\n"
+            ])
+
+        if include_keywords and 'keywords' in entry:
+            parts.extend([
+                "Keywords:",
+                *[f"  - {kw}" for kw in entry['keywords']]
+            ])
+
+        formatted_parts.append("\n".join(parts))
+        formatted_parts.append("-" * 50)
+
+    return "\n\n".join(formatted_parts)
+
+
+def format_answer_definition(data: List[Dict[str, Any]],
+                             timeline_id: int) -> List[Dict[str, Any]]:
+    """Format answer definition with specific timeline entry."""
+    return [{
+        'dataset': entry['metadata']['dataset'],
+        'document_id': entry['metadata']['document_id'].split('.')[0],
+        'date': entry['timeline'][timeline_id - 1]['date'],
+        'definition': entry['timeline'][timeline_id - 1]['definition']
+    } for entry in data]
+
+
+def camelcase_to_spaces(text: str) -> str:
+    """Convert camelCase to space-separated lowercase text."""
+    text = text.replace('#', '')
+    return re.sub(r'([a-z])([A-Z])', r'\1 \2', text).lower()
+
+
+def parse_date_string(s):
+    start_date, end_date = s.split(' - ')
+    start_date = None if start_date == 'None' else start_date
+    end_date = None if end_date == 'None' else end_date
+
+    return [start_date, end_date]

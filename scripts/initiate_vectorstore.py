@@ -65,7 +65,6 @@ def setup_collection(collection_name, dense_dim) -> Collection:
 
     schema = CollectionSchema(fields, "Definitions embeddings")
     
-    # Drop existing collection if it exists
     if utility.has_collection(collection_name):
         Collection(collection_name).drop()
         
@@ -75,7 +74,6 @@ def setup_collection(collection_name, dense_dim) -> Collection:
         consistency_level="Strong"
     )
     
-    # Create and load index
     sparse_index = {
         "index_type": "SPARSE_INVERTED_INDEX", 
         "metric_type": "IP"
