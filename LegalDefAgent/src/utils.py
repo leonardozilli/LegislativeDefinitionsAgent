@@ -209,6 +209,38 @@ def format_definitions_dict(data: List[Dict[str, Any]],
     return "\n\n".join(formatted_parts)
 
 
+def format_definitions_dict_xml(data, include_keywords: bool = True) -> str:
+    """Format definition data into XML-like string."""
+    formatted_parts = []
+    
+    for entry in data:
+        parts = [
+            "<definition>",
+            f"  <definition_id>{entry['metadata']['id']}</definition_id>",
+            f"  <dataset>{entry['metadata']['dataset']}</dataset>",
+            "  <timeline>",
+        ]
+        
+        for i, timeline_entry in enumerate(entry['timeline'], 1):
+            parts.extend([
+                "    <entry>",
+                f"      <entry_id>{i}</entry_id>",
+                f"      <date>{timeline_entry['date']}</date>",
+                f"      <definition_text>{timeline_entry['definition']}</definition_text>",
+                "    </entry>"
+            ])
+        
+        parts.append("  </timeline>")
+        
+        if include_keywords and 'keywords' in entry:
+            parts.append(f"  <keywords>{', '.join(entry['keywords'])}</keywords>")
+        
+        parts.append("</definition>")
+        formatted_parts.append("\n".join(parts))
+    
+    return "\n\n".join(formatted_parts)
+
+
 def format_answer_definition(data: List[Dict[str, Any]],
                              timeline_id: int) -> List[Dict[str, Any]]:
     """Format answer definition with specific timeline entry."""

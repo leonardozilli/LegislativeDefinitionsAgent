@@ -183,17 +183,19 @@ class ExistDBHandler:
         xquery version "3.1";
         declare namespace akn = "{namespace}";
         
-        let $full_ref:="{reference}"
-        let $split:=tokenize($full_ref,"~")
+        let $full_ref := "{reference}"
+        let $split := tokenize($full_ref,"~")
 
-        let $aknShort:=replace($split[1],"(.*)(/ep)(.*)", "$1$3")
-        let $aknShort:=replace($aknShort,"!main","")
+        let $aknShort := replace($split[1],"(.*)(/ep)(.*)", "$1$3")
+        let $aknShort := replace($aknShort,"!main","")
         
         let $ref_el := $split[2]
         let $modified-text := replace($ref_el,"(\(([A-Za-z0-9]+)\))(.*)(\(([A-Za-z0-9]+)\))?", "__para_$2$3")
         let $eid := replace($modified-text,"(?:__point_)?\(([A-Za-z0-9]+)\)", "__list_1__point_$1")
 
-        return collection("/db/{dataset}")[replace(.//akn:FRBRWork/akn:FRBRuri/@value,"-\d{{2}}-\d{{2}}","")=$aknShort]//*[matches(@eId,concat(".*(",$eid,")$"))][1]/string()
+        let $res := collection("/db/{dataset}")[replace(.//akn:FRBRWork/akn:FRBRuri/@value,"-\d{{2}}-\d{{2}}","")=$aknShort]//*[matches(@eId,concat(".*(",$eid,")$"))][1]/string()
+
+        return $res
         """
 
         REF_QUERY_IT = r"""

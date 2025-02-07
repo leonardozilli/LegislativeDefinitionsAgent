@@ -79,6 +79,8 @@ async def main() -> None:
     if "expander_open" not in st.session_state:
         st.session_state.expander_open = True
 
+    st.header(f"{APP_TITLE}")
+
     with st.expander(label="Legal Definitions Agent", expanded=st.session_state.expander_open):
         """
         This chatbot can help you retrieve legal definitions from various sources.\n
@@ -113,7 +115,7 @@ async def main() -> None:
     with st.sidebar:
         st.header(f"{APP_TITLE}")
         ""
-        "Legal Definition Retrieval and Generation Agent"
+        "Legal Definitions Retrieval and Generation Agent"
         with st.popover(":material/settings: Settings", use_container_width=True):
             model_idx = agent_client.info.models.index(agent_client.info.default_model)
             #model = st.radio("LLM to use", options=agent_client.info.models, index=model_idx)
@@ -240,8 +242,6 @@ async def draw_messages(
     last_message_type = None
     st.session_state.last_message = None
     last_node_name = INTERMEDIATE_NODES[0]
-    last_task_name = None
-    task_name = None
 
     # Placeholder for intermediate streaming tokens
     streaming_content = ""

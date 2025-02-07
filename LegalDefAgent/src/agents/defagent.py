@@ -3,18 +3,13 @@ from typing import Literal
 from langchain_core.runnables import RunnableConfig, RunnableLambda, RunnableSerializable
 from langchain_core.language_models.chat_models import BaseChatModel
 from langchain_core.messages import AIMessage, SystemMessage, trim_messages
-from langchain_core.prompts import PromptTemplate
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, MessagesState, StateGraph
 from langgraph.managed import RemainingSteps
 from langgraph.prebuilt import ToolNode
-from langchain_core.output_parsers import JsonOutputParser
-from langgraph.types import Command
-from ..schema.definition import DefinitionsList, AnswerDefinition, RelevantDefinitionsIDList, GeneratedDefinition
 
 from ..llm import get_model
 from ..settings import settings
-from ..utils import json_to_aimessage
 from ..tools import definition_search
 
 
@@ -66,7 +61,8 @@ instructions = f"""
 def wrap_model(model: BaseChatModel) -> RunnableSerializable[AgentState, AIMessage]:
     model = model.bind_tools(tools)
     preprocessor = RunnableLambda(
-        lambda state: [SystemMessage(content=instructions)] + state["messages"],
+        lambda state: [SystemMessage(
+            content=instructions)] + state["messages"],
         name="StateModifier",
     )
     return preprocessor | model
@@ -86,12 +82,13 @@ def acall_model(state: AgentState, config: RunnableConfig) -> AgentState:
                 )
             ]
         }
-    
+
     return {"messages": [response]}
 
 
 def state_cleanup(state: AgentState) -> AgentState:
-    state['messages'] = trim_messages(state['messages'], token_counter=len, strategy="last", max_tokens=1)
+    state['messages'] = trim_messages(
+        state['messages'], token_counter=len, strategy="last", max_tokens=1)
     state['messages'] = state['messages'][-1:]
 
     return {"messages": ""}
@@ -103,10 +100,8 @@ agent = StateGraph(AgentState)
 agent.add_node("supervisor", acall_model)
 agent.add_node("tools", ToolNode(tools))
 agent.add_node("state_cleanup", state_cleanup)
-#agent.add_node("generate_definition", generate_definition)
-#agent.add_node("pick_definition", pick_definition)
 
-# After "superviros", if there are tool calls, run "tools". Otherwise END.
+
 def pending_tool_calls(state: AgentState) -> Literal["tools", "done"]:
     last_message = state["messages"][-1]
     if not isinstance(last_message, AIMessage):
@@ -114,6 +109,7 @@ def pending_tool_calls(state: AgentState) -> Literal["tools", "done"]:
     if last_message.tool_calls:
         return "tools"
     return "done"
+
 
 def router(state: AgentState) -> str:
     retrieved_definitions = state['retrieved_definitions']
@@ -124,18 +120,11 @@ def router(state: AgentState) -> str:
         return "generate_definition"
 
 
-#agent.add_node("router", router)
-
-
 agent.set_entry_point("supervisor")
-agent.add_conditional_edges("supervisor", pending_tool_calls, {"tools": "tools", "done": END})
-# Always run "supervisor" after "tools"
+agent.add_conditional_edges("supervisor", pending_tool_calls, {
+                            "tools": "tools", "done": END})
 agent.add_edge("tools", "supervisor")
-#agent.add_conditional_edges("tools", router, {"pick_definition": "pick_definition", "generate_definition": "generate_definition"})
-#agent.add_edge("pick_definition", "state_cleanup")
-#agent.add_edge("generate_definition", "state_cleanup")
 agent.add_edge("state_cleanup", END)
-#agent.add_edge("generate_definition", END)
 
 
 definitions_agent = agent.compile(checkpointer=MemorySaver())

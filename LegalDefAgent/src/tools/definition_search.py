@@ -15,7 +15,7 @@ from ..existdb import existdb_handler
 from ..vectorstore import retriever as retriever_
 from ..settings import settings
 from ..schema.task_data import Task
-from ..schema.definition import RelevantDefinitionsIDList, AnswerDefinition, GeneratedDefinition
+from ..schema.definition import RelevantDefinitionsIDList, PickedDefinition, GeneratedDefinition
 from ..llm import get_model
 from ..utils import setup_logging
 
@@ -126,15 +126,19 @@ def filter_definitions_by_date(documents: list[Dict], date_filters: Tuple[str, s
     ]
 
 
-def generate_definition(config: RunnableConfig, question: str, definendum: str, example_definitions: list[str]) -> Dict:
+def generate_definition(config: RunnableConfig, question: str, definendum: str, legislation: str, example_definitions: list[str]) -> Dict:
     """Generate a definition for a given term."""
     model = get_model(config["configurable"].get(
         "model", settings.DEFAULT_MODEL))
     parser = JsonOutputParser(pydantic_object=GeneratedDefinition)
 
+    DEFAULT_ROLE = "You are a legal expert specialized in drafting legal definitions. Your job is to draft a legal definition for a specific term."
+    EU_ROLE = "You are a legal expert specialized in drafting legal definitions for European Union legislation. Your job is to draft a legal definition for a specific term to be inserted in a EU regulatory document."
+    IT_ROLE = "You are a legal expert specialized in drafting legal definitions for Italian legislation. Your job is to draft a legal definition for a specific term to be inserted in an Italian regulatory document."
+
     prompt = PromptTemplate(
         template="""
-        You are a legal expert specialized in drafting legal definitions. Your job is to draft a legal definition for a specific term.
+        {legislation_role}
         Provide a definition for the term "{definendum}" to answer the user's question provided below. 
         Your definition should be clear, concise, and accurate. Use the examples provided to guide you in creating a definition that is relevant to the user's query.
         Your generated definition has to follow the style, length and formatting of the definitions provided as examples.
@@ -146,16 +150,16 @@ def generate_definition(config: RunnableConfig, question: str, definendum: str, 
         Example definitions: 
         \n- {examples}\n
 
-        ### IMPORTANT NOTES:
         """,
 
-        input_variables=["question", "definendum", "examples"],
+        input_variables=["legislation_role", "question", "definendum", "examples"],
         partial_variables={
             "format_instructions": parser.get_format_instructions()}
     )
 
     chain = prompt | model | parser
     response = chain.invoke({
+        "legislation_role": EU_ROLE if legislation == "EU" else  IT_ROLE if legislation == "IT" else DEFAULT_ROLE,
         "question": question,
         "definendum": definendum,
         "examples": '\n- '.join(set(example_definitions))
@@ -165,7 +169,7 @@ def generate_definition(config: RunnableConfig, question: str, definendum: str, 
     return response
 
 
-def pick_definition(
+async def pick_definition(
     config: RunnableConfig,
     legislation: str,
     relevant_definitions: list[Dict],
@@ -175,13 +179,13 @@ def pick_definition(
     """Pick most relevant definition from the list."""
     model = get_model(config["configurable"].get(
         "model", settings.DEFAULT_MODEL))
-    parser = JsonOutputParser(pydantic_object=AnswerDefinition)
+    parser = JsonOutputParser(pydantic_object=PickedDefinition)
     prompt = PromptTemplate(
         template="""
         You are a legal expert specialized in legal definitions. Your job is to find the correct definition from a list of retrieved definitions.
-        You will be provided with a bunch of legal definitions, along with associated metadata. 
-        Your goal is to find a definition that answers the user's question.
-        Select a definition that provides an explanation of the EXACT term the user is asking about. If none of the retrieved definitions are fit to answer the user's question, you should not pick any definition.
+        You will be provided with a list of legal definitions, along with associated metadata and a timeline of their modifications in the XML format.
+        Your goal is to select the id of the definition that answers the user's question.
+        Select a definition that provides an explanation of the EXACT term the user is asking. If none of the provided definitions are fit to answer the user's question, you should not pick any definition.
         
         Here are the formatting instructions: {format_instructions}
 
@@ -193,7 +197,8 @@ def pick_definition(
 
         ### IMPORTANT NOTES
         - Your final output must be valid, directly parsable JSON.
-        - ONLY choose a definition that provides an explanation of the EXACT term the user is asking about. Do not choose a definition that explains a similar or related term.
+        - ONLY choose a definition that provides an explanation of the EXACT term to be defined. Do NOT choose a definition that explains a similar or related term.
+        - Use the keywords to help you determine the most relevant definition.
         - If there are multiple definitions that could be relevant, choose the one from the EU legislation (EurLex).
         - ONLY use the information provided in the dictionary. Do not rely on or include any external knowledge in your response.
         """,
@@ -202,12 +207,15 @@ def pick_definition(
             "format_instructions": parser.get_format_instructions()}
     )
 
+    await Task("Pick definition").start(data={"input": prompt.invoke({"question": question, "definendum": definendum, "retrieved_definitions": utils.format_definitions_dict_xml(relevant_definitions)})}, config=config)
     chain = prompt | model | parser
     response = chain.invoke({
         "question": question,
         "definendum": definendum,
-        "retrieved_definitions": utils.format_definitions_dict(relevant_definitions)
+        "retrieved_definitions": utils.format_definitions_dict_xml(relevant_definitions)
     })
+
+    await Task("Pick definition").finish(result="success", data={"output": response}, config=config)
     return response
 
 
@@ -226,8 +234,8 @@ async def definition_search(
     Args:
         question: The whole user's query.
         definendum: The term to be defined, as extracted from the user's query.
-        legislation: The legislation to search in. Possible values: "EU", "IT", None
-        date_filters: Date filters in the form of a string "from_date - to_date" to apply to the search. e.g. "2021-01-01 - 2021-12-31"
+        legislation: Optional legislation context to narrow search. Accepts 'EU' or 'IT'.
+        date_filters: Optional date filters in the form of a string "from_date - to_date" to apply to the search. e.g. "2021-01-01 - 2021-12-31"
     """
     logger.info(f"Searching for definitions: {definendum=}, {question=}, {legislation=}, {date_filters=}")
     state['messages'] = filter_messages(
@@ -271,7 +279,7 @@ async def definition_search(
         examples = [definition.get('definition_text')
                     for definition in relevant_definitions]
         await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
-        return generate_definition(config, question, definendum, examples)
+        return generate_definition(config, question, definendum, legislation, examples)
 
     # Process timelines
     await Task("Retrieving Definition Timeline...").start(data={"input": relevant_definitions}, config=config)
@@ -307,16 +315,18 @@ async def definition_search(
         examples = [definition.get('definition_text')
                     for definition in relevant_definitions]
         await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
-        return generate_definition(config, question, definendum, examples)
+        return generate_definition(config, question, definendum, legislation, examples)
 
     # Add keywords
     logger.info("Retrieving Eurovocs...")
+    await Task("Retrieve Eurovocs").start(data={"input": definitions_with_timeline}, config=config)
     for definition in definitions_with_timeline:
         definition['keywords'] = existdb_handler.get_work_eurovocs(
             definition['metadata'])
+    await Task("Retrieve Eurovocs").finish(result="success", data={"output": definitions_with_timeline}, config=config)
 
     # Pick final definition
-    picked_definition = pick_definition(
+    picked_definition = await pick_definition(
         config,
         legislation,
         definitions_with_timeline,
@@ -325,19 +335,45 @@ async def definition_search(
     )
     logger.info(f"Picked definition: {picked_definition}")
 
-    if picked_definition["chosen_definition_id"] is None:
+    if picked_definition["picked_definition_id"] is None:
         examples = [definition.get('definition_text')
                     for definition in definitions_with_timeline]
         return {"generated_definition": generate_definition(config, question, definendum, examples)}
 
     answer_def = [
         definition for definition in definitions_with_timeline
-        if definition['metadata']['id'] == picked_definition["chosen_definition_id"]
+        if definition['metadata']['id'] == picked_definition["picked_definition_id"]
     ]
 
-    return {
-        'retrieved_definition': utils.format_answer_definition(
-            answer_def,
-            picked_definition["timeline_id"]
-        )
-    }
+    retrieved_definition = utils.format_answer_definition(
+        answer_def,
+        picked_definition["timeline_id"]
+    )
+
+    await Task("Retrieve definition").finish(result="success", data={"retrieved_definition": retrieved_definition}, config=config)
+
+    return {'retrieved_definition': retrieved_definition}
+
+
+
+async def definition_search2(
+    state: Annotated[dict, InjectedState],
+    tool_call_id: Annotated[str, InjectedToolCallId],
+    config: RunnableConfig,
+    definendum: str,
+) -> Dict:
+    """
+    Searches and retrieves the most similar definitions to the given query in a vector DB.
+
+    Args:
+        definendum: The term to be defined, as extracted from the user's query.
+    """
+
+    await Task("Retrieve definition").start(data={"query": definendum}, config=config)
+
+    answer = "the answer to everything is always 42"
+
+    await Task("Retrieve definition").finish(result="success", data={"output": answer}, config=config)
+
+    return {"retrieved_definition": answer}
+    
