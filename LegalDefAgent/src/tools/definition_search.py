@@ -126,7 +126,7 @@ def filter_definitions_by_date(documents: list[Dict], date_filters: Tuple[str, s
     ]
 
 
-def generate_definition(config: RunnableConfig, question: str, definendum: str, legislation: str, example_definitions: list[str]) -> Dict:
+async def generate_definition(config: RunnableConfig, question: str, definendum: str, legislation: str, example_definitions: list[str]) -> Dict:
     """Generate a definition for a given term."""
     model = get_model(config["configurable"].get(
         "model", settings.DEFAULT_MODEL))
@@ -139,11 +139,11 @@ def generate_definition(config: RunnableConfig, question: str, definendum: str, 
     prompt = PromptTemplate(
         template="""
         {legislation_role}
-        Provide a definition for the term "{definendum}" to answer the user's question provided below. 
+        Provide a definition for the term "{definendum}".
         Your definition should be clear, concise, and accurate. Use the examples provided to guide you in creating a definition that is relevant to the user's query.
         Your generated definition has to follow the style, length and formatting of the definitions provided as examples.
 
-        User Question: {question}
+        User Query: {question}
 
         Output Format Instructions: {format_instructions}
 
@@ -157,6 +157,8 @@ def generate_definition(config: RunnableConfig, question: str, definendum: str, 
             "format_instructions": parser.get_format_instructions()}
     )
 
+    await Task("Generate definition").start(data={"input": prompt.invoke({"question": question, "legislation_role": EU_ROLE if legislation == "EU" else  IT_ROLE if legislation == "IT" else DEFAULT_ROLE, "definendum": definendum, "examples": '\n- '.join(set(example_definitions))})}, config=config)
+
     chain = prompt | model | parser
     response = chain.invoke({
         "legislation_role": EU_ROLE if legislation == "EU" else  IT_ROLE if legislation == "IT" else DEFAULT_ROLE,
@@ -164,6 +166,8 @@ def generate_definition(config: RunnableConfig, question: str, definendum: str, 
         "definendum": definendum,
         "examples": '\n- '.join(set(example_definitions))
     })
+    await Task("Generate definition").finish(result="success", data={"output": response}, config=config)
+    await Task("Retrieve definition").finish(result="success", data={"output": response}, config=config)
 
     response['sources'] = example_definitions
     return response
@@ -279,7 +283,7 @@ async def definition_search(
         examples = [definition.get('definition_text')
                     for definition in relevant_definitions]
         await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
-        return generate_definition(config, question, definendum, legislation, examples)
+        return await generate_definition(config, question, definendum, legislation, examples)
 
     # Process timelines
     await Task("Retrieving Definition Timeline...").start(data={"input": relevant_definitions}, config=config)
@@ -295,6 +299,7 @@ async def definition_search(
         data={"output": definitions_with_timeline},
         config=config
     )
+
 
     # Apply date filters if specified
     if date_filters:
@@ -315,7 +320,7 @@ async def definition_search(
         examples = [definition.get('definition_text')
                     for definition in relevant_definitions]
         await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
-        return generate_definition(config, question, definendum, legislation, examples)
+        return await generate_definition(config, question, definendum, legislation, examples)
 
     # Add keywords
     logger.info("Retrieving Eurovocs...")
@@ -338,7 +343,7 @@ async def definition_search(
     if picked_definition["picked_definition_id"] is None:
         examples = [definition.get('definition_text')
                     for definition in definitions_with_timeline]
-        return {"generated_definition": generate_definition(config, question, definendum, examples)}
+        return {"generated_definition": await generate_definition(config, question, definendum, legislation, examples)}
 
     answer_def = [
         definition for definition in definitions_with_timeline

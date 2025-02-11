@@ -51,10 +51,8 @@ instructions = f"""
     ### IMPORTANT NOTES
     - Remember to use ONLY the information provided by the tools described. Do not rely on or include any external knowledge in your response.
     - If the definition_search tool does not return any results, you should provide a generated definition instead.
-    - If the retrieved definition are not in English, you should not translate them, but just provide the original text.
-    - If the answer definition is generated, you should disclose this to the user in your response.
-
-    Now, please process the user's query.
+    - If the definitions retrieved by the tool are not in English, you should not translate them, but provide the original text as returned by the tool.
+    - If the answer definition is generated, you should disclose this to the user in your response like: "I couldn't find a definition for [term], so here's a generated definition instead: \n\n [definition]".
     """
 
 
@@ -122,7 +120,7 @@ def router(state: AgentState) -> str:
 
 agent.set_entry_point("supervisor")
 agent.add_conditional_edges("supervisor", pending_tool_calls, {
-                            "tools": "tools", "done": END})
+                            "tools": "tools", "done": "state_cleanup"})
 agent.add_edge("tools", "supervisor")
 agent.add_edge("state_cleanup", END)
 

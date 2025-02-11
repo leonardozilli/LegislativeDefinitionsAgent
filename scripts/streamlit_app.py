@@ -307,7 +307,8 @@ async def draw_messages(
                             streaming_content = ""
                             streaming_placeholder = None
                         else:
-                            st.write(msg.content)
+                            for chunk in msg.content.split("\n"):
+                                st.write(chunk)
 
             case "custom":
                 # CustomData example used by the bg-task-agent
