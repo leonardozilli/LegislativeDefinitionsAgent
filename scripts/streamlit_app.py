@@ -176,10 +176,10 @@ async def main() -> None:
     # Draw existing messages
     messages: list[ChatMessage] = st.session_state.messages
 
-    prompt = st.chat_input()
-    if prompt is not None:
-        st.session_state.expander_open = False  # Close the expander when the user starts typing
+    def close_expander():
+        st.session_state.expander_open = False
 
+    prompt = st.chat_input(on_submit=close_expander)
 
     # draw_messages() expects an async iterator over messages
     async def amessage_iter() -> AsyncGenerator[ChatMessage, None]:
@@ -190,7 +190,6 @@ async def main() -> None:
 
     # Generate new message if the user provided new input
     if user_input := prompt:
-        st.session_state.expander_open = False
         messages.append(ChatMessage(type="human", content=user_input))
         st.chat_message("human").write(user_input)
         if use_streaming:

@@ -65,7 +65,30 @@ class ExistDBHandler:
         frbr_work = def_metadata['frbr_work']
         dataset = self.collection_names_map[def_metadata['dataset']]
         definendum_label = def_metadata['definendum_label']
-        if def_metadata['dataset'] in ['EurLex', 'PDL']:
+        if def_metadata['dataset'] == "EurLex":
+            ARTICLE_REF_QUERY = r"""
+                xquery version "3.1";
+                declare namespace akn = "{namespace}";
+                
+                let $work:="{frbr_work}"
+
+                let $docs := collection('/db/{dataset}')[.//akn:FRBRWork/akn:FRBRthis/@value=$work]
+
+                let $results := 
+                    for $doc in $docs
+                    let $expdate := $doc//akn:FRBRExpression/akn:FRBRdate/@date/string()
+                    let $def := $doc//akn:definitionHead[@refersTo="{definendum_label}"]/@href/string()
+                    return
+                        <result>
+                            <date>{{$expdate}}</date>
+                        {{for $definition in $doc//*[@defines=$def]
+                            return <definition>{{$definition/string()}}</definition>}}
+                        </result>
+
+                return
+                    <results>{{$results}}</results>
+            """
+        elif def_metadata['dataset'] == 'Normattiva':
             ARTICLE_REF_QUERY = r"""
                 xquery version "3.1";
                 declare namespace akn = "{namespace}";
@@ -99,7 +122,7 @@ class ExistDBHandler:
 
                 let $results := 
                     for $doc in $docs
-                    let $expdate := $doc//akn:FRBRExpression/akn:FRBRdate/@date/string()
+                    let $expdate := replace($doc//akn:FRBRExpression/akn:FRBRuri/@value/string(), ".*/(\d{{4}}-\d{{2}}-\d{{2}}).*", "$1")
                     let $def := $doc//akn:definitionHead[@refersTo="{definendum_label}"]/@href/string()
                     return
                         <result>
@@ -111,6 +134,7 @@ class ExistDBHandler:
                 return
                     <results>{{$results}}</results>
             """
+
 
         namespace = self.namespaces[dataset]['akn']
         query = ARTICLE_REF_QUERY.format(

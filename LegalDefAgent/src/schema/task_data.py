@@ -137,7 +137,7 @@ class TaskDataStatus:
                 else:
                     status_str += ":red[ended with error]. Output:"
         status.write(status_str)
-        status.write(task_data.data)
+        status.json(task_data.data)
         status.write("---")
         if task_data.name not in self.current_task_data:
             # Status label always shows the last newly started task

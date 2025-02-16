@@ -35,8 +35,7 @@ class GeneratedDefinition(BaseModel):
     generated_definition: str = Field(description="the generated definition")
 
 
-class PickedDefinition(BaseModel):
-    picked_definition_id: int | None = Field(
-        description="the id of the definition chosen to answer the query. None if no definition was chosen")
-    timeline_id: int | None = Field(
-        description="the number next to the timeline entry the picked definition is from. None if no definition was chosen")
+class PickedDefinitions(BaseModel):
+    picked_definitions_ids: List[int] = Field(
+        description="a list containing the ids of the definitions chosen. Empty if no definition was chosen")
+

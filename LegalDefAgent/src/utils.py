@@ -241,14 +241,12 @@ def format_definitions_dict_xml(data, include_keywords: bool = True) -> str:
     return "\n\n".join(formatted_parts)
 
 
-def format_answer_definition(data: List[Dict[str, Any]],
-                             timeline_id: int) -> List[Dict[str, Any]]:
+def format_answer_definition(data: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """Format answer definition with specific timeline entry."""
     return [{
         'dataset': entry['metadata']['dataset'],
         'document_id': entry['metadata']['document_id'].split('.')[0],
-        'date': entry['timeline'][timeline_id - 1]['date'],
-        'definition': entry['timeline'][timeline_id - 1]['definition']
+        'definition': [tl_entry for tl_entry in entry['timeline']]
     } for entry in data]
 
 

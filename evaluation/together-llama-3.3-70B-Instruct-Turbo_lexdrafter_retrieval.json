@@ -9710,5 +9710,1511 @@
         }
       ]
     }
+  },
+  {
+    "CELEX_ID": "32019R2018",
+    "Term": "condensing unit",
+    "original_definition": "'condensing unit' means a product integrating at least one electrically driven compressor and one condenser, capable of cooling down and continuously maintaining low or medium temperature inside a refrigerated appliance or system, using a vapour compression cycle once connected to an evaporator and an expansion device, as defined in Regulation (EU) 2015/1095;",
+    "reference_list": "[{\"cited_celex_id\": \"32015R1095\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 1,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2024",
+          "date": "2021-05-01",
+          "definition": "3. \" condensing unit \" means a product integrating at least one electrically driven compressor and one condenser, capable of cooling down and continuously maintaining low or medium temperature inside a refrigerated appliance or system, using a vapour compression cycle once connected to an evaporator and an expansion device, as defined in Regulation (EU) 2015/1095"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2018",
+    "Term": "wine storage appliance",
+    "original_definition": "'wine storage appliance' means a refrigerating appliance with only one type of compartment for the storage of wine, with precision temperature control for the storage conditions and target temperature, and equipped with anti-vibration measures, as defined in Delegated Regulation (EU) 2019/2016;",
+    "reference_list": "[{\"cited_celex_id\": \"32019R2016\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 2,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2018",
+          "date": "2021-03-01",
+          "definition": "18. \" wine storage appliance \" means a refrigerating appliance with only one type of compartment for the storage of wine, with precision temperature control for the storage conditions and target temperature, and equipped with anti-vibration measures, as defined in Delegated Regulation (EU) 2019/2016"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2018",
+    "Term": "minibar",
+    "original_definition": "'minibar' means a refrigerating appliance with a total volume of maximum 60 litres, which is primary intended for the storage and sales of foodstuffs in hotel rooms and similar premises, as defined in Delegated Regulation (EU) 2019/2016;",
+    "reference_list": "[{\"cited_celex_id\": \"32019R2016\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 3,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2018",
+          "date": "2021-03-01",
+          "definition": "22. \" minibar \" means a refrigerating appliance with a total volume of maximum 60 litres, which is primary intended for the storage and sales of foodstuffs in hotel rooms and similar premises, as defined in Delegated Regulation (EU) 2019/2016"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2024",
+    "Term": "condensing unit",
+    "original_definition": "'condensing unit' means a product integrating at least one electrically driven compressor and one condenser, capable of cooling down and continuously maintaining low or medium temperature inside a refrigerated appliance or system, using a vapour compression cycle once connected to an evaporator and an expansion device, as defined in Regulation (EU) 2015/1095;",
+    "reference_list": "[{\"cited_celex_id\": \"32015R1095\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 4,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2024",
+          "date": "2021-05-01",
+          "definition": "3. \" condensing unit \" means a product integrating at least one electrically driven compressor and one condenser, capable of cooling down and continuously maintaining low or medium temperature inside a refrigerated appliance or system, using a vapour compression cycle once connected to an evaporator and an expansion device, as defined in Regulation (EU) 2015/1095"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2024",
+    "Term": "wine storage appliance",
+    "original_definition": "'wine storage appliance' means refrigerating appliance with only one type of compartment for the storage of wine, with precision temperature control for the storage conditions and target temperature, and equipped with anti-vibration measures, as defined in Regulation (EU) 2019/2019;",
+    "reference_list": "[{\"cited_celex_id\": \"32019R2019\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 5,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2018",
+          "date": "2021-03-01",
+          "definition": "18. \" wine storage appliance \" means a refrigerating appliance with only one type of compartment for the storage of wine, with precision temperature control for the storage conditions and target temperature, and equipped with anti-vibration measures, as defined in Delegated Regulation (EU) 2019/2016"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2024",
+    "Term": "minibar",
+    "original_definition": "'minibar' means a refrigerating appliance with a total volume of maximum 60 litres, which is primary intended for the storage and sales of foodstuffs in hotel rooms and similar premises, as defined in Regulation (EU) 2019/2019;",
+    "reference_list": "[{\"cited_celex_id\": \"32019R2019\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 6,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2018",
+          "date": "2021-03-01",
+          "definition": "22. \" minibar \" means a refrigerating appliance with a total volume of maximum 60 litres, which is primary intended for the storage and sales of foodstuffs in hotel rooms and similar premises, as defined in Delegated Regulation (EU) 2019/2016"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2019",
+    "Term": "professional refrigerated storage cabinet",
+    "original_definition": "'professional refrigerated storage cabinet' means an insulated refrigerating appliance integrating one or more compartments accessible via one or more doors or drawers, capable of continuously maintaining the temperature of foodstuffs within prescribed limits at chilled or frozen operating temperature, using a vapour compression cycle, and used for the storage of foodstuffs in non-household environments but not for the display to or access by customers, as defined in Regulation (EU) 2015/1095;",
+    "reference_list": "[{\"cited_celex_id\": \"32015R1095\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 7,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2016",
+          "date": "2019-12-05",
+          "definition": "(8) \" professional refrigerated storage cabinet \" means an insulated refrigerating appliance integrating one or more compartments accessible via one or more doors or drawers, capable of continuously maintaining the temperature of foodstuffs within prescribed limits at chilled or frozen operating temperature, using a vapour compression cycle, and used for the storage of foodstuffs in non-household environments but not for the display to or access by customers, as defined in Commission Regulation (EU) 2015/1095 Commission Regulation (EU) 2015/1095 of 5 May 2015 implementing Directive 2009/125/EC of the European Parliament and of the Council with regard to ecodesign requirements for professional refrigerated storage cabinets, blast cabinets, condensing units and process chillers ( OJ L 177, 8.7.2015, p. 19 )."
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2019",
+    "Term": "blast cabinet",
+    "original_definition": "'blast cabinet' means an insulated refrigerating appliance primarily intended to rapidly cool hot foodstuffs to below 10 °C in the case of chilling and below - 18 °C in the case of freezing, as defined in Regulation (EU) 2015/1095;",
+    "reference_list": "[{\"cited_celex_id\": \"32015R1095\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 8,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2019",
+          "date": "2021-03-01",
+          "definition": "(9) \" blast cabinet \" means an insulated refrigerating appliance primarily intended to rapidly cool hot foodstuffs to below 10 °C in the case of chilling and below - 18 °C in the case of freezing, as defined in Regulation (EU) 2015/1095"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2020",
+    "Term": "light",
+    "original_definition": "'light' means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics:chromaticity coordinates x and y in the range0,270 < x < 0,530 and2,3172 x2 + 2,3653 x - 0,2199 < y < - 2,3172 x2 + 2,3653 x - 0,1595;a luminous flux < 500 lumen per mm2 of projected light-emitting surface area as defined in Annex I;a luminous flux between 60 and 82 000 lumen;a colour rendering index (CRI) > 0;using incandescence, fluorescence, high-intensity discharge, inorganic light emitting diodes (LED) or organic light emitting diodes (OLED), or their combinations as lighting technology, and that can be verified as a light source according to the procedure of Annex IV.High-pressure sodium (HPS) light sources that do not fulfil condition (a) are considered light sources for the purposes of this Regulation.Light sources do not include:LED dies or LED chips;LED packages;products containing light source(s) from which these light source(s) can be removed for verification;light-emitting parts contained in a light source from which these parts cannot be removed for verification as a light source;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 9,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2015",
+          "date": "2021-03-01",
+          "definition": "(4) \" light \" means electromagnetic radiation with a wavelength between 380 nm and 780 nm;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2019",
+    "Term": "wine storage appliance",
+    "original_definition": "'wine storage appliance' means a dedicated refrigerating appliance for the storage of wine, with precision temperature control for the storage conditions and target temperature of a wine storage compartment, as defined in Annex III, Table 3, and equipped with anti-vibration measures;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 10,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2018",
+          "date": "2021-03-01",
+          "definition": "18. \" wine storage appliance \" means a refrigerating appliance with only one type of compartment for the storage of wine, with precision temperature control for the storage conditions and target temperature, and equipped with anti-vibration measures, as defined in Delegated Regulation (EU) 2019/2016"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2019",
+    "Term": "wine storage compartment",
+    "original_definition": "'wine storage compartment' means an unfrozen compartment with a target temperature of 12 °C, an internal humidity range from 50 % to 80 % and storage conditions ranging from 5 °C to 20 °C, as defined in Annex III, Table 3;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 11,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2016",
+          "date": "2019-12-05",
+          "definition": "(26) \" wine storage compartment \" means an unfrozen compartment with a target temperature of 12 °C, an internal humidity range from 50 % to 80 % and storage conditions ranging from 5 °C to 20 °C, as defined in Annex IV, Table 3;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2020",
+    "Term": "light source",
+    "original_definition": "'light source' means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics:chromaticity coordinates x and y in the range0,270 < x < 0,530 and2,3172 x2 + 2,3653 x - 0,2199 < y < - 2,3172 x2 + 2,3653 x - 0,1595;a luminous flux < 500 lumen per mm2 of projected light-emitting surface area as defined in Annex I;a luminous flux between 60 and 82 000 lumen;a colour rendering index (CRI) > 0;using incandescence, fluorescence, high-intensity discharge, inorganic light emitting diodes (LED) or organic light emitting diodes (OLED), or their combinations as lighting technology, and that can be verified as a light source according to the procedure of Annex IV.High-pressure sodium (HPS) light sources that do not fulfil condition (a) are considered light sources for the purposes of this Regulation.Light sources do not include:LED dies or LED chips;LED packages;products containing light source(s) from which these light source(s) can be removed for verification;light-emitting parts contained in a light source from which these parts cannot be removed for verification as a light source;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 12,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2020",
+          "date": "2019-12-05",
+          "definition": "light source \" means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics: \" (a) chromaticity coordinates x and y in the range 0,270 < x < 0,530 and 2,3172 x 2 + 2,3653 x – 0,2199 < y < – 2,3172 x 2 + 2,3653 x – 0,1595 ; – (b) 2 of projected light-emitting surface area as defined in Annex I; a luminous flux < 500 lumen per mm (c) 82000 lumen; a luminous flux between 60 and (d) a colour rendering index (CRI) > 0;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2020",
+    "Term": "control gear",
+    "original_definition": "'control gear' means one or more devices, that may or may not be physically integrated in a light source, intended to prepare the mains for the electric format required by one or more specific light sources within boundary conditions set by electric safety and electromagnetic compatibility. It may include transforming the supply and starting voltage, limiting operational and preheating current, preventing cold starting, correcting the power factor and/or reducing radio interference.The term ‘control gear’ does not include power supplies within the scope of Commission Regulation (EC) No 278/2009 (14). The term also does not include lighting control parts and non-lighting parts (as defined in Annex I), although such parts may be physically integrated with a control gear or marketed together as a single product.A Power over Ethernet (PoE) switch is not a control gear in the sense of this Regulation. ‘Power-over-Ethernet switch’ or ‘PoE switch’ means equipment for power-supply and data-handling that is installed between the mains and office equipment and/or light sources for the purpose of data transfer and power supply;",
+    "reference_list": "[{\"cited_celex_id\": \"32009R0278\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 13,
+    "response": {
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  },
+  {
+    "CELEX_ID": "32019R2015",
+    "Term": "light source",
+    "original_definition": "'light source' means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics:chromaticity coordinates x and y in the range:0,270 < x < 0,530; and- 2,3172 x2 + 2,3653 x - 0,2199 < y < - 2,3172 x2 + 2,3653 x - 0,1595;a luminous flux < 500 lumen per mm2 of projected light-emitting surface area as defined in Annex I;a luminous flux between 60 and 82 000 lumen;a colour rendering index (CRI) > 0;using incandescence, fluorescence, high-intensity discharge, inorganic light emitting diodes (LED) or organic light emitting diodes (OLED), or their combinations as lighting technology, and that can be verified as a light source according to the procedure of Annex IX.High-pressure sodium (HPS) light sources that do not fulfil condition (a) are considered light sources for the purposes of this Regulation.Light sources do not include:LED dies or LED chips;LED packages;products containing light source(s) from which these light source(s) can be removed for verification;light-emitting parts contained in a light source from which these parts cannot be removed for verification as a light source.",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 14,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2020",
+          "date": "2019-12-05",
+          "definition": "light source \" means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics: \" (a) chromaticity coordinates x and y in the range 0,270 < x < 0,530 and 2,3172 x 2 + 2,3653 x – 0,2199 < y < – 2,3172 x 2 + 2,3653 x – 0,1595 ; – (b) 2 of projected light-emitting surface area as defined in Annex I; a luminous flux < 500 lumen per mm (c) 82000 lumen; a luminous flux between 60 and (d) a colour rendering index (CRI) > 0;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2015",
+    "Term": "control gear",
+    "original_definition": "'control gear' means one or more devices that may or may not be physically integrated in a light source, intended to prepare the mains for the electric format required by one or more specific light sources within boundary conditions set by electric safety and electromagnetic compatibility. It may include transforming the supply and starting voltage, limiting operational and preheating current, preventing cold starting, correcting the power factor and/or reducing radio interferenceThe term ‘control gear’ does not include power supplies within the scope of Commission Regulation (EC) No 278/2009 (7). The term also does not include lighting control parts and non-lighting parts (as defined in Annex I), although such parts may be physically integrated with a control gear or marketed together as a single product.A Power over Ethernet (PoE) switch is not a control gear in the sense of this Regulation. ‘Power-over-Ethernet switch’ or ‘PoE switch’ means equipment for power-supply and data-handling that is installed between the mains and office equipment and/or light sources for the purpose of data transfer and power supply;",
+    "reference_list": "[{\"cited_celex_id\": \"32009R0278\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 15,
+    "response": {
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  },
+  {
+    "CELEX_ID": "32019R2015",
+    "Term": "light",
+    "original_definition": "'light' means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics:chromaticity coordinates x and y in the range:0,270 < x < 0,530; and- 2,3172 x2 + 2,3653 x - 0,2199 < y < - 2,3172 x2 + 2,3653 x - 0,1595;a luminous flux < 500 lumen per mm2 of projected light-emitting surface area as defined in Annex I;a luminous flux between 60 and 82 000 lumen;a colour rendering index (CRI) > 0;using incandescence, fluorescence, high-intensity discharge, inorganic light emitting diodes (LED) or organic light emitting diodes (OLED), or their combinations as lighting technology, and that can be verified as a light source according to the procedure of Annex IX.High-pressure sodium (HPS) light sources that do not fulfil condition (a) are considered light sources for the purposes of this Regulation.Light sources do not include:LED dies or LED chips;LED packages;products containing light source(s) from which these light source(s) can be removed for verification;light-emitting parts contained in a light source from which these parts cannot be removed for verification as a light source.",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 16,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2015",
+          "date": "2021-03-01",
+          "definition": "(4) \" light \" means electromagnetic radiation with a wavelength between 380 nm and 780 nm;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2016",
+    "Term": "wine storage compartment",
+    "original_definition": "'wine storage compartment' means an unfrozen compartment with a target temperature of 12 °C, an internal humidity range from 50 % to 80 % and storage conditions ranging from 5 °C to 20 °C, as defined in Annex IV, Table 3;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 17,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2016",
+          "date": "2019-12-05",
+          "definition": "(26) \" wine storage compartment \" means an unfrozen compartment with a target temperature of 12 °C, an internal humidity range from 50 % to 80 % and storage conditions ranging from 5 °C to 20 °C, as defined in Annex IV, Table 3;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2016",
+    "Term": "professional refrigerated storage cabinet",
+    "original_definition": "'professional refrigerated storage cabinet' means an insulated refrigerating appliance integrating one or more compartments accessible via one or more doors or drawers, capable of continuously maintaining the temperature of foodstuffs within prescribed limits at chilled or frozen operating temperature, using a vapour compression cycle, and used for the storage of foodstuffs in non-household environments but not for the display to or access by customers, as defined in Commission Regulation (EU) 2015/1095 (9);",
+    "reference_list": "[{\"cited_celex_id\": \"32015R1095\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 18,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2016",
+          "date": "2019-12-05",
+          "definition": "(8) \" professional refrigerated storage cabinet \" means an insulated refrigerating appliance integrating one or more compartments accessible via one or more doors or drawers, capable of continuously maintaining the temperature of foodstuffs within prescribed limits at chilled or frozen operating temperature, using a vapour compression cycle, and used for the storage of foodstuffs in non-household environments but not for the display to or access by customers, as defined in Commission Regulation (EU) 2015/1095 Commission Regulation (EU) 2015/1095 of 5 May 2015 implementing Directive 2009/125/EC of the European Parliament and of the Council with regard to ecodesign requirements for professional refrigerated storage cabinets, blast cabinets, condensing units and process chillers ( OJ L 177, 8.7.2015, p. 19 )."
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2016",
+    "Term": "blast cabinet",
+    "original_definition": "'blast cabinet' means an insulated refrigerating appliance primarily intended to rapidly cool hot foodstuffs to below 10 °C in the case of chilling and below - 18 °C in the case of freezing, as defined in Regulation (EU) 2015/1095;",
+    "reference_list": "[{\"cited_celex_id\": \"32015R1095\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 19,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2019",
+          "date": "2021-03-01",
+          "definition": "(9) \" blast cabinet \" means an insulated refrigerating appliance primarily intended to rapidly cool hot foodstuffs to below 10 °C in the case of chilling and below - 18 °C in the case of freezing, as defined in Regulation (EU) 2015/1095"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R2016",
+    "Term": "wine storage appliance",
+    "original_definition": "'wine storage appliance' means a dedicated refrigerating appliance for the storage of wine, with precision temperature control for the storage conditions and target temperature of a wine storage compartment, as defined in Annex IV, Table 3, and equipped with anti-vibration measures;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 20,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R2018",
+          "date": "2021-03-01",
+          "definition": "18. \" wine storage appliance \" means a refrigerating appliance with only one type of compartment for the storage of wine, with precision temperature control for the storage conditions and target temperature, and equipped with anti-vibration measures, as defined in Delegated Regulation (EU) 2019/2016"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32019R0807",
+    "Term": "severely degraded land",
+    "original_definition": "'severely degraded land' means land as defined in point 9 of Annex V, part C to Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 21,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R0807",
+          "date": "2019-03-13",
+          "definition": "(4) \" severely degraded land \" means land as defined in point 9 of Annex V, part C to Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "ancillary services",
+    "original_definition": "'ancillary services' means ancillary services as defined in point 14 of Article 2 of Directive 2009/73/EC.",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 22,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32014L0065",
+          "date": "2014-09-17",
+          "definition": "(3) \" ancillary services \" means any of the services listed in Section B of Annex I;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "security",
+    "original_definition": "'security' means security as defined in point 32 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 23,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(58) \" security \" means both security of supply and provision of electricity, and technical safety;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "customer",
+    "original_definition": "'customer' means customer as defined in point 24 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 24,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1369",
+          "date": "2021-05-01",
+          "definition": "(16) \" customer \" means a natural or legal person who buys, hires or receives a product for own use whether or not acting for purposes which are outside its trade, business, craft or profession;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "household customer",
+    "original_definition": "'household customer' means household customer as defined in point 25 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 25,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(4) \" household customer \" means a customer who purchases electricity for the customer's own household consumption, excluding commercial or professional activities;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "natural gas undertaking",
+    "original_definition": "'natural gas undertaking' means natural gas undertaking as defined in point 1 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 26,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(9) \" natural gas undertaking \" means natural gas undertaking as defined in point 1 of Article 2 of Directive 2009/73/EC"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "gas supply contract",
+    "original_definition": "'gas supply contract' means gas supply contract as defined in point 34 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 27,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(10) \" gas supply contract \" means gas supply contract as defined in point 34 of Article 2 of Directive 2009/73/EC"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "transmission",
+    "original_definition": "'transmission' means transmission as defined in point 3 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 28,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(34) \" transmission \" means the transport of electricity on the extra high-voltage and high-voltage interconnected system with a view to its delivery to final customers or to distributors, but does not include supply;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "transmission system operator",
+    "original_definition": "'transmission system operator' means transmission system operator as defined in point 4 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 29,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(35) \" transmission system operator \" means a natural or legal person who is responsible for operating, ensuring the maintenance of and, if necessary, developing the transmission system in a given area and, where applicable, its interconnections with other systems, and for ensuring the long-term ability of the system to meet reasonable demands for the transmission of electricity;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "distribution",
+    "original_definition": "'distribution' means distribution as defined in point 5 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 30,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010R1218",
+          "date": "2022-12-18",
+          "definition": "(r) \" distribution \" means distribution, including the sale of goods and the provision of services."
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "distribution system operator",
+    "original_definition": "'distribution system operator' means distribution system operator as defined in point 6 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 31,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(29) \" distribution system operator \" means a natural or legal person who is responsible for operating, ensuring the maintenance of and, if necessary, developing the distribution system in a given area and, where applicable, its interconnections with other systems, and for ensuring the long-term ability of the system to meet reasonable demands for the distribution of electricity;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "interconnector",
+    "original_definition": "'interconnector' means interconnector as defined in point 17 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 32,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R0943",
+          "date": "2022-06-23",
+          "definition": "(1) \" interconnector \" means a transmission line which crosses or spans a border between Member States and which connects the national transmission systems of the Member States;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "storage capacity",
+    "original_definition": "'storage capacity' means storage capacity as defined in point 28 of Article 2 of Regulation (EC) No 715/2009;",
+    "reference_list": "[{\"cited_celex_id\": \"32009R0715\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 33,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(17) \" storage capacity \" means storage capacity as defined in point 28 of Article 2 of Regulation (EC) No 715/2009"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "technical capacity",
+    "original_definition": "'technical capacity' means technical capacity as defined in point 18 of Article 2 of Regulation (EC) No 715/2009;",
+    "reference_list": "[{\"cited_celex_id\": \"32009R0715\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 34,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(18) \" technical capacity \" means technical capacity as defined in point 18 of Article 2 of Regulation (EC) No 715/2009"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "firm capacity",
+    "original_definition": "'firm capacity' means firm capacity as defined in point 16 of Article 2 of Regulation (EC) No 715/2009;",
+    "reference_list": "[{\"cited_celex_id\": \"32009R0715\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 35,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(19) \" firm capacity \" means firm capacity as defined in point 16 of Article 2 of Regulation (EC) No 715/2009"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "interruptible capacity",
+    "original_definition": "'interruptible capacity' means interruptible capacity as defined in point 13 of Article 2 of Regulation (EC) No 715/2009;",
+    "reference_list": "[{\"cited_celex_id\": \"32009R0715\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 36,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(20) \" interruptible capacity \" means interruptible capacity as defined in point 13 of Article 2 of Regulation (EC) No 715/2009"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "storage facility",
+    "original_definition": "'storage facility' means storage facility as defined in point 9 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 37,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1938",
+          "date": "2022-04-21",
+          "definition": "(23) \" storage facility \" means storage facility as defined in point 9 of Article 2 of Directive 2009/73/EC"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "system",
+    "original_definition": "'system' means transmission system operator as defined in point 4 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 38,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1369",
+          "date": "2021-05-01",
+          "definition": "(3) \" system \" means a combination of several goods which when put together perform a specific function in an expected environment and of which the energy efficiency can then be determined as a single entity;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R1938",
+    "Term": "system user",
+    "original_definition": "'system user' means system user as defined in point 23 of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0073\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 39,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(36) \" system user \" means a natural or legal person who supplies to, or is supplied by, a transmission system or a distribution system;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R2195",
+    "Term": "imbalance settlement period",
+    "original_definition": "'imbalance settlement period' means the time unit for which balance responsible parties' imbalance is calculated;",
+    "reference_list": null,
+    "#": 40,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R0943",
+          "date": "2022-06-23",
+          "definition": "(15) \" imbalance settlement period \" means the time unit for which the imbalance of the balance responsible parties is calculated;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32017R2195",
+    "Term": "imbalance price area",
+    "original_definition": "'imbalance price area' means the area for the calculation of an imbalance price;",
+    "reference_list": null,
+    "#": 41,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R0943",
+          "date": "2022-06-23",
+          "definition": "(17) \" imbalance price area \" means the area in which an imbalance price is calculated;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy from renewable sources",
+    "original_definition": "'energy from renewable sources' means energy from renewable sources or renewable energy as defined in point (1) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 42,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(31) \" energy from renewable sources \" or \"renewable energy\" means energy from renewable non-fossil sources, namely wind, solar (solar thermal and solar photovoltaic) and geothermal energy, ambient energy, tide, wave and other ocean energy, hydropower, biomass, landfill gas, sewage treatment plant gas, and biogas;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "gross final consumption of energy",
+    "original_definition": "'gross final consumption of energy' means gross final consumption of energy as defined in point (4) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 43,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(23) \" gross final consumption of energy \" means gross final consumption of energy as defined in point (4) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "support scheme",
+    "original_definition": "'support scheme' means support scheme as defined in point (5) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 44,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(24) \" support scheme \" means support scheme as defined in point (5) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "repowering",
+    "original_definition": "'repowering' means repowering as defined in point (10) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 45,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(25) \" repowering \" means repowering as defined in point (10) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "renewable energy community",
+    "original_definition": "'renewable energy community' means renewable energy community as defined in point (16) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 46,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(26) \" renewable energy community \" means renewable energy community as defined in point (16) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "district heating",
+    "original_definition": "'district heating' means district heating or district cooling as defined in point (19) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 47,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010L0031",
+          "date": "2018-07-09",
+          "definition": "19. \" district heating \" or \"district cooling\" means the distribution of thermal energy in the form of steam, hot water or chilled liquids, from a central source of production through a network to multiple buildings or sites, for the use of space or process heating or cooling;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "waste",
+    "original_definition": "'waste' means waste as defined in point (23) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 48,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R1021",
+          "date": "2019-06-25",
+          "definition": "(8) \" waste \" means waste as defined in point 1 of Article 3 of Directive 2008/98/EC"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "biomass",
+    "original_definition": "'biomass' means biomass as defined in point (24) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 49,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32015R1189",
+          "date": "2017-01-09",
+          "definition": "(6) \" biomass \" means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "agricultural biomass",
+    "original_definition": "'agricultural biomass' means agricultural biomass as defined in point (25) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 50,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "agricultural biomass means the biodegradable part of products, waste and residues of biological origin from agriculture (including vegetal and animal substances), and related industries including fisheries and aquaculture.",
+        "sources": [
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as biogases and the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable fraction of products, waste and residues from biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, as well as the biodegradable fraction of industrial and municipal waste;",
+          "biomass: means the biodegradable part of products, waste and residues of biological origin from agriculture (including vegetal and animal substances), forestry and related industries including fisheries and aquaculture, and the biodegradable fraction of industrial and municipal waste;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "forest biomass",
+    "original_definition": "'forest biomass' means forest biomass as defined in point (26) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 51,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(31) \" forest biomass \" means forest biomass as defined in point (26) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "biomass fuels",
+    "original_definition": "'biomass fuels' means biomass fuels as defined in point (27) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 52,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0811",
+          "date": "2014-06-06",
+          "definition": "(9) \" biomass fuel \" means a gaseous or liquid fuel produced from biomass;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "biogas",
+    "original_definition": "'biogas' means biogas as defined in point (28) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 53,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(33) \" biogas \" means biogas as defined in point (28) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "bioliquids",
+    "original_definition": "'bioliquids' means bioliquids as defined in point (32) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 54,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012R0601",
+          "date": "2012-08-01",
+          "definition": "(21) \" bioliquids \" means liquid fuel for energy purposes other than for transport, including electricity and heating and cooling, produced from biomass;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "biofuels",
+    "original_definition": "'biofuels' means biofuels as defined in point (33) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 55,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R2066",
+          "date": "2022-01-01",
+          "definition": "(23) \" biofuels \" means liquid fuels for transport produced from biomass;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "advanced biofuels",
+    "original_definition": "'advanced biofuels' means advanced biofuels as defined in point (34) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 56,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(36) \" advanced biofuels \" means advanced biofuels as defined in point (34) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "recycled carbon fuels",
+    "original_definition": "'recycled carbon fuels' means recycled carbon fuels as defined in point (35) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 57,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(37) \" recycled carbon fuels \" means recycled carbon fuels as defined in point (35) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "food and feed crops",
+    "original_definition": "'food and feed crops' means food and feed crops as defined in point (40) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 58,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32018R1999",
+          "date": "2021-01-01",
+          "definition": "(39) \" food and feed crops \" means food and feed crops as defined in point (40) of Article 2 of Directive (EU) 2018/2001"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "residue",
+    "original_definition": "'residue' means residue as defined in point (43) of Article 2 of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 59,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012R0528",
+          "date": "2013-09-23",
+          "definition": "(h) \" residue \" means a substance present in or on products of plant or animal origin, water resources, drinking water, food, feed or elsewhere in the environment and resulting from the use of a biocidal product, including such a substance’s metabolites, breakdown or reaction products;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "primary energy consumption",
+    "original_definition": "'primary energy consumption' means primary energy consumption as defined in point (2) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 60,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(2) \" primary energy consumption \" means gross inland consumption, excluding non-energy uses;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "final energy consumption",
+    "original_definition": "'final energy consumption' means final energy consumption as defined in point (3) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 61,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(3) \" final energy consumption \" means all energy supplied to industry, transport, households, services and agriculture. It excludes deliveries to the energy transformation sector and the energy industries themselves;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy savings",
+    "original_definition": "'energy savings' means energy savings as defined in point (5) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 62,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(5) \" energy savings \" means an amount of saved energy determined by measuring and/or estimating consumption before and after implementation of an energy efficiency improvement measure, whilst ensuring normalisation for external conditions that affect energy consumption;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy efficiency improvement",
+    "original_definition": "'energy efficiency improvement' means energy efficiency improvement as defined in point (6) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 63,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(6) \" energy efficiency improvement \" means an increase in energy efficiency as a result of technological, behavioural and/or economic changes;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy service",
+    "original_definition": "'energy service' means energy service as defined in point (7) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 64,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(7) \" energy service \" means the physical benefit, utility or good derived from a combination of energy with energy-efficient technology or with action, which may include the operations, maintenance and control necessary to deliver the service, which is delivered on the basis of a contract and in normal circumstances has proven to result in verifiable and measurable or estimable energy efficiency improvement or primary energy savings;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "total useful floor area",
+    "original_definition": "'total useful floor area' means total useful floor area as defined in point (10) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 65,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(10) \" total useful floor area \" means the floor area of a building or part of a building, where energy is used to condition the indoor climate;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy management system",
+    "original_definition": "'energy management system' means energy management system as defined in point (11) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 66,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(11) \" energy management system \" means a set of interrelated or interacting elements of a plan which sets an energy efficiency objective and a strategy to achieve that objective;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "obligated party",
+    "original_definition": "'obligated party' means obligated party as defined in point (14) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 67,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(14) \" obligated party \" means an energy distributor or retail energy sales company that is bound by the national energy efficiency obligation schemes referred to in Article 7;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "implementing public authority",
+    "original_definition": "'implementing public authority' means implementing public authority as defined in point (17) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 68,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(17) \" implementing public authority \" means a body governed by public law which is responsible for the carrying out or monitoring of energy or carbon taxation, financial schemes and instruments, fiscal incentives, standards and norms, energy labelling schemes, training or education;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "individual action",
+    "original_definition": "'individual action' means individual action as defined in point (19) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 69,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(19) \" individual action \" means an action that leads to verifiable, and measurable or estimable, energy efficiency improvements and is undertaken as a result of a policy measure;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy distributor",
+    "original_definition": "'energy distributor' means energy distributor as defined in point (20) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 70,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(20) \" energy distributor \" means a natural or legal person, including a distribution system operator, responsible for transporting energy with a view to its delivery to final customers or to distribution stations that sell energy to final customers;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "distribution system operator",
+    "original_definition": "'distribution system operator' means ‘distribution system operator’ as defined in point (6) of Article 2 of Directive 2009/72/EC and in point (6) of Article 2 of Directive 2009/73/EC;",
+    "reference_list": "[{\"cited_celex_id\": \"32009L0072\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}, {\"cited_celex_id\": \"32009L0072\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 71,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(29) \" distribution system operator \" means a natural or legal person who is responsible for operating, ensuring the maintenance of and, if necessary, developing the distribution system in a given area and, where applicable, its interconnections with other systems, and for ensuring the long-term ability of the system to meet reasonable demands for the distribution of electricity;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "retail energy sales company",
+    "original_definition": "'retail energy sales company' means retail energy sales company as defined in point (22) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 72,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(22) \" retail energy sales company \" means a natural or legal person who sells energy to final customers;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy service provider",
+    "original_definition": "'energy service provider' means energy service provider as defined in point (24) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 73,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(24) \" energy service provider \" means a natural or legal person who delivers energy services or other energy efficiency improvement measures in a final customer’s facility or premises;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "energy performance contracting",
+    "original_definition": "'energy performance contracting' means energy performance contracting as defined in point (27) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 74,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012L0027",
+          "date": "2013-07-01",
+          "definition": "(27) \" energy performance contracting \" means a contractual arrangement between the beneficiary and the provider of an energy efficiency improvement measure, verified and monitored during the whole term of the contract, where investments (work, supply or service) in that measure are paid for in relation to a contractually agreed level of energy efficiency improvement or other agreed energy performance criterion, such as financial savings;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "cogeneration",
+    "original_definition": "'cogeneration' means cogeneration as defined in point (30) of Article 2 of Directive 2012/27/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32012L0027\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 75,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010L0031",
+          "date": "2018-07-09",
+          "definition": "13. \" cogeneration \" means simultaneous generation in one process of thermal energy and electrical and/or mechanical energy;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "building",
+    "original_definition": "'building' means a building as defined in point (1) of Article 2 of Directive 2010/31/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32010L0031\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 76,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010L0031",
+          "date": "2018-07-09",
+          "definition": "1. \" building \" means a roofed construction having walls, for which energy is used to condition the indoor climate;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "nearly zero-energy building",
+    "original_definition": "'nearly zero-energy building' means a nearly zero-energy building as defined in point (2) of Article 2 of Directive 2010/31/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32010L0031\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 77,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010L0031",
+          "date": "2018-07-09",
+          "definition": "2. \" nearly zero-energy building \" as determined in accordance with Annex I. The nearly zero or very low amount of energy required should be covered to a very significant extent by energy from renewable sources, including energy from renewable sources produced on-site or nearby;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32018R1999",
+    "Term": "heat pump",
+    "original_definition": "'heat pump' means heat pump as defined in point (18) of Article 2 of Directive 2010/31/EU;",
+    "reference_list": "[{\"cited_celex_id\": \"32010L0031\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": -1, \"comment\": \"citation successfully extracted\"}]",
+    "#": 78,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32010L0031",
+          "date": "2018-07-09",
+          "definition": "18. \" heat pump \" means a machine, a device or installation that transfers heat from natural surroundings such as air, water or ground to buildings or industrial applications by reversing the natural flow of heat such that it flows from a lower to a higher temperature. For reversible heat pumps, it may also move heat from the building to the natural surroundings;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32021R2003",
+    "Term": "energy from renewable sources",
+    "original_definition": "'energy from renewable sources' means energy from renewable sources or renewable energy as defined in Article 2(1) of Directive (EU) 2018/2001;",
+    "reference_list": "[{\"cited_celex_id\": \"32018L2001\", \"cited_article_number\": \"2\", \"cited_article_fragment_number\": \"1\", \"comment\": \"citation successfully extracted\"}]",
+    "#": 79,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(31) \" energy from renewable sources \" or \"renewable energy\" means energy from renewable non-fossil sources, namely wind, solar (solar thermal and solar photovoltaic) and geothermal energy, ambient energy, tide, wave and other ocean energy, hydropower, biomass, landfill gas, sewage treatment plant gas, and biogas;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32009L0125",
+    "Term": "Manufacturer",
+    "original_definition": "'Manufacturer' means the natural or legal person who manufactures products covered by this Directive and is responsible for their conformity with this Directive in view of their being placed on the market and/or put into service under the manufacturer’s own name or trademark or for the manufacturer’s own use. In the absence of a manufacturer as defined in the first sentence of this point or of an importer as defined in point 8, any natural or legal person who places on the market and/or puts into service products covered by this Directive shall be considered a manufacturer;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 80,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1369",
+          "date": "2021-05-01",
+          "definition": "(10) \" manufacturer \" means a natural or legal person who manufactures a product or has a product designed or manufactured, and markets that product under its name or trademark;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32009L0073",
+    "Term": "non-household customer",
+    "original_definition": "'non-household customer' means a customer purchasing natural gas which is not for his own household use;",
+    "reference_list": null,
+    "#": 81,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L0944",
+          "date": "2022-06-23",
+          "definition": "(5) \" non-household customer \" including producers, industrial customers, small and medium-sized enterprises, businesses and wholesale customers;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32012R0932",
+    "Term": "non-automatic tumble drier",
+    "original_definition": "'non-automatic tumble drier' means a tumble drier which switches off the drying process after a predefined period, usually controlled by a timer, but which may also be manually switched off;",
+    "reference_list": null,
+    "#": 82,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32012R0932",
+          "date": "2017-01-09",
+          "definition": "(8) \" non-automatic tumble drier \" usually controlled by a timer, but which may also be manually switched off;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32013R0347",
+    "Term": "energy infrastructure bottleneck",
+    "original_definition": "'energy infrastructure bottleneck' means limitation of physical flows in an energy system due to insufficient transmission capacity, which includes inter alia the absence of infrastructure;",
+    "reference_list": null,
+    "#": 83,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0347",
+          "date": "2014-01-10",
+          "definition": "(5) \" energy infrastructure bottleneck \" means limitation of physical flows in an energy system due to insufficient transmission capacity, which includes inter alia the absence of infrastructure;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32013R0813",
+    "Term": "boiler combination heater",
+    "original_definition": "'boiler combination heater' means a boiler space heater that is designed to also provide heat to deliver hot drinking or sanitary water at given temperature levels, quantities and flow rates during given intervals, and is connected to an external supply of drinking or sanitary water;",
+    "reference_list": null,
+    "#": 84,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0813",
+          "date": "2017-01-09",
+          "definition": "(13) \" boiler combination heater \" means a boiler space heater that is designed to also provide heat to deliver hot drinking or sanitary water at given temperature levels, quantities and flow rates during given intervals, and is connected to an external supply of drinking or sanitary water;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32013R0813",
+    "Term": "electric boiler space heater",
+    "original_definition": "'electric boiler space heater' means a boiler space heater that generates heat using the Joule effect in electric resistance heating elements only;",
+    "reference_list": null,
+    "#": 85,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0813",
+          "date": "2017-01-09",
+          "definition": "(14) \" electric boiler space heater \" means a boiler space heater that generates heat using the Joule effect in electric resistance heating elements only;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32013R0813",
+    "Term": "electric boiler combination heater",
+    "original_definition": "'electric boiler combination heater' means a boiler combination heater that generates heat using the Joule effect in electric resistance heating elements only;",
+    "reference_list": null,
+    "#": 86,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0813",
+          "date": "2017-01-09",
+          "definition": "(15) \" electric boiler combination heater \" means a boiler combination heater that generates heat using the Joule effect in electric resistance heating elements only;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32013R0666",
+    "Term": "full size battery operated vacuum cleaner",
+    "original_definition": "'full size battery operated vacuum cleaner' means a battery operated vacuum cleaner which when fully charged, can clean 15 m2 of floor area by applying 2 double strokes to each part of the floor without recharge;",
+    "reference_list": null,
+    "#": 87,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0665",
+          "date": "2014-06-06",
+          "definition": "(14) \" full size battery operated vacuum cleaner \" means a battery operated vacuum cleaner which when fully charged, can clean 15 m 2 of floor area by applying 2 double strokes to each part of the floor without recharge;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32013R0543",
+    "Term": "cross-control area balancing",
+    "original_definition": "'cross-control area balancing' means a balancing scheme where a TSO can receive bids for activation coming from other TSOs’ areas. It does not include re-dispatching or the delivery of emergency energy;",
+    "reference_list": null,
+    "#": 88,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013R0543",
+          "date": "2020-01-01",
+          "definition": "(9) \" cross-control area balancing \" areas. It does not include re-dispatching or the delivery of emergency energy;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32005R0302",
+    "Term": "site",
+    "original_definition": "'site' means an area delimited by the Community and the Member State, comprising one or more installations, including closed-down installations, as defined in their relevant basic technical characteristics, whereby:waste treatment or waste storage installations do not constitute a site in themselves;in the case of a closed-down installation where source material or special fissile material in quantities less than one effective kilogram was customarily used, the term is limited to locations with hot cells or where activities related to conversion, enrichment, fuel fabrication or reprocessing were carried out;‘site’ also includes all plants co-located with the installations which provide or use essential services including hot cells for processing irradiated materials not containing nuclear material; plants for the treatment, storage and disposal of waste; and buildings associated with activities specified in Annex 1 to Additional Protocol 1999/188/Euratom and identified by the State concerned;",
+    "reference_list": "[{\"cited_celex_id\": \"NA\", \"cited_article_number\": -1, \"cited_article_fragment_number\": -1, \"comment\": \"citation with Regulation, Directive, or Decision not present\"}]",
+    "#": 89,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "Normattiva",
+          "document_id": "20170807_17G00135_VIGENZA_20230415",
+          "date": "2023-04-15",
+          "definition": "i) «sito» : area o porzione di territorio geograficamente definita e perimetrata, intesa nelle sue matrici ambientali (suolo e acque sotterranee);"
+        }
+      ]
+    }
   }
 ]

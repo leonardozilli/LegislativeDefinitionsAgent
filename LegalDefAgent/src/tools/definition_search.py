@@ -15,7 +15,7 @@ from ..existdb import existdb_handler
 from ..vectorstore import retriever as retriever_
 from ..settings import settings
 from ..schema.task_data import Task
-from ..schema.definition import RelevantDefinitionsIDList, PickedDefinition, GeneratedDefinition
+from ..schema.definition import RelevantDefinitionsIDList, GeneratedDefinition, PickedDefinitions
 from ..llm import get_model
 from ..utils import setup_logging
 
@@ -108,22 +108,33 @@ def get_definition_timeline(definition: Dict) -> Optional[list[Dict]]:
 def filter_definitions_by_date(documents: list[Dict], date_filters: Tuple[str, str]) -> list[Dict]:
     """Filter legal definitions based on their timeline dates and given date filters."""
     parsed_filters = utils.parse_date_filters(date_filters)
+    filtered_documents = []
 
     if isinstance(parsed_filters, datetime.date):
         target_date = parsed_filters
-        return [
-            doc for doc in documents
-            if any(utils.parse_date(entry['date']) == target_date for entry in doc['timeline'])
-        ]
+        for doc in documents:
+            matching_entries = [
+                entry for entry in doc['timeline']
+                if utils.parse_date(entry['date']) == target_date
+            ]
+
+            if matching_entries:
+                filtered_documents.append({**doc, 'timeline': matching_entries})
+            
+        return filtered_documents
 
     from_date, to_date = parsed_filters
-    return [
-        doc for doc in documents
-        if any(
-            from_date <= utils.parse_date(entry['date']) <= to_date
-            for entry in doc['timeline']
-        )
-    ]
+
+    for doc in documents:
+        matching_entries = [
+            entry for entry in doc['timeline']
+            if from_date <= utils.parse_date(entry['date']) <= to_date
+        ]
+
+        if matching_entries:
+            filtered_documents.append({**doc, 'timeline': matching_entries})
+
+    return filtered_documents
 
 
 async def generate_definition(config: RunnableConfig, question: str, definendum: str, legislation: str, example_definitions: list[str]) -> Dict:
@@ -183,13 +194,13 @@ async def pick_definition(
     """Pick most relevant definition from the list."""
     model = get_model(config["configurable"].get(
         "model", settings.DEFAULT_MODEL))
-    parser = JsonOutputParser(pydantic_object=PickedDefinition)
+    parser = JsonOutputParser(pydantic_object=PickedDefinitions)
     prompt = PromptTemplate(
         template="""
-        You are a legal expert specialized in legal definitions. Your job is to find the correct definition from a list of retrieved definitions.
+        You are a legal expert specialized in legal definitions. Your job is to find the correct definitions from a list of retrieved definitions.
         You will be provided with a list of legal definitions, along with associated metadata and a timeline of their modifications in the XML format.
-        Your goal is to select the id of the definition that answers the user's question.
-        Select a definition that provides an explanation of the EXACT term the user is asking. If none of the provided definitions are fit to answer the user's question, you should not pick any definition.
+        Your goal is to select the ids of the definitions that best match the user's query.
+        Select the definitions that provide an explanation of the EXACT term the user is asking. If none of the provided definitions are fit to answer the user's question, you output an empty list.
         
         Here are the formatting instructions: {format_instructions}
 
@@ -201,9 +212,8 @@ async def pick_definition(
 
         ### IMPORTANT NOTES
         - Your final output must be valid, directly parsable JSON.
-        - ONLY choose a definition that provides an explanation of the EXACT term to be defined. Do NOT choose a definition that explains a similar or related term.
-        - Use the keywords to help you determine the most relevant definition.
-        - If there are multiple definitions that could be relevant, choose the one from the EU legislation (EurLex).
+        - ONLY choose definitions that provides an explanation of the EXACT term to be defined. Do NOT choose definitions that explain a similar or related term.
+        - Use the keywords to help you determine the most relevant definitions.
         - ONLY use the information provided in the dictionary. Do not rely on or include any external knowledge in your response.
         """,
         input_variables=["question", "definendum", "retrieved_definitions"],
@@ -221,6 +231,10 @@ async def pick_definition(
 
     await Task("Pick definition").finish(result="success", data={"output": response}, config=config)
     return response
+
+
+def parse_legislation(legislation: Optional[str]) -> bool:
+    return legislation in ["EU", "IT"]
 
 
 async def definition_search(
@@ -267,16 +281,19 @@ async def definition_search(
     )
 
     # Apply legislation filter if specified
-    if legislation:
+    if parse_legislation(legislation):
         logger.info(f"Filtering by legislation: {legislation}")
         await Task("Filter by legislation").start(data={"input": relevant_definitions}, config=config)
         relevant_definitions = filter_definitions_by_legislation(
             relevant_definitions, legislation)
+        logger.info(f"{len(relevant_definitions)} definitions left after filtering by legislation")
         await Task("Filter by legislation").finish(
             result="success",
             data={"output": relevant_definitions},
             config=config
         )
+
+    logger.info(f"{len(relevant_definitions)} definitions left after filtering by legislation")
 
     if not relevant_definitions:
         logger.info("No relevant definitions found. Generating definition...")
@@ -286,6 +303,8 @@ async def definition_search(
         return await generate_definition(config, question, definendum, legislation, examples)
 
     # Process timelines
+    logger.info("Retrieving Definition Timeline...")
+    logger.info(relevant_definitions)
     await Task("Retrieving Definition Timeline...").start(data={"input": relevant_definitions}, config=config)
     definitions_with_timeline = []
 
@@ -300,7 +319,6 @@ async def definition_search(
         config=config
     )
 
-
     # Apply date filters if specified
     if date_filters:
         date_filters = utils.parse_date_string(date_filters)
@@ -308,6 +326,7 @@ async def definition_search(
         await Task("Filter by date").start(data={"input": definitions_with_timeline}, config=config)
         definitions_with_timeline = filter_definitions_by_date(
             definitions_with_timeline, date_filters)
+        logger.info(f"{len(definitions_with_timeline)} definitions left after filtering by date")
         await Task("Filter by date").finish(
             result="success",
             data={"output": definitions_with_timeline},
@@ -331,54 +350,30 @@ async def definition_search(
     await Task("Retrieve Eurovocs").finish(result="success", data={"output": definitions_with_timeline}, config=config)
 
     # Pick final definition
-    picked_definition = await pick_definition(
+    picked_definitions = await pick_definition(
         config,
         legislation,
         definitions_with_timeline,
         question,
         definendum
     )
-    logger.info(f"Picked definition: {picked_definition}")
+    logger.info(f"Picked definition: {picked_definitions}")
 
-    if picked_definition["picked_definition_id"] is None:
+    picked_definitions_ids = picked_definitions["picked_definitions_ids"]
+
+    if len(picked_definitions_ids) == 0:
         examples = [definition.get('definition_text')
                     for definition in definitions_with_timeline]
         return {"generated_definition": await generate_definition(config, question, definendum, legislation, examples)}
-
+    
     answer_def = [
-        definition for definition in definitions_with_timeline
-        if definition['metadata']['id'] == picked_definition["picked_definition_id"]
+        definition
+        for definition in definitions_with_timeline
+        if definition["metadata"]["id"] in picked_definitions_ids
     ]
 
-    retrieved_definition = utils.format_answer_definition(
-        answer_def,
-        picked_definition["timeline_id"]
-    )
+    retrieved_definition = utils.format_answer_definition(answer_def)
 
     await Task("Retrieve definition").finish(result="success", data={"retrieved_definition": retrieved_definition}, config=config)
 
     return {'retrieved_definition': retrieved_definition}
-
-
-
-async def definition_search2(
-    state: Annotated[dict, InjectedState],
-    tool_call_id: Annotated[str, InjectedToolCallId],
-    config: RunnableConfig,
-    definendum: str,
-) -> Dict:
-    """
-    Searches and retrieves the most similar definitions to the given query in a vector DB.
-
-    Args:
-        definendum: The term to be defined, as extracted from the user's query.
-    """
-
-    await Task("Retrieve definition").start(data={"query": definendum}, config=config)
-
-    answer = "the answer to everything is always 42"
-
-    await Task("Retrieve definition").finish(result="success", data={"output": answer}, config=config)
-
-    return {"retrieved_definition": answer}
-    
