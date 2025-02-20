@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LegalDefAgent"
+version = "1.0"
+requires-python = ">=3.7"
+dependencies = []
+description = "A legal definition retrieval and generation system."
+authors = [{name = "Leonardo Zilli", email = "leonardo.zilli@studio.unibo.it"}]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/leonardozilli/LegalDefAgent"
+
+[tool.setuptools.packages.find]
+include = ["LegalDefAgent*"]
+
+[tool.setuptools]
+include-package-data = true

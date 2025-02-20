@@ -1,0 +1,2904 @@
+[
+  {
+    "question": "What was the definition of \"fishing activities\" after May 08, 2015?",
+    "term": "fishing activities",
+    "reference_date": "2015-05-08",
+    "available_dates": [
+      "2012-07-08",
+      "2016-02-05"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2016-02-05",
+      "definition": "6. \"\" fishing activities \"\" means fishing, including joint fishing operations, fish processing operations, the transhipment or landing of fishery resources or products thereof and any other commercial activity in preparation for, or related to, fishing, including packaging, transporting, refuelling or resupplying;"
+    }
+  },
+  {
+    "question": "What was the definition of \"port\" before October 01, 2015?",
+    "term": "port",
+    "reference_date": "2015-10-01",
+    "available_dates": [
+      "2012-07-08",
+      "2016-02-05"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2012-07-08",
+      "definition": "13. \"\" port \"\" means any place used for landing or a place close to the shore designated by a Contracting Party for transhipping fishery resources."
+    }
+  },
+  {
+    "question": "What was the definition of \"competent authorities\" before November 28, 2020?",
+    "term": "competent authorities",
+    "reference_date": "2020-11-28",
+    "available_dates": [
+      "2011-07-21",
+      "2014-05-23",
+      "2019-06-11",
+      "2020-01-01",
+      "2021-08-03",
+      "2022-08-12"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2020-01-01",
+      "definition": "\"\" competent authorities \"\" means: (i) competent authorities and/or supervisory authorities as defined in the legislation referred to in Article 1(2); (ii) with regard to Directive 2002/65/EC , the authorities and bodies competent for ensuring compliance with the requirements of that Directive by firms providing investment services and by collective investment undertakings marketing their units or shares; (iii) with regard to investor compensation schemes, bodies which administer national compensation schemes pursuant to Directive 97/9/EC , or in the case where the operation of the investor compensation scheme is administered by a private company, the public authority supervising those schemes pursuant to that Directive."
+    }
+  },
+  {
+    "question": "What was the definition of \"national safety authority\" before July 02, 2020?",
+    "term": "national safety authority",
+    "reference_date": "2020-07-02",
+    "available_dates": [
+      "2016-05-26",
+      "2020-10-23"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2016-05-26",
+      "definition": "(7) \"\" national safety authority \"\" means the national body entrusted with the tasks regarding railway safety in accordance with this Directive or any body entrusted by several Member States with those tasks in order to ensure a unified safety regime;"
+    }
+  },
+  {
+    "question": "What was the definition of \"investment firm\" after February 02, 2016?",
+    "term": "investment firm",
+    "reference_date": "2016-02-02",
+    "available_dates": [
+      "2011-11-25",
+      "2013-06-28",
+      "2017-07-20",
+      "2019-11-28",
+      "2021-06-26",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2017-07-20",
+      "definition": "(3) \"\" investment firm \"\" means an investment firm as defined in point (2) of Article 4(1) of Regulation (EU) No 575/2013 that is subject to the initial capital requirement laid down in Article 28(2) of Directive 2013/36/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"competent authority\" after October 15, 2021?",
+    "term": "competent authority",
+    "reference_date": "2021-10-15",
+    "available_dates": [
+      "2014-01-17",
+      "2014-07-02",
+      "2016-03-31",
+      "2016-07-01",
+      "2017-07-20",
+      "2017-12-06",
+      "2019-12-14",
+      "2021-05-25",
+      "2022-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-01-01",
+      "definition": "(18) \"\" competent authority \"\" means a competent authority as defined in point (26) of Article 4(1) of Directive 2014/65/EU and, for the authorisation and supervision of data reporting services providers, ESMA, with the exception of those approved reporting mechanisms (ARMs) and approved publication arrangements (APAs) with a derogation in accordance with paragraph 3 of this Article;"
+    }
+  },
+  {
+    "question": "What was the definition of \"aggregate amount\" on July 20, 2017?",
+    "term": "aggregate amount",
+    "reference_date": "2017-07-20",
+    "available_dates": [
+      "2017-07-20",
+      "2019-06-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-20",
+      "definition": "(70) \"\" aggregate amount \"\" means the aggregate amount by which the resolution authority has assessed that eligible liabilities are to be written down or converted, in accordance with Article 46(1);"
+    }
+  },
+  {
+    "question": "What was the definition of \"eligible liabilities\" after January 31, 2019?",
+    "term": "eligible liabilities",
+    "reference_date": "2019-01-31",
+    "available_dates": [
+      "2017-07-20",
+      "2019-06-27"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(71a) \"\" eligible liabilities \"\" means bail-inable liabilities that fulfil, as applicable, the conditions of Article 45b or point (a) of point (b) of Regulation (EU) No 575/2013"
+    }
+  },
+  {
+    "question": "What was the definition of \"covered bond\" before November 08, 2018?",
+    "term": "covered bond",
+    "reference_date": "2018-11-08",
+    "available_dates": [
+      "2017-07-20",
+      "2020-01-07"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-20",
+      "definition": "(96) \"\" covered bond \"\" means an instrument as referred to in Article 52(4) of Directive 2009/65/EC of the European Parliament and of the Council Directive 2009/65/EC of the European Parliament and of the Council of 13 July 2009 on the coordination of laws, regulations and administrative provisions relating to undertakings for collective investment in transferable securities (UCITS) ( OJ L 302, 17.11.2009, p. 32 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"customs legislation\" on December 12, 2022?",
+    "term": "customs legislation",
+    "reference_date": "2022-12-12",
+    "available_dates": [
+      "2013-10-30",
+      "2022-12-12"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2022-12-12",
+      "definition": "\"\" customs legislation \"\" means the body of legislation made up of all of the following: (a) the Code and the provisions supplementing or implementing it adopted at Union or national level; (b) the Common Customs Tariff; (c) the legislation setting up a Union system of reliefs from customs duty; (d) international agreements containing customs provisions, insofar as they are applicable in the Union; (e) Regulation (EU) 2022/2399 of the European Parliament and of the Council Regulation (EU) 2022/2399 of the European Parliament and of the Council of 23 November 2022 establishing the European Union Single Window Environment for Customs and amending Regulation (EU) No 952/2013 ( OJ L 317, 9.12.2022, p. 1 ). and the provisions supplementing or implementing it;"
+    }
+  },
+  {
+    "question": "What was the definition of \"eco 40-60\" before June 14, 2020?",
+    "term": "eco 40-60",
+    "reference_date": "2020-06-14",
+    "available_dates": [
+      "2019-12-05",
+      "2021-03-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-12-05",
+      "definition": "(12) \"\" eco 40-60 \"\" importer or authorised representative as able to clean normally soiled cotton laundry declared to be washable at 40 \u00b0C or 60 \u00b0C, together in the same washing cycle, and to which the ecodesign requirements on energy efficiency, washing efficiency, rinsing effectiveness, programme duration and water consumption relate;"
+    }
+  },
+  {
+    "question": "What was the definition of \"host Member State of the AIFM\" after June 22, 2014?",
+    "term": "host Member State of the AIFM",
+    "reference_date": "2014-06-22",
+    "available_dates": [
+      "2013-06-20",
+      "2014-07-02"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2014-07-02",
+      "definition": "\"\" host Member State of the AIFM \"\" means any of the following: (i) a Member State, other than the home Member State, in which an EU AIFM manages EU AIFs; (ii) a Member State, other than the home Member State, in which an EU AIFM markets units or shares of an EU AIF; (iii) a Member State, other than the home Member State, in which an EU AIFM markets units or shares of a non-EU AIF; (iv) a Member State, other than the Member State of reference, in which a non-EU AIFM manages EU AIFs; (v) a Member State, other than the Member State of reference, in which a non-EU AIFM markets units or shares of an EU AIF; or (vi) a Member State, other than the Member State of reference, in which a non-EU AIFM markets units or shares of a non-EU AIF; or (vii) a Member State, other than the home Member State, in which an EU AIFM provides the services referred to in Article 6(4);"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial instrument\" on November 28, 2019?",
+    "term": "financial instrument",
+    "reference_date": "2019-11-28",
+    "available_dates": [
+      "2011-11-25",
+      "2014-09-17",
+      "2019-11-28",
+      "2023-03-23"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "10. \"\" financial instrument \"\" means the same as in point (15) of Article 4(1) of Directive 2014/65/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"management body\" before April 06, 2018?",
+    "term": "management body",
+    "reference_date": "2018-04-06",
+    "available_dates": [
+      "2014-09-17",
+      "2022-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2014-09-17",
+      "definition": "(36) \"\" management body \"\" means the body or bodies of an investment firm, market operator or data reporting services provider, which are appointed in accordance with national law, which are empowered to set the entity\u2019s strategy, objectives and overall direction, and which oversee and monitor management decision-making and include persons who effectively direct the business of the entity. Where this Directive refers to the management body and, pursuant to national law, the managerial and supervisory functions of the management body are assigned to different bodies or different members within one body, the Member State shall identify the bodies or members of the management body responsible in accordance with its national law, unless otherwise specified by this Directive;"
+    }
+  },
+  {
+    "question": "What was the definition of \"senior management\" before January 01, 2018?",
+    "term": "senior management",
+    "reference_date": "2018-01-01",
+    "available_dates": [
+      "2014-01-01",
+      "2014-09-17",
+      "2019-01-01",
+      "2022-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2014-09-17",
+      "definition": "(37) \"\" senior management \"\" means natural persons who exercise executive functions within an investment firm, a market operator or a data reporting services provider and who are responsible, and accountable to the management body, for the day-to-day management of the entity, including for the implementation of the policies concerning the distribution of services and products to clients by the firm and its personnel;"
+    }
+  },
+  {
+    "question": "What was the definition of \"structured deposit\" on September 17, 2014?",
+    "term": "structured deposit",
+    "reference_date": "2014-09-17",
+    "available_dates": [
+      "2014-09-17",
+      "2016-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2014-09-17",
+      "definition": "\"\" structured deposit \"\" means a deposit as defined in point (c) of Article 2(1) of Directive 2014/49/EU of the European Parliament and of the Council Directive 2014/49/EU of the European Parliament and of the Council of 16 April 2014 on deposit guarantee schemes (see page 149 of this Official Journal). , which is fully repayable at maturity on terms under which interest or a premium will be paid or is at risk, according to a formula involving factors such as: (a) an index or combination of indices, excluding variable rate deposits whose return is directly linked to an interest rate index such as Euribor or Libor; (b) a financial instrument or combination of financial instruments; (c) a commodity or combination of commodities or other physical or non-physical non-fungible assets; or (d) a foreign exchange rate or combination of foreign exchange rates;"
+    }
+  },
+  {
+    "question": "What was the definition of \"agricultural commodity derivatives\" after January 30, 2022?",
+    "term": "agricultural commodity derivatives",
+    "reference_date": "2022-01-30",
+    "available_dates": [
+      "2014-09-17",
+      "2022-02-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-02-28",
+      "definition": "(59) \"\" agricultural commodity derivatives \"\" means derivative contracts relating to products listed in Article 1 of, and Annex I, Parts I to XX and XXIV/1, to, Regulation (EU) No 1308/2013 of the European Parliament and of the Council Regulation (EU) No 1308/2013 of the European Parliament and of the Council of 17 December 2013 establishing a common organisation of the markets in agricultural products and repealing Council Regulations (EEC) No 922/72 , (EEC) No 234/79 (EC) No 1037/2001 and (EC) No 1234/2007 ( OJ L 347, 20.12.2013, p. 671 ). , as well as to products listed in Annex I to Regulation (EU) No 1379/2013 of the European Parliament and of the Council Regulation (EU) No 1379/2013 of the European Parliament and of the Council of 11 December 2013 on the common organisation of the markets in fishery and aquaculture products, amending Council Regulations (EC) No 1184/2006 and (EC) No 1224/2009 and repealing Council Regulation (EC) No 104/2000 ( OJ L 354, 28.12.2013, p. 1 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"undertaking in difficulty\" on July 01, 2023?",
+    "term": "undertaking in difficulty",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "\"\" undertaking in difficulty \"\" means an undertaking in respect of which at least one of the following circumstances occurs: (a) In the case of a limited liability company (other than an SME that has been in existence for less than 3 years or, for the purposes of eligibility for risk finance aid, an SME that fulfils the condition in Article 21(3), point (b), and qualifies for risk finance investments following due diligence by the selected financial intermediary), where more than half of its subscribed share capital has disappeared as a result of accumulated losses. This is the case when deduction of accumulated losses from reserves (and all other elements generally considered as part of the own funds of the company) leads to a negative cumulative amount that exceeds half of the subscribed share capital. For the purposes of this provision, \"\"limited liability company\"\" refers in particular to the types of company mentioned in Annex I to Directive 2013/34/EU of the European Parliament and of the Council\"\"share capital\"\" includes, where relevant, any share premium. Directive 2013/34/EU of the European Parliament and of the Council of 26 June 2013 on the annual financial statements, consolidated financial statements and related reports of certain types of undertakings, amending Directive 2006/43/EC of the European Parliament and of the Council and repealing Council Directives 78/660/EEC and 83/349/EEC ( OJ L 182, 29.6.2013, p. 19 ). and (b) In the case of a company where at least some of its members have unlimited liability for the debt of the company (other than an SME that has been in existence for less than 3 years or, for the purposes of eligibility for risk finance aid, an SME that fulfils the condition in Article 21(3), point (b), and qualifies for risk finance investments following due diligence by the selected financial intermediary), where more than half of its capital as shown in the company accounts has disappeared as a result of accumulated losses. For the purposes of this provision, \"\"a company where at least some of its members have unlimited liability for the debt of the company\"\" refers in particular to the types of company mentioned in Annex II to Directive 2013/34/EU (c) Where the undertaking is subject to collective insolvency proceedings or fulfils the criteria under its domestic law for being placed in collective insolvency proceedings at the request of its creditors. (d) Where the undertaking has received rescue aid and has not yet reimbursed the loan or terminated the guarantee, or has received restructuring aid and is still subject to a restructuring plan. (e) In the case of an undertaking that is not an SME, where, for the past two years: (1) the undertaking\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"adjusted aid amount\" on July 10, 2017?",
+    "term": "adjusted aid amount",
+    "reference_date": "2017-07-10",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(20) \"\" adjusted aid amount \"\" means the maximum permissible aid amount for a large investment project, calculated according to the following formula: maximum aid amount = R \u00d7 (A + 0,50 \u00d7 B + 0 \u00d7 C) where: R is the maximum aid intensity applicable in the area concerned established in an approved regional map and which is in force on the date of granting the aid, excluding the increased aid intensity for SMEs; A is the initial EUR 50 million of eligible costs, B is the part of eligible costs between EUR 50 million and EUR 100 million and C is the part of eligible costs above EUR 100 million"
+    }
+  },
+  {
+    "question": "What was the definition of \"assisted areas\" before March 03, 2021?",
+    "term": "assisted areas",
+    "reference_date": "2021-03-03",
+    "available_dates": [
+      "2017-07-10",
+      "2020-07-27",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2020-07-27",
+      "definition": "(27) \"\" assisted areas \"\" means areas designated in an approved regional aid map approved in application of Articles2020-2021, 107(3)(a) and (c) of the Treaty for the period from 1 July 2014 to 31 December 2021 for regional aid granted until 31 December 2021 and areas designated in an approved regional aid map approved in application of Articles 107(3)(a) and (c) of the Treaty for the period from 1 January 2022 to 31 December 2027 for regional aid granted after 31 December 2021 ;"
+    }
+  },
+  {
+    "question": "What was the definition of \"net increase in the number of employees\" before April 07, 2021?",
+    "term": "net increase in the number of employees",
+    "reference_date": "2021-04-07",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(32) \"\" net increase in the number of employees \"\" means a net increase in the number of employees in the establishment concerned compared with the average over a given period in time, and that any posts lost during that period must therefore be deducted and that the number of persons employed full-time, part-time and seasonal has to be considered with their annual labour unit fractions;"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial intermediary\" on July 01, 2023?",
+    "term": "financial intermediary",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(34) \"\" financial intermediary \"\" means any financial institution regardless of its form and ownership, including funds of funds, private investment funds, public investment funds, banks, micro-finance institutions and guarantee societies;"
+    }
+  },
+  {
+    "question": "What was the definition of \"operating profit\" after December 20, 2020?",
+    "term": "operating profit",
+    "reference_date": "2020-12-20",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(39) \"\" operating profit \"\" means the difference between the discounted revenues and the discounted operating costs over the economic lifetime of the investment, where this difference is positive. The operating costs include costs such as personnel costs, materials, contracted services, communications, energy, maintenance, rent, administration, but exclude depreciation charges and the costs of financing if these have been covered by investment aid. Discounting revenues and operating costs using an appropriate discount rate allows a reasonable profit to be made;"
+    }
+  },
+  {
+    "question": "What was the definition of \"regional operating aid\" before April 04, 2018?",
+    "term": "regional operating aid",
+    "reference_date": "2018-04-04",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(42) \"\" regional operating aid \"\" means aid to reduce an undertaking\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"steel sector\" after May 01, 2021?",
+    "term": "steel sector",
+    "reference_date": "2021-05-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "\"\" steel sector \"\" means the production of one or more of the following: (a) pig iron and ferro-alloys: pig iron for steelmaking, foundry and other pig iron, spiegeleisen and high-carbon ferro-manganese, not including other ferro-alloys; (b) crude and semi-finished products of iron, ordinary steel or special steel: liquid steel cast or not cast into ingots, including ingots for forging semi-finished products: blooms, billets and slabs; sheet bars and tinplate bars; hot-rolled wide coils, with the exception of production of liquid steel for castings from small and medium-sized foundries; (c) hot finished products of iron, ordinary steel or special steel: rails, sleepers, fishplates, soleplates, joists, heavy sections of 80 mm and over, sheet piling, bars and sections of less than 80 mm and flats of less than 150 mm, wire rod, tube rounds and squares, hot-rolled hoop and strip (including tube strip), hot-rolled sheet (coated or uncoated), plates and sheets of 3 mm thickness and over, universal plates of 150 mm and over, with the exception of wire and wire products, bright bars and iron castings; (d) cold finished products: tinplate, terneplate, blackplate, galvanised sheets, other coated sheets, cold-rolled sheets, electrical sheets and strip for tinplate, cold-rolled plate, in coil and in strip; (e) tubes: all seamless steel tubes, welded steel tubes with a diameter of over 406.4 mm;"
+    }
+  },
+  {
+    "question": "What was the definition of \"transport sector\" on July 10, 2017?",
+    "term": "transport sector",
+    "reference_date": "2017-07-10",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "\"\" transport sector \"\" means the transport of passengers by aircraft, maritime transport, road or rail and by inland waterway or freight transport services for hire or reward; more specifically, the \"\"transport sector\"\" means the following activities in terms of NACE Rev. 2: (a) NACE 49: Land transport and transport via pipelines, excluding NACE 49.32 Taxi operation, 49.42 Removal services, 49.5 Transport via pipeline; (b) NACE 50: Water transport; (c) NACE 51: Air transport, excluding NACE 51.22 Space transport."
+    }
+  },
+  {
+    "question": "What was the definition of \"independent private investor\" before June 11, 2020?",
+    "term": "independent private investor",
+    "reference_date": "2020-06-11",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(72) \"\" independent private investor \"\" means a private investor who is not a shareholder of the eligible undertaking in which it invests, including business angels and financial institutions, irrespective of their ownership, to the extent that they bear the full risk in respect of their investment. Upon the creation of a new company, private investors, including the founders, are considered to be independent from that company;"
+    }
+  },
+  {
+    "question": "What was the definition of \"entrusted entity\" on July 10, 2017?",
+    "term": "entrusted entity",
+    "reference_date": "2017-07-10",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(79) \"\" entrusted entity \"\" means the European Investment Bank and the European Investment Fund, an international financial institution in which a Member State is a shareholder, or a financial institution established in a Member State aiming at the achievement of public interest under the control of a public authority, a public law body, or a private law body with a public service mission: the entrusted entity can be selected or directly appointed in accordance with the provisions of Directive 2004/18/EC on the coordination of procedures for the award of public works contracts, public supply contracts and public service contracts, OJ L 134, 30.4.2004, p. 114 . or any subsequent legislation replacing that Directive in full or in part;"
+    }
+  },
+  {
+    "question": "What was the definition of \"innovative enterprise\" on July 01, 2023?",
+    "term": "innovative enterprise",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "\"\" innovative enterprise \"\" means an enterprise that meets one of the following conditions: (a) it can demonstrate, by means of an evaluation carried out by an external expert, that it will in the foreseeable future develop products, services or processes which are new or substantially improved compared to the state of the art in its industry, and which carry a risk of technological or industrial failure; (b) its research and development costs represent at least 10 % of its total operating costs in at least one of the 3 years preceding the granting of the aid or, in the case of a start-up enterprise without any financial history, in the audit of its current fiscal period, as certified by an external auditor; (c) in the 3 years preceding the granting of the aid: (i) it has been awarded a Seal of Excellence quality label by the European Innovation Council in accordance with the Horizon 2020 work programme 2018-2020 adopted by Commission Implementing Decision C(2017)7124 Commission Implementing Decision C(2017)7124 of 27 October 2017 on the adoption of the work programme for 2018-2020 within the framework of the Specific Programme Implementing Horizon 2020 \u2013 the Framework Programme for Research and Innovation (2014-2020) and on the financing of the work programme for 2018. or with Article 2(23) and Article15(2) of Regulation (EU) 2021/695 of the European Parliament and of the Council Regulation (EU) 2021/695 of the European Parliament and of the Council of 28 April 2021 establishing Horizon Europe \u2013 the Framework Programme for Research and Innovation, laying down its rules for participation and dissemination, and repealing Regulations (EU) No 1290/2013 and (EU) No 1291/2013 ( OJ L 170, 12.5.2021, p. 1 ). ; or (ii) it has received an investment by the European Innovation Council Fund, such as an investment in the context of the Accelerator Programme as referred to in Article 48(7) of Regulation (EU) 2021/695; (d) in the 3 years preceding the granting of the aid: (i) it has participated in any action of the Commission\u2019s space initiative \"\"CASSINI\"\" (such as the Business Accelerator or the Matchmaking) The CASSINI initiative, first announced in the \"\"SME Strategy for a sustainable and digital Europe\"\" (COM(2020) 103 final of 10.3.2020 ), is a collection of concrete actions whose aims include easing access to risk capital for SMEs active in the space sector to fund their expansion. ; or (ii) it has received investment from the CASSINI Seed and Growth Funding Facility, or the InnovFin Space Equity Pilot; or (iii) it has been awarded a CASSINI Prize; or (iv) it has been granted funding in accordance with Regulation (EU) 2021/695 in the space research area resulting in the creation of a start-up; (v) or has been granted funding as a beneficiary of a research and development action under the European Defence Fund in accordance with Regulation (EU) 2021/697 of the European Parliament and of the Council Regulation (EU) 2021/697 of the European Parliament and of the Council of 29 April 2021 establishing the European Defence Fund and repealing Regulation (EU) 2018/1092 ( OJ L 170, 12.5.2021, p. 149 ); ; or (vi) has been granted funding under the European Defence Industrial Development Programme in accordance with Regulation (EU) 2018/1092 of the European Parliament and of the Council Regulation (EU) 2018/1092 of the European Parliament and of the Council of 18 July 2018 establishing the European Defence Industrial Development Programme aiming at supporting the competitiveness and innovation capacity of the Union\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"alternative trading platform\" on July 01, 2023?",
+    "term": "alternative trading platform",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(81) \"\" alternative trading platform \"\" means a multilateral trading facility as defined in Article 4(1), point (22) of Directive 2014/65/EU of the European Parliament and of the Council Directive 2014/65/EU of the European Parliament and of the Council of 15 May 2014 on markets in financial instruments and amending Directive 2002/92/EC and Directive 2011/61/EU ( OJ L 173, 12.6.2014, p. 349 ). where at least 50 % of the financial instruments admitted to trading are issued by SMEs;"
+    }
+  },
+  {
+    "question": "What was the definition of \"industrial research\" before August 10, 2022?",
+    "term": "industrial research",
+    "reference_date": "2022-08-10",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(85) \"\" industrial research \"\" means the planned research or critical investigation aimed at the acquisition of new knowledge and skills for developing new products, processes or services or for bringing about a significant improvement in existing products, processes or services. It comprises the creation of components parts of complex systems, and may include the construction of prototypes in a laboratory environment or in an environment with simulated interfaces to existing systems as well as of pilot lines, when necessary for the industrial research and notably for generic technology validation;"
+    }
+  },
+  {
+    "question": "What was the definition of \"experimental development\" on July 10, 2017?",
+    "term": "experimental development",
+    "reference_date": "2017-07-10",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(86) \"\" experimental development \"\" means acquiring, combining, shaping and using existing scientific, technological, business and other relevant knowledge and skills with the aim of developing new or improved products, processes or services. This may also include, for example, activities aiming at the conceptual definition, planning and documentation of new products, processes or services; Experimental development may comprise prototyping, demonstrating, piloting, testing and validation of new or improved products, processes or services in environments representative of real life operating conditions where the primary objective is to make further technical improvements on products, processes or services that are not substantially set. This may include the development of a commercially usable prototype or pilot which is necessarily the final commercial product and which is too expensive to produce for it to be used only for demonstration and validation purposes. Experimental development does not include routine or periodic changes made to existing products, production lines, manufacturing processes, services and other operations in progress, even if those changes may represent improvements;"
+    }
+  },
+  {
+    "question": "What was the definition of \"arm\" on July 01, 2023?",
+    "term": "arm",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(39a) \"\" arm \"\" s length\"\" means that the conditions of the transaction between the contracting parties do not differ from those which would be stipulated between independent undertakings and contain no element of collusion. Any transaction that results from an open, transparent and non-discriminatory procedure is considered as meeting the arm\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"effective collaboration\" on July 01, 2023?",
+    "term": "effective collaboration",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(90) \"\" effective collaboration \"\" means collaboration between at least two independent parties to exchange knowledge or technology, or to achieve a common objective based on the division of labour where the parties jointly define the scope of the collaborative project, contribute to its implementation and share its risks, as well as its results. One or several parties may bear the full costs of the project and thus relieve other parties of its financial risks. Contract research and provision of research services are not considered forms of collaboration;"
+    }
+  },
+  {
+    "question": "What was the definition of \"innovation clusters\" before October 27, 2018?",
+    "term": "innovation clusters",
+    "reference_date": "2018-10-27",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(92) \"\" innovation clusters \"\" means structures or organised groups of independent parties (such as innovative start-ups, small, medium and large enterprises, as well as research and knowledge dissemination organisations, non-for-profit organisations and other related economic actors) designed to stimulate innovative activity through promotion, sharing of facilities and exchange of knowledge and expertise and by contributing effectively to knowledge transfer, networking, information dissemination and collaboration among the undertakings and other organisations in the cluster;"
+    }
+  },
+  {
+    "question": "What was the definition of \"innovation advisory services\" before May 08, 2021?",
+    "term": "innovation advisory services",
+    "reference_date": "2021-05-08",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(94) \"\" innovation advisory services \"\" means consultancy, assistance and training in the fields of knowledge transfer, acquisition, protection and exploitation of intangible assets, use of standards and regulations embedding them;"
+    }
+  },
+  {
+    "question": "What was the definition of \"innovation support services\" on July 01, 2023?",
+    "term": "innovation support services",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(95) \"\" innovation support services \"\" means the provision of office space, data banks, cloud and data storage services, libraries, market research, laboratories, quality labelling, testing, experimentation and certification or other related services, including those services provided by research and knowledge dissemination organisations, research infrastructures, testing and experimentation infrastructures or innovation clusters, for the purpose of developing more effective or technologically advanced products, processes or services, including the implementation of innovative technologies and solutions (including digital technologies and solutions);"
+    }
+  },
+  {
+    "question": "What was the definition of \"organisational innovation\" on July 01, 2023?",
+    "term": "organisational innovation",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(96) \"\" organisational innovation \"\" means the implementation of a new organisational method at the level of the undertaking (at group level in the given industry sector in the EEA), workplace organisation or external relations, including for instance by making use of novel or innovative digital technologies. Excluded from this definition are changes that are based on organisational methods already in use in the undertaking, changes in management strategy, mergers and acquisitions, ceasing to use a process, simple capital replacement or extension, changes resulting purely from changes in factor prices, customisation, localisation, regular, seasonal and other cyclical changes and trading of new or significantly improved products;"
+    }
+  },
+  {
+    "question": "What was the definition of \"process innovation\" before September 09, 2018?",
+    "term": "process innovation",
+    "reference_date": "2018-09-09",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(97) \"\" process innovation \"\" means the implementation of a new or significantly improved production or delivery method (including significant changes in techniques, equipment or software), excluding minor changes or improvements, increases in production or service capabilities through the addition of manufacturing or logistical systems which are very similar to those already in use, ceasing to use a process, simple capital replacement or extension, changes resulting purely from changes in factor prices, customisation, localisation, regular, seasonal and other cyclical changes and trading of new or significantly improved products;"
+    }
+  },
+  {
+    "question": "What was the definition of \"environmental protection\" on July 01, 2023?",
+    "term": "environmental protection",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(101) \"\" environmental protection \"\" means any action or activity designed to reduce or prevent pollution, negative environmental impacts or other damage to physical surroundings (including to air, water and soil), ecosystems or natural resources by human activities, including to mitigate climate change, to reduce the risk of such damage, to protect and restore biodiversity or to lead to more efficient use of natural resources, including energy-saving measures and the use of renewable sources of energy and other techniques to reduce greenhouse gas emissions and other pollutants, as well as to shift to circular economy models to reduce the use of primary materials and increase efficiencies. It also covers actions that reinforce adaptive capacity and minimise vulnerability to climate impacts;"
+    }
+  },
+  {
+    "question": "What was the definition of \"energy efficiency\" after June 17, 2023?",
+    "term": "energy efficiency",
+    "reference_date": "2023-06-17",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(103) \"\" energy efficiency \"\" means energy efficiency as defined in Article 2, point (4), of Directive 2012/27/EU of the European Parliament and of the Council Directive 2012/27/EU of the European Parliament and of the Council of 25 October 2012 on energy efficiency, amending Directives 2009/125/EC and 2010/30/EU and repealing Directives 2004/8/EC and 2006/32/EC ( OJ L 315, 14.11.2012, p. 1 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"standard balancing responsibilities\" before July 16, 2017?",
+    "term": "standard balancing responsibilities",
+    "reference_date": "2017-07-16",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(116) \"\" standard balancing responsibilities \"\" means non-discriminatory balancing responsibilities across technologies which do not exempt any generator from those responsibilities;"
+    }
+  },
+  {
+    "question": "What was the definition of \"biomass\" on January 01, 2022?",
+    "term": "biomass",
+    "reference_date": "2022-01-01",
+    "available_dates": [
+      "2017-07-10",
+      "2021-01-01",
+      "2022-01-01",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2022-01-01",
+      "definition": "(21) \"\" biomass \"\" means the biodegradable fraction of products, waste and residues from biological origin from agriculture, including vegetal and animal substances, from forestry and related industries, including fisheries and aquaculture, as well as the biodegradable fraction of waste, including industrial and municipal waste of biological origin;"
+    }
+  },
+  {
+    "question": "What was the definition of \"energy efficient district heating and cooling\" on July 01, 2023?",
+    "term": "energy efficient district heating and cooling",
+    "reference_date": "2023-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(124) \"\" energy efficient district heating and cooling \"\" means efficient district heating and cooling as defined in Article 2, point (41), of Directive 2012/27/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"preparing for re-use\" on July 10, 2017?",
+    "term": "preparing for re-use",
+    "reference_date": "2017-07-10",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(127) \"\" preparing for re-use \"\" cleaning or repairing recovery operations, by which products or components of products that have become waste are prepared so that they can be re-used without any other pre-processing;"
+    }
+  },
+  {
+    "question": "What was the definition of \"recycling\" before July 01, 2019?",
+    "term": "recycling",
+    "reference_date": "2019-07-01",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(128) \"\" recycling \"\" means any recovery operation by which waste materials are reprocessed into products, materials or substances whether for the original or other purposes. It includes the reprocessing of organic material but does not include energy recovery and the reprocessing into materials that are to be used as fuels or for backfilling operations;"
+    }
+  },
+  {
+    "question": "What was the definition of \"energy infrastructure\" after February 27, 2018?",
+    "term": "energy infrastructure",
+    "reference_date": "2018-02-27",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "\"\" energy infrastructure \"\" means any physical equipment or facility which is located within the Union or linking the Union to one or more third countries and falling under the following categories: (a) electricity: (i) \"\" where \"\" transmission\"\" means the transport of electricity onshore as well as offshore on the extra high-voltage and high-voltage interconnected system with a view to its delivery to final customers or to distributors, but does not include supply and \"\"distribution\"\" means the transport of electricity onshore as well as offshore on high-voltage, medium-voltage and low-voltage distribution systems with a view to its delivery to customers, but does not include supply; (ii) any equipment or installation essential for the systems referred to in point (i) to operate safely, securely and efficiently, including protection, monitoring and control systems at all voltage levels and substations; (iii) Directive (EU) 2019/944 of the European Parliament and of the Council Directive (EU) 2019/944 of the European Parliament and of the Council of 5 June 2019 on common rules for the internal market for electricity and amending Directive 2012/27/EU ( OJ L 158, 14.6.2019, p. 125 ). fully integrated network components, as defined in Article 2, point (51), of (iv) smart electricity grids, which means systems and components integrating information and communications technology, through operational digital platforms, control systems and sensor technologies both at transmission and distribution level, aiming at a more secure, efficient and intelligent electricity transmission and distribution network, increased capacity to integrate new forms of generation, storage and consumption and facilitating new business models and market structures; (v) off-shore electricity grids, which means any equipment or installation of electricity transmission or distribution infrastructure as defined in point (i), which has dual functionality: interconnection and transmission or distribution of offshore renewable electricity from the offshore generation sites to two or more countries. This also includes smart grids as well as any offshore adjacent equipment or installation essential to operate safely, securely and efficiently, including protection, monitoring and control systems, and necessary substations if they also ensure technology interoperability and among other interface compatibility between different technologies; (b) gas (natural gas, biogas- including biomethane \u2013 and/or renewable gas of non-biological origin): (i) transmission and distribution pipelines for the transport of gas that form part of a network, excluding high-pressure pipelines used for upstream distribution of natural gas; (ii) underground storage facilities connected to the high-pressure gas pipelines referred to in point (i); (iii) reception, storage and regasification or decompression facilities for liquefied or compressed gas; (iv) any equipment or installation essential for the system to operate safely, securely and efficiently or to enable bi-directional capacity, including compressor stations; (v) smart gas grids, which means any of the following equipment or installation aiming at enabling and facilitating the integration of renewable and low-carbon gases (including hydrogen or gases of non-biological origin) into the network: digital systems and components integrating information and communication technologies, control systems and sensor technologies to enable the interactive and intelligent monitoring, metering, quality control and management of gas production, transmission, distribution and consumption within a gas network. Furthermore, smart grids may also include equipment to enable reverse flows from the distribution to the transmission level and related necessary upgrades to the existing network; (c) hydrogen: (i) transmission pipelines, for the high-pressure transport of hydrogen, as well as distribution pipelines for the local distribution of hydrogen, giving access to multiple network users on a transparent and non-discriminatory basis; (ii) storage facilities, which means facilities used for the stocking of hydrogen of a high grade of purity, including the part of a hydrogen terminal used for storage but excluding the portion used for production operations, and including facilities reserved exclusively for hydrogen network operators in carrying out their functions. Hydrogen storage facilities include underground storage facilities connected to the high-pressure hydrogen pipelines referred to in point (i); (iii) dispatch, reception, storage and regasification or decompression facilities for hydrogen or hydrogen embedded in other chemical substances with the objective of injecting the hydrogen into the grid either for gas or dedicated to hydrogen; (iv) terminals, which means installations used for the transformation of liquid hydrogen into gaseous hydrogen for injection into the hydrogen network. Terminals include ancillary equipment and temporary storage necessary for the transformation process and subsequent injection into the hydrogen network, but does not include any part of the hydrogen terminal used for storage; (v) interconnectors, which means a hydrogen network (or part thereof) which crosses or spans a border between Member States, or between a Member State and a third country up to the territory of the Member States or the territorial sea of that Member State; (vi) any equipment or installation essential for the hydrogen system to operate safely, securely and efficiently or to enable bi-directional capacity, including compressor stations; Any of the assets listed under points (i) to (vi) may be newly constructed assets or assets converted from natural gas to hydrogen, or a combination of the two. Assets listed under points (i) to (vi), which are subject to third party access shall qualify as energy infrastructure; (d) carbon dioxide: (i) Article 3 of Directive 2009/31/EC of the European Parliament and of the Council Directive 2009/31/EC of the European Parliament and of the Council of 23 April 2009 on the geological storage of carbon dioxide and amending Council Directive 85/337/EEC , European Parliament and Council Directives 2000/60/EC , 2001/80/EC, 2004/35/EC, 2006/12/EC, 2008/1/EC and Regulation (EC) No 1013/2006 ( OJ L 140, 5.6.2009, p. 114 ). or for the purpose of use of carbon dioxide as feedstock or to enhance the yields of biological processes; pipelines, other than upstream pipeline network, used to transport carbon dioxide from more than one source, this is to say, industrial installations (including power plants) that produce carbon dioxide gas from combustion or other chemical reactions involving fossil or non-fossil carbon-containing compounds, for the purpose of permanent geological storage of carbon dioxide pursuant to (ii) Article 3 of Directive 2009/31/EC and associated surface and injection facilities; facilities for liquefaction and buffer storage of carbon dioxide in view of its transport or storage. This does not include infrastructure within a geological formation used for the permanent geological storage of carbon dioxide pursuant to (iii) any equipment or installation essential for the system in question to operate properly, securely and efficiently, including protection, monitoring and control systems. This may include dedicated mobile assets for the transport and storage of carbon dioxide, provided that such mobile assets fulfil the definition of a clean vehicle; Assets listed under points (i), (ii) and (iii) which are subject to third party access shall qualify as energy infrastructure; (e) infrastructure used for transmission or distribution of thermal energy in the form of steam, hot water or chilled liquids from multiple producers or users, based on use of renewable energy or waste heat from industrial applications; (f) Projects of Common Interest, as defined in Article 2, point (4), of Regulation (EU) No 347/2013 of the European Parliament and of the Council Regulation (EU) No 347/2013 of the European Parliament and of the Council of 17 April 2013 on guidelines for trans-European energy infrastructure ( OJ L 115, 25.4.2013, p. 39 ). (g) other infrastructure categories that enable physical or wireless connection of renewable or carbon-free energy between producers and users from multiple access and exit points and which are open to access by third parties not belonging to the infrastructure owner or manager undertakings;"
+    }
+  },
+  {
+    "question": "What was the definition of \"wholesale access\" after September 22, 2021?",
+    "term": "wholesale access",
+    "reference_date": "2021-09-22",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-07-01",
+      "definition": "(139) \"\" wholesale access \"\" means access which enables an operator to utilise the facilities of another operator. The wholesale access shall include, on the basis of the current technological developments, at least the following access products: (i) for FTTx networks: access to the broadband infrastructure, unbundling and bitstream access; (ii) for cable networks: access to the broadband infrastructure and access to active services; (iii) for fixed wireless networks: access to the broadband infrastructure and access to active services; (iv) for mobile networks: access to the broadband infrastructure and access to active services (at least roaming); (v) for satellite platforms: access to active services; (vi) for backhaul networks: access to the broadband infrastructure and access to active services;"
+    }
+  },
+  {
+    "question": "What was the definition of \"re-use\" before April 22, 2018?",
+    "term": "re-use",
+    "reference_date": "2018-04-22",
+    "available_dates": [
+      "2017-07-10",
+      "2023-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2017-07-10",
+      "definition": "(126) \"\"re-use\"\" means any operation by which products or components that are not waste are used again for the same purpose for which they were conceived;"
+    }
+  },
+  {
+    "question": "What was the definition of \"official control\" after May 07, 2018?",
+    "term": "official control",
+    "reference_date": "2018-05-07",
+    "available_dates": [
+      "2016-03-31",
+      "2019-12-14"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-12-14",
+      "definition": "(33) \"\" official control \"\" means any form of control performed in accordance with Regulation (EU) 2017/625 of the European Parliament and of the Council Regulation (EU) 2017/625 of the European Parliament and of the Council of 15 March 2017 on official controls and other official activities performed to ensure the application of food and feed law, rules on animal health and welfare, plant health and plant protection products, amending Regulations (EC) No 999/2001 , (EC) No 396/2005 (EC) No 1069/2009 (EC) No 1107/2009 (EU) No 1151/2012 (EU) No 652/2014 (EU) 2016/429 and (EU) 2016/2031 of the European Parliament and of the Council, Council Regulations (EC) No 1/2005 and (EC) No 1099/2009 and Council Directives 98/58/EC , 1999/74/EC, 2007/43/EC, 2008/119/EC and 2008/120/EC, and repealing Regulations (EC) No 854/2004 and (EC) No 882/2004 of the European Parliament and of the Council, Council Directives 89/608/EEC , 89/662/EEC, 90/425/EEC, 91/496/EEC, 96/23/EC, 96/93/EC and 97/78/EC and Council Decision 92/438/EEC (Official Controls Regulation) ( OJ L 95, 7.4.2017, p. 1 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"official veterinarian\" after June 26, 2016?",
+    "term": "official veterinarian",
+    "reference_date": "2016-06-26",
+    "available_dates": [
+      "2016-03-31",
+      "2019-12-14"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-12-14",
+      "definition": "(53) \"\" official veterinarian \"\" means an official veterinarian as defined in Article 3(32) of Regulation (EU) 2017/625"
+    }
+  },
+  {
+    "question": "What was the definition of \"allusion\" before May 07, 2020?",
+    "term": "allusion",
+    "reference_date": "2020-05-07",
+    "available_dates": [
+      "2019-05-17",
+      "2021-05-25"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-05-17",
+      "definition": "\"\" allusion \"\" means the direct or indirect reference to one or more legal names provided for in the categories of spirit drinks set out in Annex I or to one or more geographical indications for spirit drinks, other than a reference in a compound term or in a list of ingredients as referred to in Article 13(2), (3) and (4), in the description, presentation or labelling of: (a) a foodstuff other than a spirit drink, or (b) a spirit drink that complies with the requirements of categories 33 to 40 of Annex I;"
+    }
+  },
+  {
+    "question": "What was the definition of \"automatic exchange\" before October 13, 2020?",
+    "term": "automatic exchange",
+    "reference_date": "2020-10-13",
+    "available_dates": [
+      "2015-01-05",
+      "2017-06-05",
+      "2020-07-01",
+      "2023-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2020-07-01",
+      "definition": "automatic exchange \"\" means, \"\" (a) for the purposes of Article 8(1) and Articles 8a, 8aa and 8ab, the systematic communication of predefined information to another Member State, without prior request, at pre-established regular intervals. For the purposes of Article 8(1), reference to available information relates to information in the tax files of the Member State communicating the information, which is retrievable in accordance with the procedures for gathering and processing information in that Member State; (b) for the purposes of Article 8(3a), the systematic communication of predefined information on residents in other Member States to the relevant Member State of residence, without prior request, at pre-established regular intervals; (c) for the purposes of provisions of this Directive other than Article 8(1) and (3a) and Articles 8a, 8aa and 8ab, the systematic communication of predefined information provided in points (a) and (b) of this point."
+    }
+  },
+  {
+    "question": "What was the definition of \"person\" after July 12, 2016?",
+    "term": "person",
+    "reference_date": "2016-07-12",
+    "available_dates": [
+      "2015-01-05",
+      "2017-06-05"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2017-06-05",
+      "definition": "person \"\" means: \"\" (a) a natural person; (b) a legal person; (c) where the legislation in force so provides, an association of persons recognised as having the capacity to perform legal acts but lacking the status of a legal person; or (d) any other legal arrangement of whatever nature and form, regardless of whether it has legal personality, owning or managing assets, which, including income derived therefrom, are subject to any of the taxes covered by this Directive;"
+    }
+  },
+  {
+    "question": "What was the definition of \"CCN network\" after May 06, 2015?",
+    "term": "CCN network",
+    "reference_date": "2015-05-06",
+    "available_dates": [
+      "2015-01-05",
+      "2017-06-05"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2017-06-05",
+      "definition": "13. \"\" CCN network \"\" means the common platform based on the common communication network (CCN), developed by the Union for all transmissions by electronic means between competent authorities in the area of customs and taxation;"
+    }
+  },
+  {
+    "question": "What was the definition of \"merger\" after August 28, 2019?",
+    "term": "merger",
+    "reference_date": "2019-08-28",
+    "available_dates": [
+      "2019-07-31",
+      "2020-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2020-01-01",
+      "definition": "\"\" merger \"\" means an operation whereby: (a) one or more companies, on being dissolved without going into liquidation, transfer all their assets and liabilities to another existing company, the acquiring company, in exchange for the issue to their members of securities or shares representing the capital of that other company and, if applicable, a cash payment not exceeding 10 % of the nominal value, or, in the absence of a nominal value, of the accounting par value of those securities or shares; or (b) two or more companies, on being dissolved without going into liquidation, transfer all their assets and liabilities to a company that they form, the new company, in exchange for the issue to their members of securities or shares representing the capital of that new company and, if applicable, a cash payment not exceeding 10 % of the nominal value, or in the absence of a nominal value, of the accounting par value of those securities or shares; or (c) a company, on being dissolved without going into liquidation, transfers all its assets and liabilities to the company holding all the securities or shares representing its capital. ; or (d) one or more companies, on being dissolved without going into liquidation, transfer all their assets and liabilities to another existing company, the acquiring company, without the issue of any new shares by the acquiring company, provided that one person holds directly or indirectly all the shares in the merging companies or the members of the merging companies hold their securities and shares in the same proportion in all merging companies."
+    }
+  },
+  {
+    "question": "What was the definition of \"beneficiary\" on October 16, 2015?",
+    "term": "beneficiary",
+    "reference_date": "2015-10-16",
+    "available_dates": [
+      "2015-10-16",
+      "2018-08-02"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2015-10-16",
+      "definition": "(10) \"\" beneficiary \"\" means a public or private body and, for the purposes of the EAFRD Regulation and of the EMFF Regulation only, a natural person, responsible for initiating or both initiating and implementing operations; and in the context of State aid schemes, as defined in point 13 of this Article, the body which receives the aid; and in the context of financial instruments under Title IV of Part Two of this Regulation, it means the body that implements the financial instrument or the fund of funds as appropriate;"
+    }
+  },
+  {
+    "question": "What was the definition of \"macroregional strategy\" before July 15, 2017?",
+    "term": "macroregional strategy",
+    "reference_date": "2017-07-15",
+    "available_dates": [
+      "2015-10-16",
+      "2018-08-02"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2015-10-16",
+      "definition": "(31) \"\" macroregional strategy \"\" means an integrated framework endorsed by the European Council, which may be supported by the ESI Funds among others, to address common challenges faced by a defined geographical area relating to Member States and third countries located in the same geographical area which thereby benefit from strengthened cooperation contributing to achievement of economic, social and territorial cohesion;"
+    }
+  },
+  {
+    "question": "What was the definition of \"transnational association of producer organisations\" after March 06, 2018?",
+    "term": "transnational association of producer organisations",
+    "reference_date": "2018-03-06",
+    "available_dates": [
+      "2018-01-01",
+      "2023-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-01-01",
+      "definition": "(e) \"\" transnational association of producer organisations \"\" means any association of producer organisations in which at least one of the associated organisations or associations is located in a Member State other than where the association has its head office."
+    }
+  },
+  {
+    "question": "What was the definition of \"flag\" after May 04, 2021?",
+    "term": "flag",
+    "reference_date": "2021-05-04",
+    "available_dates": [
+      "2019-06-11",
+      "2022-08-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-08-01",
+      "definition": "(8) \"\" flag \"\" means a suspension of the validity of an alert at the national level that may be added to alerts for arrest, alerts on missing and vulnerable persons, alerts for discreet, inquiry and specific checks and to information alerts;"
+    }
+  },
+  {
+    "question": "What was the definition of \"concessions or other obligations\" after March 06, 2015?",
+    "term": "concessions or other obligations",
+    "reference_date": "2015-03-06",
+    "available_dates": [
+      "2014-06-27",
+      "2021-02-13"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-02-13",
+      "definition": "(b) \"\" concessions or other obligations \"\" means tariff concessions or other obligations or benefits in the field of trade in goods or services, or concerning trade-related aspects of intellectual property rights, that the Union has committed itself to applying in its trade with third countries by virtue of international trade agreements to which it is a party;"
+    }
+  },
+  {
+    "question": "What was the definition of \"two-day spot\" after December 27, 2011?",
+    "term": "two-day spot",
+    "reference_date": "2011-12-27",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "3. \"\"two-day spot\"\" means allowances auctioned for delivery at an agreed date no later than the second trading day from the day of the auction;"
+    }
+  },
+  {
+    "question": "What was the definition of \"five-day futures\" on November 28, 2019?",
+    "term": "five-day futures",
+    "reference_date": "2019-11-28",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "4. \"\"five-day futures\"\" means allowances auctioned for delivery at an agreed date no later than the fifth trading day from the day of the auction;"
+    }
+  },
+  {
+    "question": "What was the definition of \"credit institution\" on June 28, 2013?",
+    "term": "credit institution",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2011-11-25",
+      "2013-06-28",
+      "2019-11-28",
+      "2021-06-29"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(1) \"\" credit institution \"\" means an undertaking the business of which is to take deposits or other repayable funds from the public and to grant credits for its own account;"
+    }
+  },
+  {
+    "question": "What was the definition of \"parent undertaking\" after June 20, 2015?",
+    "term": "parent undertaking",
+    "reference_date": "2015-06-20",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "12. \"\" parent undertaking \"\" means the same as in Article 2(9) of Directive 2013/34/EU of the European Parliament and of the Council Directive 2013/34/EU of the European Parliament and of the Council of 26 June 2013 on the annual financial statements, consolidated financial statements and related reports of certain types of undertakings, amending Directive 2006/43/EC of the European Parliament and of the Council and repealing Council Directives 78/660/EEC and 83/349/EEC ( OJ L 182, 29.6.2013, p. 19 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"subsidiary undertaking\" on November 25, 2011?",
+    "term": "subsidiary undertaking",
+    "reference_date": "2011-11-25",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "13. \"\" subsidiary undertaking \"\" means the same as in Articles 1 and 2 of Directive 83/349/EEC"
+    }
+  },
+  {
+    "question": "What was the definition of \"affiliate undertaking\" on November 28, 2019?",
+    "term": "affiliate undertaking",
+    "reference_date": "2019-11-28",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "14. \"\" affiliate undertaking \"\" means the same as in Article 2(12) of Directive 2013/34/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"money laundering\" after October 06, 2016?",
+    "term": "money laundering",
+    "reference_date": "2016-10-06",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "17. \"\" money laundering \"\" means the same as in Article 1(3) of Directive (EU) 2015/849 of the European Parliament and of the Council Directive (EU) 2015/849 of the European Parliament and of the Council of 20 May 2015 on the prevention of the use of the financial system for the purposes of money laundering or terrorist financing, amending Regulation (EU) No 648/2012 of the European Parliament and of the Council, and repealing Directive 2005/60/EC of the European Parliament and of the Council and Commission Directive 2006/70/EC ( OJ L 141, 5.6.2015, p. 73 ). having regard to Article 1(4)"
+    }
+  },
+  {
+    "question": "What was the definition of \"terrorist financing\" on November 25, 2011?",
+    "term": "terrorist financing",
+    "reference_date": "2011-11-25",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "18. \"\" terrorist financing \"\" means the same as in Article 1(4) of Directive 2005/60/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"criminal activity\" on November 28, 2019?",
+    "term": "criminal activity",
+    "reference_date": "2019-11-28",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "19. \"\" criminal activity \"\" means the same as in Article 3(4) of Directive (EU) 2015/849"
+    }
+  },
+  {
+    "question": "What was the definition of \"nominated holding account\" before February 21, 2014?",
+    "term": "nominated holding account",
+    "reference_date": "2014-02-21",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "21. \"\" nominated holding account \"\" means one or more type of holding account provided for in the applicable Commission regulation adopted pursuant to Article 19(3) of Directive 2003/87/EC for the purposes of participating in or conducting the auction process including the holding of allowances in escrow, pending their delivery under this Regulation;"
+    }
+  },
+  {
+    "question": "What was the definition of \"beneficial owner\" before January 17, 2016?",
+    "term": "beneficial owner",
+    "reference_date": "2016-01-17",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "24. \"\" beneficial owner \"\" means the same as in Article 3(6) of Directive 2005/60/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"politically exposed persons\" after October 05, 2016?",
+    "term": "politically exposed persons",
+    "reference_date": "2016-10-05",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "26. \"\" politically exposed persons \"\" means the same as in Article 3(9) of Directive (EU) 2015/849"
+    }
+  },
+  {
+    "question": "What was the definition of \"market abuse\" after April 26, 2013?",
+    "term": "market abuse",
+    "reference_date": "2013-04-26",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "27. \"\" market abuse \"\" means the same as in Article 1 of Regulation (EU) No 596/2014 of the European Parliament and of the Council Regulation (EU) No 596/2014 of the European Parliament and of the Council of 16 April 2014 on market abuse (market abuse regulation) and repealing Directive 2003/6/EC of the European Parliament and of the Council and Commission Directives 2003/124/EC , 2003/125/EC and 2004/72/EC ( OJ L 173, 12.6.2014, p. 1 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"insider dealing\" after February 09, 2014?",
+    "term": "insider dealing",
+    "reference_date": "2014-02-09",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "28. \"\" insider dealing \"\" means the same as in Article 8 of Regulation (EU) No 596/2014"
+    }
+  },
+  {
+    "question": "What was the definition of \"inside information\" before June 13, 2015?",
+    "term": "inside information",
+    "reference_date": "2015-06-13",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "29. \"\" inside information \"\" means the same as in Article 1(1) of Directive 2003/6/EC in relation to a financial instrument within the meaning of Article 1(3) of Directive 2003/6/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"market manipulation\" after January 13, 2019?",
+    "term": "market manipulation",
+    "reference_date": "2019-01-13",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-28",
+      "definition": "30. \"\" market manipulation \"\" means the same as in Article 12 of Regulation (EU) No 596/2014"
+    }
+  },
+  {
+    "question": "What was the definition of \"regulated market\" on November 25, 2011?",
+    "term": "regulated market",
+    "reference_date": "2011-11-25",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "39. \"\" regulated market \"\" means the same as in point (14) of Article 4(1) of Directive 2004/39/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"market operator\" on November 25, 2011?",
+    "term": "market operator",
+    "reference_date": "2011-11-25",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "42. \"\" market operator \"\" means the same as in point (13) of Article 4(1) of Directive 2004/39/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"establishment\" before November 23, 2015?",
+    "term": "establishment",
+    "reference_date": "2015-11-23",
+    "available_dates": [
+      "2011-11-25",
+      "2019-11-28"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2011-11-25",
+      "definition": "\"\" establishment \"\" means any of the following: (a) place of residence or permanent address within the Union for the purposes of the third subparagraph of Article 6(3); (b) the same as in point 20(a) of Article 4(1) of Directive 2004/39/EC (c) the same as in point 20(a) of Article 4(1) of Directive 2004/39/EC (d) the same as in point (7) of Article 4 of Directive 2006/48/EC (e) the same as in point 20(a) of Article 4(1) of Directive 2004/39/EC (f) the same as in point 20(b) of Article 4(1) of Directive 2004/39/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"institution\" after February 07, 2020?",
+    "term": "institution",
+    "reference_date": "2020-02-07",
+    "available_dates": [
+      "2013-06-28",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-06-29",
+      "definition": "(3) \"\" institution \"\" means a credit institution authorised under Article 8 of Directive 2013/36/EU or an undertaking as referred to in Article 8a"
+    }
+  },
+  {
+    "question": "What was the definition of \"collective investment undertaking\" after October 24, 2016?",
+    "term": "collective investment undertaking",
+    "reference_date": "2016-10-24",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(7) \"\" collective investment undertaking \"\" or \"\"CIU\"\" means a UCITS as defined in Article 1(2) of Directive 2009/65/EC of the European Parliament and of the Council Directive 2009/65/EC of the European Parliament and of the Council of 13 July 2009 on the coordination of laws, regulations and administrative provisions relating to undertakings for collective investment in transferable securities (UCITS) ( OJ L 302, 17.11.2009, p. 32 ). or an alternative investment fund (AIF) as defined in point (a) of Article 4(1) of Directive 2011/61/EU of the European Parliament and of the Council Directive 2011/61/EU of the European Parliament and of the Council of 8 June 2011 on Alternative Investment Fund Managers and amending Directives 2003/41/EC and 2009/65/EC and Regulations (EC) No 1060/2009 and (EU) No 1095/2010 ( OJ L 174, 1.7.2011, p. 1 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"originator\" on June 28, 2013?",
+    "term": "originator",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "\"\" originator \"\" means an entity which: (a) itself or through related entities, directly or indirectly, was involved in the original agreement which created the obligations or potential obligations of the debtor or potential debtor giving rise to the exposure being securitised; or (b) purchases a third party\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"sponsor\" on June 28, 2013?",
+    "term": "sponsor",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(14) \"\" sponsor \"\" means an institution other than an originator institution that establishes and manages an asset-backed commercial paper programme or other securitisation scheme that purchases exposures from third-party entities;"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial holding company\" after August 04, 2014?",
+    "term": "financial holding company",
+    "reference_date": "2014-08-04",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(20) \"\" financial holding company \"\" means a financial institution, the subsidiaries of which are exclusively or mainly institutions or financial institutions, and which is not a mixed financial holding company; the subsidiaries of a financial institution are mainly institutions or financial institutions where at least one of them is an institution and where more than 50 % of the financial institution\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial institution\" on June 27, 2019?",
+    "term": "financial institution",
+    "reference_date": "2019-06-27",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27",
+      "2021-06-29"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(26) \"\" financial institution \"\" means an undertaking other than an institution and other than a pure industrial holding company, the principal activity of which is to acquire holdings or to pursue one or more of the activities listed in points 2 to 12 and point 15 of Annex I to Directive 2013/36/EU , including a financial holding company, a mixed financial holding company, a payment institution as defined in point (4) of Article 4 of Directive (EU) 2015/2366 of the European Parliament and of the Council Directive (EU) 2015/2366 of the European Parliament and of the Council of 25 November 2015 on payment services in the internal market, amending Directives 2002/65/EC , 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010 , and repealing Directive 2007/64/EC ( OJ L 337, 23.12.2015, p. 35 ). , and an asset management company, but excluding insurance holding companies and mixed-activity insurance holding companies as defined, respectively, in points (f) and (g) of Article 212(1) of Directive 2009/138/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"consolidating supervisor\" on June 28, 2013?",
+    "term": "consolidating supervisor",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(41) \"\" consolidating supervisor \"\" means a competent authority responsible for the exercise of supervision on a consolidated basis of EU parent institutions and of institutions controlled by EU parent financial holding companies or EU parent mixed financial holding companies;"
+    }
+  },
+  {
+    "question": "What was the definition of \"initial capital\" after April 03, 2021?",
+    "term": "initial capital",
+    "reference_date": "2021-04-03",
+    "available_dates": [
+      "2013-06-28",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-06-29",
+      "definition": "(51) \"\" initial capital \"\" means the amounts and types of own funds specified in Article 12 of Directive 2013/36/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"cash assimilated instrument\" after August 02, 2017?",
+    "term": "cash assimilated instrument",
+    "reference_date": "2017-08-02",
+    "available_dates": [
+      "2013-06-28",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-06-29",
+      "definition": "(60) \"\" cash assimilated instrument \"\" means a certificate of deposit, a bond, including a covered bond, or any other non\u2010subordinated instrument, which has been issued by an institution or an investment firm, for which the institution or investment firm has already received full payment and which is to be unconditionally reimbursed by the institution or investment firm at its nominal value;"
+    }
+  },
+  {
+    "question": "What was the definition of \"securitisation\" after October 28, 2015?",
+    "term": "securitisation",
+    "reference_date": "2015-10-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(61) \"\" securitisation \"\" means a securitisation as defined in point (1) of Article 2 of Regulation (EU) 2017/2402"
+    }
+  },
+  {
+    "question": "What was the definition of \"securitisation position\" after March 19, 2017?",
+    "term": "securitisation position",
+    "reference_date": "2017-03-19",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(62) \"\" securitisation position \"\" means a securitisation position as defined in point (19) of Article 2 of Regulation (EU) 2017/2402"
+    }
+  },
+  {
+    "question": "What was the definition of \"securitisation special purpose entity\" before January 18, 2014?",
+    "term": "securitisation special purpose entity",
+    "reference_date": "2014-01-18",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(66) \"\" securitisation special purpose entity \"\" or \"\"SSPE\"\" means a corporation trust or other entity, other than an institution, organised for carrying out a securitisation or securitisations, the activities of which are limited to those appropriate to accomplishing that objective, the structure of which is intended to isolate the obligations of the SSPE from those of the originator institution, and in which the holders of the beneficial interests have the right to pledge or exchange those interests without restriction;"
+    }
+  },
+  {
+    "question": "What was the definition of \"tranche\" on June 28, 2013?",
+    "term": "tranche",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(67) \"\" tranche \"\" means a contractually established segment of the credit risk associated with an exposure or a number of exposures, where a position in the segment entails a risk of credit loss greater than or less than a position of the same amount in each other such segment, without taking account of credit protection provided by third parties directly to the holders of positions in the segment or in other segments;"
+    }
+  },
+  {
+    "question": "What was the definition of \"eligible capital\" on June 27, 2019?",
+    "term": "eligible capital",
+    "reference_date": "2019-06-27",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "\"\" eligible capital \"\" means the following: (a) for the purposes of Title III of Part Two it means the sum of the following: (i) Tier 1 capital as referred to in Article 25, without applying the deduction in Article 36(1)(k)(i); (ii) Tier 2 capital as referred to in Article 71 that is equal to or less than one third of Tier 1 capital as calculated pursuant to point (i) of this point; (b) for the purposes of Article 97 it means the sum of the following: (i) Tier 1 capital as referred to in Article 25; (ii) Tier 2 capital as referred to in Article 71 that is equal to or less than one third of Tier 1 capital;"
+    }
+  },
+  {
+    "question": "What was the definition of \"recognised exchange\" after December 07, 2018?",
+    "term": "recognised exchange",
+    "reference_date": "2018-12-07",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "\"\" recognised exchange \"\" means an exchange which meets all of the following conditions: (a) it is a regulated market or a third-country market that is considered to be equivalent to a regulated market in accordance with the procedure set out in point (a) of Article 25(4) of Directive 2014/65/EU of the European Parliament and of the Council Directive 2014/65/EU of the European Parliament and of the Council of 15 May 2014 on markets in financial instruments and amending Directive 2002/92/EC and Directive 2011/61/EU ( OJ L 173, 12.6.2014, p. 349 ). (b) it has a clearing mechanism whereby contracts listed in Annex II are subject to daily margin requirements which, in the opinion of the competent authorities, provide appropriate protection;"
+    }
+  },
+  {
+    "question": "What was the definition of \"trading book\" on June 27, 2019?",
+    "term": "trading book",
+    "reference_date": "2019-06-27",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(86) \"\" trading book \"\" means all positions in financial instruments and commodities held by an institution either with trading intent or to hedge positions held with trading intent in accordance with Article 104;"
+    }
+  },
+  {
+    "question": "What was the definition of \"trade exposure\" on June 27, 2019?",
+    "term": "trade exposure",
+    "reference_date": "2019-06-27",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(91) \"\" trade exposure \"\" means a current exposure, including a variation margin due to the clearing member but not yet received, and any potential future exposure of a clearing member or a client, to a CCP arising from contracts and transactions listed in points (a), (b) and (c) of Article 301(1), as well as initial margin;"
+    }
+  },
+  {
+    "question": "What was the definition of \"internal hedge\" on June 27, 2019?",
+    "term": "internal hedge",
+    "reference_date": "2019-06-27",
+    "available_dates": [
+      "2013-06-28",
+      "2019-06-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-06-27",
+      "definition": "(96) \"\" internal hedge \"\" means a position that materially offsets the component risk elements between a trading book position and one or more non-trading book positions or between two trading desks;"
+    }
+  },
+  {
+    "question": "What was the definition of \"distributable items\" before June 08, 2019?",
+    "term": "distributable items",
+    "reference_date": "2019-06-08",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01",
+      "2019-06-27"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(128) \"\" distributable items \"\" means the amount of the profits at the end of the latest financial year plus any profits brought forward and reserves available for that purpose before distributions to holders of own funds instruments less any losses brought forward, profits which are non-distributable pursuant to provisions in legislation or the institution\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"facility grade\" on January 01, 2019?",
+    "term": "facility grade",
+    "reference_date": "2019-01-01",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(7) \"\" facility grade \"\" means a risk category within a rating system\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"servicer\" on June 28, 2013?",
+    "term": "servicer",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(8) \"\" servicer \"\" means an entity that manages a pool of purchased receivables or the underlying credit exposures on a day-to-day basis."
+    }
+  },
+  {
+    "question": "What was the definition of \"clean-up call option\" after March 16, 2016?",
+    "term": "clean-up call option",
+    "reference_date": "2016-03-16",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(1) \"\" clean-up call option \"\" either by repurchasing the underlying exposures remaining in the pool in the case of traditional securitisations or by terminating the credit protection in the case of synthetic securitisations, in both cases when the amount of outstanding underlying exposures falls to or below certain pre-specified level;"
+    }
+  },
+  {
+    "question": "What was the definition of \"liquidity facility\" before September 23, 2017?",
+    "term": "liquidity facility",
+    "reference_date": "2017-09-23",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(3) \"\" liquidity facility \"\" means the securitisation position arising from a contractual agreement to provide funding to ensure timeliness of cash flows to investors;"
+    }
+  },
+  {
+    "question": "What was the definition of \"unrated position\" after April 02, 2014?",
+    "term": "unrated position",
+    "reference_date": "2014-04-02",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(4) \"\" unrated position \"\" means a securitisation position which does not have an eligible credit assessment in accordance with Section 4;"
+    }
+  },
+  {
+    "question": "What was the definition of \"rated position\" before June 17, 2016?",
+    "term": "rated position",
+    "reference_date": "2016-06-17",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(8) \"\" rated position \"\" means a securitisation position which has an eligible credit assessment by an ECAI as referred to in Section 4;"
+    }
+  },
+  {
+    "question": "What was the definition of \"traditional securitisation\" after August 03, 2017?",
+    "term": "traditional securitisation",
+    "reference_date": "2017-08-03",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(13) \"\" traditional securitisation \"\" means a traditional securitisation as defined in point (9) of Article 2 of Regulation (EU) 2017/2402"
+    }
+  },
+  {
+    "question": "What was the definition of \"synthetic securitisation\" on June 28, 2013?",
+    "term": "synthetic securitisation",
+    "reference_date": "2013-06-28",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(11) \"\" synthetic securitisation \"\" means a securitisation where the transfer of risk is achieved by the use of credit derivatives or guarantees, and the exposures being securitised remain exposures of the originator institution;"
+    }
+  },
+  {
+    "question": "What was the definition of \"revolving exposure\" on January 01, 2019?",
+    "term": "revolving exposure",
+    "reference_date": "2019-01-01",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(15) \"\" revolving exposure \"\" means a revolving exposure as defined in point (15) of Article 2 of Regulation (EU) 2017/2402"
+    }
+  },
+  {
+    "question": "What was the definition of \"early amortisation provision\" on January 01, 2019?",
+    "term": "early amortisation provision",
+    "reference_date": "2019-01-01",
+    "available_dates": [
+      "2013-06-28",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "(16) \"\" early amortisation provision \"\" means an early amortisation provision as defined in point (17) of Article 2 of Regulation (EU) 2017/2402"
+    }
+  },
+  {
+    "question": "What was the definition of \"hedging set\" before April 26, 2021?",
+    "term": "hedging set",
+    "reference_date": "2021-04-26",
+    "available_dates": [
+      "2013-06-28",
+      "2021-06-29"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2013-06-28",
+      "definition": "(6) \"\" hedging set \"\" means a group of risk positions arising from the transactions within a single netting set, where only the balance of those risk positions is used for determining the exposure value under the Standardised Method set out in Section 5;"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial customer\" after April 23, 2019?",
+    "term": "financial customer",
+    "reference_date": "2019-04-23",
+    "available_dates": [
+      "2013-06-28",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-06-29",
+      "definition": "\"\" financial customer \"\" means a customer, including a financial customer belonging to a non-financial corporate group, which performs one or more of the activities listed in Annex I to Directive 2013/36/EU as its main business, or which is one of the following: (a) a credit institution; (b) an investment firm; (c) a securitisation special purpose entity (SSPE); (d) a collective investment undertaking (CIU); (e) a non-open ended investment scheme; (f) an insurance undertaking; (g) a reinsurance undertaking; (h) a financial holding company or mixed-financial holding company; (i) a financial institution; (j) a pension scheme arrangement as defined in point (10) of Article 2 of Regulation (EU) No 648/2012"
+    }
+  },
+  {
+    "question": "What was the definition of \"retail deposit\" after April 01, 2018?",
+    "term": "retail deposit",
+    "reference_date": "2018-04-01",
+    "available_dates": [
+      "2013-06-28",
+      "2021-06-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-06-29",
+      "definition": "(2) \"\" retail deposit \"\" means a liability to a natural person or to a SME, where the SME would qualify for the retail exposure class under the standardised or IRB approaches for credit risk, or a liability to a company which is eligible for the treatment set out in Article 153(4), and where the aggregate deposits by that SME or company on a group basis do not exceed EUR 1 million;"
+    }
+  },
+  {
+    "question": "What was the definition of \"air traffic advisory service\" on October 12, 2017?",
+    "term": "air traffic advisory service",
+    "reference_date": "2017-10-12",
+    "available_dates": [
+      "2015-06-30",
+      "2017-10-12"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-10-12",
+      "definition": "27. \"\" air traffic advisory service \"\" means a service provided within advisory airspace to ensure separation, in so far as practical, between aircraft which are operating on instrument flight rules (IFR) flight plans;"
+    }
+  },
+  {
+    "question": "What was the definition of \"alternate aerodrome\" after September 14, 2015?",
+    "term": "alternate aerodrome",
+    "reference_date": "2015-09-14",
+    "available_dates": [
+      "2015-06-30",
+      "2016-08-18"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2016-08-18",
+      "definition": "\"\" alternate aerodrome \"\" means an aerodrome to which an aircraft may proceed when it becomes either impossible or inadvisable to proceed to or to land at the aerodrome of intended landing, where the necessary services and facilities are available, where aircraft performance requirements can be met and which is operational at the expected time of use. Alternate aerodromes include the following: (a) take-off alternate an alternate aerodrome at which an aircraft would be able to land should this become necessary shortly after take-off and it is not possible to use the aerodrome of departure; (b) en-route alternate an alternate aerodrome at which an aircraft would be able to land in the event that a diversion becomes necessary while en route; (c) destination alternate an alternate aerodrome at which an aircraft would be able to land should it become either impossible or inadvisable to land at the aerodrome of intended landing;"
+    }
+  },
+  {
+    "question": "What was the definition of \"controlled aerodrome\" on January 27, 2022?",
+    "term": "controlled aerodrome",
+    "reference_date": "2022-01-27",
+    "available_dates": [
+      "2015-06-30",
+      "2022-01-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2022-01-27",
+      "definition": "57. \"\" controlled aerodrome \"\" means an aerodrome at which air traffic control service is provided to aerodrome traffic;"
+    }
+  },
+  {
+    "question": "What was the definition of \"means a series of predetermined manoeuvres by reference to flight instruments with specified protection from obstacles from the initial approach fix\" after May 10, 2016?",
+    "term": "means a series of predetermined manoeuvres by reference to flight instruments with specified protection from obstacles from the initial approach fix",
+    "reference_date": "2016-05-10",
+    "available_dates": [
+      "2015-06-30",
+      "2016-08-18"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2016-08-18",
+      "definition": "\"\" means a series of predetermined manoeuvres by reference to flight instruments with specified protection from obstacles from the initial approach fix \"\" or where applicable, from the beginning of a defined arrival route to a point from which a landing can be completed and thereafter, if a landing is not completed, to a position at which holding or en-route obstacle clearance criteria apply. Instrument approach procedures are classified as follows: (a) non-precision approach (NPA) procedure. An instrument approach procedure designed for 2D instrument approach operations Type A; (b) approach procedure with vertical guidance (APV). A performance-based navigation (PBN) instrument approach procedure designed for 3D instrument approach operations Type A; (c) precision approach (PA) procedure. An instrument approach procedure based on navigation systems (ILS, MLS, GLS and SBAS Cat I) designed for 3D instrument approach operations Type A or B;"
+    }
+  },
+  {
+    "question": "What was the definition of \"runway-holding position\" on October 12, 2017?",
+    "term": "runway-holding position",
+    "reference_date": "2017-10-12",
+    "available_dates": [
+      "2015-06-30",
+      "2017-10-12"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-10-12",
+      "definition": "114. \"\" runway-holding position \"\" an obstacle limitation surface, or an instrument landing system (ILS)/microwave landing system (MLS) critical/sensitive area at which taxiing aircraft and vehicles are to stop and hold, unless otherwise authorised by the aerodrome control tower;"
+    }
+  },
+  {
+    "question": "What was the definition of \"VMC\" before October 04, 2021?",
+    "term": "VMC",
+    "reference_date": "2021-10-04",
+    "available_dates": [
+      "2015-06-30",
+      "2022-01-27"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2015-06-30",
+      "definition": "143. \"\" VMC \"\" means the symbol used to designate visual meteorological conditions."
+    }
+  },
+  {
+    "question": "What was the definition of \"flight\" before April 26, 2020?",
+    "term": "flight",
+    "reference_date": "2020-04-26",
+    "available_dates": [
+      "2016-08-05",
+      "2023-04-11"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2016-08-05",
+      "definition": "(3) \"\" flight \"\" means a departure from a specified aerodrome towards a specified destination aerodrome;"
+    }
+  },
+  {
+    "question": "What was the definition of \"third country operator\" after September 09, 2022?",
+    "term": "third country operator",
+    "reference_date": "2022-09-09",
+    "available_dates": [
+      "2016-08-05",
+      "2023-04-11"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-04-11",
+      "definition": "(2) \"\" third country operator \"\" means any operator in respect of which the functions and duties of the State of the operator are not carried out by a Member State or the Agency."
+    }
+  },
+  {
+    "question": "What was the definition of \"description\" on March 27, 2014?",
+    "term": "description",
+    "reference_date": "2014-03-27",
+    "available_dates": [
+      "2014-03-27",
+      "2021-12-07"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2014-03-27",
+      "definition": "(2) \"\" description \"\" means the list of the specific characteristics of an aromatised wine product;"
+    }
+  },
+  {
+    "question": "What was the definition of \"organisation\" on July 27, 2015?",
+    "term": "organisation",
+    "reference_date": "2015-07-27",
+    "available_dates": [
+      "2015-07-27",
+      "2018-06-12"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2015-07-27",
+      "definition": "(i) \"\" organisation \"\" means a natural person, a legal person or part of a legal person. Such an organisation may be established at more than one location whether or not within the territory of the Member States;"
+    }
+  },
+  {
+    "question": "What was the definition of \"principal place of business\" after March 25, 2016?",
+    "term": "principal place of business",
+    "reference_date": "2016-03-25",
+    "available_dates": [
+      "2015-07-27",
+      "2016-08-25"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2016-08-25",
+      "definition": "(m) \"\" principal place of business \"\" means the head office or the registered office of the undertaking within which the principal financial functions and operational control of the activities referred to in this Regulation are exercised;"
+    }
+  },
+  {
+    "question": "What was the definition of \"dependent\" after July 21, 2022?",
+    "term": "dependent",
+    "reference_date": "2022-07-21",
+    "available_dates": [
+      "2013-01-07",
+      "2023-09-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-09-01",
+      "definition": "(2) \"\" \"\" dependent\"\" means, with regard to EEE, needing electric currents or electromagnetic fields to fulfil at least one intended function;"
+    }
+  },
+  {
+    "question": "What was the definition of \"non-road mobile machinery made available exclusively for professional use\" on January 07, 2013?",
+    "term": "non-road mobile machinery made available exclusively for professional use",
+    "reference_date": "2013-01-07",
+    "available_dates": [
+      "2013-01-07",
+      "2017-12-11"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2013-01-07",
+      "definition": "(28) \"\" non-road mobile machinery made available exclusively for professional use \"\" with an on-board power source, the operation of which requires either mobility or continuous or semi-continuous movement between a succession of fixed working locations while working, and is made available exclusively for professional use."
+    }
+  },
+  {
+    "question": "What was the definition of \"investment platforms\" after May 13, 2016?",
+    "term": "investment platforms",
+    "reference_date": "2016-05-13",
+    "available_dates": [
+      "2015-07-01",
+      "2017-12-30"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2017-12-30",
+      "definition": "\"\" investment platforms \"\" means special purpose vehicles, managed accounts, contract-based co-financing or risk-sharing arrangements or arrangements established by any other means by which entities channel a financial contribution in order to finance a number of investment projects, and which may include: (a) national or sub-national platforms that group together several investment projects on the territory of a given Member State; (b) cross-border, multi-country, regional or macro-regional platforms that group together partners from several Member States, regions or third countries interested in projects in a given geographic area; (c) thematic platforms that group together investment projects in a given sector;"
+    }
+  },
+  {
+    "question": "What was the definition of \"frozen meat\" after January 18, 2022?",
+    "term": "frozen meat",
+    "reference_date": "2022-01-18",
+    "available_dates": [
+      "2021-01-01",
+      "2022-01-25"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-01-25",
+      "definition": "(a) \"\" frozen meat \"\" means meat with an internal temperature of \u2013 12 \u00b0C or lower when it enters the customs territory of the Union;"
+    }
+  },
+  {
+    "question": "What was the definition of \"Network Manager\" on October 05, 2023?",
+    "term": "Network Manager",
+    "reference_date": "2023-10-05",
+    "available_dates": [
+      "2020-11-05",
+      "2023-10-05"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-10-05",
+      "definition": "(3) \"\" Network Manager \"\" means the body entrusted with the tasks necessary for the execution of the functions referred to in Article 6 of Regulation (EC) No 551/2004"
+    }
+  },
+  {
+    "question": "What was the definition of \"means an organisation\" on November 05, 2020?",
+    "term": "means an organisation",
+    "reference_date": "2020-11-05",
+    "available_dates": [
+      "2020-11-05",
+      "2022-01-27"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2020-11-05",
+      "definition": "\"\" means an organisation \"\" which is: (a) type 1 DAT provider that processes aeronautical data for use on aircraft and provides an aeronautical database meeting the DQRs, under controlled conditions, for which no corresponding airborne application/equipment compatibility has been determined; (b) type 2 DAT provider that processes aeronautical data and provides an aeronautical database for use on certified aircraft application/equipment meeting the DQRs for which compatibility with that application/equipment has been determined."
+    }
+  },
+  {
+    "question": "What was the definition of \"project of common interest\" on November 04, 2017?",
+    "term": "project of common interest",
+    "reference_date": "2017-11-04",
+    "available_dates": [
+      "2014-03-20",
+      "2017-11-04"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-11-04",
+      "definition": "(1) \"\" project of common interest \"\" means a project identified in Regulation (EU) No 1315/2013 , Regulation (EU) No 347/2013 or Regulation (EU) No 283/2014 of the European Parliament and of the Council Regulation (EU) No 283/2014 of the European Parliament and of the Council of 11 March 2014 on guidelines for trans-European networks in the area of telecommunications infrastructure and repealing Decision No 1336/97/EC ( OJ L 86, 21.3.2014, p. 14 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"agricultural products\" before July 30, 2021?",
+    "term": "agricultural products",
+    "reference_date": "2021-07-30",
+    "available_dates": [
+      "2020-07-27",
+      "2023-10-25"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2020-07-27",
+      "definition": "(a) \"\" agricultural products \"\" means products listed in Annex I to Regulation (EC) No 104/2000"
+    }
+  },
+  {
+    "question": "What was the definition of \"marketing of agricultural products\" before August 18, 2020?",
+    "term": "marketing of agricultural products",
+    "reference_date": "2020-08-18",
+    "available_dates": [
+      "2020-07-27",
+      "2023-10-25"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2020-07-27",
+      "definition": "(c) \"\" marketing of agricultural products \"\" means holding or display with a view to sale, offering for sale, delivery or any other manner of placing on the market, except the first sale by a primary producer to resellers or processors and any activity preparing a product for such first sale; a sale by a primary producer to final consumers shall be considered as marketing if it takes place in separate premises reserved for that purpose."
+    }
+  },
+  {
+    "question": "What was the definition of \"Other declaration\" on January 01, 2011?",
+    "term": "Other declaration",
+    "reference_date": "2011-01-01",
+    "available_dates": [
+      "2011-01-01",
+      "2012-02-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2011-01-01",
+      "definition": "(c) \"\" Other declaration \"\" means any declaration or document, other than those referred to in points (a) and (b), which has to be submitted or kept by a beneficiary or a third party in order to comply with specific requirements of certain rural development measures."
+    }
+  },
+  {
+    "question": "What was the definition of \"goods\" on July 01, 2018?",
+    "term": "goods",
+    "reference_date": "2018-07-01",
+    "available_dates": [
+      "2018-07-01",
+      "2022-05-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2018-07-01",
+      "definition": "(3) \"\" goods \"\" means any tangible movable items, with the exception of items sold by way of execution or otherwise by authority of law; water, gas and electricity shall be considered as goods within the meaning of this Directive where they are put up for sale in a limited volume or a set quantity;"
+    }
+  },
+  {
+    "question": "What was the definition of \"sales contract\" on July 01, 2018?",
+    "term": "sales contract",
+    "reference_date": "2018-07-01",
+    "available_dates": [
+      "2018-07-01",
+      "2022-05-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2018-07-01",
+      "definition": "(5) \"\" sales contract \"\" means any contract under which the trader transfers or undertakes to transfer the ownership of goods to the consumer and the consumer pays or undertakes to pay the price thereof, including any contract having as its object both goods and services;"
+    }
+  },
+  {
+    "question": "What was the definition of \"service contract\" on July 01, 2018?",
+    "term": "service contract",
+    "reference_date": "2018-07-01",
+    "available_dates": [
+      "2018-07-01",
+      "2022-05-28"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2018-07-01",
+      "definition": "(6) \"\" service contract \"\" means any contract other than a sales contract under which the trader supplies or undertakes to supply a service to the consumer and the consumer pays or undertakes to pay the price thereof;"
+    }
+  },
+  {
+    "question": "What was the definition of \"digital content\" before March 22, 2019?",
+    "term": "digital content",
+    "reference_date": "2019-03-22",
+    "available_dates": [
+      "2018-07-01",
+      "2022-05-28"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2018-07-01",
+      "definition": "(11) \"\" digital content \"\" means data which are produced and supplied in digital form;"
+    }
+  },
+  {
+    "question": "What was the definition of \"ancillary contract\" before June 18, 2021?",
+    "term": "ancillary contract",
+    "reference_date": "2021-06-18",
+    "available_dates": [
+      "2018-07-01",
+      "2022-05-28"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2018-07-01",
+      "definition": "(15) \"\" ancillary contract \"\" means a contract by which the consumer acquires goods or services related to a distance contract or an off-premises contract and where those goods are supplied or those services are provided by the trader or by a third party on the basis of an arrangement between that third party and the trader."
+    }
+  },
+  {
+    "question": "What was the definition of \"specified seeds\" before May 05, 2021?",
+    "term": "specified seeds",
+    "reference_date": "2021-05-05",
+    "available_dates": [
+      "2021-01-30",
+      "2021-11-03"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2021-01-30",
+      "definition": "(c) \"\" specified seeds \"\" means seeds of Solanum lycopersicum L. and Capsicum spp;"
+    }
+  },
+  {
+    "question": "What was the definition of \"specified fruits\" after May 02, 2021?",
+    "term": "specified fruits",
+    "reference_date": "2021-05-02",
+    "available_dates": [
+      "2021-01-30",
+      "2021-11-03"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-11-03",
+      "definition": "(d) \"\" specified fruits \"\" means fruits of Solanum lycopersicum L. and its hybrids and of Capsicum spp."
+    }
+  },
+  {
+    "question": "What was the definition of \"fishery and aquaculture products\" before December 12, 2022?",
+    "term": "fishery and aquaculture products",
+    "reference_date": "2022-12-12",
+    "available_dates": [
+      "2020-12-10",
+      "2023-10-25"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2020-12-10",
+      "definition": "(b) \"\" fishery and aquaculture products \"\" means the products defined in Article 5 (a) and (b) of Regulation (EU) No 1379/2013"
+    }
+  },
+  {
+    "question": "What was the definition of \"means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics:\" on December 05, 2019?",
+    "term": "means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics:",
+    "reference_date": "2019-12-05",
+    "available_dates": [
+      "2019-12-05",
+      "2021-03-01",
+      "2021-09-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-12-05",
+      "definition": "For the purpose of this Regulation, the following definitions shall apply: (1) light source \"\" means an electrically operated product intended to emit, or, in the case of a non-incandescent light source, intended to be possibly tuned to emit, light, or both, with all of the following optical characteristics: \"\" (a) chromaticity coordinates x and y in the range 0,270 < x < 0,530 and 2,3172 x 2 + 2,3653 x \u2013 0,2199 < y < \u2013 2,3172 x 2 + 2,3653 x \u2013 0,1595 ; \u2013 (b) 2 of projected light-emitting surface area as defined in Annex I; a luminous flux < 500 lumen per mm (c) 82000 lumen; a luminous flux between 60 and (d) a colour rendering index (CRI) > 0; using incandescence, fluorescence, high-intensity discharge, inorganic light emitting diodes (LED) or organic light emitting diodes (OLED), or their combinations as lighting technology, and that can be verified as a light source according to the procedure of Annex IV. High-pressure sodium (HPS) light sources that do not fulfil condition (a) are considered light sources for the purposes of this Regulation. Light sources do not include: (a) LED dies or LED chips; (b) LED packages; (c) products containing light source(s) from which these light source(s) can be removed for verification; (d) light-emitting parts contained in a light source from which these parts cannot be removed for verification as a light source; (2) \"\" control gear \"\" means one or more devices, that may or may not be physically integrated in a light source, intended to prepare the mains for the electric format required by one or more specific light sources within boundary conditions set by electric safety and electromagnetic compatibility. It may include transforming the supply and starting voltage, limiting operational and preheating current, preventing cold starting, correcting the power factor and/or reducing radio interference. The term \"\"control gear\"\" does not include power supplies within the scope of Commission Regulation (EC) No 278/2009 Commission Regulation (EC) No 278/2009 of 6 April 2009 implementing Directive 2005/32/EC of the European Parliament and of the Council with regard to ecodesign requirements for no-load condition electric power consumption and average active efficiency of external power supplies ( OJ L 93, 7.4.2009, p. 3 ). \"\" Power-over-Ethernet switch \"\" PoE switch\"\" means equipment for power-supply and data-handling that is installed between the mains and office equipment and/or light sources for the purpose of data transfer and power supply; (3) \"\"separate control gear\"\", means a control gear that is not physically integrated with a light source and is placed on the market as a separate product or as a part of a containing product; (4) \"\" containing product \"\" means a product containing one or more light sources, or separate control gears, or both. Examples of containing products are luminaires that can be taken apart to allow separate verification of the contained light source(s), household appliances containing light source(s), furniture (shelves, mirrors, display cabinets) containing light source(s). If a containing product cannot be taken apart for verification of the light source and separate control gear, the entire containing product is to be considered a light source; (5) \"\" light \"\" means electromagnetic radiation with a wavelength between 380 nm and 780 nm; (6) \"\"mains\"\" or \"\"mains voltage\"\" (MV) means the electricity supply of 230 (\u00b1 10 %) volt of alternating current at 50 Hz; (7) \"\" LED die \"\" or \"\"LED chip\"\" means a small block of light-emitting semiconducting material on which a functional LED circuit is fabricated; (8) \"\" LED package \"\" means a single electric part comprising principally at least one LED die. It does not include a control gear or parts of it, a cap or active electronic components and is not connected directly to the mains voltage. It can include one or more of the following: optical elements, light converters (phosphors), thermal, mechanical and electric interfaces or parts to address electrostatic discharge concerns. Any light-emitting devices that are intended to be used directly in an LED luminaire, are considered to be light sources; (9) \"\" chromaticity \"\" means the property of a colour stimulus defined by its chromaticity coordinates (x and y); (10) \"\"luminous flux\"\" or \"\"flux\"\" (\u03a6), expressed in lumen (lm), means the quantity derived from radiant flux (radiant power) by evaluating the electromagnetic radiation in accordance with the spectral sensitivity of the human eye. It refers to the total flux emitted by a light source in a solid angle of 4\u03c0 steradians under conditions (e.g. current, voltage, temperature) specified in applicable standards. It refers to the initial flux for the undimmed light source after a short operating period, unless it is clearly specified that the flux in a dimmed condition or the flux after a given period of operation is intended. For light sources that can be tuned to emit different light spectra and/or different maximum light intensities, it refers to the flux in the \"\"reference control settings\"\" as defined in Annex I; (11) \"\"colour rendering index\"\" (CRI) means a metric quantifying the effect of an illuminant on the colour appearance of objects by conscious or subconscious comparison with their colour appearance under the reference illuminant and is the average Ra of the colour rendering for the first 8 test colours (R1-R8) defined in standards; (12) \"\" incandescence \"\" means the phenomenon where light is produced from heat, in light sources typically produced through a threadlike conductor (\"\"filament\"\") which is heated by the passage of an electric current; (13) \"\" halogen light source \"\" means an incandescent light source with a threadlike conductor made from tungsten surrounded by gas containing halogens or halogen compounds; (14) \"\"fluorescence\"\" or \"\"fluorescent light source\"\" (FL) means the phenomenon or a light source using an electric gas discharge of the low-pressure mercury type in which most of the light is emitted by one or more layers of phosphors excited by the ultraviolet radiation from the discharge. Fluorescent light sources may have one (\"\"single-capped\"\") or two (\"\"double-capped\"\") connections (\"\"caps\"\") to their electricity supply. For the purposes of this Regulation, magnetic induction light sources are also considered as fluorescent light sources; (15) \"\"high intensity discharge\"\" (HID) means an electric gas discharge in which the light- producing arc is stabilised by wall temperature and the arc chamber has a bulb wall loading in excess of 3 watts per square centimetre. HID light sources are limited to metal halide, high-pressure sodium and mercury vapour types, as defined in Annex I; (16) \"\" gas discharge \"\" means a phenomenon where light is produced, directly or indirectly, by an electric discharge through a gas, plasma, metal vapour or mixture of gases and vapours; (17) \"\"inorganic light emitting diode\"\" (LED) means a technology in which light is produced from a solid state device embodying a p-n junction of inorganic material. The junction emits optical radiation when excited by an electric current; (18) \"\"organic light emitting diode\"\" (OLED) means a technology in which light is produced from a solid state device embodying a p-n junction of organic material. The junction emits optical radiation when excited by an electric current; (19) \"\"high-pressure sodium light source\"\" (HPS) means a high intensity discharge light source in which the light is produced mainly by radiation from sodium vapour operating at a partial pressure of the order of 10 kilopascals. HPS light sources may have one (\"\"single-ended\"\") or two (\"\"double-ended\"\") connectors to their electricity supply. (20) \"\" equivalent model \"\" means a model with the same technical characteristics relevant for the ecodesign requirements, but that is placed on the market or put into service by the same manufacturer or importer as another model with a different model identifier; (21) \"\" model identifier \"\" means the code, usually alphanumeric, which distinguishes a specific product model from other models with the same trade mark or the same manufacturer\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"calculation factors\" after September 24, 2023?",
+    "term": "calculation factors",
+    "reference_date": "2023-09-24",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(7) \"\" calculation factors \"\" means net calorific value, emission factor, preliminary emission factor, oxidation factor, conversion factor, carbon content, biomass fraction or unit conversion factor;"
+    }
+  },
+  {
+    "question": "What was the definition of \"tier\" on January 01, 2021?",
+    "term": "tier",
+    "reference_date": "2021-01-01",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2021-01-01",
+      "definition": "(8) \"\" tier \"\" means a set requirement used for determining activity data, calculation factors, annual emission and annual average hourly emission, and payload;"
+    }
+  },
+  {
+    "question": "What was the definition of \"inherent risk\" after July 20, 2023?",
+    "term": "inherent risk",
+    "reference_date": "2023-07-20",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(9) \"\" inherent risk \"\" means the susceptibility of a parameter in the annual emissions report to misstatements that could be material, individually or when aggregated with other misstatements, before taking into consideration the effect of any related control activities;"
+    }
+  },
+  {
+    "question": "What was the definition of \"control risk\" before August 27, 2023?",
+    "term": "control risk",
+    "reference_date": "2023-08-27",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2021-01-01",
+      "definition": "(10) \"\" control risk \"\" means the susceptibility of a parameter in the annual emissions report or tonne-kilometre report to misstatements that could be material, individually or when aggregated with other misstatements, and not prevented or detected and corrected on a timely basis by the control system;"
+    }
+  },
+  {
+    "question": "What was the definition of \"reporting period\" after November 25, 2023?",
+    "term": "reporting period",
+    "reference_date": "2023-11-25",
+    "available_dates": [
+      "2016-12-16",
+      "2021-01-01",
+      "2023-06-05",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(m) \"\" reporting period \"\" means the period from 1 January until 31 December of any given year; for voyages starting and ending in two different years, the respective data shall be accounted under the year concerned;"
+    }
+  },
+  {
+    "question": "What was the definition of \"emission factor\" on January 01, 2021?",
+    "term": "emission factor",
+    "reference_date": "2021-01-01",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2021-01-01",
+      "definition": "(13) \"\" emission factor \"\" means the average emission rate of a greenhouse gas relative to the activity data of a source stream assuming complete oxidation for combustion and complete conversion for all other chemical reactions;"
+    }
+  },
+  {
+    "question": "What was the definition of \"conservative\" after January 15, 2022?",
+    "term": "conservative",
+    "reference_date": "2022-01-15",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(20) \"\" conservative \"\" means that a set of assumptions is defined in order to ensure that no under-estimation of annual emissions occurs;"
+    }
+  },
+  {
+    "question": "What was the definition of \"biofuels\" after November 15, 2021?",
+    "term": "biofuels",
+    "reference_date": "2021-11-15",
+    "available_dates": [
+      "2021-01-01",
+      "2022-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-01-01",
+      "definition": "(23) \"\" biofuels \"\" means liquid fuels for transport produced from biomass;"
+    }
+  },
+  {
+    "question": "What was the definition of \"proxy data\" after October 11, 2023?",
+    "term": "proxy data",
+    "reference_date": "2023-10-11",
+    "available_dates": [
+      "2021-01-01",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(59) \"\" proxy data \"\" means annual values which are empirically substantiated or derived from accepted sources and which an operator or regulated entity as defined in Article 3 of Directive 2003/87/EC uses to substitute the activity data, the released fuel amounts or the calculation factors for the purpose of ensuring complete reporting when it is not possible to generate all the required activity data, released fuel amounts or calculation factors in the applicable monitoring methodology;"
+    }
+  },
+  {
+    "question": "What was the definition of \"issuing authority\" on May 01, 2014?",
+    "term": "issuing authority",
+    "reference_date": "2014-05-01",
+    "available_dates": [
+      "2014-05-01",
+      "2022-03-13"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2014-05-01",
+      "definition": "\"\" issuing authority \"\" means: (i) a judge, a court, an investigating judge or a public prosecutor competent in the case concerned; or (ii) any other competent authority as defined by the issuing State which, in the specific case, is acting in its capacity as an investigating authority in criminal proceedings with competence to order the gathering of evidence in accordance with national law. In addition, before it is transmitted to the executing authority the EIO shall be validated, after examination of its conformity with the conditions for issuing an EIO under this Directive, in particular the conditions set out in Article 6.1, by a judge, court, investigating judge or a public prosecutor in the issuing State. Where the EIO has been validated by a judicial authority, that authority may also be regarded as an issuing authority for the purposes of transmission of the EIO;"
+    }
+  },
+  {
+    "question": "What was the definition of \"green harvesting\" before February 16, 2012?",
+    "term": "green harvesting",
+    "reference_date": "2012-02-16",
+    "available_dates": [
+      "2011-10-01",
+      "2012-09-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2011-10-01",
+      "definition": "(a) \"\" green harvesting \"\" means the total harvesting of non-marketable products on a given area carried out before the beginning of the normal harvest. The products concerned shall not have been already damaged prior to the green harvesting, whether due to climatic reasons or disease or otherwise."
+    }
+  },
+  {
+    "question": "What was the definition of \"projections\" after May 01, 2021?",
+    "term": "projections",
+    "reference_date": "2021-05-01",
+    "available_dates": [
+      "2021-01-01",
+      "2021-07-29"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-07-29",
+      "definition": "(7) \"\" projections \"\" means forecasts of anthropogenic greenhouse gas emissions by sources and removals by sinks or developments of the energy system, including at least quantitative estimates for a sequence of six future years ending with 0 or 5, immediately following the reporting year;"
+    }
+  },
+  {
+    "question": "What was the definition of \"the Union\" before February 09, 2021?",
+    "term": "the Union",
+    "reference_date": "2021-02-09",
+    "available_dates": [
+      "2021-01-01",
+      "2023-11-20"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2021-01-01",
+      "definition": "(11) \"\" the Union \"\" s 2030 targets for energy and climate\"\" means the Union-wide binding target of at least 40 % domestic reduction in economy-wide greenhouse gas emissions as compared to 1990 to be achieved by 2030, the Union-level binding target of at least 32 % for the share of renewable energy consumed in the Union in 2030, the Union-level headline target of at least 32,5 % for improving energy efficiency in 2030, and the 15 % electricity interconnection target for 2030 or any subsequent targets in this regard agreed by the European Council or by the European Parliament and by the Council for 2030;"
+    }
+  },
+  {
+    "question": "What was the definition of \"early efforts\" after January 17, 2022?",
+    "term": "early efforts",
+    "reference_date": "2022-01-17",
+    "available_dates": [
+      "2021-01-01",
+      "2023-11-20"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-11-20",
+      "definition": "\"\" early efforts \"\" means: (a) in the context of the assessment of a potential gap between the Union\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"fossil fuel\" on May 16, 2023?",
+    "term": "fossil fuel",
+    "reference_date": "2023-05-16",
+    "available_dates": [
+      "2021-01-01",
+      "2023-05-16"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-05-16",
+      "definition": "(62) \"\" fossil fuel \"\" means non-renewable carbon-based energy sources such as solid fuels, natural gas and oil;"
+    }
+  },
+  {
+    "question": "What was the definition of \"specification\" after February 02, 2013?",
+    "term": "specification",
+    "reference_date": "2013-02-02",
+    "available_dates": [
+      "2011-04-22",
+      "2016-09-14"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2016-09-14",
+      "definition": "(18) \"\" specification \"\" means composition of a substance, purity criteria for a substance, physico-chemical characteristics of a substance, details concerning the manufacturing process of a substance or further information concerning the expression of migration limits;"
+    }
+  },
+  {
+    "question": "What was the definition of \"containing product\" before August 28, 2021?",
+    "term": "containing product",
+    "reference_date": "2021-08-28",
+    "available_dates": [
+      "2021-03-01",
+      "2021-09-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2021-03-01",
+      "definition": "(3) \"\" containing product \"\" means a product containing one or more light sources, or separate control gears, or both. Examples of containing products are luminaires that can be taken apart to allow separate verification of the contained light source(s), household appliances containing light source(s), furniture (shelves, mirrors, display cabinets) containing light source(s). If a containing product cannot be taken apart for verification of the light source and separate control gear, the entire containing product is to be considered a light source;"
+    }
+  },
+  {
+    "question": "What was the definition of \"customs office of first entry\" after May 01, 2020?",
+    "term": "customs office of first entry",
+    "reference_date": "2020-05-01",
+    "available_dates": [
+      "2016-05-01",
+      "2020-07-16"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2020-07-16",
+      "definition": "(15) \"\" customs office of first entry \"\" means the customs office which is competent for customs supervision at the place where the means of transport carrying the goods arrives or, where applicable, is destined to arrive, in the customs territory of the Union from a territory outside that territory;"
+    }
+  },
+  {
+    "question": "What was the definition of \"regular shipping service\" on July 16, 2020?",
+    "term": "regular shipping service",
+    "reference_date": "2020-07-16",
+    "available_dates": [
+      "2016-05-01",
+      "2020-07-16"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2020-07-16",
+      "definition": "(45) \"\" regular shipping service \"\" means a service which carries goods in vessels that ply only between Union ports and does not come from, go to or call at any points outside the customs territory of the Union or any points in a free zone of a Union port;"
+    }
+  },
+  {
+    "question": "What was the definition of \"regional cumulation\" after October 07, 2016?",
+    "term": "regional cumulation",
+    "reference_date": "2016-10-07",
+    "available_dates": [
+      "2016-05-01",
+      "2020-07-16"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2020-07-16",
+      "definition": "(8) \"\" regional cumulation \"\" means a system whereby products which according to this Section originate in a country which is a member of a regional group are considered as materials originating in another country of the same regional group (or a country of another regional group where cumulation between groups is possible) when further processed or incorporated in a product manufactured there;"
+    }
+  },
+  {
+    "question": "What was the definition of \"exporter\" after February 20, 2017?",
+    "term": "exporter",
+    "reference_date": "2017-02-20",
+    "available_dates": [
+      "2016-05-01",
+      "2018-09-02"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2018-09-02",
+      "definition": "\"\" exporter \"\" means: (a) a private individual carrying goods to be taken out of the customs territory of the Union where these goods are contained in the private individual\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"vehicle type with regard to emissions and vehicle repair and maintenance information\" after December 07, 2018?",
+    "term": "vehicle type with regard to emissions and vehicle repair and maintenance information",
+    "reference_date": "2018-12-07",
+    "available_dates": [
+      "2017-07-27",
+      "2019-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-01-01",
+      "definition": "\"\" vehicle type with regard to emissions and vehicle repair and maintenance information \"\" means a group of vehicles which: (a) do not differ with respect to the criteria constituting an \"\"interpolation family\"\" as defined in point 5.6 of Annex XXI; (b) fall in a single \"\"CO 2 interpolation range\"\" within the meaning of point 2.3.2 of Sub-Annex 6 to Annex XXI; (c) do not differ with respect to any characteristics that have a non-negligible influence on tailpipe emissions, such as, but not limited to, the following: x trap, SCR, lean NO x catalyst, particulate trap or combinations thereof in a single unit); types and sequence of pollution control devices (e.g. three-way catalyst, oxidation catalyst, lean NO exhaust gas recirculation (with or without, internal/external, cooled/non-cooled, low/high pressure)."
+    }
+  },
+  {
+    "question": "What was the definition of \"periodically regenerating system\" on July 27, 2017?",
+    "term": "periodically regenerating system",
+    "reference_date": "2017-07-27",
+    "available_dates": [
+      "2017-07-27",
+      "2019-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-27",
+      "definition": "(6) \"\" periodically regenerating system \"\" means an exhaust emissions control device (e.g. catalytic converter, particulate trap) that requires a periodical regeneration process in less than 4000 km of normal vehicle operation;"
+    }
+  },
+  {
+    "question": "What was the definition of \"type of pollution control device\" on September 01, 2023?",
+    "term": "type of pollution control device",
+    "reference_date": "2023-09-01",
+    "available_dates": [
+      "2017-07-27",
+      "2023-09-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-09-01",
+      "definition": "\"\" type of pollution control device \"\" means catalytic converters and particulate filters which do not differ in any of the following essential aspects: (a) number and kind of substrates, structure and material; (b) type of activity of each substrate; (c) volume, ratio of frontal area and substrate length; (d) catalyst material content; (e) catalyst material ratio; (f) cell density; (g) dimensions and shape; (h) thermal protection; (i) required reagent (if applicable);"
+    }
+  },
+  {
+    "question": "What was the definition of \"mono fuel gas vehicle\" on July 27, 2017?",
+    "term": "mono fuel gas vehicle",
+    "reference_date": "2017-07-27",
+    "available_dates": [
+      "2017-07-27",
+      "2023-09-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-27",
+      "definition": "(10) \"\" mono fuel gas vehicle \"\" means a mono fuel vehicle that primarily runs on LPG, NG/biomethane, or hydrogen but may also have a petrol system for emergency purposes or starting only, where the petrol tank does not contain more than 15 litres of petrol;"
+    }
+  },
+  {
+    "question": "What was the definition of \"properly maintained and used\" on July 27, 2017?",
+    "term": "properly maintained and used",
+    "reference_date": "2017-07-27",
+    "available_dates": [
+      "2017-07-27",
+      "2023-09-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-07-27",
+      "definition": "(17) \"\" properly maintained and used \"\" means, for the purpose of a test vehicle, that such a vehicle satisfies the criteria for acceptance of a selected vehicle laid down in section 2 of Appendix 3 to UN/ECE Regulation No 83 Regulation No 83 of the Economic Commission for Europe of the United Nations (UNECE) \u2014 Uniform provisions concerning the approval of vehicles with regard to the emission of pollutants according to engine fuel requirements [2015/1038] ( OJ L 172, 3.7.2015, p. 1 ). ;"
+    }
+  },
+  {
+    "question": "What was the definition of \"malfunction\" after November 08, 2019?",
+    "term": "malfunction",
+    "reference_date": "2019-11-08",
+    "available_dates": [
+      "2017-07-27",
+      "2023-09-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-09-01",
+      "definition": "(20) \"\" malfunction \"\" means the failure of an emission-related component or system that would result in emissions exceeding the thresholds in Table 4A of paragraph 6.8.2 of UN Regulation No 154 or if the OBD system is unable to fulfil the basic monitoring requirements set out in Annex C5 to UN Regulation No 154;"
+    }
+  },
+  {
+    "question": "What was the definition of \"access to information\" after December 24, 2018?",
+    "term": "access to information",
+    "reference_date": "2018-12-24",
+    "available_dates": [
+      "2017-07-27",
+      "2023-09-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-09-01",
+      "definition": "(23) \"\" access to information \"\" means the availability of all vehicle OBD and vehicle repair and maintenance information, required for the inspection, diagnosis, servicing or repair of the vehicle;"
+    }
+  },
+  {
+    "question": "What was the definition of \"vehicle OBD information\" on September 01, 2023?",
+    "term": "vehicle OBD information",
+    "reference_date": "2023-09-01",
+    "available_dates": [
+      "2017-07-27",
+      "2023-09-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-09-01",
+      "definition": "(26) \"\" vehicle OBD information \"\" means information relating to an on-board diagnostic system for any electronic system on the vehicle;"
+    }
+  },
+  {
+    "question": "What was the definition of \"wheelbase\" after August 21, 2019?",
+    "term": "wheelbase",
+    "reference_date": "2019-08-21",
+    "available_dates": [
+      "2017-07-27",
+      "2019-12-02"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-12-02",
+      "definition": "\"\" wheelbase \"\" means the following: (a) for motor vehicles and drawbar trailers, the horizontal distance between the centre of the first and the last axle; (b) for centre-axle trailers, semi-trailers and rigid drawbar trailers, the distance between the vertical axis of the coupling and the centre of the last axle;"
+    }
+  },
+  {
+    "question": "What was the definition of \"indivisible load\" after February 09, 2019?",
+    "term": "indivisible load",
+    "reference_date": "2019-02-09",
+    "available_dates": [
+      "2017-07-27",
+      "2019-12-02"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-12-02",
+      "definition": "(40) \"\" indivisible load \"\" means a load that cannot, for the purposes of carriage by road, be divided into two or more loads without undue expense or risk of damage and which, owing to its mass or dimension, cannot be carried by a vehicle the masses and dimensions of which comply with the maximum authorised masses and dimensions applicable in a Member State;"
+    }
+  },
+  {
+    "question": "What was the definition of \"biocidal product family\" before September 29, 2013?",
+    "term": "biocidal product family",
+    "reference_date": "2013-09-29",
+    "available_dates": [
+      "2013-09-23",
+      "2014-04-25"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2013-09-23",
+      "definition": "(s) \"\" biocidal product family \"\" means a group of biocidal products having similar uses, the active substances of which have the same specifications, and presenting specified variations in their composition which do not adversely affect the level of risk or significantly reduce the efficacy of the products;"
+    }
+  },
+  {
+    "question": "What was the definition of \"Member States concerned\" after December 10, 2018?",
+    "term": "Member States concerned",
+    "reference_date": "2018-12-10",
+    "available_dates": [
+      "2018-07-17",
+      "2019-03-26"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-03-26",
+      "definition": "(10) \"\" Member States concerned \"\" means Member States having a direct management interest, namely Denmark, Germany, Estonia, Latvia, Lithuania, Poland, Finland and Sweden."
+    }
+  },
+  {
+    "question": "What was the definition of \"inducement scheme\" after November 21, 2021?",
+    "term": "inducement scheme",
+    "reference_date": "2021-11-21",
+    "available_dates": [
+      "2018-04-26",
+      "2022-08-02"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-08-02",
+      "definition": "(3) \"\" inducement scheme \"\" means a set of rules governing the payment of inducements, including the conditions under which the inducements are paid;"
+    }
+  },
+  {
+    "question": "What was the definition of \"axle\" before June 30, 2020?",
+    "term": "axle",
+    "reference_date": "2020-06-30",
+    "available_dates": [
+      "2019-03-01",
+      "2022-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-03-01",
+      "definition": "(10) \"\" axle \"\" means a central shaft for a rotating wheel or gear as drive axle of a vehicle;"
+    }
+  },
+  {
+    "question": "What was the definition of \"air drag\" before October 22, 2021?",
+    "term": "air drag",
+    "reference_date": "2021-10-22",
+    "available_dates": [
+      "2019-03-01",
+      "2022-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-03-01",
+      "definition": "(11) \"\" air drag \"\" means characteristic of a vehicle configuration regarding aerodynamic force acting on the vehicle opposite to the direction of air flow and determined as a product of the drag coefficient and the cross sectional area for zero crosswind conditions;"
+    }
+  },
+  {
+    "question": "What was the definition of \"auxiliaries\" after February 21, 2022?",
+    "term": "auxiliaries",
+    "reference_date": "2022-02-21",
+    "available_dates": [
+      "2019-03-01",
+      "2022-07-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-07-01",
+      "definition": "(12) \"\" auxiliaries \"\" means vehicle components including an engine fan, steering system, electric system, pneumatic system and Heating, Ventilation and Air Conditioning (HVAC) system whose CO 2 emissions and fuel consumption properties have been defined in Annex IX;"
+    }
+  },
+  {
+    "question": "What was the definition of \"RASFF network\" after February 03, 2020?",
+    "term": "RASFF network",
+    "reference_date": "2020-02-03",
+    "available_dates": [
+      "2019-10-14",
+      "2021-04-21"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-04-21",
+      "definition": "(9) \"\" RASFF network \"\" means the Rapid alert system established as a network by Article 50 of Regulation (EC) No 178/2002 for the notifications referred to in points (15) to (20) of this Article;"
+    }
+  },
+  {
+    "question": "What was the definition of \"alert and cooperation network\" before December 14, 2020?",
+    "term": "alert and cooperation network",
+    "reference_date": "2020-12-14",
+    "available_dates": [
+      "2019-10-14",
+      "2021-04-21"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-10-14",
+      "definition": "(12) \"\" alert and cooperation network \"\" means a network composed of the RASFF, AAC and food fraud networks;"
+    }
+  },
+  {
+    "question": "What was the definition of \"border rejection notification\" on October 14, 2019?",
+    "term": "border rejection notification",
+    "reference_date": "2019-10-14",
+    "available_dates": [
+      "2019-10-14",
+      "2021-04-21"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2019-10-14",
+      "definition": "(20) \"\" border rejection notification \"\" means a notification in iRASFF of a rejection due to a risk as defined in point 8 of a batch, container or cargo of food, food contact material or feed as referred to in point (c) of Article 50(3) of Regulation (EC) No 178/2002"
+    }
+  },
+  {
+    "question": "What was the definition of \"original notification\" after January 04, 2020?",
+    "term": "original notification",
+    "reference_date": "2020-01-04",
+    "available_dates": [
+      "2019-10-14",
+      "2021-04-21"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-04-21",
+      "definition": "(22) \"\" original notification \"\" means a non-compliance notification, an alert notification, an information notification, a news notification, a fraud notification or a border rejection notification;"
+    }
+  },
+  {
+    "question": "What was the definition of \"non-compliance notification\" after July 09, 2020?",
+    "term": "non-compliance notification",
+    "reference_date": "2020-07-09",
+    "available_dates": [
+      "2019-10-14",
+      "2021-04-21"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2021-04-21",
+      "definition": "(14) \"\"non-compliance notification\"\" means a notification in iRASFF of a non-compliance with the rules referred to in Article 1(2) of Regulation (EU) 2017/625 that does not represent a risk within the meaning of Article 50 of Regulation (EC) No 178/2002 and Article 29 of Regulation (EC) No 183/2005"
+    }
+  },
+  {
+    "question": "What was the definition of \"Large power transformer\" after November 20, 2017?",
+    "term": "Large power transformer",
+    "reference_date": "2017-11-20",
+    "available_dates": [
+      "2017-01-09",
+      "2019-11-14"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2019-11-14",
+      "definition": "(4) \"\" Large power transformer \"\" means a power transformer with at least one winding having either rated power greater than 3150 kVA or highest voltage for equipment greater than 36 kV."
+    }
+  },
+  {
+    "question": "What was the definition of \"port of call\" after September 05, 2021?",
+    "term": "port of call",
+    "reference_date": "2021-09-05",
+    "available_dates": [
+      "2016-12-16",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(b) \"\" port of call \"\" means a port of call as defined in Article 3, point (z), of Directive 2003/87/EC of the European Parliament and of the Council Directive 2003/87/EC of the European Parliament and of the Council of 13 October 2003 establishing a system for greenhouse gas emission allowance trading within the Union and amending Council Directive 96/61/EC ( OJ L 275, 25.10.2003, p. 32 )."
+    }
+  },
+  {
+    "question": "What was the definition of \"voyage\" on June 05, 2023?",
+    "term": "voyage",
+    "reference_date": "2023-06-05",
+    "available_dates": [
+      "2016-12-16",
+      "2023-06-05"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2023-06-05",
+      "definition": "(c) \"\" voyage \"\" means any movement of a ship that originates from or terminates in a port of call;"
+    }
+  },
+  {
+    "question": "What was the definition of \"company\" after September 07, 2017?",
+    "term": "company",
+    "reference_date": "2017-09-07",
+    "available_dates": [
+      "2016-12-16",
+      "2024-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2024-01-01",
+      "definition": "(d) \"\" company \"\" means the shipping company as defined in Article 3, point (w), of Directive 2003/87/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"other relevant information\" before March 18, 2017?",
+    "term": "other relevant information",
+    "reference_date": "2017-03-18",
+    "available_dates": [
+      "2016-12-16",
+      "2023-06-05"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2016-12-16",
+      "definition": "(i) \"\" other relevant information \"\" means information related to CO 2 emissions from the consumption of fuels, to transport work and to the energy efficiency of ships, which enables the analysis of emission trends and the assessment of ships\\"
+    }
+  },
+  {
+    "question": "What was the definition of \"ice class\" after May 04, 2021?",
+    "term": "ice class",
+    "reference_date": "2021-05-04",
+    "available_dates": [
+      "2016-12-16",
+      "2023-06-05"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-06-05",
+      "definition": "(o) \"\" ice class \"\" means the notation assigned to the ship by the competent national authorities of the flag State or an organisation recognised by that State, showing that the ship has been designed for navigation in sea-ice conditions;"
+    }
+  },
+  {
+    "question": "What was the definition of \"Relevant entity\" on September 09, 2016?",
+    "term": "Relevant entity",
+    "reference_date": "2016-09-09",
+    "available_dates": [
+      "2016-09-09",
+      "2021-03-30"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2016-09-09",
+      "definition": "(1) \"\" Relevant entity \"\" means an EU parent institution or EU parent financial holding company or EU parent mixed financial holding company or an institution that is not a subsidiary of an EU parent institution or EU parent financial holding company or EU parent mixed financial holding company;"
+    }
+  },
+  {
+    "question": "What was the definition of \"approved publication arrangement\" after July 05, 2017?",
+    "term": "approved publication arrangement",
+    "reference_date": "2017-07-05",
+    "available_dates": [
+      "2014-07-02",
+      "2022-01-01"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2022-01-01",
+      "definition": "(34) \"\" approved publication arrangement \"\" or \"\"APA\"\" means a person authorised under this Regulation to provide the service of publishing trade reports on behalf of investment firms pursuant to Articles 20 and 21;"
+    }
+  },
+  {
+    "question": "What was the definition of \"consolidated tape provider\" on July 02, 2014?",
+    "term": "consolidated tape provider",
+    "reference_date": "2014-07-02",
+    "available_dates": [
+      "2014-07-02",
+      "2022-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2014-07-02",
+      "definition": "(35) \"\" consolidated tape provider \"\" or \"\"CTP\"\" means a consolidated tape provider as defined in Article 4(1)(53) of Directive 2014/65/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"approved reporting mechanism\" on January 01, 2022?",
+    "term": "approved reporting mechanism",
+    "reference_date": "2022-01-01",
+    "available_dates": [
+      "2014-07-02",
+      "2022-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2022-01-01",
+      "definition": "(36) \"\" approved reporting mechanism \"\" or \"\"ARM\"\" means a person authorised under this Regulation to provide the service of reporting details of transactions to competent authorities or to ESMA on behalf of investment firms;"
+    }
+  },
+  {
+    "question": "What was the definition of \"portfolio compression\" before October 04, 2014?",
+    "term": "portfolio compression",
+    "reference_date": "2014-10-04",
+    "available_dates": [
+      "2014-07-02",
+      "2016-07-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2014-07-02",
+      "definition": "(47) \"\" portfolio compression \"\" means a risk reduction service in which two or more counterparties wholly or partially terminate some or all of the derivatives submitted by those counterparties for inclusion in the portfolio compression and replace the terminated derivatives with another derivative whose combined notional value is less than the combined notional value of the terminated derivatives."
+    }
+  },
+  {
+    "question": "What was the definition of \"OTC derivative\" after November 04, 2015?",
+    "term": "OTC derivative",
+    "reference_date": "2015-11-04",
+    "available_dates": [
+      "2014-01-01",
+      "2016-01-12"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2016-01-12",
+      "definition": "(7) \"\" OTC derivative \"\" or \"\"OTC derivative contract\"\" means a derivative contract the execution of which does not take place on a regulated market within the meaning of Article 4(1)(14) of Directive 2004/39/EC"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial counterparty\" before March 07, 2015?",
+    "term": "financial counterparty",
+    "reference_date": "2015-03-07",
+    "available_dates": [
+      "2014-01-01",
+      "2019-06-17"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2014-01-01",
+      "definition": "(8) \"\" financial counterparty \"\" means an investment firm authorised in accordance with Directive 2004/39/EC , a credit institution authorised in accordance with Directive 2006/48/EC , an insurance undertaking authorised in accordance with Directive 73/239/EEC , an assurance undertaking authorised in accordance with Directive 2002/83/EC , a reinsurance undertaking authorised in accordance with Directive 2005/68/EC , a UCITS and, where relevant, its management company, authorised in accordance with Directive 2009/65/EC , an institution for occupational retirement provision within the meaning of Article 6(a) of Directive 2003/41/EC and an alternative investment fund managed by AIFMs authorised or registered in accordance with Directive 2011/61/EU"
+    }
+  },
+  {
+    "question": "What was the definition of \"mobile refrigerating appliance\" before August 25, 2020?",
+    "term": "mobile refrigerating appliance",
+    "reference_date": "2020-08-25",
+    "available_dates": [
+      "2019-12-05",
+      "2021-03-01"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2019-12-05",
+      "definition": "(31) \"\" mobile refrigerating appliance \"\" means a refrigerating appliance that can be used where there is no access to the mains electricity grid and that uses extra low-voltage electricity (< 120V DC) or fuel or both as the energy source for the refrigeration functionality, including a refrigerating appliance that, in addition to extra low voltage electricity or fuel, or both, can be electric mains operated. An appliance placed on the market with an AC/DC converter is not a mobile refrigerating appliance;"
+    }
+  },
+  {
+    "question": "What was the definition of \"EES data\" before December 26, 2018?",
+    "term": "EES data",
+    "reference_date": "2018-12-26",
+    "available_dates": [
+      "2018-10-09",
+      "2019-06-11"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2018-10-09",
+      "definition": "(22) \"\" EES data \"\" means all data stored in the EES Central System in accordance with Article 14 and Articles 16 to 20;"
+    }
+  },
+  {
+    "question": "What was the definition of \"Responding Member State\" on August 29, 2017?",
+    "term": "Responding Member State",
+    "reference_date": "2017-08-29",
+    "available_dates": [
+      "2017-08-29",
+      "2023-10-25"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2017-08-29",
+      "definition": "(k) \"\" Responding Member State \"\" means the Member State to whom the ERRU request or notification is directed."
+    }
+  },
+  {
+    "question": "What was the definition of \"young farmer\" on January 01, 2014?",
+    "term": "young farmer",
+    "reference_date": "2014-01-01",
+    "available_dates": [
+      "2014-01-01",
+      "2018-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2014-01-01",
+      "definition": "(n) \"\" young farmer \"\" means a person who is no more than 40 years of age at the moment of submitting the application, possesses adequate occupational skills and competence and is setting up for the first time in an agricultural holding as head of that holding;"
+    }
+  },
+  {
+    "question": "What was the definition of \"forest\" on January 01, 2018?",
+    "term": "forest",
+    "reference_date": "2018-01-01",
+    "available_dates": [
+      "2014-01-01",
+      "2018-01-01"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2018-01-01",
+      "definition": "(r) \"\" forest \"\" means an area of land spanning more than 0,5 hectares with trees higher than 5 meters and a canopy cover of more than 10 percent, or trees able to reach these thresholds in situ; and does not include land that is predominantly under agricultural or urban land use, subject to paragraph 2;"
+    }
+  },
+  {
+    "question": "What was the definition of \"financial institutions\" before November 30, 2014?",
+    "term": "financial institutions",
+    "reference_date": "2014-11-30",
+    "available_dates": [
+      "2013-10-30",
+      "2016-01-12"
+    ],
+    "reference_style": "before",
+    "ground_truth": {
+      "date": "2013-10-30",
+      "definition": "(1) \"\" financial institutions \"\" means \"\"credit institutions\"\" as defined in Article 4(1) of Directive 2006/48/EC , \"\"investment firms\"\" as defined in Article 3(1)(b) of Directive 2006/49/EC , and \"\"financial conglomerates\"\" as defined in Article 2(14) of Directive 2002/87/EC , save that, with regard to Directive 2005/60/EC , \"\"financial institutions\"\" means credit institutions and financial institutions as defined in Article 3(1)"
+    }
+  },
+  {
+    "question": "What was the definition of \"net turnover\" on December 05, 2014?",
+    "term": "net turnover",
+    "reference_date": "2014-12-05",
+    "available_dates": [
+      "2014-12-05",
+      "2023-01-05"
+    ],
+    "reference_style": "exact",
+    "ground_truth": {
+      "date": "2014-12-05",
+      "definition": "(5) \"\" net turnover \"\" means the amounts derived from the sale of products and the provision of services after deducting sales rebates and value added tax and other taxes directly linked to turnover;"
+    }
+  },
+  {
+    "question": "What was the definition of \"material\" after January 19, 2018?",
+    "term": "material",
+    "reference_date": "2018-01-19",
+    "available_dates": [
+      "2014-12-05",
+      "2023-01-05"
+    ],
+    "reference_style": "after",
+    "ground_truth": {
+      "date": "2023-01-05",
+      "definition": "(16) \"\" material \"\" means the status of information where its omission or misstatement could reasonably be expected to influence decisions that users make on the basis of the financial statements of the undertaking. The materiality of individual items shall be assessed in the context of other similar items;"
+    }
+  }
+]

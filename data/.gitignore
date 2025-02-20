@@ -1,0 +1,5 @@
+*
+!.gitignore
+!/definitions_corpus/
+/definitions_corpus/*
+!/definitions_corpus/definitions.csv

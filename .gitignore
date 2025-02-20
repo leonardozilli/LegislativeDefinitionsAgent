@@ -1,0 +1,11 @@
+.vscode/
+__pycache__/
+.env
+logs/
+*.db*
+*.egg-info/
+*.lock
+*.old
+*.xlsx
+build/
+notebooks/
