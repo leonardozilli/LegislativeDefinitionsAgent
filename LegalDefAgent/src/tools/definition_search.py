@@ -19,11 +19,9 @@ from ..schema.definition import RelevantDefinitionsIDList, GeneratedDefinition, 
 from ..llm import get_model
 from ..utils import setup_logging
 
-# Setup logging
 setup_logging()
 logger = logging.getLogger(__name__)
 
-# Initialize retriever with constant
 RETRIEVER = retriever_.setup_retriever(k=10)
 
 

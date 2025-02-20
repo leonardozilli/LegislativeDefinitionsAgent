@@ -48,13 +48,11 @@ class DefinitionExtractor:
         logging.info(f'Extracted definitions from {extracted} files. {
                      errors} errors out of {total} files.')
 
-        # Create DataFrame and process immediately
         if not all_definitions:
             raise ValueError("No definitions were extracted")
 
         df = pl.DataFrame(all_definitions)
 
-        # Process and transform the data
         processed_df = (
             df
             .with_columns(

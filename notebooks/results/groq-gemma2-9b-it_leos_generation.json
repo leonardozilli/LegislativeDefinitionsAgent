@@ -1,0 +1,834 @@
+[
+  {
+    "CELEX_ID": "32016R0679",
+    "Term": "Non-personal Data",
+    "#": 1,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0680",
+    "Term": "Connected device",
+    "#": 2,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0681",
+    "Term": "IoT device",
+    "#": 3,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0682",
+    "Term": "Open Data",
+    "#": 4,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0683",
+    "Term": "Satellite Data",
+    "#": 5,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0684",
+    "Term": "Cookie",
+    "#": 6,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0685",
+    "Term": "Synthetic Data",
+    "#": 7,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0686",
+    "Term": "International Data Transfer",
+    "#": 8,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R0687",
+    "Term": "Data Sharing activity",
+    "#": 9,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Data Sharing activity means the act of making personal data accessible to one or more parties, either directly or indirectly, for a specific purpose, with or without the involvement of automated means.",
+        "sources": [
+          "shared services: means any activity, function or service performed by either an internal unit within a payment card scheme or processing entity or a separate legal entity and executed to the benefit of both the payment card scheme and the processing entity;",
+          "transfer of personal data: means the communication of personal data, actively made available, between a limited number of identified parties, with the knowledge or intention of the sender to give the recipient access to the personal data;",
+          "Member State: \" handling and exchanging data \" information and documents on official controls, and capable of electronically exchanging data with the relevant component;",
+          "processing: means any operation or set of operations which are performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "processing: means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "processing: means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "processing: means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "processing of personal data: means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, logging, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "processing of personal data: means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, logging, organisation, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction;",
+          "code sharing: il trasporto di passeggeri operato da uno o piu' vettori aerei per conto di altri vettori aerei e regolato da apposita convenzione;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32016R0688",
+    "Term": "Data Buyer",
+    "#": 10,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0083",
+    "Term": "Connected device",
+    "#": 11,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0084",
+    "Term": "IoT device",
+    "#": 12,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0085",
+    "Term": "Dangerous Product",
+    "#": 13,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0086",
+    "Term": "Dangerous Product Importer",
+    "#": 14,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "Normattiva",
+          "document_id": "20160525_16G00099_ORIGINALE",
+          "date": "2016-05-26",
+          "definition": "m) importatore : la persona fisica o giuridica stabilita nell'Unione europea che immette sul mercato dell'Unione un esplosivo originario di un paese terzo;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32011L0087",
+    "Term": "Intermediary Platform",
+    "#": 15,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "An Intermediary Platform is a digital platform that facilitates interactions between two or more parties, enabling the exchange of information, goods, services, or value. It acts as a neutral intermediary, connecting buyers and sellers, service providers and consumers, or other relevant stakeholders, but does not itself provide the goods, services, or value being exchanged.",
+        "sources": [
+          "interface: means a facility between systems which provides the media through which they can connect and interact;",
+          "intermediary institution: means a credit institution which intermediates promotional loans provided that it does not give them as credit to a final customer.",
+          "intermediate body: means any public or private body which acts under the responsibility of a Managing Authority, or which carries out duties on behalf of such an in relation to beneficiaries implementing projects;",
+          "intermediate body: means a public or private body which acts under the responsibility of a managing authority, or which carries out functions or tasks on behalf of such an authority;",
+          "blending facility or platform: means a cooperation framework established between the Commission and development or other public finance institutions with a view to combining non-repayable forms of support and/or financial instruments and/or budgetary guarantees from the budget and repayable forms of support from development or other public finance institutions, as well as from private-sector finance institutions and private-sector investors;",
+          "intermediary: means a person as defined in point (d) of Article 2 of Directive 2007/36/EC",
+          "intermediate body: means any public or private body which acts under the responsibility of a managing or certifying authority, or which carries out duties on behalf of such an authority in relation to beneficiaries' implementing operations;",
+          "intermediate body: means any public or private body which acts under the responsibility of a managing or certifying authority, or which carries out duties on behalf of such an authority, in relation to beneficiaries implementing operations;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32011L0088",
+    "Term": "Internet Platform",
+    "#": 16,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0089",
+    "Term": "Content Creator",
+    "#": 17,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0090",
+    "Term": "Digital Internal Market",
+    "#": 18,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0091",
+    "Term": "Data Monetization",
+    "#": 19,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32011L0092",
+    "Term": "Smart Contract",
+    "#": 20,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0029",
+    "Term": "Gender-based Crime",
+    "#": 21,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0030",
+    "Term": "Victim-blaming",
+    "#": 22,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Victim-blaming is the act of assigning responsibility or fault to a victim for the harm they experienced, regardless of their role in the event. This often involves suggesting that the victim's actions or behavior contributed to the offense or that they could have prevented it.",
+        "sources": [
+          "victim: means: a natural person who has suffered harm, including physical, mental or emotional harm or economic loss which was directly caused by a criminal offence; family members of a person whose death was directly caused by a criminal offence and who have suffered harm as a result of that person's death;",
+          "type of injury: means the physical consequences for the victim;",
+          "means the object: tool or instrument with which the victim came into contact or the psychological mode of injury.",
+          "nationality of the victim: means the country of citizenship;",
+          "creditor: means the counterparty bearing the credit risk of an instrument, other than a protection provider;",
+          "imputation: means a procedure for entering a value for a specific data item where no response is available.",
+          "convicting Member State: means the Member State in which a conviction is handed down;",
+          "sinistro: la richiesta di risarcimento danni per i quali e' prestata l'assicurazione (criterio c.d. «claims made») ossia qualsiasi formale richiesta scritta avanzata per la prima volta da terzi in vigenza di polizza o durante il periodo di ultrattivita' di cui all'articolo 5, comma 2, nei confronti dell'assicurato (o, nel caso di azione diretta, nei confronti dell'assicuratore), per il risarcimento dei danni subiti come conseguenza della sua attivita'; costituisce sinistro anche la citazione dell'assicurato in veste di responsabile civile in un procedimento penale a fronte della costituzione di parte civile da parte del danneggiato. In caso di polizza di cui all'articolo 10, comma 3, della Legge, il sinistro e' costituito dall'esercizio dell'azione di responsabilita' amministrativa, di rivalsa o surroga previste dagli articoli 9, commi 5 e 6, e 12, comma 3, della Legge. In questi casi, costituisce sinistro anche il ricevimento dell'invito a dedurre da parte del pubblico ministero presso la Corte dei Conti, nonche', per la rivalsa civilistica delle strutture sanitarie, la richiesta scritta avanzata per la prima volta dalla struttura in vigenza di polizza nei confronti dell'assicurato, con la quale e' ritenuto responsabile per colpa grave a seguito di sentenza passata in giudicato. Fatti diversi da quelli elencati non costituiscono sinistro, ivi inclusa la richiesta della cartella clinica, l'esecuzione del riscontro autoptico/autopsia giudiziaria/autopsia di cui alD.P.R. 10 settembre 1990, n. 285, la querela e l'avviso di garanzia. Piu' richieste di risarcimento presentate all'assicurato o all'assicuratore o alla struttura in conseguenza di una pluralita' di eventi riconducibili allo stesso atto, errore od omissione, oppure a piu' atti, errori od omissioni riconducibili ad una stessa causa, rappresentano nella formula claims made altrettanti sinistri quanti sono gli eventi (nel primo caso) o gli atti, errori od omissioni (nel secondo caso);",
+          "debtor: means any person liable for a debt.",
+          "age: means the age of the victim at the time of the accident;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32012L0031",
+    "Term": "Hate Speech",
+    "#": 23,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0032",
+    "Term": "Stalking",
+    "#": 24,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0033",
+    "Term": "Ransomware",
+    "#": 25,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0034",
+    "Term": "International Terrorism",
+    "#": 26,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0035",
+    "Term": "Cooperation Duties",
+    "#": 27,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0036",
+    "Term": "Law Enforcement Policy",
+    "#": 28,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0037",
+    "Term": "Fair compensation",
+    "#": 29,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32012L0038",
+    "Term": "Law Enforcement Officer ",
+    "#": 30,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0057",
+    "Term": "Cryptocurrency",
+    "#": 31,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0058",
+    "Term": "Decentralised Finance",
+    "#": 32,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0059",
+    "Term": "Smart Contract",
+    "#": 33,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0060",
+    "Term": "Autonomous Trading Agent",
+    "#": 34,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0061",
+    "Term": "Automated trading",
+    "#": 35,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0062",
+    "Term": "Multi-year Agreement",
+    "#": 36,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32014R0447",
+          "date": "2014-05-03",
+          "definition": "(i) \" financing agreement \" means an annual or multi-annual agreement concluded between the Commission and an IPA II beneficiary, for implementing the Union's financial assistance through an action falling within the scope of this Regulation."
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32014L0063",
+    "Term": "Restrictive Practice",
+    "#": 37,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "A restrictive practice is a policy, action, or condition that limits or restricts access to, participation in, or opportunities within a specific market, industry, or activity. This can include practices that unfairly disadvantage competitors, consumers, or workers. ",
+        "sources": [
+          "practice: means any act or omission by a trader;",
+          "practice: means a human activity that can increase the exposure of individuals to radiation from a radiation source and is managed as a planned exposure situation;",
+          "restricted zone: means a zone in which restrictions on the movements of certain animals or products and other disease control measures are applied, with a view to preventing the spread of a particular disease into areas where no restrictions are applied; a restricted zone may, when relevant, include protection and surveillance zones;",
+          "restriction of processing: means the marking of stored personal data with the aim of limiting their processing in the future;",
+          "restriction of processing: means the marking of stored personal data with the aim of limiting their processing in the future;",
+          "restriction of processing: means the marking of stored personal data with the aim of limiting their processing in the future;",
+          "restriction of processing: means the marking of stored personal data with the aim of limiting their processing in the future;",
+          "portfolio compression: means a risk reduction service in which two or more counterparties wholly or partially terminate some or all of the derivatives submitted by those counterparties for inclusion in the portfolio compression and replace the terminated derivatives with another derivative whose combined notional value is less than the combined notional value of the terminated derivatives.",
+          "operating restriction: means a noise-related action that limits access to or reduces the operational capacity of an airport, including operating restrictions aimed at the withdrawal from operations of marginally compliant aircraft at specific airports as well as operating restrictions of a partial nature, which for example apply for an identified period of time during the day or only for certain runways at the airport.",
+          "attivita' riservate: una forma di regolamentazione di una professione secondo cui l'accesso a un'attivita' professionale o a un gruppo di attivita' professionali e' riservato, direttamente o indirettamente, in forza di disposizioni legislative, regolamentari o amministrative, a coloro che esercitano una professione regolamentata, in possesso di una specifica qualifica professionale, anche nel caso in cui l'attivita' sia condivisa con altre professioni regolamentate;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32014L0064",
+    "Term": "Confidential Information",
+    "#": 38,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32014L0066",
+    "Term": "Digital Signature",
+    "#": 39,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0413",
+    "Term": "Non-animal origin ",
+    "#": 40,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0414",
+    "Term": "Imported Good",
+    "#": 41,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0415",
+    "Term": "Air Pollution",
+    "#": 42,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0416",
+    "Term": "Non-organic Origin",
+    "#": 43,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32013L0030",
+          "date": "2021-01-01",
+          "definition": "(27) \" owner \" means an entity legally entitled to control the operation of a non-production installation;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32015L0417",
+    "Term": "Animal Welfare",
+    "#": 44,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0418",
+    "Term": "National Health Authority ",
+    "#": 45,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0419",
+    "Term": "Plant-based Product",
+    "#": 46,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0420",
+    "Term": "Risk Assessment",
+    "#": 47,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32015L0421",
+    "Term": "Risk Evaluation",
+    "#": 48,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1629",
+    "Term": "Autonomous Vehicle",
+    "#": 49,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1631",
+    "Term": "Motorbike",
+    "#": 50,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1632",
+    "Term": "Risk Assessment",
+    "#": 51,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1633",
+    "Term": "Risk Evaluation",
+    "#": 52,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1634",
+    "Term": "Air quality Assessment",
+    "#": 53,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1635",
+    "Term": "Emission controlling mechanism",
+    "#": 54,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1636",
+    "Term": "Organic fuel",
+    "#": 55,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016R1637",
+    "Term": "Internal Combustion",
+    "#": 56,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2394",
+    "Term": "Cooperation Duties",
+    "#": 57,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2395",
+    "Term": "Transnational Cooperation",
+    "#": 58,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2396",
+    "Term": "Digital Product",
+    "#": 59,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2397",
+    "Term": "e-Book",
+    "#": 60,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2398",
+    "Term": "Non-physical copy ",
+    "#": 61,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "A non-physical copy refers to a reproduction of a work or data that exists in a digital format, such as an electronic file, a software program, or a database, rather than a tangible medium like paper or film.",
+        "sources": [
+          "accessible format copy: means a copy of a work or other subject matter in an alternative manner or form that gives a beneficiary person access to the work or other subject matter, including allowing such person to have access as feasibly and comfortably as a person without any of the impairments or disabilities referred to in point 2;",
+          "accessible format copy: means a copy of a work or other subject matter in an alternative manner or form that gives a beneficiary person access to the work or other subject matter, including allowing such person to have access as feasibly and comfortably as a person without any of the impairments or disabilities referred to in point 2;",
+          "certified copy: means a copy of an original public document which is signed and attested to be an accurate and complete reproduction of that original public document by an authority, empowered to do so under national law and of the same Member State that originally issued the public document.",
+          "fossil carbon: means inorganic and organic carbon that is not biomass;",
+          "fossil carbon: means inorganic and organic carbon that is not biomass;",
+          "alternative-fuel vehicle: or that is substantially derived from non-mineral oil;",
+          "non-reciprocal agreement: or where two undertakings grant each other such a licence but where those licences do not concern competing technologies and cannot be used for the production of competing products;",
+          "retail client: means a client who is not a professional client;",
+          "owner: means an entity legally entitled to control the operation of a non-production installation;",
+          "non-compliance: based on or resulting, directly or indirectly, from the listed extra-territorial legislation or subsequent actions;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32017R2399",
+    "Term": "Transnational Contract Enforcement",
+    "#": 62,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Transnational contract enforcement refers to the process of legally compelling the performance of a contract across national borders. This involves navigating the complexities of different legal systems, jurisdictional issues, and international treaties to ensure that the contractual obligations are upheld.",
+        "sources": [
+          "transnational markets: means markets identified in accordance with Article 65, which cover the Union or a substantial part thereof located in more than one Member State;",
+          "contractual cross product netting agreement: means a bilateral contractual agreement between an institution and a counterparty which creates a single legal obligation (based on netting of covered transactions) covering all bilateral master agreements and transactions belonging to different product categories that are included within the agreement;",
+          "contractual cross product netting agreement: means a bilateral contractual agreement between an institution and a counterparty which creates a single legal obligation (based on netting of covered transactions) covering all bilateral master agreements and transactions belonging to different product categories that are included within the agreement;",
+          "contractual cross product netting agreement: means a bilateral contractual agreement between an institution and a counterparty which creates a single legal obligation (based on netting of covered transactions) covering all bilateral master agreements and transactions belonging to different product categories that are included within the agreement;",
+          "contract: means a contractual agreement between a manufacturer or importer of tobacco products and a provider of data storage systems in accordance with Article 15(8) of Directive 2014/40/EU and Implementing Regulation (EU) 2018/574",
+          "transnational producer organisation: means any organisation in which at least one of the producers’ holdings is located in a Member State other than where the organisation has its head office;",
+          "transnational producer organisation: means any organisation in which at least one of the producers' holdings is located in a Member State other than where the organisation has its head office;",
+          "transnational producer organisation: means any producer organisation of which the member producers' holdings are located in more than one Member State;",
+          "transnational interbranch organisation: means any interbranch organisation of which the members are engaged in production, processing or trade in the products covered by the organisation's activities in more than one Member State.",
+          "contract: means a public contract or a concession contract;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32017R2400",
+    "Term": "International Warranty ",
+    "#": 63,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2401",
+    "Term": "Place of Production",
+    "#": 64,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32017R2402",
+    "Term": "International Distance Selling ",
+    "#": 65,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "International distance selling means the offer for sale, hire or hire purchase of goods or services by a trader to a consumer located in a different country from the trader's establishment, without the simultaneous physical presence of the trader and the consumer, using one or more means of distance communication.",
+        "sources": [
+          "distance selling: means the offer for sale, hire or hire purchase by mail order, catalogue, internet, telemarketing or by any other method by which the potential customer cannot be expected to see the product displayed;",
+          "distance selling: means the offer for sale, hire or hire purchase by mail order, catalogue, internet, telemarketing or by any other method by which the potential end-user cannot be expected to see the tyre displayed;",
+          "distance contract: means any contract concluded between the trader and the consumer under an organised distance sales or service-provision scheme without the simultaneous physical presence of the trader and the consumer, with the exclusive use of one or more means of distance communication up to and including the time at which the contract is concluded;",
+          "cross-border distance sales: at the time the consumer orders the product from a retail outlet, the consumer is located in a Member State other than the Member State or the third country where that retail outlet is established; a retail outlet is deemed to be established in a Member State: in the case of a natural person: if he or she has his or her place of business in that Member State; in other cases: if the retail outlet has its statutory seat, central administration or place of business, including a branch, agency or any other establishment, in that Member State;",
+          "import scheme: means the special scheme for distance sales of goods imported from third territories or third countries provided for in Section 4 of Chapter 6 of Title XII of Directive 2006/112/EC",
+          "international transport: means rail transport between a place (of loading/embarkation or unloading/disembarkation) in the reporting country and a place (of loading/embarkation or unloading/disembarkation) in another country;",
+          "international rail passenger service: means a rail passenger service crossing at least one border of a Member State the principal purpose of which is to carry passengers between stations located in different Member States or in a Member State and a third country;",
+          "placing on the market: means to make products, irrespective of their place of manufacture, available to consumers located in the Union, with or without payment, including by means of distance sale; in the case of cross-border distance sales the product is deemed to be placed on the market in the Member State where the consumer is located;",
+          "indirect link: means an arrangement between a CSD and a third party other than a CSD, that is a participant in the securities settlement system of another CSD. Such link is set up by a CSD in order to facilitate the transfer of securities to its participants from the participants of another CSD;",
+          "international standard: means a standard adopted by an international standardisation body;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32017R2403",
+    "Term": "Lead Consumer Authority ",
+    "#": 66,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2162",
+    "Term": "Financial Stability ",
+    "#": 67,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2163",
+    "Term": "Credit Risk Assessment",
+    "#": 68,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2164",
+    "Term": "Credit Risk Evaluation",
+    "#": 69,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2165",
+    "Term": "Cryptocurrency",
+    "#": 70,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2166",
+    "Term": "International Investment",
+    "#": 71,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2167",
+    "Term": "Autonomous Trading Agent",
+    "#": 72,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2168",
+    "Term": "Dominant Position",
+    "#": 73,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2169",
+    "Term": "Automated Creditworthiness Decision",
+    "#": 74,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Automated Creditworthiness Decision means a decision regarding the creditworthiness of an individual or entity made solely by a computer system, without any significant human intervention in the decision-making process.",
+        "sources": [
+          "Creditworthiness assessment: means the evaluation of the prospect for the debt obligation resulting from the credit agreement to be met.",
+          "Credit: means the recognition of prior experience or qualifications;",
+          "Credit report: means a report on the basis of which prior experience or qualifications may be recognised;",
+          "automatic acceleration: means a situation in which a covered bond automatically becomes immediately due and payable upon the insolvency or resolution of the issuer and in respect of which the covered bond investors have an enforceable claim for repayment at a time earlier than the original maturity date;",
+          "analytical quota: means a Union autonomous quota for which an analytical assessment is available;",
+          "analytical quota: means a Union autonomous quota for which an analytical assessment is available;",
+          "analytical quota: means a Union autonomous quota for which an analytical assessment is available;",
+          "reference obligation: means an obligation used for the purposes of determining the cash settlement value of a credit derivative;",
+          "competent authority: means an authority or public body entrusted by a Member State with responsibility for managing the system of roadworthiness testing, including, where appropriate, the carrying-out of roadworthiness tests;",
+          "computerised validation system: means a system capable of verifying that all data recorded in Member States databases is accurate, complete and submitted within the deadlines;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32019L2170",
+    "Term": "National Bond Authority ",
+    "#": 75,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32019L2171",
+    "Term": "Market Disruption Crisis",
+    "#": 76,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0680",
+    "Term": "Videosurveillance",
+    "#": 77,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0681",
+    "Term": "Trojan",
+    "#": 78,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0682",
+    "Term": "Connected device",
+    "#": 79,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0683",
+    "Term": "EU Criminal Record ",
+    "#": 80,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019R0816",
+          "date": "2019-06-11",
+          "definition": "(3) \" criminal record \" means the national register or registers recording convictions in accordance with national law;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016L0684",
+    "Term": "Human Trafficking ",
+    "#": 81,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0686",
+    "Term": "GPS Data",
+    "#": 82,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0687",
+    "Term": "International Cooperation Policy",
+    "#": 83,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "International Cooperation Policy refers to a set of principles, guidelines, and actions undertaken by a state, organization, or group of states to foster collaboration and coordination with other actors on a global scale to achieve common objectives in areas such as diplomacy, trade, security, environment, or development.",
+        "sources": [
+          "International Coordination Centre: means the coordination structure established for the coordination of a joint operation or a rapid border intervention at the external borders;",
+          "International Coordination Centre: means the coordination structure established within the host Member State for the coordination of a sea operation;",
+          "international organisation: means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries;",
+          "international organisation: means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries;",
+          "memorandum of cooperation: means an agreement between the EIT and a KIC, aiming to keep the KIC as an active member of the EIT Community after the expiry of the partnership agreement, and which includes the conditions for access to EIT competitive calls for some specific activities and transnational activities with a high Union added value;",
+          "cooperation for innovation and the exchange of good practices: means transnational and international cooperation projects involving organisations active in the fields of education, training and/or youth, and may include other organisations;",
+          "international organisation: means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries.",
+          "international organisation: means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries.",
+          "international organisation: means an organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries.",
+          "operazione internazionale: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato non appartenente all'Unione europea;"
+        ]
+      }
+    }
+  },
+  {
+    "CELEX_ID": "32016L0688",
+    "Term": "National Monitoring Body",
+    "#": 84,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  },
+  {
+    "CELEX_ID": "32016L0689",
+    "Term": "Law Enforcement Data Sharing",
+    "#": 85,
+    "response": {
+      "error": "Failed to call a function. Please adjust your prompt. See 'failed_generation' for more details."
+    }
+  }
+]

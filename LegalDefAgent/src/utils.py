@@ -15,13 +15,11 @@ from langchain_core.documents import Document
 from dotenv import load_dotenv, find_dotenv
 from IPython.display import Image, display
 
-# Load environment variables
 load_dotenv(find_dotenv())
 
 
 def setup_logging(log_level: int = logging.INFO) -> None:
     """Configure logging for Jupyter Notebook cells."""
-    # Clear existing handlers
     for handler in logging.root.handlers[:]:
         logging.root.removeHandler(handler)
 

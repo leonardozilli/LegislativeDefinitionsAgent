@@ -1,0 +1,122 @@
+[
+  {
+    "CELEX_ID": "32016R0679",
+    "Term": "Non-personal Data",
+    "#": 1,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R1004",
+          "date": "2021-07-14",
+          "definition": "(6) \" detailed data \" means data based on primary data in a form which does not allow natural persons or legal entities to be identified directly or indirectly;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0680",
+    "Term": "Connected device",
+    "#": 2,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32020R2155",
+          "date": "2020-10-14",
+          "definition": "(10) \" connectivity \" means the ability of systems to exchange data with each other and the ability of the building or building unit to exchange data, with the grid and related entities, such as an aggregator, or other buildings;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0681",
+    "Term": "IoT device",
+    "#": 3,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "Normattiva",
+          "document_id": "20220715_22G00099_ORIGINALE",
+          "date": "2022-07-30",
+          "definition": "g) bene ICT (information and communication technology) , un insieme di reti, sistemi informativi e servizi informatici, o parti di essi, di qualunque natura, considerato unitariamente ai fini dello svolgimento di funzioni essenziali dello Stato o per l'erogazione di servizi essenziali, ai sensi dell'articolo 7 del decreto del Presidente del Consiglio dei ministri 30 luglio 2020, n. 131, recante il regolamento di cui all'articolo 1, comma 2, del decreto-legge;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0682",
+    "Term": "Open Data",
+    "#": 4,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32019L1024",
+          "date": "2019-06-20",
+          "definition": "(14) \" open format \" means a file format that is platform-independent and made available to the public without any restriction that impedes the re-use of documents;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0683",
+    "Term": "Satellite Data",
+    "#": 5,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32021R0696",
+          "date": "2021-04-28",
+          "definition": "(9) \" SST data \" means physical parameters of space objects, including space debris, acquired by SST sensors, or orbital parameters of space objects derived from SST sensors’ observations in the framework of the SST sub-component;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0684",
+    "Term": "Cookie",
+    "#": 6,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32014R0066",
+          "date": "2017-01-09",
+          "definition": "(17) \" mixed hob \" means an appliance with one or more electrically heated cooking zones or areas and one or more cooking zones heated by gas burners;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0685",
+    "Term": "Synthetic Data",
+    "#": 7,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32017R2402",
+          "date": "2021-04-09",
+          "definition": "(10) \" synthetic securitisation \" means a securitisation where the transfer of risk is achieved by the use of credit derivatives or guarantees, and the exposures being securitised remain exposures of the originator;"
+        }
+      ]
+    }
+  },
+  {
+    "CELEX_ID": "32016R0686",
+    "Term": "International Data Transfer",
+    "#": 8,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "EurLex",
+          "document_id": "32016R0794",
+          "date": "2022-06-28",
+          "definition": "(m) \" transfer of personal data \" means the communication of personal data, actively made available, between a limited number of identified parties, with the knowledge or intention of the sender to give the recipient access to the personal data;"
+        }
+      ]
+    }
+  }
+]
