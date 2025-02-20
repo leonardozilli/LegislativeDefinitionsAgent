@@ -10,7 +10,6 @@ dependencies = []
 description = "A legal definition retrieval and generation system."
 authors = [{name = "Leonardo Zilli", email = "leonardo.zilli@studio.unibo.it"}]
 readme = "README.md"
-keywords = ["egg", "bacon", "sausage", "tomatoes", "Lobster Thermidor"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -25,7 +24,3 @@ include = ["LegalDefAgent*"]
 
 [tool.setuptools]
 include-package-data = true
-
-[project.scripts]
-# Define any CLI scripts here when applicable
-# extract_definitions = "LegalDefAgent.scripts.my_script:main"
