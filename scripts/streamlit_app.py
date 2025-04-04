@@ -107,14 +107,16 @@ async def main() -> None:
             model_idx = agent_client.info.models.index(agent_client.info.default_model)
             #model = st.radio("LLM to use", options=agent_client.info.models, index=model_idx)
             model = st.selectbox("LLM to use", options=agent_client.info.models, index=model_idx)
-            agent_list = [a.key for a in agent_client.info.agents]
-            agent_idx = agent_list.index(agent_client.info.default_agent)
-            agent_client.agent = st.selectbox(
-                "Agent to use",
-                options=agent_list,
-                index=agent_idx,
-            )
-            use_streaming = st.toggle("Stream results", value=True)
+            #agent_list = [a.key for a in agent_client.info.agents]
+            #agent_idx = agent_list.index(agent_client.info.default_agent)
+            #agent_client.agent = st.selectbox(
+                #"Agent to use",
+                #options=agent_list,
+                #index=agent_idx,
+            #)
+            use_streaming = True#st.toggle("Stream results", value=True)
+            st.slider("Number of definitions retrieved", min_value=1, max_value=30, value=20, step=1, label_visibility="visible")
+
 
         @st.dialog("Agent Architecture")
         def architecture_dialog() -> None:

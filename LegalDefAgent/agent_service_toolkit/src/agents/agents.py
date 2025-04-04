@@ -9,6 +9,7 @@ from LegalDefAgent.src.agents import definitions_agent, definitions_agent_eval
 
 DEFAULT_AGENT = "LegalDefAgent"
 
+
 @dataclass
 class Agent:
     description: str
@@ -18,9 +19,6 @@ class Agent:
 agents: dict[str, Agent] = {
     "LegalDefAgent": Agent(
         description="A legal assistant for definition Retrieval and Generation", graph=definitions_agent
-    ),
-    "LegalDefAgentEval": Agent(
-        description="A legal assistant for definition Retrieval and Generation. Returns a json output for evaluation purposes.", graph=definitions_agent_eval
     )
 }
 

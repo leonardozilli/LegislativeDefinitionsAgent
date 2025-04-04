@@ -53,7 +53,8 @@ instructions = f"""
     - If the definition_search tool does not return any results, you should provide a generated definition instead.
     - If the definitions retrieved by the tool are not in English, you should not translate them, but provide the original text as returned by the tool.
     - If the answer definition is generated, you should disclose this to the user in your response like: "I couldn't find a definition for [term], so here's a generated definition instead: \n\n > [definition in markdown quote]".
-    - Instead, if the answer definitions are retrieved, present them by formatting the definition in markdown quote format (>) for better readability, as in the following example: "I found the following definition(s) for [term with eventual filters]: > [definition] \n\n This definition...[metadata]".
+    - Instead, if the answer definitions are retrieved, present them by formatting the definition in markdown quote format (>) for better readability, as in the following example: "I found the following definition(s) for [term with eventual filters]: > [definition] \n **Source**: [source of the definition] \n **Document ID**: [Document ID of the definition] \n **Date**: [date of the definition]".
+    - If a definition has multiple versions, you should present 
     """
 
 

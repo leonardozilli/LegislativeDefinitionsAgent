@@ -52,6 +52,11 @@ def setup_collection(collection_name, dense_dim) -> Collection:
             max_length=120
         ),
         FieldSchema(
+            name="keywords", 
+            dtype=DataType.VARCHAR, 
+            max_length=325
+        ),
+        FieldSchema(
             name="sparse_vector", 
             dtype=DataType.SPARSE_FLOAT_VECTOR,
         ),
@@ -130,6 +135,7 @@ def populate_vectorstore(definitions_corpus, definitions_embeddings, settings):
                 batch_df['document_id'].to_list(),
                 batch_df['frbr_work'].to_list(),
                 batch_df['frbr_expression'].to_list(),
+                batch_df['keywords'].to_list(),
                 batch_sparse_embeddings,
                 batch_dense_embeddings
             ]
