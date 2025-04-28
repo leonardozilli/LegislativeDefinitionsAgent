@@ -8,9 +8,5 @@ logs/
 *.old
 *.xlsx
 build/
-<<<<<<< HEAD
 notebooks/
 venv/
-=======
-notebooks/
->>>>>>> origin/main

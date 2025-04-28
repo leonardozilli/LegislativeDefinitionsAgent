@@ -27,11 +27,6 @@ definendum_list = (processed_df.select(
 )
 )['label'].to_list()
 
-<<<<<<< HEAD
-=======
-len(def_list), len(definendum_list)
-
->>>>>>> origin/main
 defs_embeddings_dense = dense_ef(def_list)
 
 defs_embeddings_sparse = sparse_ef(def_list)
