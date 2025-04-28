@@ -340,7 +340,16 @@ async def definition_search(
         return await generate_definition(config, question, definendum, legislation, examples)
 
     # Add keywords
+<<<<<<< HEAD
     definition['keywords'] = definition['metadata'].get('keywords', "")
+=======
+    logger.info("Retrieving Eurovocs...")
+    await Task("Retrieve Eurovocs").start(data={"input": definitions_with_timeline}, config=config)
+    for definition in definitions_with_timeline:
+        definition['keywords'] = existdb_handler.get_work_eurovocs(
+            definition['metadata'])
+    await Task("Retrieve Eurovocs").finish(result="success", data={"output": definitions_with_timeline}, config=config)
+>>>>>>> origin/main
 
     # Pick final definition
     picked_definitions = await pick_definition(

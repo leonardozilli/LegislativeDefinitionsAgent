@@ -1,7 +1,16 @@
 import argparse
+<<<<<<< HEAD
 import pickle
 import xml.etree.ElementTree as ET
 import re
+=======
+import logging
+import pickle
+import os
+import xml.etree.ElementTree as ET
+import re
+import csv
+>>>>>>> origin/main
 from pathlib import Path
 import logging
 import polars as pl
@@ -42,7 +51,12 @@ class DefinitionExtractor:
                     errors += 1
                     logging.error(f"Error processing {file}: {e}")
 
+<<<<<<< HEAD
         logging.info(f'Extracted definitions from {extracted} files. {errors} errors out of {total} files.')
+=======
+        logging.info(f'Extracted definitions from {extracted} files. {
+                     errors} errors out of {total} files.')
+>>>>>>> origin/main
 
         if not all_definitions:
             raise ValueError("No definitions were extracted")
@@ -52,6 +66,7 @@ class DefinitionExtractor:
         processed_df = (
             df
             .with_columns(
+<<<<<<< HEAD
                 pl.when(pl.col("definendum").is_null() | pl.col("definiens").is_null())
                 .then(pl.col("full_definition"))
                 .otherwise(pl.concat_str([pl.col("definendum"), pl.col("definiens")], separator=": "))
@@ -76,6 +91,41 @@ class DefinitionExtractor:
                 pl.col("keywords"),
             )
             .with_row_index("id")
+=======
+                pl.when(
+                    pl.col("definendum").is_null() | pl.col(
+                        "definiens").is_null()
+                ).then(
+                    pl.col("full_definition")
+                ).otherwise(
+                    pl.concat_str(
+                        [pl.col("definendum"), pl.col("definiens")],
+                        separator=": ",
+                    )
+                ).alias("joined_definition")
+            )
+            .with_columns(
+                pl.struct(pl.col('joined_definition'), pl.col(
+                    'references'), pl.col('provenance'))
+                .map_elements(self.append_refs, return_dtype=pl.String)
+                .alias("def_with_refs")
+            )
+            .filter(pl.col('def_with_refs').str.len_chars() < 5000)
+            .with_columns(pl.col('def_with_refs').str.split(' ').list.len().alias('word_count'))
+            .filter(pl.col('word_count') > 3,
+                    pl.col('word_count') < 500)
+            .select(
+                pl.col('def_with_refs').alias('definition_text'),
+                pl.col('def_n'),
+                pl.col('label'),
+                pl.col('provenance').alias('dataset'),
+                pl.col('document').alias('document_id'),
+                # pl.col('references'),
+                pl.col('frbr_work'),
+                pl.col('frbr_expression'),
+            )
+            .with_row_index('id')
+>>>>>>> origin/main
         )
 
         return processed_df
@@ -90,7 +140,10 @@ class DefinitionExtractor:
                 './/akn:FRBRthis', namespace).attrib.get('value', '')
             frbr_expression = root.find('.//akn:FRBRExpression', namespace).find(
                 './/akn:FRBRthis', namespace).attrib.get('value', '')
+<<<<<<< HEAD
             keywords = root.findall('.//akn:keyword', namespace)
+=======
+>>>>>>> origin/main
 
             definitions_el = root.findall('.//akn:definitions', namespace)
             if not definitions_el:
@@ -114,7 +167,10 @@ class DefinitionExtractor:
                             'document': xml_file.name,
                             'frbr_work': frbr_work,
                             'frbr_expression': frbr_expression,
+<<<<<<< HEAD
                             'keywords': ', '.join([kw.attrib.get('showAs', '') for kw in keywords]),
+=======
+>>>>>>> origin/main
                         })
                 except Exception as e:
                     logging.error(f"Error parsing definition in {
@@ -186,7 +242,11 @@ class DefinitionExtractor:
             ]
             return body_text, references
         return None, None
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> origin/main
     @staticmethod
     def _clean_definendum(text: str) -> str:
         text = text.strip()
@@ -233,9 +293,22 @@ class DefinitionExtractor:
         """Save extracted definitions to TSV file."""
         output_file.parent.mkdir(parents=True, exist_ok=True)
 
+<<<<<<< HEAD
         df = pl.DataFrame(definitions)
         df.write_csv(output_file, separator="\t")
         logging.info(f"Saved {len(definitions)} definitions to {output_file}")
+=======
+        with open(output_file, 'w', newline='') as csvfile:
+            writer = csv.DictWriter(
+                csvfile,
+                fieldnames=definitions[0].keys(),
+                delimiter="\t",
+                quoting=csv.QUOTE_MINIMAL
+            )
+            writer.writeheader()
+            for row in definitions:
+                writer.writerow(row)
+>>>>>>> origin/main
 
 
 def save_definitions_list_to_pickle(df, output_file='definitions_list.pkl'):
@@ -249,6 +322,7 @@ def save_definitions_list_to_pickle(df, output_file='definitions_list.pkl'):
 def main(pickle=False):
     extractor = DefinitionExtractor()
     processed_df = extractor.extract_and_filter()
+<<<<<<< HEAD
 
     if pickle:
         save_definitions_list_to_pickle(processed_df)
@@ -258,10 +332,23 @@ def main(pickle=False):
         
         processed_df.write_csv(str(output_path))
         logging.info(f"Saved {len(processed_df)} definitions to {output_path}")
+=======
+    if pickle:
+        save_definitions_list_to_pickle(processed_df)
+    else:
+        output_file = os.path.join(
+            settings.DB_CONFIG.DEFINITIONS_OUTPUT_DIR, "definitions.csv")
+        if not os.path.exists(settings.DB_CONFIG.DEFINITIONS_OUTPUT_DIR):
+            os.makedirs(settings.DB_CONFIG.DEFINITIONS_OUTPUT_DIR)
+        processed_df.write_csv(output_file)
+        logging.info(f"{processed_df.__len__()
+                        } Definitions saved to {output_file}")
+>>>>>>> origin/main
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
+<<<<<<< HEAD
         description="Extract legislative definitions from a collection of AKN documents.")
     parser.add_argument('--pickle', action='store_true', default=False, 
                     help="Save extracted definitions as a pickle file for embedding later.")
@@ -270,3 +357,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(pickle=args.pickle)
+=======
+        description="Build the vector database of legal definitions.")
+    parser.add_argument('--pickle', action='store_true',
+                        help='Only create the list of definitions and save to a pickle file to perform the embedding phase later (or on another machine, e.g. Google Colab).')
+
+    args = parser.parse_args()
+
+    main(pickle=args.pickle)
+>>>>>>> origin/main
