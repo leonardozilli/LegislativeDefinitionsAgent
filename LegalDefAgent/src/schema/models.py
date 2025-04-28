@@ -13,6 +13,7 @@ class Provider(StrEnum):
     AWS = auto()
     FAKE = auto()
     TOGETHER = auto()
+    VLLM = auto()
 
 
 class OpenAIModelName(StrEnum):
@@ -96,6 +97,11 @@ class GoogleModelName(StrEnum):
     GEMMA2_2B_IT = "gemma2-2b-it"
 
 
+class VLLMModelName(StrEnum):
+
+    LLAMA_33_70B = "vllm-llama-3.3-70b"
+
+
 AllModelEnum: TypeAlias = (
     OpenAIModelName
     | AnthropicModelName
@@ -107,4 +113,5 @@ AllModelEnum: TypeAlias = (
     | OllamaModelName
     | DeepSeekModelName
     | TogetherModelName
+    | VLLMModelName
 )

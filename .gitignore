@@ -9,3 +9,4 @@ logs/
 *.xlsx
 build/
 notebooks/
+venv/

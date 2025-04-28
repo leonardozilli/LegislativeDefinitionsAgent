@@ -11,6 +11,8 @@ from langchain_mistralai import ChatMistralAI
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
 from langchain_openai.chat_models.base import BaseChatOpenAI
+from langchain_community.llms import VLLM
+
 
 from .settings import settings
 from .schema.models import (
@@ -24,6 +26,7 @@ from .schema.models import (
     GoogleModelName,
     AnthropicModelName,
     TogetherModelName,
+    VLLMModelName,
 )
 
 load_dotenv(find_dotenv())
@@ -49,12 +52,13 @@ _MODEL_TABLE = {
     TogetherModelName.LLAMA_33_70B: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
     TogetherModelName.NEMOTRON_70B: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
     TogetherModelName.LLAMA_31_8B: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+    VLLMModelName.LLAMA_33_70B: "meta-llama/Llama-3.3-70B-Instruct"
 }
 
 ModelT: TypeAlias = (
     ChatOpenAI | ChatGroq | ChatMistralAI | ChatOllama |
     FakeListChatModel | ChatGoogleGenerativeAI |
-    ChatAnthropic | ChatTogether
+    ChatAnthropic | ChatTogether | VLLM
 )
 
 
@@ -85,3 +89,5 @@ def get_model(model_name: AllModelEnum, /) -> ModelT:
         return ChatGoogleGenerativeAI(model=api_model_name)
     if model_name in AnthropicModelName:
         return ChatAnthropic(model=api_model_name)
+    if model_name in VLLMModelName:
+        return VLLM(model=api_model_name, tensor_parallel_size=4, trust_remote_code=True, temperature=0.3, streaming=True)
