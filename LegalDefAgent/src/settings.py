@@ -14,6 +14,7 @@ from .schema.models import (
     DeepSeekModelName,
     TogetherModelName,
     Provider,
+    VLLMModelName,
 )
 
 
@@ -84,6 +85,7 @@ class Settings(BaseSettings):
     GOOGLE_API_KEY: SecretStr | None = None
     DEEPSEEK_API_KEY: SecretStr | None = None
     TOGETHER_API_KEY: SecretStr | None = None
+    VLLM: bool | None = False
 
     # If DEFAULT_MODEL is None, it will be set in model_post_init
     DEFAULT_MODEL: AllModelEnum | None = None  # type: ignore[assignment]
@@ -142,6 +144,10 @@ class Settings(BaseSettings):
                     self.AVAILABLE_MODELS.update(set(AnthropicModelName))
                 case _:
                     raise ValueError(f"Unknown provider: {provider}")
+
+        if self.VLLM:
+            self.DEFAULT_MODEL = VLLMModelName.LLAMA_33_70B
+            self.AVAILABLE_MODELS.update(set(VLLMModelName))
 
     def is_dev(self) -> bool:
         return self.MODE == "dev"
