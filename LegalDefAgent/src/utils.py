@@ -251,7 +251,8 @@ def format_answer_definition(data: List[Dict[str, Any]]) -> List[Dict[str, Any]]
 def camelcase_to_spaces(text: str) -> str:
     """Convert camelCase to space-separated lowercase text."""
     text = text.replace('#', '')
-    return re.sub(r'([a-z])([A-Z])', r'\1 \2', text).lower()
+    text = re.sub(r'((?<=[a-z])[A-Z]|(?<!\A)[A-Z](?=[a-z]))', r' \1', text)
+    return text.lower()
 
 
 def parse_date_string(s):

@@ -1,4 +1,5 @@
 from typing import Literal
+import logging
 
 from langchain_core.runnables import RunnableConfig, RunnableLambda, RunnableSerializable
 from langchain_core.language_models.chat_models import BaseChatModel
@@ -10,7 +11,12 @@ from langgraph.prebuilt import ToolNode
 
 from ..llm import get_model
 from ..settings import settings
-from ..tools import definition_search
+from ..tools.definition_search_eval import definition_search
+from ..utils import setup_logging
+
+
+setup_logging()
+logger = logging.getLogger(__name__)
 
 
 class AgentState(MessagesState, total=False):

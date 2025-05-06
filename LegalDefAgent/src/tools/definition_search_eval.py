@@ -17,17 +17,21 @@ from ..settings import settings
 from ..schema.task_data import Task
 from ..schema.definition import RelevantDefinitionsIDList, GeneratedDefinition, PickedDefinitions
 from ..llm import get_model
-from ..utils import setup_logging
+from ..utils import setup_logging, camelcase_to_spaces
 
 setup_logging()
 logger = logging.getLogger(__name__)
 
-RETRIEVER = retriever_.setup_retriever(k=10)
+RETRIEVER = retriever_.setup_retriever(k=30)
+
+def filter_existing_definitions(definiendum, definitions):
+    return [definition for definition in definitions if camelcase_to_spaces(definition.metadata['definendum_label']) != definiendum][:10]
 
 
-def query_vectorstore(query: str) -> list[Dict]:
+def query_vectorstore(query: str, definendum: str) -> list[Dict]:
     """Query vector store for relevant definitions."""
     retrieved_definitions = RETRIEVER.invoke(query)
+    retrieved_definitions = filter_existing_definitions(definendum, retrieved_definitions)
     return utils.docs_list_to_json_list(retrieved_definitions)
 
 
@@ -189,7 +193,7 @@ async def generate_definition(config: RunnableConfig, question: str, definendum:
     await Task("Generate definition").finish(result="success", data={"output": response}, config=config)
     await Task("Retrieve definition").finish(result="success", data={"output": response}, config=config)
 
-    response['sources'] = example_definitions
+    response["sources"] = example_definitions
     return response
 
 
@@ -280,8 +284,8 @@ async def definition_search(
     )
 
     # Query vector store
-    await Task("Query vector store").start(data={"input": definendum}, config=config)
-    relevant_definitions = query_vectorstore(question)
+    await Task("Query vector store").start(data={"input": question}, config=config)
+    relevant_definitions = query_vectorstore(question, definendum)
     logger.info(f"Retrieved {len(relevant_definitions)} definitions from vectorstore")
     await Task("Query vector store").finish(
         result="success",
@@ -301,7 +305,7 @@ async def definition_search(
             config=config
         )
 
-    logger.info(f"{len(relevant_definitions)} definitions left after filtering by legislation")
+    #logger.info(f"{len(relevant_definitions)} definitions left after filtering by legislation")
 
     if not relevant_definitions:
         logger.info("No relevant definitions found. Generating definition...")
@@ -310,68 +314,69 @@ async def definition_search(
         await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
         return await generate_definition(config, question, definendum, legislation, examples)
 
-    # Process timelines
-    logger.info("Retrieving Definition Timeline...")
-    logger.info(relevant_definitions)
-    await Task("Retrieving Definition Timeline...").start(data={"input": relevant_definitions}, config=config)
-    definitions_with_timeline = []
+#   # Process timelines
+    #logger.info("Retrieving Definition Timeline...")
+    #logger.info(relevant_definitions)
+    #await Task("Retrieving Definition Timeline...").start(data={"input": relevant_definitions}, config=config)
+    #definitions_with_timeline = []
 
-    for definition in relevant_definitions:
-        if timeline := get_definition_timeline(definition):
-            definition['timeline'] = timeline
-            definitions_with_timeline.append(definition)
+    #for definition in relevant_definitions:
+        #if timeline := get_definition_timeline(definition):
+            #definition['timeline'] = timeline
+            #definitions_with_timeline.append(definition)
 
-    await Task("Retrieving Definition Timeline...").finish(
-        result="success",
-        data={"output": definitions_with_timeline},
-        config=config
-    )
+    #await Task("Retrieving Definition Timeline...").finish(
+        #result="success",
+        #data={"output": definitions_with_timeline},
+        #config=config
+    #)
 
-    # Apply date filters if specified
-    if date_filters:
-        date_filters = utils.parse_date_string(date_filters)
-        logger.info(f"Filtering by date: {date_filters}")
-        await Task("Filter by date").start(data={"input": definitions_with_timeline}, config=config)
-        definitions_with_timeline = filter_definitions_by_date(
-            definitions_with_timeline, date_filters)
-        logger.info(f"{len(definitions_with_timeline)} definitions left after filtering by date")
-        await Task("Filter by date").finish(
-            result="success",
-            data={"output": definitions_with_timeline},
-            config=config
-        )
+    ## Apply date filters if specified
+    #if date_filters:
+        #date_filters = utils.parse_date_string(date_filters)
+        #logger.info(f"Filtering by date: {date_filters}")
+        #await Task("Filter by date").start(data={"input": definitions_with_timeline}, config=config)
+        #definitions_with_timeline = filter_definitions_by_date(
+            #definitions_with_timeline, date_filters)
+        #logger.info(f"{len(definitions_with_timeline)} definitions left after filtering by date")
+        #await Task("Filter by date").finish(
+            #result="success",
+            #data={"output": definitions_with_timeline},
+            #config=config
+        #)
 
-    if not definitions_with_timeline:
-        logger.info(
-            "No definitions with timeline found. Generating definition...")
-        examples = [definition.get('definition_text')
-                    for definition in relevant_definitions]
-        await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
-        return await generate_definition(config, question, definendum, legislation, examples)
+   ##if not definitions_with_timeline:
+        #logger.info(
+            #"No definitions with timeline found. Generating definition...")
+        #examples = [definition.get('definition_text')
+                    #for definition in relevant_definitions]
+        #await Task("Retrieve definition").finish(result="success", data={"output": ""}, config=config)
+        #return await generate_definition(config, question, definendum, legislation, examples)
 
     # Add keywords
-    definition['keywords'] = definition['metadata'].get('keywords', "")
+    #definition['keywords'] = definition['metadata'].get('keywords', "")
 
-    # Pick final definition
-    picked_definitions = await pick_definition(
-        config,
-        legislation,
-        definitions_with_timeline,
-        question,
-        definendum
-    )
-    logger.info(f"Picked definition: {picked_definitions}")
+    ## Pick final definition
+    #picked_definitions = await pick_definition(
+        #config,
+        #legislation,
+        #definitions_with_timeline,
+        #question,
+        #definendum
+    #)
+    #logger.info(f"Picked definition: {picked_definitions}")
 
-    picked_definitions_ids = picked_definitions["picked_definitions_ids"]
+    #picked_definitions_ids = picked_definitions["picked_definitions_ids"]
+    picked_definitions_ids = []
 
     if len(picked_definitions_ids) == 0:
-        examples = [definition.get('definition_text')
-                    for definition in definitions_with_timeline]
+        examples = list(set(definition.get('definition_text')
+                    for definition in relevant_definitions))
         return {"generated_definition": await generate_definition(config, question, definendum, legislation, examples)}
     
     answer_def = [
         definition
-        for definition in definitions_with_timeline
+        for definition in relevant_definitions
         if definition["metadata"]["id"] in picked_definitions_ids
     ]
 

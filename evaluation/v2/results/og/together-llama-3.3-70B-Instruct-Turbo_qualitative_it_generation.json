@@ -1,0 +1,1101 @@
+[
+  {
+    "term": "Dato non personale",
+    "#": 1,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Dato non personale: qualsiasi informazione che non riguarda una persona fisica identificata o identificabile, ai sensi dell'articolo 4 del Regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio del 27 aprile 2016.",
+        "sources": [
+          "dato personale: qualunque informazione relativa a persona fisica, persona giuridica, ente od associazione, identificati o identificabili, anche indirettamente, mediante riferimento a qualsiasi altra informazione, ivi compreso un numero di identificazione personale;",
+          "dati personali: qualsiasi informazione riguardante una persona fisica identificata o identificabile («interessato»);",
+          "dati personali: qualsiasi informazione riguardante una persona fisica identificata o identificabile in relazione a nome, numero di identificazione, dati relativi all'ubicazione, identificativo online, uno o piu' elementi caratteristici della sua identita' fisica, fisiologica, genetica, psichica, economica, culturale o sociale, ai sensi dell'articolo 4 del Regolamento;",
+          "dato personale: qualsiasi informazione riguardante una persona fisica identificata o identificabile utilizzata per le finalità di cui allalettera d);",
+          "interessato: la persona fisica cui si riferiscono i dati personali;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Dispositivo connesso",
+    "#": 2,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Dispositivo connesso: qualsiasi dispositivo che sia in grado di comunicare con altri dispositivi o sistemi informatici attraverso una rete di comunicazione elettronica, ai sensi dell'articolo 1, comma 1, lettera dd), del decreto legislativo 1° agosto 2003, n. 259, e che esegua, in base ad un programma, un trattamento automatico di dati digitali.",
+        "sources": [
+          "prodotto connesso all'energia o prodotto: qualsiasi bene che abbia un impatto sul consumo di energia durante l'uso, immesso in commercio ovvero messo in servizio, comprese le parti destinate ad essere integrate in prodotti connessi all'energia disciplinati dal presente decreto e immesse in commercio ovvero messe in servizio come parti a se' stanti per gli utilizzatori finali e di cui e' possibile valutare le prestazioni ambientali in maniera indipendente;",
+          "prodotto connesso all'energia (prodotto): qualsiasi bene che abbia un impatto sul consumo energetico durante l'utilizzo, che viene immesso sul mercato ovvero messo in servizio e che comprende le parti destinate a essere incorporate in un prodotto connesso all'energia contemplato dal presente decreto, immesse sul mercato ovvero messe in servizio come parti a se stanti per gli utilizzatori finali, e le cui prestazioni ambientali possono essere valutate in maniera indipendente;",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 1, comma 1, lettera dd), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 1, comma 1, lettera dd), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 1, comma 1, lettera dd), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 2, comma 1, lettera vv), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Dispositivo IoT",
+    "#": 3,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Dispositivo IoT: un dispositivo fisico dotato di sensori, attuatori o altri dispositivi che, per il tramite di software e/o applicazioni informatiche, consente la raccolta, l'elaborazione e la trasmissione di dati, nonché l'interazione con altri dispositivi o sistemi, attraverso reti di comunicazione elettronica, ai sensi dell'articolo 1, comma 1, lettera dd), del decreto legislativo 1° agosto 2003, n. 259.",
+        "sources": [
+          "«dispositivo: oggetto o record protetto» un dispositivo, oggetto o record protetto contro le imitazioni o l'utilizzazione fraudolenta, per esempio mediante disegno, codice o firma;",
+          "oggetto della fornitura: bene, sistema o servizio ICT appartenente alle categorie che il soggetto incluso nel perimetro intende acquisire, destinato all'impiego sui beni ICT individuati ai sensi dell'articolo 7 del decreto del Presidente del Consiglio dei ministri 30 luglio 2020, n. 131;",
+          "fornitore: persona fisica o giuridica che fornisce l'oggetto della fornitura di beni, sistemi o servizi ICT, destinato alle reti, ai sistemi informativi e ai servizi informatici di cui all'articolo 1, comma 2, lettera b), del decreto-legge;",
+          "oggetto della fornitura: bene, sistema o servizio ICT, appartenente alle categorie, che il soggetto incluso nel perimetro intende acquisire;",
+          "bene ICT (information and communication technology): un insieme di reti, sistemi informativi e servizi informatici, o parti di essi, di qualunque natura, considerato unitariamente ai fini dello svolgimento di funzioni essenziali dello Stato o per l'erogazione di servizi essenziali, ai sensi dell'articolo 7 del decreto del Presidente del Consiglio dei ministri 30 luglio 2020, n. 131, recante il regolamento di cui all'articolo 1, comma 2, del decreto-legge;",
+          "dispositivo di accettazione: il dispositivo fisico che, per il tramite di software e/o applicazioni informatiche, consente il pagamento degli acquisti tramite strumenti di pagamento elettronici;",
+          "dispositivo medico: un dispositivo medico o un accessorio ai sensi rispettivamente delle lettere a) o b) dell'articolo 1, comma 2, del decreto legislativo 24 febbraio 1997, n. 46, recante attuazione della direttiva 93/42/CEE, del Consiglio del 14 giugno 1993, sui dispositivi medici, che costituisca un'AEE;",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 1, comma 1, lettera dd), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 1, comma 1, lettera dd), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);",
+          "rete, sistema informativo: 1) una rete di comunicazione elettronica ai sensi dell'articolo 1, comma 1, lettera dd), deldecreto legislativo 1° agosto 2003, n. 259; 2) qualsiasi dispositivo o gruppo di dispositivi interconnessi o collegati, uno o piu' dei quali eseguono, in base ad un programma, un trattamento automatico di dati digitali, ivi inclusi i sistemi di controllo industriale; 3) i dati digitali conservati, trattati, estratti o trasmessi per mezzo di reti o dispositivi di cui ai numeri 1) e 2), per il loro funzionamento, uso, protezione e manutenzione, compresi i programmi di cui al numero 2);"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Dato aperto",
+    "#": 4,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Dato aperto: il dato reso disponibile in formato digitale, accessibile e riutilizzabile, ai sensi dell'articolo 1, comma 1, lettera n), del decreto legislativo 24 gennaio 2006, n. 36, e successive modificazioni, che attua la direttiva 2003/98/CE del Parlamento europeo e del Consiglio del 17 novembre 2003, relativa al riutilizzo dell'informazione del settore pubblico.",
+        "sources": [
+          "Registro nazionale aiuti: la banca dati istituita presso il Ministero dello sviluppo economico - Direzione generale incentivi alle imprese, ai sensi dell'articolo 14, comma 2, della legge 5 marzo 2001, n. 57, denominata dall'articolo 52, comma 1, della legge 24 dicembre 2012, n. 234, Registro nazionale degli aiuti di Stato;\n\nReferences: \n1. Al fine di garantire il rispetto dei divieti di cumulo e degli obblighi di trasparenza e di pubblicita' previsti dalla normativa europea e nazionale in materia di aiuti di Stato, i soggetti pubblici o privati che concedono ovvero gestiscono i predetti aiuti trasmettono le relative informazioni alla banca di dati istituita presso il Ministero dello sviluppo economico ai sensi dell'articolo 14, comma 2, della legge 5 marzo 2001, n. 57, che assume la denominazione di \"Registro nazionale degli aiuti di Stato\".",
+          "Legge di Contabilita' generale dello Stato: ilregio decreto 18 novembre 1923, n. 2440, recante «Nuove disposizioni sull'amministrazione del patrimonio e sulla contabilita' generale dello Stato\"; d) «Organo tecnico», l'organo del Comando Generale della Guardia di finanza o dell'Ente amministrativo della Guardia di finanza competente in relazione alla specifica progettualita'; e) «Amministrazione», il Corpo della Guardia di finanza; f) «Gruppo Europeo di Interesse Economico (GEIE)», l'organismo di cooperazione transnazionale, di cui al Regolamento (CEE) n. 2137/85 del Consiglio del 25 luglio 1985 e al decreto legislativo 23 luglio 1991, n. 240, rivolto agli operatori economici europei appartenenti almeno a due Stati membri diversi e volto a facilitare e sviluppare le attivita' economiche dei suoi membri mettendo in comune risorse, attivita' ed esperienze; g) «Operatore economico», la persona fisica, la persona giuridica o l'ente senza personalita' giuridica - ivi compreso il gruppo europeo di interesse economico (GEIE) - che offre sul mercato la fornitura di beni ovvero la prestazione di servizi; h) «contraente», l'operatore economico che stipula un atto negoziale con l'Amministrazione; i) «organo di verifica», il direttore dell'esecuzione contrattuale o la commissione appositamente nominata per effettuare la verifica di conformita' dell'esecuzione; j) «documenti di gara», i documenti prodotti dall'Amministrazione utili per la selezione del contraente nell'ambito della procedura di gara."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Dato satelittare",
+    "#": 5,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Dato satelittare: i dati raccolti e trasmessi da satelliti artificiali, relativi a informazioni sulla superficie terrestre, sull'atmosfera e sugli oceani, come definiti dal decreto legislativo 24 febbraio 2017, n. 31, e in coerenza con la legge 11 gennaio 2018, n. 7.",
+        "sources": [
+          "Sistema Informativo Nazionale per la Tutela delle Acque Italiane (SINTAI): lo strumento per la raccolta e diffusione delle informazioni relative allo stato di qualita' delle acque interne e marine sviluppato e gestito dall'Istituto superiore per la protezione e la ricerca ambientale (ISPRA) ai sensi e per le finalita' di cui alla parte Terza deldecreto legislativo 3 aprile 2006, n. 152, e in coerenza con la legge 28 giugno 2016, n. 132. Il SINTAI, gestito da ISPRA, e' il nodo nazionale «Water Information System for Europe» (WISE), come definito dal decreto del Ministro dell'ambiente e della tutela del territorio e del mare 17 luglio 2009, pubblicato nella Gazzetta Ufficiale 2 settembre 2009, n. 203 «Individuazione delle informazioni territoriali e modalita' per la raccolta, lo scambio e l'utilizzazione dei dati necessari alla predisposizione dei rapporti conoscitivi sullo stato di attuazione degli obblighi comunitari e nazionali in materia di acque» e lo strumento per la trasmissione dei dati all'Agenzia Europea dell'Ambiente di cui al Regolamento (CE) n. 401/2009 del Parlamento Europeo;",
+          "dati biometrici: i dati personali relativi alle caratteristiche fisiche o fisiologiche di una persona fisica, quali l'immagine facciale o i dati dattiloscopici come definiti dal codice in materia di protezione dei dati personali, di cui aldecreto legislativo 30 giugno 2003, n. 196;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Cookie",
+    "#": 6,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Cookie: un piccolo file di testo inviato da un sito web al browser dell'utente e memorizzato sul dispositivo dell'utente, ai sensi dell'articolo 122 del decreto legislativo 30 giugno 2003, n. 196, recante il codice in materia di protezione dei dati personali, che consente di raccogliere informazioni sull'utente e di tracciare la sua navigazione all'interno del sito web.",
+        "sources": [
+          "denominazione legale: il nome di un alimento prescritto dalle disposizioni dell'Unione europea a esso applicabili o, in mancanza di tali disposizioni, la denominazione prevista dalla legislazione nazionale dello Stato membro in cui l'alimento è venduto;",
+          "prodotti Made in Italy: prodotti originari dell'Italia nel rispetto di quanto stabilito dall'articolo 60 del regolamento (UE) n. 952/2013 del Parlamento europeo e del Consiglio del 9 ottobre 2013, che istituisce il codice doganale dell'Unione, e dalle relative disposizioni di applicazione;",
+          "produttore: la persona fisica o giuridica che, qualunque sia la tecnica di vendita utilizzata, compresa la comunicazione a distanza, ai sensi della Sezione II, del Capo I, del Titolo III deldecreto legislativo 6 settembre 2005, n. 206, riguardante la protezione dei consumatori in materia di contratti a distanza: 1) e' stabilita nel territorio nazionale e fabbrica AEE recanti il suo nome o marchio di fabbrica oppure commissiona la progettazione o la fabbricazione di AEE e le commercializza sul mercato nazionale apponendovi il proprio nome o marchio di fabbrica; 2) e' stabilita nel territorio nazionale e rivende sul mercato nazionale, con il suo nome o marchio di fabbrica, apparecchiature prodotte da altri fornitori; il rivenditore non viene considerato 'produttore', se l'apparecchiatura reca il marchio del produttore a norma del numero 1); 3) e' stabilita nel territorio nazionale ed immette sul mercato nazionale, nell'ambito di un'attivita' professionale, AEE di un Paese terzo o di un altro Stato membro dell'Unione europea; 4) e' stabilita in un altro Stato membro dell'Unione europea o in un paese terzo e vende sul mercato nazionale AEE mediante tecniche di comunicazione a distanza direttamente a nuclei domestici o a utilizzatori diversi dai nuclei domestici;",
+          "IG o IIGG: l'indicazione geografica, o le indicazioni geografiche, che, ai sensi del regolamento (UE) 2019/787 del Parlamento europeo e del Consiglio, del 17 aprile 2019, identifica, o identificano, una bevanda spiritosa originaria del territorio italiano, di una regione o localita' italiana, quando una determinata qualita', la rinomanza o altra caratteristica della bevanda spiritosa e' essenzialmente attribuibile alla sua origine geografica;",
+          "banca: la banca italiana o la succursale di banca estera comunitaria o extracomunitaria operante in Italia e autorizzata all'esercizio dell'attivita' bancaria di cui all'art. 13 del testo unico bancario (decreto legislativo 1° settembre 1993, n. 385, e successive modifiche e integrazioni), aderente alle convenzioni di cui all'art. 2, comma 7, del decreto-legge n. 69/2013;",
+          "CUI (Codice Univoco Identificativo): codice alfanumerico generato in automatico dal sistema AFIS e legato univocamente alla persona di cui all'articolo 9 della legge o al consanguineo sottoposti a prelievo di un campione biologico;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Dato Sintetico",
+    "#": 7,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Dato Sintetico: informazione che rappresenta una combinazione di dati elementari, aggregati e trasformati in una forma che consente una rappresentazione semplificata e immediata di un fenomeno o di una situazione, ai sensi della normativa vigente in materia di statistica e di protezione dei dati personali, come disciplinata dal Regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio del 27 aprile 2016 e dal decreto legislativo 30 giugno 2003, n. 196.",
+        "sources": [
+          "Sistema Informativo Nazionale per la Tutela delle Acque Italiane (SINTAI): lo strumento per la raccolta e diffusione delle informazioni relative allo stato di qualita' delle acque interne e marine sviluppato e gestito dall'Istituto superiore per la protezione e la ricerca ambientale (ISPRA) ai sensi e per le finalita' di cui alla parte Terza deldecreto legislativo 3 aprile 2006, n. 152, e in coerenza con la legge 28 giugno 2016, n. 132. Il SINTAI, gestito da ISPRA, e' il nodo nazionale «Water Information System for Europe» (WISE), come definito dal decreto del Ministro dell'ambiente e della tutela del territorio e del mare 17 luglio 2009, pubblicato nella Gazzetta Ufficiale 2 settembre 2009, n. 203 «Individuazione delle informazioni territoriali e modalita' per la raccolta, lo scambio e l'utilizzazione dei dati necessari alla predisposizione dei rapporti conoscitivi sullo stato di attuazione degli obblighi comunitari e nazionali in materia di acque» e lo strumento per la trasmissione dei dati all'Agenzia Europea dell'Ambiente di cui al Regolamento (CE) n. 401/2009 del Parlamento Europeo;",
+          "varieta' sintetiche: varieta' risultanti dalla progenie di un certo numero di linee liberamente fecondatesi;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Trasferimento internazionale di dati",
+    "#": 8,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Trasferimento internazionale di dati: l'operazione di comunicazione di dati personali da un titolare del trattamento stabilito nel territorio italiano a un altro titolare del trattamento stabilito in un paese terzo o a un'organizzazione internazionale, nel rispetto delle disposizioni di cui al Regolamento (UE) 2016/679 e del decreto legislativo 30 giugno 2003, n. 196.",
+        "sources": [
+          "immissione: l'operazione di trattamento elettronico che consente l'inserimento di dati nella Banca dati nazionale, per le finalita' per cui essa e' istituita, nel rispetto dei principi di esattezza, pertinenza, completezza e non eccedenza stabiliti daldecreto legislativo 30 giugno 2003, n. 196;",
+          "trasmissione all'estero: la procedura con cui una sentenza di condanna pronunciata in Italia e' trasmessa a un altro Stato membro dell'Unione europea, ai fini del suo riconoscimento e della sua esecuzione in detto Stato;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Attività di Condivisione di Dati",
+    "#": 9,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Attività di Condivisione di Dati: l'operazione di trattamento elettronico che consente la messa a disposizione e l'utilizzo di dati tra diversi soggetti, nel rispetto dei principi di esattezza, pertinenza, completezza e non eccedenza stabiliti dal decreto legislativo 30 giugno 2003, n. 196, e del Regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio, del 27 aprile 2016.",
+        "sources": [
+          "immissione: l'operazione di trattamento elettronico che consente l'inserimento di dati nella Banca dati nazionale, per le finalita' per cui essa e' istituita, nel rispetto dei principi di esattezza, pertinenza, completezza e non eccedenza stabiliti daldecreto legislativo 30 giugno 2003, n. 196;",
+          "consultazione: l'operazione di trattamento elettronico che consente ai soggetti di cui all'articolo 83, commi 1 e 2, del Codice antimafia, attraverso il collegamento alla Banca dati nazionale, di richiedere e, se del caso, ottenere il rilascio immediato ed automatico della documentazione antimafia, senza avere visibilita' del dettaglio dei dati in essa contenuti;",
+          "trattamento: qualsiasi operazione o insieme di operazioni, compiute con o senza l'ausilio di processi automatizzati, applicate a dati personali o insiemi di dati personali, come la raccolta, la registrazione, l'organizzazione, la strutturazione, la conservazione, l'adattamento o la modifica, l'estrazione, la consultazione, l'uso, la comunicazione mediante trasmissione, diffusione o qualsiasi altra forma di messa a disposizione, il raffronto o l'interconnessione, la limitazione, la cancellazione o la distruzione;",
+          "aggiornamento: l'operazione di trattamento elettronico che consente di modificare o di cancellare, con modalita' sicure, i dati gia' contenuti nella Banca dati nazionale, nel rispetto dei principi di esattezza, pertinenza, completezza e non eccedenza stabiliti daldecreto legislativo 30 giugno 2003, n. 196;",
+          "«Regolamento» il Regolamento (UE) 2016/679: del Parlamento europeo e del Consiglio, del 27 aprile 2016, relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali, nonche' alla libera circolazione di tali dati e che abroga ladirettiva 95/46/CE (Regolamento generale sulla protezione dei dati);",
+          "trattamento: qualunque operazione o complesso di operazioni effettuate anche senza l'ausilio di strumenti elettronici, concernenti la raccolta, la registrazione, l'organizzazione, la conservazione, la consultazione, l'elaborazione, la modificazione, la selezione, la tipizzazione, il raffronto, l'utilizzo, l'interconnessione, il blocco, la comunicazione, la diffusione, la cancellazione e la distruzione di dati;",
+          "APP IO: l'applicazione, prevista all'articolo 64-bis del decreto legislativo del 7 marzo 2005, n. 82, predisposta e gestita da PagoPA S.p.A. in virtu' dell'articolo 8, comma 2, del decreto-legge 14 dicembre 2018, n. 135, convertito, con modificazioni, dalla legge 11 febbraio 2019, n. 12, tramite la quale gli aderenti possono partecipare al programma e visualizzare la graduatoria finale;\n\nReferences: \n2. Entro 120 giorni dalla data di entrata in vigore del presente decreto, per lo svolgimento delle attivita' di cui al comma 1, sulla base degli obiettivi indicati con direttiva adottata dal Presidente del Consiglio dei ministri, e' costituita una societa' per azioni ((controllata, anche indirettamente, dallo Stato)), ai sensi dell'articolo 9 del decreto legislativo 19 agosto 2016, n. 175, secondo criteri e modalita' individuati con decreto del Presidente del Consiglio dei ministri, utilizzando ai fini della sottoscrizione del capitale sociale iniziale quota parte delle risorse finanziarie gia' destinate dall'Agenzia per l'Italia digitale per le esigenze della piattaforma di cui al comma 1, secondo procedure definite con decreto del Presidente del Consiglio dei ministri. Le predette risorse finanziarie sono versate, nell'anno 2019, all'entrata del bilancio dello Stato per essere riassegnate allo stato di previsione del Ministero dell'economia e delle finanze e destinate al bilancio autonomo della Presidenza del Consiglio dei ministri. Nello statuto della societa' sono previste modalita' di vigilanza, anche ai fini della verifica degli obiettivi di cui al comma 1, da parte del Presidente del Consiglio dei ministri o del Ministro delegato."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Acquirente di dati",
+    "#": 10,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Acquirente di dati: qualsiasi persona fisica o giuridica, pubblica o privata, che acquista o ottiene dati, indipendentemente dal metodo di acquisizione o dal formato dei dati stessi.",
+        "sources": [
+          "acquirente: qualsiasi persona fisica o giuridica, indipendentemente dal luogo di stabilimento di tale persona, o qualsiasi autorita' pubblica ricompresa nell'Unione europea che acquista prodotti agricoli e alimentari; il termine «acquirente» puo' includere un gruppo di tali persone fisiche e giuridiche;",
+          "acquirente diretto: una persona fisica, una persona giuridica o un ente privo di personalita' giuridica che ha acquistato direttamente da un autore della violazione beni o servizi oggetto di una violazione del diritto della concorrenza;",
+          "acquirente indiretto: una persona fisica, una persona giuridica o un ente privo di personalita' giuridica che ha acquistato non direttamente da un autore della violazione, ma da un acquirente diretto o da un acquirente successivo beni o servizi oggetto di una violazione del diritto della concorrenza, oppure beni o servizi che li incorporano o che derivano dagli stessi.",
+          "interessato: la persona fisica cui si riferiscono i dati personali;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Prodotto pericoloso",
+    "#": 11,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "prodotto pericoloso: un prodotto che contiene o è costituito da sostanze pericolose, come definite dal regolamento (CE) n. 1272/2008 del Parlamento europeo e del Consiglio del 16 dicembre 2008, ovvero che presenta caratteristiche tali da poter provocare danni alla salute umana o all'ambiente, ai sensi della legislazione vigente in materia di sostanze pericolose e di protezione dell'ambiente.",
+        "sources": [
+          "sostanza pericolosa: una sostanza o miscela di cui alla parte 1 o elencata nella parte 2 dell'allegato 1, sotto forma di materia prima, prodotto, sottoprodotto, residuo o prodotto intermedio;",
+          "pericolo: la proprieta' intrinseca di una sostanza pericolosa o della situazione fisica, esistente in uno stabilimento, di provocare danni per la salute umana e/o per l'ambiente;",
+          "prodotto connesso all'energia o prodotto: qualsiasi bene che abbia un impatto sul consumo di energia durante l'uso, immesso in commercio ovvero messo in servizio, comprese le parti destinate ad essere integrate in prodotti connessi all'energia disciplinati dal presente decreto e immesse in commercio ovvero messe in servizio come parti a se' stanti per gli utilizzatori finali e di cui e' possibile valutare le prestazioni ambientali in maniera indipendente;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Importatore di un prodotto pericolo",
+    "#": 12,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Importatore di un prodotto pericolo: la persona fisica o giuridica stabilita nell'Unione europea che immette sul mercato dell'Unione europea un prodotto pericolo originario di un Paese terzo.",
+        "sources": [
+          "importatore: la persona fisica o giuridica con domicilio o sede nel territorio comunitario che immette sul mercato comunitario un prodotto proveniente da un Paese terzo;",
+          "importatore: una persona fisica o giuridica stabilita nell'Unione che immette sul mercato dell'Unione un prodotto originario di un paese terzo;",
+          "importatore: la persona fisica o giuridica stabilita nell'Unione europea che immette sul mercato dell'Unione un esplosivo originario di un paese terzo;",
+          "importatore: la persona fisica o giuridica stabilita nell'Unione europea che immette sul mercato dell'Unione europea un articolo pirotecnico originario di un Paese terzo;",
+          "importatore: una persona fisica o giuridica stabilita nella Comunita' che immette sul mercato comunitario un giocattolo proveniente da un Paese terzo;",
+          "importatore: la persona fisica o giuridica stabilita nell'Unione che immette sul mercato dell'Unione materiale elettrico originario di un Paese terzo;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Piattaforma di Intermediazione",
+    "#": 13,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "PDL",
+          "document_id": "18PDL0021860_PD",
+          "definition": [
+            {
+              "date": "2018-07-13",
+              "definition": "c) «piattaforma di intermediazione» o «piattaforma» : ogni servizio di interconnessione di utenti fornito dai gestori attraverso l'utilizzo di strumenti informatici e no;"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "term": "Piattaforma su Internet",
+    "#": 14,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Piattaforma su Internet: qualsiasi software accessibile agli utenti, compresi i siti web o parti di essi e le applicazioni, anche mobili, che consente ai venditori di essere collegati con altri utenti allo scopo di svolgere, direttamente o indirettamente, un'attivita' pertinente per tali utenti, attraverso la rete internet.",
+        "sources": [
+          "piattaforma di intermediazione» o «piattaforma: ogni servizio di interconnessione di utenti fornito dai gestori attraverso l'utilizzo di strumenti informatici e no;",
+          "piattaforma web: un sistema informativo che rende accessibile un insieme di contenuti interconnessi tra loro, denominati «pagine web», attraverso la rete internet, utilizzando un software di navigazione, denominato «browser». I fruitori di tali contenuti possono, a seconda delle funzionalità messe a disposizione dalla piattaforma stessa, interagire con i contenuti stessi o creare propri contributi, disponibili agli altri utenti secondo le politiche di visibilità definite dal gestore;",
+          "piattaforma digitale: qualsiasi software accessibile agli utenti, compresi i siti internet o parti di essi e le applicazioni, anche mobili, che consente il collegamento con altri utenti sulle reti sociali telematiche o per finalità commerciali, vendita o offerta di beni e servizi;",
+          "piattaforma: qualsiasi software accessibile agli utenti, compresi i siti web o parti di essi e le applicazioni, anche mobili, che consente ai venditori di essere collegati con altri utenti allo scopo di svolgere, direttamente o indirettamente, un'attivita' pertinente per tali utenti. La definizione di cui alla presente lettera include qualsiasi accordo per la riscossione e il pagamento di un corrispettivo in relazione all'attivita' pertinente. Il termine piattaforma non include i software che, senza ulteriori interventi per l'esecuzione di un'attivita' pertinente, consentono esclusivamente una delle seguenti azioni: 1) il trattamento di pagamenti relativi all'attivita' pertinente; 2) la catalogazione o la pubblicita' di un'attivita' pertinente da parte degli utenti; 3) il reindirizzamento o il trasferimento di utenti verso una piattaforma;",
+          "mercato online: un servizio digitale che consente ai consumatori ovvero ai professionisti, come definiti rispettivamente all'articolo 141, comma 1, lettere a) e b), del decreto legislativo 6 settembre 2005, n. 206, di concludere contratti di vendita o di servizi online con i professionisti sia sul sito web del mercato online sia sul sito web di un professionista che utilizza i servizi informatici forniti dal mercato on line;",
+          "piattaforma digitale: lo strumento informatico che mette in contatto per via telematica gli utenti operatori e gli utenti fruitori, funge da collegamento per la condivisione e rende possibili transazioni tra gli stessi utenti;",
+          "portale: il sito web, individuato dal Regolamento SUAP, che costituisce riferimento per imprese e soggetti da esse delegati e che consente di ottenere informazioni e interoperare telematicamente con le amministrazioni interessate;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Creatore di Contenuti",
+    "#": 15,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Creatore di Contenuti: la persona fisica o giuridica che crea, produce, pubblica o diffonde contenuti multimediali, testuali, visivi o sonori, attraverso qualsiasi mezzo o piattaforma, compresi, a titolo esemplificativo, i social media, i siti web, le piattaforme di streaming e i mezzi di comunicazione tradizionali.",
+        "sources": [
+          "costitutore: la persona fisica o giuridica che ha creato oppure scoperto e sviluppato la varieta' ovvero il suo avente causa, responsabile della conservazione in purezza della varieta', che effettua direttamente o affida ad un responsabile della conservazione, nonche' dello stato sanitario dei materiali di moltiplicazione delle categorie «Iniziale» e «Base» di detta varieta';",
+          "costitutore: la persona fisica o giuridica che ha creato oppure scoperto e sviluppato la varieta' ovvero il suo avente causa, responsabile della conservazione in purezza della varieta' che effettua direttamente o affida ad un responsabile della conservazione;",
+          "costitutore: la persona fisica o giuridica che ha creato oppure scoperto e sviluppato la varieta' ovvero il suo avente causa, responsabile della conservazione in purezza della varieta' che cura direttamente o affida ad un responsabile della conservazione;",
+          "fornitore di servizi di media: la persona fisica o giuridica cui e' riconducibile la responsabilita' editoriale della scelta del contenuto audiovisivo",
+          "produttore: 1) la persona fisica o giuridica stabilita in uno Stato membro che fabbrica, riempie, vende o importa a titolo professionale, a prescindere dalla tecnica di vendita, anche attraverso contratti a distanza come definiti dall'articolo 45, comma 1, lettera g) del decreto legislativo 6 settembre 2005, n. 206 ed immette sul mercato nazionale prodotti di plastica monouso o prodotti di plastica monouso riempiti o attrezzi da pesca contenenti plastica, diverse dalle persone che esercitano l'attivita' di pesca di cui all'articolo 4, punto 28), del regolamento (UE) n. 1380/2013 del Parlamento europeo e del Consiglio, dell'11 dicembre 2013; ovvero 2) la persona fisica o giuridica stabilita in uno Stato membro o in un paese terzo che a titolo professionale vende in un altro Stato membro direttamente a nuclei domestici, o a utenti diversi dai nuclei domestici, tramite contratti a distanza come definiti dall'articolo 45, comma 1, lettera g) del decreto legislativo n. 206 del 2005, prodotti di plastica monouso, prodotti di plastica monouso riempiti o attrezzi da pesca contenenti plastica, a eccezione delle persone che esercitano l'attivita' di pesca di cui all'articolo 4, punto 28, del regolamento (UE) n. 1380/2013;",
+          "costruttore: la persona fisica o giuridica, come definita dall'articolo 3, numero 47), del regolamento (UE) n. 168/2013, per i veicoli di categoria L, e dall'articolo 3, numero 40), del regolamento (UE) n. 2018/858, per i veicoli di categoria M1, M2, M3, M1G, M2G, M3G, N1 e N1G;",
+          "fabbricante: la persona fisica o giuridica che fabbrica prodotti contemplati dal presente decreto e che e' responsabile della conformita' al presente decreto del prodotto, in vista della sua immissione sul mercato ovvero per la messa in servizio con il nome o marchio del fabbricante o per suo uso. In mancanza di un fabbricante secondo la presente definizione o di un importatore quale definito alla lettera h), e' considerato fabbricante la persona fisica o giuridica che immette sul mercato ovvero mette in servizio prodotti contemplati dal presente decreto;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Mercato Digitale Interno",
+    "#": 16,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Mercato Digitale Interno: l'ambito nel quale sono forniti servizi digitali e sono eseguite transazioni elettroniche, ai sensi del regolamento (UE) n. 910/2014 del Parlamento europeo e del Consiglio, del 23 luglio 2014, in materia di identificazione elettronica e servizi fiduciari per le transazioni elettroniche nel mercato interno, che consente la libera circolazione di beni, servizi e persone all'interno dell'Unione europea.",
+        "sources": [
+          "mercato online: un servizio digitale che consente ai consumatori ovvero ai professionisti, come definiti rispettivamente all'articolo 141, comma 1, lettere a) e b), del decreto legislativo 6 settembre 2005, n. 206, di concludere contratti di vendita o di servizi online con i professionisti sia sul sito web del mercato online sia sul sito web di un professionista che utilizza i servizi informatici forniti dal mercato on line;",
+          "regolamento eIDAS: il regolamento (UE) n. 910/2014 del Parlamento europeo e del Consiglio, del 23 luglio 2014, in materia di identificazione elettronica e servizi fiduciari per le transazioni elettroniche nel mercato interno;",
+          "«mezzo di scambio digitale» qualsiasi moneta elettronica definita all'articolo 1: comma 2, lettera h-ter, del decreto legislativo 1° settembre 1993, n. 385, e la valuta virtuale;",
+          "decreto 22/4/2022: il decreto del Ministro dello sviluppo economico, di concerto con il Ministro dell'economia e delle finanze, del 22 aprile 2022, pubblicato nella Gazzetta Ufficiale della Repubblica italiana n. 139 del 16 giugno 2022, che definisce la nuova disciplina per l'acquisto da parte delle piccole e medie imprese di beni strumentali, in attuazione delle misure previste dall'articolo 2 del decreto-legge n. 69 del 2013, ai sensi dell'articolo 8, comma 1, del decreto-legge n. 3 del 2015;",
+          "modello elettronico: modello standard telematico predisposto dal Ministero dello sviluppo economico, sentito l'IVASS, utilizzato dall'impresa di assicurazione per formulare l'offerta del contratto base al consumatore, via internet, anche attraverso il proprio sito web, ovvero integrato con i sistemi di preventivazione ed offerta online pubblici;",
+          "investimenti: gli investimenti previsti dall'articolo 9 del decreto 22/4/2022; in particolare: investimenti in beni strumentali: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di macchinari, impianti, beni strumentali di impresa, attrezzature nuovi di fabbrica ad uso produttivo e hardware classificabili, nell'attivo dello stato patrimoniale, alle voci B.II.2, B.II.3 e B.II.4, dell'articolo 2424 del codice civile, nonche' di software e tecnologie digitali destinati a strutture produttive gia' esistenti o da impiantare, ovunque localizzate nel territorio nazionale; investimenti 4.0: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di beni materiali nuovi di fabbrica e immateriali, aventi come finalita' la realizzazione di investimenti in tecnologie, compresi gli investimenti in big data, cloud computing, banda ultralarga, cybersecurity, robotica avanzata e meccatronica, realta' aumentata, manifattura 4D, Radio frequency identification (RFID) e sistemi di tracciamento e pesatura dei rifiuti, come elencati, rispettivamente, negli allegati A e B alla legge n. 232/2016; investimenti green: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di macchinari, impianti e attrezzature nuovi di fabbrica ad uso produttivo, a basso impatto ambientale, nell'ambito di programmi finalizzati a migliorare l'ecosostenibilita' dei prodotti e dei processi produttivi;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Monetizzazione di Dati",
+    "#": 17,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Monetizzazione di Dati: l'operazione di trattamento e valorizzazione dei dati personali e non, ai sensi del decreto legislativo 30 giugno 2003, n. 196, e del regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio, del 27 aprile 2016, relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali, nonche' alla libera circolazione di tali dati, attraverso cui i dati vengono trasformati in risorse economiche, anche attraverso la loro vendita, scambio o utilizzo come base per la fornitura di servizi o pubblicita'.",
+        "sources": [
+          "immissione: l'operazione di trattamento elettronico che consente l'inserimento di dati nella Banca dati nazionale, per le finalita' per cui essa e' istituita, nel rispetto dei principi di esattezza, pertinenza, completezza e non eccedenza stabiliti daldecreto legislativo 30 giugno 2003, n. 196;",
+          "e' sostituita dalla seguente: «ff) pubblica amministrazione centrale: le autorita' governative centrali di cui all'allegato III deldecreto legislativo 18 aprile 2016, n. 50, nonche' gli organi costituzionali;»; f) al comma 2, la lettera nn) e' sostituita dalla seguente: «nn) sistema di contabilizzazione: sistema tecnico che consente la misurazione dell'energia termica o frigorifera fornita alle singole unita' immobiliari (utenze) servite da un impianto termico centralizzato o da teleriscaldamento o teleraffreddamento, ai fini della proporzionale suddivisione delle relative spese. Sono ricompresi nei sistemi di contabilizzazione i dispositivi atti alla contabilizzazione indiretta del calore, quali i ripartitori dei costi di riscaldamento e i totalizzatori;».",
+          "aggiornamento: l'operazione di trattamento elettronico che consente di modificare o di cancellare, con modalita' sicure, i dati gia' contenuti nella Banca dati nazionale, nel rispetto dei principi di esattezza, pertinenza, completezza e non eccedenza stabiliti daldecreto legislativo 30 giugno 2003, n. 196;",
+          "norma armonizzata: specifica tecnica adottata da un organismo di normalizzazione, ovvero il Comitato europeo di normalizzazione (CEN), il Comitato europeo di normalizzazione elettrotecnica (CENELEC) o l'Istituto europeo per le norme di telecomunicazione (ETSI), nel quadro di un mandato rilasciato dalla Commissione europea conformemente alle procedure istituite dalladirettiva 98/34/CE del Parlamento europeo e del Consiglio, del 22 giugno 1998, che prevede un procedura d'informazione nel settore delle norme e delle regolamentazioni tecniche e delle regole relative ai servizi della societa' dell'informazione, e non avente carattere vincolante.",
+          "norma armonizzata: una norma adottata da uno degli organismi europei di normalizzazione elencati all'allegato I delladirettiva 98/34/CE del Parlamento europeo e del Consiglio, del 22 giugno 1998, che prevede una procedura d'informazione nel settore delle norme e delle regolamentazioni tecniche e delle regole relative ai servizi della societa' dell'informazione, sulla base di una richiesta presentata dalla Commissione conformemente all'articolo 6 di tale direttiva;",
+          "banca dati: quella costituita presso il Centro elaborazione dati della Direzione generale per la motorizzazione del Ministero delle infrastrutture e dei trasporti, alimentata dalle informazioni contenute nell'Archivio nazionale dei veicoli e nell'Anagrafe nazionale degli abilitati alla guida, di cui agliarticoli 225 e 226 del decreto legislativo n. 285 del 1992, nonche' dalle informazioni e dai dati forniti gratuitamente dalle imprese di assicurazione, direttamente o attraverso sistemi informativi centralizzati istituiti presso le associazioni di rappresentanza, relativi alla data di decorrenza, di sospensione e di scadenza delle coperture assicurative r.c. auto dei veicoli a motore;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Contratto Intelligente",
+    "#": 18,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Contratto Intelligente: un accordo contrattuale che utilizza la tecnologia blockchain per automatizzare l'esecuzione delle obbligazioni contrattuali, mediante l'utilizzo di codici informatici che si attivano automaticamente quando si verificano determinate condizioni, come definite nel contratto stesso, senza la necessità di intervento umano.",
+        "sources": [
+          "cartello: un accordo, una intesa ai sensi dell'articolo 2 della legge 10 ottobre 1990, n. 287, o una pratica concordata fra due o piu' concorrenti, volta a coordinare il loro comportamento concorrenziale sul mercato o a influire sui pertinenti parametri di concorrenza mediante pratiche consistenti, tra l'altro, nel fissare o coordinare i prezzi di acquisto o di vendita o altre condizioni di transazione, anche in relazione a diritti di proprieta' intellettuale, nell'allocare quote di produzione o di vendita, nel ripartire i mercati e i clienti, tra l'altro mediante manipolazione delle gare d'appalto, restrizioni delle importazioni o delle esportazioni o azioni anticoncorrenziali dirette contro altre imprese concorrenti;",
+          "dopo la lettera l-tricies), sono aggiunte le seguenti: «l-tricies semel) \"contratto di rendimento energetico o di prestazione energetica (EPC)\": contratto di cui all'articolo 2, comma 2, lettera n), del decreto legislativo 4 luglio 2014, n. 102, e successive modificazioni; l-tricies bis) \"microsistema isolato\": il microsistema isolato quale definito dall'articolo 2, punto 27, della direttiva 2009/72/CE del Parlamento europeo e del Consiglio; l-tricies ter) \"sistema di automazione e controllo dell'edificio (BACS)\": sistema comprendente tutti i prodotti, i software e i servizi tecnici che contribuiscono al funzionamento sicuro, economico ed efficiente sotto il profilo dell'energia dei sistemi tecnici per l'edilizia tramite controlli automatici e facilitando la gestione manuale di tali sistemi; l-tricies quater) \"sistema o impianto di climatizzazione invernale\" o \"impianto di riscaldamento\": complesso di tutti i componenti necessari a un sistema di trattamento dell'aria, attraverso il quale la temperatura e' controllata o puo' essere aumentata; l-tricies quinquies) \"sistemi alternativi ad alta efficienza\": sistemi tecnici per l'edilizia ad alta efficienza tra i quali, a titolo esemplificativo e non esaustivo, i sistemi di produzione di energia rinnovabile, la cogenerazione, il teleriscaldamento e il teleraffrescamento, le pompe di calore, i sistemi ibridi e i sistemi di monitoraggio e controllo attivo dei consumi, nonche' il free cooling aerotermico, geotermico o idrotermico.».\n\nReferences: \nn) contratto di rendimento energetico o di prestazione energetica (EPC) : accordo contrattuale tra il beneficiario o chi per esso esercita il potere negoziale e il fornitore di una misura di miglioramento dell'efficienza energetica, verificata e monitorata durante l'intera durata del contratto, dove gli investimenti (lavori, forniture o servizi) realizzati sono pagati in funzione del livello di miglioramento dell'efficienza energetica stabilito contrattualmente o di altri criteri di prestazione energetica concordati, quali i risparmi finanziari;",
+          "investimenti: gli investimenti previsti dall'articolo 9 del decreto 22/4/2022; in particolare: investimenti in beni strumentali: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di macchinari, impianti, beni strumentali di impresa, attrezzature nuovi di fabbrica ad uso produttivo e hardware classificabili, nell'attivo dello stato patrimoniale, alle voci B.II.2, B.II.3 e B.II.4, dell'articolo 2424 del codice civile, nonche' di software e tecnologie digitali destinati a strutture produttive gia' esistenti o da impiantare, ovunque localizzate nel territorio nazionale; investimenti 4.0: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di beni materiali nuovi di fabbrica e immateriali, aventi come finalita' la realizzazione di investimenti in tecnologie, compresi gli investimenti in big data, cloud computing, banda ultralarga, cybersecurity, robotica avanzata e meccatronica, realta' aumentata, manifattura 4D, Radio frequency identification (RFID) e sistemi di tracciamento e pesatura dei rifiuti, come elencati, rispettivamente, negli allegati A e B alla legge n. 232/2016; investimenti green: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di macchinari, impianti e attrezzature nuovi di fabbrica ad uso produttivo, a basso impatto ambientale, nell'ambito di programmi finalizzati a migliorare l'ecosostenibilita' dei prodotti e dei processi produttivi;",
+          "sistema di misurazione intelligente: un sistema elettronico in grado di misurare il consumo di energia fornendo maggiori informazioni rispetto ad un dispositivo convenzionale, e di trasmettere e ricevere dati utilizzando una forma di comunicazione elettronica;",
+          "accordo che compone la controversia: l'accordo amichevole di definizione della controversia raggiunto mediante il procedimento di cui aldecreto legislativo 4 marzo 2010, n. 28; l'accordo raggiunto a seguito di convenzione di negoziazione assistita di cui al capo II del decreto-legge 12 settembre 2014, n. 132, convertito, con modificazioni, dalla legge 10 novembre 2014, n. 162; l'accordo amichevole raggiunto mediante il procedimento di cui al titolo II-bis del codice del consumo di cui al decreto legislativo 6 settembre 2005, n. 206; la determinazione contrattuale con cui e' definita la controversia nell'arbitrato irrituale di cui all'articolo 808-ter del codice di procedura civile;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Crimine di Genere",
+    "#": 19,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "crimine di genere: ogni atto o comportamento che costituisce reato ai sensi della legge penale italiana e che e' fondato sul genere, inteso come ruoli, comportamenti, attivita' e attributi socialmente costruiti che una determinata societa' considera appropriati per donne e uomini, e che abbia l'effetto ovvero lo scopo diretto o indiretto di produrre una disparita' di trattamento lesiva della dignita' in ragione del sesso o dell'orientamento di genere.",
+        "sources": [
+          "discriminazione di genere: ogni distinzione, disposizione, criterio, prassi, atto, patto, comportamento o limitazione basata sul sesso o sull'orientamento di genere, che abbia l'effetto ovvero lo scopo diretto o indiretto di produrre una disparità di trattamento lesiva della dignità in ragione del sesso;",
+          "reati gravi: i reati che, ai sensi della legge penale italiana, integrano le fattispecie elencate nell'allegato II delladirettiva (UE) 2016/681, puniti con una pena detentiva o una misura di sicurezza privativa della liberta' personale non inferiore a tre anni;",
+          "genere: ai sensi dell'articolo 3 lettera c, della Convenzione di Istanbul, ruoli, comportamenti, attività e attributi socialmente costruiti che una determinata società considera appropriati per donne e uomini;",
+          "violenza nei confronti delle donne: ai sensi dell'articolo 3, lettere a, b e d, della Convenzione di Istanbul, una violazione dei diritti umani e una forma di discriminazione contro le donne, comprendente tutti gli atti di violenza fondati sul genere che provocano o sono suscettibili di provocare danni o sofferenze di natura fisica, sessuale, psicologica o economica, comprese le minacce di compiere tali atti, la coercizione o la privazione arbitraria della libertà, sia nella vita pubblica che nella vita privata; tutti gli atti di violenza fisica, sessuale, psicologica o economica che si verificano all'interno della famiglia o del nucleo familiare o tra attuali o precedenti coniugi o partner, indipendentemente dal fatto che l'autore di tali atti condivida o abbia condiviso la stessa residenza con la vittima; qualsiasi violenza diretta contro una donna in quanto tale, o che colpisce le donne in modo sproporzionato;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Colpevolizzazione della Vittima",
+    "#": 20,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Colpevolizzazione della Vittima: il processo attraverso il quale la vittima di un reato o di un'offesa e' incolpata, totalmente o parzialmente, per le conseguenze o gli effetti dell'evento dannoso subito, anche attraverso l'attribuzione di responsabilita' o di colpa per fatti o circostanze che non le sono direttamente imputabili.",
+        "sources": [
+          "vittima del reato: la persona fisica che ha subito direttamente dal reato qualunque danno patrimoniale o non patrimoniale, nonche' il familiare della persona fisica la cui morte e' stata causata dal reato e che ha subito un danno in conseguenza della morte di tale persona;",
+          "persona indicata come autore dell'offesa: 1) la persona indicata come tale dalla vittima, anche prima della proposizione della querela; 2) la persona sottoposta alle indagini; 3) l'imputato; 4) la persona sottoposta a misura di sicurezza personale; 5) la persona condannata con pronuncia irrevocabile; 6) la persona nei cui confronti e' stata emessa una sentenza di non luogo a procedere o di non doversi procedere, per difetto della condizione di procedibilita', anche ai sensi dell'articolo 344-bis del codice di procedura penale, o per intervenuta causa estintiva del reato;",
+          "persona coinvolta: la persona fisica o giuridica menzionata nella segnalazione interna o esterna ovvero nella divulgazione pubblica come persona alla quale la violazione e' attribuita o come persona comunque implicata nella violazione segnalata o divulgata pubblicamente;",
+          "Beneficiari: 1) orfani di crimini domestici, figli minorenni e maggiorenni economicamente non autosufficienti, della vittima di un omicidio commesso dal coniuge, anche legalmente separato o divorziato, ovvero dall'altra persona dell'unione civile, anche se l'unione e' cessata, ovvero dalla persona che e' o e' stata legata da relazione affettiva e stabile convivenza, da dichiararsi secondo le modalita' di cui all'articolo 13, comma 1, lettera b), del d.P.R. 30 maggio 1989, n. 223, anche in conformita' a quanto previsto dall'articolo 1, comma 37, della legge 20 maggio 2016, n. 76; 2) orfani, figli minorenni e maggiorenni economicamente non autosufficienti, di madre vittima di omicidio, ai sensi dell'articolo 576, comma 1, n. 5.1, del codice penale; 3) orfani, figli minorenni e maggiorenni economicamente non autosufficienti, di madre vittima di omicidio, a seguito dei delitti di cui agli articoli 609-bis e 609-octies del codice penale;\n\nReferences: \n37. Ferma restando la sussistenza dei presupposti di cui al comma 36, per l'accertamento della stabile convivenza si fa riferimento alla dichiarazione anagrafica di cui all'articolo 4 e alla lettera b) del comma 1 dell'articolo 13 del regolamento di cui al decreto del Presidente della Repubblica 30 maggio 1989, n. 223."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Discorso d'odio",
+    "#": 21,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Per 'Discorso d'odio' si intende qualsiasi forma di espressione che inciti all'odio, alla violenza o alla discriminazione nei confronti di individui o gruppi in base alla loro razza, religione, etnia, nazionalità, orientamento sessuale, disabilità o altre caratteristiche personali, come previsto dalla legislazione italiana e dalle norme dell'Unione Europea, in particolare dal codice penale e dalla direttiva (UE) 2016/681.",
+        "sources": [
+          "persona indicata come autore dell'offesa: 1) la persona indicata come tale dalla vittima, anche prima della proposizione della querela; 2) la persona sottoposta alle indagini; 3) l'imputato; 4) la persona sottoposta a misura di sicurezza personale; 5) la persona condannata con pronuncia irrevocabile; 6) la persona nei cui confronti e' stata emessa una sentenza di non luogo a procedere o di non doversi procedere, per difetto della condizione di procedibilita', anche ai sensi dell'articolo 344-bis del codice di procedura penale, o per intervenuta causa estintiva del reato;",
+          "offese alla dignità personale: attuate da superiori, da pari grado o da subordinati ovvero dal datore di lavoro.",
+          "reati gravi: i reati che, ai sensi della legge penale italiana, integrano le fattispecie elencate nell'allegato II delladirettiva (UE) 2016/681, puniti con una pena detentiva o una misura di sicurezza privativa della liberta' personale non inferiore a tre anni;",
+          "dai provvedimenti che dispongono una misura cautelare o il giudizio: ovvero che recano una condanna anche non definitiva per taluni dei delitti di cui agliarticoli 353, 353-bis, 603-bis, 629, 640-bis, 644, 648-bis, 648-ter del codice penale, dei delitti di cui all'articolo 51, comma 3-bis, del codice di procedura penale e di cui all'articolo 12-quinquies del decreto-legge 8 giugno 1992, n. 306 convertito, con modificazioni, dalla legge 7 agosto 1992, n. 356",
+          "accordo che compone la controversia: l'accordo amichevole di definizione della controversia raggiunto mediante il procedimento di cui aldecreto legislativo 4 marzo 2010, n. 28; l'accordo raggiunto a seguito di convenzione di negoziazione assistita di cui al capo II del decreto-legge 12 settembre 2014, n. 132, convertito, con modificazioni, dalla legge 10 novembre 2014, n. 162; l'accordo amichevole raggiunto mediante il procedimento di cui al titolo II-bis del codice del consumo di cui al decreto legislativo 6 settembre 2005, n. 206; la determinazione contrattuale con cui e' definita la controversia nell'arbitrato irrituale di cui all'articolo 808-ter del codice di procedura civile;",
+          "«regolamento antitortura» s'intende il regolamento (UE) 2019/125 del Parlamento europeo e del Consiglio: del 16 gennaio 2019, relativo al commercio di determinate merci che potrebbero essere utilizzate per la pena di morte, per la tortura o per altri trattamenti o pene crudeli, inumani o degradanti (codificazione);"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Stalking",
+    "#": 22,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Lo stalking: il comportamento di una persona che, con condotte reiterate, minaccia o perseguita un'altra persona, causandole un stato di ansia o di timore per la propria incolumità o per quella di un proprio congiunto, come previsto dall'articolo 612-bis del Codice Penale.",
+        "sources": [
+          "navi: le navi mercantili battenti bandiera italiana che transitano nelle acque internazionali a rischio pirateria individuate dal decreto del Ministro della difesa adottato ai sensi dell'articolo 5, comma 4, del decreto-legge n.107 del 2011, convertito, con modificazioni, dalla legge n. 130 del 2011; l) procedure tecnico-amministrative relative all'imbarco delle guardie giurate: procedure tecnico-amministrative individuate dal comandante generale del Corpo delle capitanerie di porto in relazione all'imbarco delle guardie giurate a bordo delle navi mercantili nazionali, in conformita' alle linee guida sviluppate dall'IMO ed alla normativa nazionale, comunitaria ed internazionale di settore, con decreto 23 marzo 2015, n. 307; m) regolamento per l'esecuzione del T.U.L.P.S.: il regio decreto 6 maggio 1940, n. 635, recante «Approvazione del regolamento per l'esecuzione del testo unico 18 giugno 1931, n. 773, delle leggi di pubblica sicurezza»; n) servizi di protezione del naviglio mercantile: servizi, svolti dalle guardie giurate, ai sensi dell'articolo 5, comma 4, del decreto-legge n. 107 del 2011, convertito, con modificazioni dalla legge n. 130 del 2011, a tutela delle navi mercantili, nonche' delle merci e dei valori sulle stesse trasportati, battenti bandiera italiana che transitano in acque internazionali a rischio pirateria; o) T.U.L.P.S.: il testo unico delle leggi di pubblica sicurezza di cui al regio decreto 18 giugno 1931, n. 773; p) UAMA: l'unita' per le autorizzazioni dei materiali d'armamento del Ministero degli affari esteri e della cooperazione internazionale, di cui alla legge 9 luglio 1990, n. 185 e successive modificazioni, competente per il rilascio delle autorizzazioni per l'interscambio dei materiali di armamento e per il rilascio delle certificazioni per le imprese e per gli adempimenti connessi alla materia."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Ransomware",
+    "#": 23,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Ransomware: un tipo di software dannoso che, una volta installato su un sistema informatico, impedisce l'accesso ai dati o alle funzionalità del sistema stesso, richiedendo il pagamento di un riscatto in cambio della riattivazione dell'accesso o del rimedio alla situazione di blocco, ai sensi dell'articolo 615-ter del codice penale.",
+        "sources": [
+          "cybersicurezza: l'insieme delle attivita', fermi restando le attribuzioni di cui allalegge 3 agosto 2007, n. 124, e gli obblighi derivanti da trattati internazionali, necessarie per proteggere dalle minacce informatiche reti, sistemi informativi, servizi informatici e comunicazioni elettroniche, assicurandone la disponibilita', la confidenzialita' e l'integrita' e garantendone la resilienza, anche ai fini della tutela della sicurezza nazionale e dell'interesse nazionale nello spazio cibernetico;",
+          "reati gravi: i reati che, ai sensi della legge penale italiana, integrano le fattispecie elencate nell'allegato II delladirettiva (UE) 2016/681, puniti con una pena detentiva o una misura di sicurezza privativa della liberta' personale non inferiore a tre anni;",
+          "reati presupposto associati, relativamente allo scambio di informazioni con le autorita' competenti di altri Stati membri: qualsiasi reato punibile con una pena detentiva o con una misura privativa della liberta' superiore nel massimo a un anno o nel minimo a sei mesi. Anche fuori dai casi previsti dal primo periodo, costituiscono reati presupposto associati i reati che rientrano nelle seguenti categorie: 1) partecipazione a un gruppo criminale organizzato e al racket; 2) terrorismo; 3) tratta di esseri umani e traffico di migranti; 4) sfruttamento sessuale; 5) traffico illecito di stupefacenti e sostanze psicotrope; 6) traffico illecito di armi; 7) traffico illecito di beni rubati e altri beni; 8) corruzione; 9) frode; 10) falsificazione di moneta; 11) contraffazione e pirateria di prodotti; 12) reati ambientali; 13) omicidio, lesioni fisiche gravi; 14) rapimento, sequestro di persona e presa di ostaggi; 15) rapina o furto; 16) contrabbando; 17) reati in materia di imposte dirette e indirette; 18) estorsione; 19) contraffazione; 20) pirateria; 21) abuso di informazioni privilegiate e manipolazione del mercato; 22) criminalita' informatica;",
+          "Agenzia: l'Agenzia per la cybersicurezza nazionale di cui all'articolo 5 del decreto-legge 14 giugno 2021, n. 82, convertito, con modificazioni, dalla legge 4 agosto 2021, n. 109, designata dall'articolo 7, comma 1, lettera e), del medesimo decreto-legge, per l'Italia, quale autorita' nazionale di certificazione della cybersicurezza, di cui all'articolo 58, paragrafo 1, del Regolamento;",
+          "autorita' competenti nazionali: le Forze di polizia di cui all'articolo 16, primo comma, della legge 1° aprile 1981, n. 121, la Direzione Investigativa Antimafia, gli organismi previsti dagli articoli 4, 6 e 7 della legge 3 agosto 2007, n. 124, nonche' la Direzione Nazionale Antimafia e Antiterrorismo di cui all'articolo 103 del decreto legislativo 6 settembre 2011, n. 159 e le Autorita' giudiziarie competenti a perseguire i reati di cui al comma 1, lettere e) e f);",
+          "Agenzia: l'Agenzia per la cybersicurezza nazionale;",
+          "Agenzia: l'Agenzia per la cybersicurezza nazionale;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Terrorismo internazionale",
+    "#": 24,
+    "response": {
+      "generated_definition": "Il termine 'Terrorismo internazionale' si riferisce a qualsiasi atto di violenza o minaccia di violenza che ha lo scopo di intimidire, costringere o influenzare un governo, un'organizzazione internazionale o una popolazione civile, commesso in violazione delle leggi italiane o internazionali, e che comporta un elemento di transnazionalità, come definito dalla legge n. 155 del 2005 e successive modifiche, nonché dalle convenzioni e dagli strumenti internazionali ratificati dall'Italia, tra cui la Convenzione delle Nazioni Unite per la repressione del finanziamento del terrorismo del 1999 e la Convenzione europea per la repressione del terrorismo del 1977.",
+      "sources": []
+    }
+  },
+  {
+    "term": "Obblighi di Cooperazione",
+    "#": 25,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Obblighi di Cooperazione: gli obblighi di collaborazione e di assistenza reciproca tra le autorità, gli enti e le amministrazioni pubbliche, disciplinati dal diritto italiano e dall'Unione europea, volti a garantire il raggiungimento di obiettivi comuni e la tutela degli interessi pubblici.",
+        "sources": [
+          "cooperazione regionale: cooperazione e coordinamento delle attivita' tra gli Stati membri e, ove possibile, tra i Paesi terzi che hanno in comune la stessa regione o sottoregione marina, ai fini dello sviluppo e dell'attuazione di strategie per l'ambiente marino;",
+          "operazione internazionale: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato non appartenente all'Unione europea;",
+          "operazione transfrontaliera: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato appartenente all'Unione europea;",
+          "cooperazione applicativa: l'interazione tra i sistemi informatici delle pubbliche amministrazioni disciplinata dalle regole tecniche SPC di cui alla lettera f), che avviene tramite le porte di dominio;",
+          "collaborazione con il titolare di impresa, il libero professionista o il lavoratore autonomo: azione con cui il promotore, instaurando un rapporto di natura autonoma o dipendente, incarica un soggetto in possesso dei necessari requisiti professionali, di svolgere parte delle proprie attivita' lavorative, in modo da liberare tempo per la cura dei figli minori o figli disabili, senza pregiudicare l'andamento della propria vita professionale."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Politica delle Attività di Contrasto",
+    "#": 26,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Politica delle Attività di Contrasto: l'insieme delle strategie, delle azioni e delle misure volte a prevenire, contrastare e ridurre le attività illecite o criminose, ai sensi dell'articolo 1 della legge 7 agosto 2015, n. 124, e successive modificazioni, nonché le disposizioni del codice di procedura penale e delle altre leggi speciali in materia di prevenzione e contrasto alla criminalità organizzata.",
+        "sources": [
+          "cartello: un accordo, una intesa ai sensi dell'articolo 2 della legge 10 ottobre 1990, n. 287, o una pratica concordata fra due o piu' concorrenti, volta a coordinare il loro comportamento concorrenziale sul mercato o a influire sui pertinenti parametri di concorrenza mediante pratiche consistenti, tra l'altro, nel fissare o coordinare i prezzi di acquisto o di vendita o altre condizioni di transazione, anche in relazione a diritti di proprieta' intellettuale, nell'allocare quote di produzione o di vendita, nel ripartire i mercati e i clienti, tra l'altro mediante manipolazione delle gare d'appalto, restrizioni delle importazioni o delle esportazioni o azioni anticoncorrenziali dirette contro altre imprese concorrenti;",
+          "autorita' di contrasto: l'organo centrale del Ministero dell'interno per la sicurezza e per la regolarita' dei servizi di telecomunicazione, di cui all'articolo 7-bis del decreto-legge 27 luglio 2005, n. 144, convertito, con modificazioni, dalla legge 31 luglio 2005, n.155;",
+          "attivita' di attuazione congiunta: un'attivita' di progetto approvata da una o piu' parti incluse all'allegato I della Convenzione quadro delle Nazioni Unite sui cambiamenti climatici, ai sensi dell'articolo 6 del Protocollo di Kyoto e delle decisioni successive adottate a norma della UNFCCC o del Protocollo di Kyoto;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Equa Compensazione",
+    "#": 27,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Equa Compensazione: il pagamento di un indennizzo o di un risarcimento che tenga conto del danno subito e sia proporzionato alle conseguenze dello stesso, come previsto dall'articolo 1226 del Codice Civile.",
+        "sources": [
+          "giustizia riparativa: ogni programma che consente alla vittima del reato, alla persona indicata come autore dell'offesa e ad altri soggetti appartenenti alla comunita' di partecipare liberamente, in modo consensuale, attivo e volontario, alla risoluzione delle questioni derivanti dal reato, con l'aiuto di un terzo imparziale, adeguatamente formato, denominato mediatore;",
+          "Beneficiari: 1) orfani di crimini domestici, figli minorenni e maggiorenni economicamente non autosufficienti, della vittima di un omicidio commesso dal coniuge, anche legalmente separato o divorziato, ovvero dall'altra persona dell'unione civile, anche se l'unione e' cessata, ovvero dalla persona che e' o e' stata legata da relazione affettiva e stabile convivenza, da dichiararsi secondo le modalita' di cui all'articolo 13, comma 1, lettera b), del d.P.R. 30 maggio 1989, n. 223, anche in conformita' a quanto previsto dall'articolo 1, comma 37, della legge 20 maggio 2016, n. 76; 2) orfani, figli minorenni e maggiorenni economicamente non autosufficienti, di madre vittima di omicidio, ai sensi dell'articolo 576, comma 1, n. 5.1, del codice penale; 3) orfani, figli minorenni e maggiorenni economicamente non autosufficienti, di madre vittima di omicidio, a seguito dei delitti di cui agli articoli 609-bis e 609-octies del codice penale;\n\nReferences: \n37. Ferma restando la sussistenza dei presupposti di cui al comma 36, per l'accertamento della stabile convivenza si fa riferimento alla dichiarazione anagrafica di cui all'articolo 4 e alla lettera b) del comma 1 dell'articolo 13 del regolamento di cui al decreto del Presidente della Repubblica 30 maggio 1989, n. 223.",
+          "conciliazione: la composizione di una controversia a seguito dello svolgimento della mediazione;",
+          "ESL: equivalente sovvenzione lorda di un aiuto calcolato secondo la metodologia di cui alla comunicazione della Commissione europea (2008/C 14/02), relativa alla revisione del metodo di fissazione dei tassi di riferimento e di attualizzazione, ovvero secondo il metodo nazionale per calcolare l'elemento di aiuto delle garanzie a favore delle PMI (n. 182/2010) approvato dalla Commissione europea con decisione n. 4505 del 6 luglio 2010;",
+          "esito riparativo: qualunque accordo di cui all'articolo 42, comma 1, lettera e), del decreto legislativo;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Ufficiale delle Forze dell'Ordine",
+    "#": 28,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Ufficiale delle Forze dell'Ordine: un membro delle Forze di polizia o delle Forze armate, nominato in tale funzione in forza di leggi o di regolamenti nazionali, che esercita funzioni di polizia giudiziaria o di pubblica sicurezza.",
+        "sources": [
+          "ufficiale inquirente: l'ufficiale incaricato di svolgere l'inchiesta formale;",
+          "ufficiale: un membro dell'equipaggio, diverso dal comandante, nominato in tale funzione in forza di leggi o di regolamenti nazionali o, in mancanza di questi, in forza dei contratti collettivi;",
+          "difensore d'ufficio: il militare designato per assistere l'inquisito in mancanza di un difensore di fiducia;",
+          "operatore: la persona fisica alle dipendenze di uno dei soggetti di cui all'articolo 97 del Codice antimafia, ovvero appartenente all'Amministrazione civile dell'interno, alle Forze di polizia, alla DNA ed alla DIA nei cui confronti sono state rilasciate le credenziali di autenticazione che consentono l'accesso o la consultazione della Banca dati nazionale.",
+          "inquisito: il militare sottoposto a procedimento disciplinare di stato;",
+          "sotto la denominazione di autorita' centrale sono compresi i Capi degli stati maggiori della difesa e di Forza armata: il Segretario generale della difesa, il Comandante generale dell'Arma dei carabinieri.",
+          "allievo ufficiale di coperta: una persona che sta effettuando l'addestramento per diventare ufficiale di coperta, designata come tale dalla legge nazionale o dai regolamenti;",
+          "operatore: l'appartenente alle Forze di polizia di cui all'articolo 16, primo comma, della legge n. 121 del 1981, in servizio presso il Dipartimento della pubblica sicurezza, le Questure, gli uffici e comandi delle predette Forze di polizia, nei cui confronti sono state rilasciate le credenziali di autenticazione che consentono di effettuare le interrogazioni del SITAM;",
+          "allievo ufficiale di macchina: una persona che sta effettuando l'addestramento per diventare ufficiale di macchina, designata come tale dalla legge nazionale o dai regolamenti;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Criptovaluta",
+    "#": 29,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "«Criptovaluta» una rappresentazione di valore digitale che non e' emessa o garantita da una banca centrale o da un ente pubblico, non e' legata necessariamente a una valuta legalmente istituita e non possiede lo status giuridico di valuta o denaro, ma e' accettata da persone fisiche o giuridiche come mezzo di scambio, e che puo' essere trasferita, memorizzata e scambiata elettronicamente.",
+        "sources": [
+          "«valuta virtuale» una rappresentazione di valore digitale che non e' emessa o garantita da una banca centrale o da un ente pubblico: non e' legata necessariamente a una valuta legalmente istituita e non possiede lo status giuridico di valuta o denaro, ma e' accettata da persone fisiche o giuridiche come mezzo di scambio, e che puo' essere trasferita, memorizzata e scambiata elettronicamente.",
+          "«mezzo di scambio digitale» qualsiasi moneta elettronica definita all'articolo 1: comma 2, lettera h-ter, del decreto legislativo 1° settembre 1993, n. 385, e la valuta virtuale;",
+          "valore della pratica: entita' numerica espressa in euro che costituisce il parametro di base per la liquidazione delle singole attivita' professionali;",
+          "controllato da membri o soci che siano persone fisiche: piccole imprese, autorita' locali, ivi incluse le amministrazioni comunali, gli enti di ricerca e formazione, gli enti del terzo settore e di protezione ambientale, gli enti religiosi, nonche' le amministrazioni locali contenute nell'elenco delle amministrazioni pubbliche divulgato dall'Istituto Nazionale di Statistica secondo quanto previsto all'articolo 1, comma 3, della legge 31 dicembre 2009, n. 196;",
+          "firma digitale: un particolare tipo di firma elettronica avanzata, basata su un certificato qualificato e su un sistema di chiavi crittografiche, una pubblica e una privata, correlate tra loro, che consente al titolare tramite la chiave privata e al destinatario tramite la chiave pubblica, rispettivamente, di rendere manifesta e di verificare la provenienza e l'integrita' di un documento informatico o di un insieme di documenti informatici, di cui all'articolo 1, comma 1, lett. s), del decreto legislativo 7 marzo 2005, n. 82;",
+          "forma digitale: la circostanza che taluni strumenti finanziari esistono soltanto come scritturazioni in un registro per la circolazione digitale;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Finanza Decentralizzata",
+    "#": 30,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Finanza Decentralizzata: l'insieme delle attivita' e dei servizi finanziari che si avvalgono di tecnologie e piattaforme decentrate, come ad esempio la blockchain e le criptovalute, per la gestione e la negoziazione di strumenti finanziari, come definiti dal Testo Unico della Finanza di cui al decreto legislativo 24 febbraio 1998, n. 58, e successive modificazioni e integrazioni.",
+        "sources": [
+          "societa' finanziarie: le societa' di cui all'articolo 59, comma 1, lettera b), del Testo Unico Bancario; lll) «societa' veicolo per la gestione delle attivita'»: una societa' di capitali costituita ai sensi del Titolo IV, Capo IV, Sezione II, Sottosezione III,direttiva 2006/48/CE del Parlamento europeo e del Consiglio e relative disposizioni di attuazione; direttiva 2006/48/CE del Parlamento europeo e del Consiglio e relative disposizioni di attuazione; articolo 51, paragrafo 1, della direttiva 2013/36/UE; sss) «Testo Unico Bancario»: il decreto legislativo 1° settembre 1993, n. 385; uuu) «Testo Unico della Finanza»: il decreto legislativo 24 febbraio 1998, n. 58; vvv) «titoli di debito»: le obbligazioni e altre forme di debito trasferibile, gli strumenti che creano o riconoscono un debito e quelli che conferiscono diritti di acquistare titoli di debito.",
+          "e' sostituita dalla seguente: «ff) pubblica amministrazione centrale: le autorita' governative centrali di cui all'allegato III deldecreto legislativo 18 aprile 2016, n. 50, nonche' gli organi costituzionali;»; f) al comma 2, la lettera nn) e' sostituita dalla seguente: «nn) sistema di contabilizzazione: sistema tecnico che consente la misurazione dell'energia termica o frigorifera fornita alle singole unita' immobiliari (utenze) servite da un impianto termico centralizzato o da teleriscaldamento o teleraffreddamento, ai fini della proporzionale suddivisione delle relative spese. Sono ricompresi nei sistemi di contabilizzazione i dispositivi atti alla contabilizzazione indiretta del calore, quali i ripartitori dei costi di riscaldamento e i totalizzatori;».",
+          "Banca finanziatrice: la banca italiana o la succursale di banca estera comunitaria o extracomunitaria operante in Italia e autorizzata all'esercizio dell'attivita' bancaria di cui all'articolo 13 del decreto legislativo 1° settembre 1993, n. 385 e successive modificazioni e integrazioni, recante Testo unico delle leggi in materia bancaria e creditizia, aderente alla Convenzione di cui al comma 14, articolo 1 del decreto-legge 20 giugno 2017 n. 91;\n\nReferences: \n14. Le modalita' di corresponsione del contributo a fondo perduto e del contributo in conto interessi, nonche' i casi e le modalita' per l'escussione della garanzia, sono definite con il decreto di cui al comma",
+          "autorita' di vigilanza competente: la Banca centrale europea o la Banca d'Italia, secondo la ripartizione di compiti stabilita dal regolamento (UE) n. 1024/2013 del Consiglio del 15 ottobre 2013, che attribuisce alla Banca centrale europea compiti specifici in merito alle politiche in materia di vigilanza prudenziale degli enti creditizi;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Agente autonomo di trading ",
+    "#": 31,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Agente autonomo di trading: un soggetto che esercita in piena autonomia l'attivita' di negoziazione di strumenti finanziari per proprio conto a scopo di lucro, in conformita' alle disposizioni del Testo Unico della Finanza (Decreto Legislativo 24 febbraio 1998, n. 58) e successive modificazioni.",
+        "sources": [
+          "operatore finanziario: un soggetto che esercita regolarmente l'attivita' di acquisto o di vendita di strumenti finanziari per proprio conto a scopo di lucro;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Trading automatizzato",
+    "#": 32,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Trading automatizzato: l'attività di negoziazione di strumenti finanziari mediante l'utilizzo di sistemi informatici che eseguono ordini di acquisto o vendita senza l'intervento diretto di un operatore umano, in base a parametri e strategie predefinite, conformemente alle disposizioni del Testo Unico della Finanza (Decreto Legislativo 24 febbraio 1998, n. 58) e alle regolamentazioni dell'Autorità delle Condizioni di Borsa (Consob) e della Banca d'Italia.",
+        "sources": [
+          "Mercato regolamentato all'ingrosso di titoli di Stato: il sistema multilaterale che consente o facilita l'incontro, al suo interno e in base a regole non discrezionali, di interessi multipli di acquisto e di vendita di terzi relativi a titoli di Stato, ammessi alla negoziazione conformemente alle regole del mercato stesso, in modo da dare luogo a contratti negoziati all'ingrosso, e che e' gestito da una societa' di gestione, e' autorizzato e funziona regolarmente;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Contratto Pluriennale",
+    "#": 33,
+    "response": {
+      "generated_definition": "Il contratto pluriennale è un contratto che prevede una durata superiore a un anno, regolato dalle disposizioni del Codice Civile e dalle leggi speciali applicabili, caratterizzato da un impegno reciproco tra le parti per un periodo di tempo determinato che supera il termine annuale.",
+      "sources": []
+    }
+  },
+  {
+    "term": "Pratica Restrittiva",
+    "#": 34,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Per \"Pratica Restrittiva\" si intende qualsiasi provvedimento o misura volta a limitare o impedire la messa a disposizione sul mercato o l'uso di un prodotto o servizio, ai sensi dell'articolo 215 del trattato sul funzionamento dell'Unione europea.",
+        "sources": [
+          "ritiro: qualsiasi provvedimento volto ad impedire la messa a disposizione sul mercato o l'uso di attrezzature a pressione trasportabili;",
+          "«regolamenti (UE) concernenti misure restrittive» s'intendono le misure adottate ai sensi dell'articolo 215 del trattato sul funzionamento dell'Unione europea: concernenti misure restrittive nei confronti di determinati Paesi terzi assoggettati ad embargo commerciale;",
+          "ritiro: qualsiasi provvedimento volto a impedire la messa a disposizione sul mercato di un prodotto nella catena di fornitura;",
+          "ritiro: qualsiasi provvedimento volto a impedire la messa a disposizione sul mercato di un prodotto nella catena di fornitura;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Informazione Confidenziale",
+    "#": 35,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Informazione Confidenziale: qualsiasi informazione o dato, a prescindere da forma, natura o modalita' di trasmissione, che non e' di pubblico dominio e che, per motivi di tutela della riservatezza, della proprietà intellettuale o di altri interessi legittimi, richieda protezione contro divulgazione, accesso, riproduzione, modifica o distruzione non autorizzata, ai sensi del Codice in materia di protezione dei dati personali di cui al decreto legislativo 30 giugno 2003, n. 196, e successive modificazioni.",
+        "sources": [
+          "informazioni classificate: qualsiasi informazione o materiale, a prescindere da forma, natura o modalita' di trasmissione, alla quale e' stato attribuito un determinato livello di classificazione di sicurezza o un livello di protezione e che, nell'interesse della sicurezza nazionale e ai sensi dellalegge 3 agosto 2007, n. 124, concernente il sistema di informazione per la sicurezza della Repubblica e nuova disciplina del segreto, del decreto del Presidente del Consiglio dei Ministri in data 8 aprile 2008 e del decreto del Presidente del Consiglio dei Ministri 12 giugno 2009, n. 7, richieda protezione contro appropriazione indebita, distruzione, rimozione, divulgazione, perdita o accesso da parte di un soggetto non autorizzato o contro qualsiasi altro tipo di pregiudizio;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Origine Non Animale",
+    "#": 36,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Origine Non Animale: prodotto o sostanza che non deriva da animali, ai sensi del Regolamento (CE) n. 1069/2009 del Parlamento europeo e del Consiglio del 21 ottobre 2009, come recepito nel diritto italiano.",
+        "sources": [
+          "stabilimento con orientamento produttivo NON DPA: detenzione di animali per finalita' diverse dagli usi zootecnici e dalla produzione di alimenti;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Bene Importato",
+    "#": 37,
+    "response": {
+      "generated_definition": "Il termine 'Bene Importato' si riferisce a qualsiasi bene che sia stato introdotto nel territorio italiano provenendo da un altro Stato, ai sensi della legislazione doganale e commerciale vigente, compresi i regolamenti dell'Unione Europea (UE) e le disposizioni del Codice Doganale Comunitario.",
+      "sources": []
+    }
+  },
+  {
+    "term": "Inquinamento dell'Aria",
+    "#": 38,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Inquinamento dell'Aria: l'introduzione diretta o indiretta, conseguente alle attivita' umane, di sostanze o energia nell'aria ambiente, comprese le emissioni di gas, particolato e altri inquinanti, che provoca o che puo' provocare effetti negativi sulla salute umana o sull'ambiente nel suo complesso.",
+        "sources": [
+          "inquinamento: introduzione diretta o indiretta, conseguente alle attivita' umane, di sostanze o energia nell'ambiente marino, compreso il rumore sottomarino prodotto dall'uomo, che provoca o che puo' provocare effetti negativi come danni alle risorse biologiche e agli ecosistemi marini, inclusa la perdita di biodiversita', pericoli per la salute umana, limitazioni alle attivita' marittime, compresi la pesca, il turismo, l'uso ricreativo e altri utilizzi legittimi del mare, alterazioni della qualita' delle acque marine che ne pregiudichino l'utilizzo e ne riducano la funzione ricreativa e o, in generale, la compromissione dell'uso sostenibile dei beni e dei servizi marini;",
+          "emissione: il rilascio in atmosfera di sostanze provenienti da fonti, puntuali o diffuse, presenti nel territorio nazionale, nelle zone economiche esclusive e nelle zone di controllo dell'inquinamento atmosferico;",
+          "inquinamento luminoso: l'alterazione della quantità naturale di luce presente nell'ambiente notturno provocata dall'immissione di luce artificiale fuori dalle aree a cui è funzionalmente diretta o con irradiazione orientata al di sopra della linea dell'orizzonte, ovvero in misura superiore ai livelli di illuminazione minimi previsti dalla presente legge e dalle norme di sicurezza o che possa indurre effetti negativi anche temporanei sull'uomo ovvero alterazioni dell'ambiente, quali mortalità o allontanamento di specie sensibili, perdita di biodiversità, alterazione della composizione delle biocenosi e degli equilibri ecologici, incremento della frammentazione ambientale, effetti sulla fisiologia e sul comportamento di specie animali e sul fotoperiodo delle piante, perdita di risorse naturali, peggioramento della qualità dell'aria e minore fruibilità della visione del cielo notturno stellato;",
+          "normativa europea sul controllo dell'inquinamento atmosferico alla fonte: la normativa europea finalizzata a ridurre le emissioni di inquinanti atmosferici previsti dal presente decreto mediante misure di mitigazione alla fonte;",
+          "inquinante: qualsiasi sostanza presente nell'aria ambiente che puo' avere effetti dannosi sulla salute umana o sull'ambiente nel suo complesso;",
+          "aria ambiente: l'aria esterna presente nella troposfera, ad esclusione di quella presente nei luoghi di lavoro definiti daldecreto legislativo 9 aprile 2008, n. 81;",
+          "livello: concentrazione nell'aria ambiente di un inquinante o deposizione di questo su una superficie in un dato periodo di tempo;",
+          "obiettivi di qualita' dell'aria: i valori limite, i valori obiettivo e gli obblighi di concentrazione dell'esposizione previsti daldecreto legislativo 13 agosto 2010, n. 155;",
+          "zona: parte del territorio nazionale delimitata, ai sensi del presente decreto, ai fini della valutazione e della gestione della qualita' dell'aria ambiente;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Origine Inorganica",
+    "#": 39,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Origine Inorganica: materiale o sostanza di origine non biologica, non derivante da organismi viventi, come ad esempio minerali, metalli, gas e altri composti chimici non prodotti da processi biologici, disciplinata ai sensi del decreto legislativo 3 aprile 2006, n. 152, e successive modificazioni.",
+        "sources": [
+          "IG o IIGG: l'indicazione geografica, o le indicazioni geografiche, che, ai sensi del regolamento (UE) 2019/787 del Parlamento europeo e del Consiglio, del 17 aprile 2019, identifica, o identificano, una bevanda spiritosa originaria del territorio italiano, di una regione o localita' italiana, quando una determinata qualita', la rinomanza o altra caratteristica della bevanda spiritosa e' essenzialmente attribuibile alla sua origine geografica;",
+          "carbonio organico di origine biologica: il carbonio organico costituente di prodotti di origine vegetale o animale o derivante direttamente da detti prodotti con esclusione di qualsiasi forma di carbonio organico di sintesi;",
+          "NORM: acronimo di Naturally Occurring Radioactive Materials indicante materiali, generalmente materie prime, o prodotti secondari, o residui di attivita' industriali, contenenti radionuclidi di origine naturale e regolati daldecreto legislativo 17 marzo 1995, n. 230, e successive modificazioni;",
+          "matrice organica: prodotto organico di origine naturale, merceologicamente identificabile con uno di quelli descritti fra i tipi dell'allegato 5 e destinato alla produzione di concimi organici ed organo-minerali;",
+          "garanzia di origine: documento elettronico che serve esclusivamente a provare ad un cliente finale che una determinata quota o un determinato quantitativo di energia sono stati prodotti da fonti rinnovabili come previsto all'articolo 3, paragrafo 6, della direttiva 2003/54/CE e dai provvedimenti attuativi di cui all'articolo 1, comma 5, del decreto-legge 18 giugno 2007, n. 73, convertito, con modificazioni, dalla legge 3 agosto 2007, n. 125;",
+          "contributo di fonti naturali: emissione di sostanze inquinanti non causata in modo diretto o indiretto da attivita' umane, come nel caso di eruzioni vulcaniche, attivita' sismiche, attivita' geotermiche, incendi spontanei, tempeste di vento ed altri eventi naturali, aerosol marini, emissioni biogeniche, trasporto o risospensione in atmosfera di particelle naturali dalle regioni secche;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Benessere Animale",
+    "#": 40,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Benessere Animale: lo stato di salute fisica e psicologica di un animale, caratterizzato dall'assenza di dolore, di sofferenza, di paura, di stress e di qualsiasi forma di malessere, garantendo le condizioni adeguate per il suo benessere, come previsto dalla normativa vigente in materia di protezione degli animali, inclusi il Decreto Legislativo 26 marzo 2001, n. 152, e il Regolamento (UE) n. 2016/429 del Parlamento europeo e del Consiglio del 9 marzo 2016.",
+        "sources": [
+          "nell'articolo 4: punti 24) e 27), del regolamento (UE) n. 2016/429 del Parlamento europeo e del Consiglio del 9 marzo 2016, relativo alle malattie animali trasmissibili e che modifica e abroga taluni atti in materia di sanita' animale («normativa in materia di sanita' animale»).",
+          "responsabile del benessere animale: la persona responsabile del benessere e dell'assistenza degli animali e del funzionamento delle attrezzature di uno o piu' stabilimenti;",
+          "animale di affezione: qualsiasi animale tenuto o destinato a essere tenuto dall'uomo, per affezione o compagnia, senza fini produttivi o alimentari, compresi quelli che svolgono attività utili all'uomo, quali la pratica terapeutica dolce, la riabilitazione e l'assistenza;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Autorità Nazionale per la Salute",
+    "#": 41,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Autorità Nazionale per la Salute: l'organismo istituito ai sensi della legislazione vigente, responsabile della tutela della salute pubblica e della gestione delle politiche sanitarie a livello nazionale, come previsto dal decreto legislativo 30 dicembre 1992, n. 502, e successive modificazioni.",
+        "sources": [
+          "autorita' sanitaria locale territorialmente competente: l'Azienda sanitaria locale (ASL), l'Azienda Unita' Sanitaria Locale (AUSL) o altro ente pubblico deputato a svolgere controlli sulla salubrita' delle acque e sugli alimenti e bevande per scopi di tutela della salute pubblica, come individuato da norme nazionali e regionali;",
+          "Servizio fitosanitario nazionale: l'organismo di cui al decreto legislativo recante norme per la protezione delle piante dagli organismi nocivi in attuazione dell'articolo 11 della legge 4 ottobre 2019, n. 117, articolato nel Servizio fitosanitario centrale e nei Servizi fitosanitari regionali e delle province autonome;",
+          "soggetti che operano nel settore della salute: i soggetti appartenenti all'area sanitaria o amministrativa e gli altri soggetti che operano, a qualsiasi titolo, nell'ambito di un'organizzazione sanitaria, pubblica o privata, e che, indipendentemente dall'incarico ricoperto, esercitano responsabilita' nella gestione e nell'allocazione delle risorse o intervengono nei processi decisionali in materia di farmaci, dispositivi, tecnologie e altri beni, anche non sanitari, nonche' di ricerca, sperimentazione e sponsorizzazione. Sono equiparati ai soggetti che operano nel settore della salute i professionisti iscritti nell'Albo nazionale obbligatorio dei componenti delle commissioni giudicatrici nelle procedure di affidamento dei contratti pubblici, di cui all'articolo 78 del codice di cui aldecreto legislativo 18 aprile 2016, n. 50, gestito dall'Autorita' nazionale anticorruzione, e selezionabili per le procedure ad evidenza pubblica per l'acquisto e la produzione di beni e servizi nel settore sanitario;",
+          "Agenzia: l'Agenzia per la cybersicurezza nazionale di cui all'articolo 5 del decreto-legge 14 giugno 2021, n. 82, convertito, con modificazioni, dalla legge 4 agosto 2021, n. 109, designata dall'articolo 7, comma 1, lettera e), del medesimo decreto-legge, per l'Italia, quale autorita' nazionale di certificazione della cybersicurezza, di cui all'articolo 58, paragrafo 1, del Regolamento;",
+          "servizio fitosanitario nazionale: l'organismo di cui al decreto legislativo recante norme per la protezione delle piante dagli organismi nocivi in attuazione dell'articolo 11 della legge 4 ottobre 2019, n. 117, articolato nel Servizio fitosanitario centrale e nei Servizi fitosanitari regionalie delle province autonome;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Prodotto Vegetale",
+    "#": 42,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Prodotto Vegetale: il prodotto derivante da vegetali, comprese le piante, le parti di piante, i frutti, le semenze, i tuberi, le radici e altri organi vegetali, destinato alla commercializzazione, alla trasformazione o al consumo umano o animale, esclusi i prodotti di origine animale e i prodotti chimici o sintetici.",
+        "sources": [
+          "prodotti agricoli e alimentari a chilometro zero: i prodotti dell'agricoltura e dell'allevamento, compresa l'acquacoltura, di cui all'allegato I al Trattato sul funzionamento dell'Unione europea, e i prodotti alimentari di cui all'articolo 2 del regolamento (CE) n. 178/2002 del Parlamento europeo e del Consiglio, del 28 gennaio 2002, provenienti da luoghi di produzione e di trasformazione della materia prima o delle materie prime agricole primarie utilizzate posti a una distanza non superiore a 70 chilometri di raggio dal luogo di vendita, o comunque provenienti dalla stessa provincia del luogo di vendita, o dal luogo di consumo del servizio di ristorazione di cui alcomma 1 dell'articolo 144 del codice dei contratti pubblici, di cui al decreto legislativo 18 aprile 2016, n. 50, come sostituito dall'articolo 6 della presente legge, e i prodotti freschi della pesca in mare e della pesca nelle acque interne e lagunari, provenienti da punti di sbarco posti a una distanza non superiore a 70 chilometri di raggio dal luogo di vendita o dal luogo di consumo del servizio di ristorazione come definito ai sensi del citato comma 1 dell'articolo 144 del codice di cui al decreto legislativo n. 50 del 2016, catturati da imbarcazioni iscritte nei registri degli uffici marittimi delle capitanerie di porto competenti per i punti di sbarco, e da imprenditori ittici iscritti nei registri delle licenze di pesca tenuti presso le province competenti;",
+          "prodotti fitosanitari: i prodotti, nella forma in cui sono forniti all'utilizzatore finale, contenenti o costituiti da sostanze attive, antidoti agronomici o sinergizzanti, destinati ad uno dei seguenti impieghi: 1) proteggere i vegetali o i prodotti vegetali da tutti gli organismi nocivi o prevenire gli effetti di questi ultimi, a meno che non si ritenga che tali prodotti siano utilizzati principalmente per motivi di igiene, piuttosto che per la protezione dei vegetali o dei prodotti vegetali; 2) influire sui processi vitali dei vegetali, ad esempio nel caso di sostanze, diverse dai nutrienti, che influiscono sulla loro crescita; 3) conservare i prodotti vegetali, sempreche' la sostanza o il prodotto non siano disciplinati da disposizioni comunitarie speciali in materia di conservanti; 4) distruggere vegetali o parti di vegetali indesiderati, eccetto le alghe, a meno che i prodotti non siano adoperati sul suolo o in acqua per proteggere i vegetali; 5) controllare o evitare una crescita indesiderata dei vegetali, eccetto le alghe, a meno che i prodotti non siano adoperati sul suolo o in acqua per proteggere i vegetali;",
+          "prodotti agricoli e alimentari nazionali provenienti da filiera corta: i prodotti la cui filiera produttiva risulti caratterizzata dall'assenza di intermediari commerciali, ovvero composta da un solo intermediario tra il produttore, singolo o associato in diverse forme di aggregazione, e il consumatore finale. Le cooperative e i loro consorzi di cui all'articolo 1, comma 2, del decreto legislativo 18 maggio 2001, n. 228, non sono considerati intermediari."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Analisi del rischio",
+    "#": 43,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "Normattiva",
+          "document_id": "20210423_21G00060_ORIGINALE",
+          "definition": [
+            {
+              "date": "2021-05-08",
+              "definition": "g) analisi del rischio : un processo che consente di identificare i fattori di rischio di un incidente, valutandone la probabilita' e l'impatto potenziale sulla continuita', sulla sicurezza o sulla efficacia della funzione essenziale o del servizio essenziale, e conseguentemente di trattare tale rischio individuando ed implementando idonee misure di sicurezza;"
+            }
+          ]
+        },
+        {
+          "dataset": "Normattiva",
+          "document_id": "20201021_20G00150_ORIGINALE",
+          "definition": [
+            {
+              "date": "2020-11-05",
+              "definition": "z) analisi del rischio , un processo che consente di identificare i fattori di rischio di un incidente, valutandone la probabilita' e l'impatto potenziale sulla continuita', sulla sicurezza o sulla efficacia della funzione essenziale o del servizio essenziale, e conseguentemente di trattare tale rischio individuando ed implementando idonee misure di sicurezza."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "term": "Valutazione del Rischio",
+    "#": 44,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "Normattiva",
+          "document_id": "20190607_19G00052_ORIGINALE",
+          "definition": [
+            {
+              "date": "2019-06-22",
+              "definition": "c) valutazione di rischio : valutazione complessiva degli elementi di potenziale rischio ambientale e sanitario associato all'esposizione indiretta per assunzione alimentare, condotta secondo i criteri di cui all'allegato 3, che costituisce parte integrante del presente regolamento;"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "term": "Veicolo Autonomo",
+    "#": 45,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Veicolo Autonomo: un veicolo a motore o un insieme di autoarticolati adibito o destinato al trasporto su strada di passeggeri o di merci, che sia in grado di muoversi senza l'intervento diretto di un conducente, utilizzando sistemi di guida automatica e tecnologie di rilevamento dell'ambiente.",
+        "sources": [
+          "autoveicolo: un veicolo a motore o un insieme di autoarticolati, adibito o usato per il trasporto su strada di merci e che abbia un peso totale a pieno carico autorizzato superiore a 3,5 tonnellate;",
+          "veicolo: un veicolo a motore o un insieme di autoarticolati adibito o destinato al trasporto su strada di passeggeri o di merci;",
+          "veicolo: qualsiasi veicolo a motore destinato a circolare su strada, provvisto di almeno quattro ruote ed avente una velocita' massima per costruzione superiore a 25 km/h, nonche' i relativi rimorchi, eccettuati i veicoli che si muovono su rotaie, le macchine mobili ed i trattori agricoli e forestali, purche' non viaggino ad una velocita' superiore a 40 km/h quando trasportano merci pericolose;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Analisi della qualità dell'Aria",
+    "#": 46,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Analisi della qualità dell'Aria: l'attività di valutazione e misurazione delle caratteristiche chimiche e fisiche dell'aria ambiente, al fine di determinarne lo stato di qualità e di verificarne il rispetto degli obiettivi di qualità dell'aria, come definiti dal decreto legislativo 13 agosto 2010, n. 155.",
+        "sources": [
+          "obiettivi di qualita' dell'aria: i valori limite, i valori obiettivo e gli obblighi di concentrazione dell'esposizione previsti daldecreto legislativo 13 agosto 2010, n. 155;",
+          "zona: parte del territorio nazionale delimitata, ai sensi del presente decreto, ai fini della valutazione e della gestione della qualita' dell'aria ambiente;",
+          "aria ambiente: l'aria esterna presente nella troposfera, ad esclusione di quella presente nei luoghi di lavoro definiti daldecreto legislativo 9 aprile 2008, n. 81;",
+          "emissione: il rilascio in atmosfera di sostanze provenienti da fonti, puntuali o diffuse, presenti nel territorio nazionale, nelle zone economiche esclusive e nelle zone di controllo dell'inquinamento atmosferico;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Meccanismo di controllo delle emissioni",
+    "#": 47,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Meccanismo di controllo delle emissioni: il sistema di regole, procedure e tecnologie volte a monitorare, ridurre e gestire le emissioni di sostanze inquinanti in atmosfera, ai sensi della normativa vigente in materia di tutela dell'ambiente e di controllo dell'inquinamento atmosferico.",
+        "sources": [
+          "emissione: il rilascio in atmosfera di sostanze provenienti da fonti, puntuali o diffuse, presenti nel territorio nazionale, nelle zone economiche esclusive e nelle zone di controllo dell'inquinamento atmosferico;",
+          "normativa europea sul controllo dell'inquinamento atmosferico alla fonte: la normativa europea finalizzata a ridurre le emissioni di inquinanti atmosferici previsti dal presente decreto mediante misure di mitigazione alla fonte;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Combustibile Organico",
+    "#": 48,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Combustibile Organico: il combustibile ottenuto dalla biomassa, ovvero la frazione biodegradabile dei prodotti, rifiuti e residui provenienti dall'agricoltura, comprendente sostanze vegetali e animali, dalla silvicoltura e dalle industrie connesse, nonche' la frazione biodegradabile dei rifiuti industriali e urbani.",
+        "sources": [
+          "veicolo pulito: 1) un veicolo di categoria M1 , M2 o N1 con emissioni allo scarico massime espresse in CO2 g/km ed emissioni di inquinanti in condizioni reali di guida inferiori a una percentuale dei limiti di emissione applicabili di cui alla tabella 2 dell'allegato; 2) un veicolo di categoria M3 , N2 o N3 che utilizza combustibili alternativi quali definiti all'articolo 2, comma 1, lettera a), del decreto legislativo 16 dicembre 2016, n. 257, esclusi i combustibili prodotti da biomassa a elevato rischio di cambiamento indiretto della destinazione d'uso dei terreni, prodotti da materie prime per le quali si osserva una considerevole espansione della zona di produzione in terreni che presentano elevate scorte di carbonio, conformemente all'articolo 26 della direttiva (UE) 2018/2001 del Parlamento europeo e del Consiglio, dell'11 dicembre 2018. Nel caso di veicoli che utilizzano biocarburanti liquidi, carburanti sintetici e paraffinici, tali carburanti non devono essere miscelati con i combustibili fossili convenzionali;\n\nReferences: \na) combustibili alternativi : combustibili o fonti di energia che fungono, almeno in parte, da sostituti delle fonti fossili di petrolio nella fornitura di energia per il trasporto e che possono contribuire alla sua decarbonizzazione e migliorare le prestazioni ambientali del settore trasporti. I combustibili alternativi comprendono anche: 1) elettricita'; 2) idrogeno; 3) biocarburanti, quali definiti all'articolo 2, comma 1, lettera i) del decreto legislativo 3 marzo 2011, n. 28; 4) combustibili sintetici e paraffinici; 5) gas naturale, compreso il biometano, in forma gassosa, denominato gas naturale compresso, di seguito GNC, e liquefatta, denominato gas naturale liquefatto, di seguito GNL; 6) gas di petrolio liquefatto, di seguito denominato GPL;",
+          "carbonio organico di origine biologica: il carbonio organico costituente di prodotti di origine vegetale o animale o derivante direttamente da detti prodotti con esclusione di qualsiasi forma di carbonio organico di sintesi;",
+          "biocarburanti, bioliquidi e combustibili da biomassa a basso rischio di cambiamento indiretto della destinazione d'uso dei terreni: biocarburanti, bioliquidi e combustibili da biomassa le cui materie prime sono state prodotte nell'ambito di sistemi che evitano gli effetti di spostamento dei biocarburanti, dei bioliquidi e dei combustibili da biomassa ottenuti da colture alimentari e foraggere mediante il miglioramento delle pratiche agricole e mediante la coltivazione in aree che non erano precedentemente utilizzate a tal fine, e che sono stati prodotti conformemente ai criteri di sostenibilita' per i biocarburanti, i bioliquidi e i combustibili da biomassa di cui all'articolo 42 del presente decreto;",
+          "carburanti da carbonio riciclato: combustibili e carburanti liquidi e gassosi che sono prodotti da una delle seguenti due categorie: 1) flussi di rifiuti liquidi o solidi di origine non rinnovabile che non sono idonei al recupero di materia ai sensi dell'articolo 179 del decreto legislativo 3 aprile 2006, n.152; 2) gas derivante dal trattamento dei rifiuti e dal gas di scarico di origine non rinnovabile che sono prodotti come conseguenza inevitabile e non intenzionale del processo di produzione negli impianti industriali;",
+          "combustibili alternativi: combustibili o fonti di energia che fungono, almeno in parte, da sostituti delle fonti fossili di petrolio nella fornitura di energia per il trasporto e che possono contribuire alla sua decarbonizzazione e migliorare le prestazioni ambientali del settore trasporti. I combustibili alternativi comprendono anche: 1) elettricita'; 2) idrogeno; 3) biocarburanti, quali definiti all'articolo 2, comma 1, lettera i) del decreto legislativo 3 marzo 2011, n. 28; 4) combustibili sintetici e paraffinici; 5) gas naturale, compreso il biometano, in forma gassosa, denominato gas naturale compresso, di seguito GNC, e liquefatta, denominato gas naturale liquefatto, di seguito GNL; 6) gas di petrolio liquefatto, di seguito denominato GPL;\n\nReferences: \ni) «biocarburanti» : carburanti liquidi o gassosi per i trasporti ricavati dalla biomassa;",
+          "biocarburanti: carburanti liquidi o gassosi utilizzati per il trasporto, prodotti dalla 'biomassa', ovvero la frazione biodegradabile dei prodotti, rifiuti e residui provenienti dall'agricoltura, comprendente sostanze vegetali e animali, dalla silvicoltura e dalle industrie connesse, nonche' la frazione biodegradabile dei rifiuti industriali e urbani;",
+          "combustibile solido secondario (CSS): il combustibile solido secondario, come definito all'articolo 183, comma 1, lettera cc), deldecreto legislativo 3 aprile 2006, n. 152;",
+          "rifiuto organico: i rifiuti biodegradabili di giardini e parchi, i rifiuti alimentari e di cucina prodotti da nuclei domestici, ristoranti, servizi di ristorazione e punti di vendita al dettaglio e i rifiuti simili prodotti dall'industria alimentare raccolti in modo differenziato;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Combustione Interna",
+    "#": 49,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Combustione Interna: il processo di combustione che avviene all'interno di un motore o di un'impianto, dove il combustibile viene bruciato all'interno della camera di combustione per produrre energia meccanica o termica, come disciplinato dal decreto legislativo 24 febbraio 2009, n. 30, e successive modificazioni.",
+        "sources": [
+          "consumo interno: il dato aggregato corrispondente al totale, calcolato secondo l'allegato II, dei quantitativi immessi in consumo nel Paese per l'insieme degli usi energetici e non energetici; tale aggregato comprende i consumi del settore della trasformazione e i consumi delle industrie, dei trasporti, delle famiglie e degli altri settori di consumo finale; esso comprende altresi' l'autoconsumo del settore dell'energia, fatta eccezione per il combustibile utilizzato in raffineria per la produzione di prodotti petroliferi. L'immissione in consumo e' desunta dal verificarsi dei presupposti per il pagamento dell'accisa o dell'imposta di consumo, anche per i prodotti destinati ad usi esenti."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Cooperazione Transnazionale",
+    "#": 50,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Cooperazione Transnazionale: collaborazione e coordinamento di attivita' tra Stati appartenenti all'Unione europea o tra Stati membri e Paesi terzi, volta a raggiungere obiettivi comuni e a favorire lo sviluppo di progetti e iniziative a livello sovranazionale.",
+        "sources": [
+          "operazione transfrontaliera: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato appartenente all'Unione europea;",
+          "operazione internazionale: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato non appartenente all'Unione europea;",
+          "operazione» ed «operazioni: esportazione e importazione, definitiva o temporanea; transito; cessione di licenze di produzione, trasferimento intracomunitario, intermediazione, delocalizzazione produttiva, trasferimento intangibile, concessione di licenze di fabbricazione e trasformazione o adattamento di materiali e mezzi, di cui all'articolo 1 e all'articolo 2, commi 5 e 7, della legge; prestazione o cessione di servizi di cui all'articolo 2, comma 6, all'articolo 9, comma 5, lettera a), e all'articolo 11, comma 2, lettera b), della legge;",
+          "la lettera q) e' sostituita dalla seguente: \" q) mercati transnazionali: mercati situati in piu' di uno Stato membro, individuati conformemente all'articolo 18, che comprendono l'Unione europea o una parte considerevole dei suoi Stati membri;\";",
+          "cooperazione regionale: cooperazione e coordinamento delle attivita' tra gli Stati membri e, ove possibile, tra i Paesi terzi che hanno in comune la stessa regione o sottoregione marina, ai fini dello sviluppo e dell'attuazione di strategie per l'ambiente marino;",
+          "meccanismo transfrontaliero: uno schema, accordo o progetto, riguardante l'Italia e una o piu' giurisdizioni estere, qualora si verifichi almeno una delle seguenti condizioni: 1) non tutti i partecipanti allo schema, accordo o progetto risiedono, ai fini fiscali, nel territorio dello Stato; 2) uno o piu' partecipanti allo schema, accordo o progetto sono contemporaneamente residenti ai fini fiscali nel territorio dello Stato e in una o piu' giurisdizioni estere; 3) uno o piu' partecipanti allo schema, accordo o progetto svolgono la propria attivita' in una giurisdizione estera tramite una stabile organizzazione ivi situata e lo schema, accordo o progetto riguarda almeno una parte dell'attivita' della stabile organizzazione; 4) uno o piu' partecipanti allo schema, accordo o progetto, senza essere residenti ai fini fiscali o avere una stabile organizzazione in una giurisdizione estera, svolgono in tale giurisdizione un'attivita'; 5) lo schema, accordo o progetto puo' alterare la corretta applicazione delle procedure sullo scambio automatico di informazioni o sull'identificazione del titolare effettivo;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Prodotto Digitale",
+    "#": 51,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "«Prodotto Digitale» qualsiasi bene o servizio fornito attraverso la rete internet o altre reti di comunicazione elettronica, come definito all'articolo 55, comma 1, del decreto legislativo 30 aprile 1992, n. 285, e successive modificazioni, che può essere utilizzato, fruito o consumato in forma digitale.",
+        "sources": [
+          "mercato online: un servizio digitale che consente ai consumatori ovvero ai professionisti, come definiti rispettivamente all'articolo 141, comma 1, lettere a) e b), del decreto legislativo 6 settembre 2005, n. 206, di concludere contratti di vendita o di servizi online con i professionisti sia sul sito web del mercato online sia sul sito web di un professionista che utilizza i servizi informatici forniti dal mercato on line;",
+          "«mezzo di scambio digitale» qualsiasi moneta elettronica definita all'articolo 1: comma 2, lettera h-ter, del decreto legislativo 1° settembre 1993, n. 385, e la valuta virtuale;",
+          "emittente: il soggetto che emette o intende emettere strumenti finanziari digitali;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Libro Elettronico",
+    "#": 52,
+    "response": {
+      "retrieved_definition": [
+        {
+          "dataset": "Normattiva",
+          "document_id": "20220701_22G00089_VIGENZA_20230811",
+          "definition": [
+            {
+              "date": "2023-08-11",
+              "definition": "uu) «libro elettronico (e-book) e software dedicati» : il servizio consistente nella fornitura di file digitali che trasmettono la versione elettronica di un libro cosi' da potervi accedere e navigare e da renderne possibile la lettura e l'utilizzo, nonche' il software, ivi inclusi i servizi per dispositivi mobili comprese le applicazioni mobili, destinato a consentire le operazioni di accesso, navigazione, lettura e utilizzo di tali file digitali, ed esclude i software di cui alla definizione;"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "term": "Copia Immateriale",
+    "#": 53,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Copia Immateriale: copia di un documento o di un'informazione, realizzata mediante strumenti informatici, avente contenuto e forma identici all'originale, ai sensi dell'articolo 1, comma 1, lett. i-ter), del decreto legislativo 7 marzo 2005, n. 82.",
+        "sources": [
+          "bene: ogni bene materiale o immateriale, mobile o immobile, nonche' ogni atto giuridico o documento attestante un titolo o un diritto su tale bene, che secondo la competente autorita' giudiziaria dello Stato di emissione costituisca il prodotto di uno dei reati di cui all'articolo 3, ovvero rappresenti l'equivalente del valore di tale prodotto, ovvero sia stato lo strumento o l'oggetto di uno dei predetti reati;",
+          "«copia per immagine su supporto informatico» del documento analogico: documento informatico avente contenuto e forma identici a quelli del documento analogico da cui e' tratto, di cui all'articolo 1, comma 1, lett. i-ter), del decreto legislativo 7 marzo 2005, n. 82;",
+          "fascicolo informatico: versione informatica, ai sensi dell'articolo 41 del decreto legislativo 7 marzo 2005, n. 82, del fascicolo d'ufficio di cui all'articolo 25 del decreto legislativo 31 dicembre 1992, n. 546, contenente gli atti, i dati e i documenti, relativi al processo, prodotti come documenti informatici, oppure le copie per immagine su supporto informatico dei medesimi atti qualora siano stati depositati su supporto cartaceo;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Esecuzione Transnazionale dei Contratti ",
+    "#": 54,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Esecuzione Transnazionale dei Contratti: l'esecuzione di un contratto che comporta l'applicazione della legge di più di uno Stato, ivi inclusi gli Stati membri dell'Unione europea, e che richiede il coordinamento tra le autorità giudiziarie e amministrative di più Stati per il suo adempimento, ai sensi del regolamento (UE) n. 1215/2012 del Parlamento europeo e del Consiglio del 12 dicembre 2012 concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale.",
+        "sources": [
+          "operazione transfrontaliera: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato appartenente all'Unione europea;",
+          "la lettera q) e' sostituita dalla seguente: \" q) mercati transnazionali: mercati situati in piu' di uno Stato membro, individuati conformemente all'articolo 18, che comprendono l'Unione europea o una parte considerevole dei suoi Stati membri;\";",
+          "trasmissione all'estero: la procedura con cui una sentenza di condanna pronunciata in Italia e' trasmessa a un altro Stato membro dell'Unione europea, ai fini del suo riconoscimento e della sua esecuzione in detto Stato;",
+          "navi: le navi mercantili battenti bandiera italiana che transitano nelle acque internazionali a rischio pirateria individuate dal decreto del Ministro della difesa adottato ai sensi dell'articolo 5, comma 4, del decreto-legge n.107 del 2011, convertito, con modificazioni, dalla legge n. 130 del 2011; l) procedure tecnico-amministrative relative all'imbarco delle guardie giurate: procedure tecnico-amministrative individuate dal comandante generale del Corpo delle capitanerie di porto in relazione all'imbarco delle guardie giurate a bordo delle navi mercantili nazionali, in conformita' alle linee guida sviluppate dall'IMO ed alla normativa nazionale, comunitaria ed internazionale di settore, con decreto 23 marzo 2015, n. 307; m) regolamento per l'esecuzione del T.U.L.P.S.: il regio decreto 6 maggio 1940, n. 635, recante «Approvazione del regolamento per l'esecuzione del testo unico 18 giugno 1931, n. 773, delle leggi di pubblica sicurezza»; n) servizi di protezione del naviglio mercantile: servizi, svolti dalle guardie giurate, ai sensi dell'articolo 5, comma 4, del decreto-legge n. 107 del 2011, convertito, con modificazioni dalla legge n. 130 del 2011, a tutela delle navi mercantili, nonche' delle merci e dei valori sulle stesse trasportati, battenti bandiera italiana che transitano in acque internazionali a rischio pirateria; o) T.U.L.P.S.: il testo unico delle leggi di pubblica sicurezza di cui al regio decreto 18 giugno 1931, n. 773; p) UAMA: l'unita' per le autorizzazioni dei materiali d'armamento del Ministero degli affari esteri e della cooperazione internazionale, di cui alla legge 9 luglio 1990, n. 185 e successive modificazioni, competente per il rilascio delle autorizzazioni per l'interscambio dei materiali di armamento e per il rilascio delle certificazioni per le imprese e per gli adempimenti connessi alla materia."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Garanzia Internazionale",
+    "#": 55,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "La Garanzia Internazionale: la garanzia fornita da uno Stato o da un'organizzazione internazionale a favore di un altro Stato o di un soggetto giuridico, ai sensi degli accordi internazionali vigenti, anche in relazione all'azione comune 2008/851/PESC del Consiglio, del 10 novembre 2008, e delle linee guida del «Maritime Safety Committee» (MSC) delle Nazioni Unite in seno all'«International Maritime Organization» (IMO), al fine di tutelare gli interessi e i diritti dei soggetti coinvolti nelle attività internazionali di contrasto alla pirateria.",
+        "sources": [
+          "accordi internazionali: gli accordi vigenti in materia di cooperazione o di reciproca assistenza tecnico - militare nel settore della difesa, conclusi dall'Italia con uno o piu' Stati esteri;",
+          "aree a rischio pirateria o acque internazionali a rischio pirateria: le aree individuate con decreto del Ministro della difesa, adottato ai sensi dell'articolo 5, comma 4, del decreto-legge 12 luglio 2011, n. 107, convertito, con modificazioni, dalla legge 2 agosto 2011, n. 130, come modificato dal decreto-legge 18 febbraio 2015, n.7, convertito, con modificazioni, dalla legge 17 aprile 2015, n. 43;\n\nReferences: \n4. Nell'ambito delle attivita' internazionali di contrasto alla pirateria, anche in relazione all'azione comune 2008/851/PESC del Consiglio, del 10 novembre 2008, ed in attesa della ratifica delle linee guida del «Maritime Safety Committee» (MSC) delle Nazioni Unite in seno all'«International Maritime Organization» (IMO), e' consentito, nei limiti di cui ai commi 5, 5-bis e 5-ter, l'impiego di guardie giurate, autorizzate ai sensi degli articoli 133 e 134 del testo unico delle leggi di pubblica sicurezza, di cui al regio decreto 18 giugno 1931, n. 773, a bordo delle navi mercantili battenti bandiera italiana, che transitano in acque internazionali soggette al rischio di pirateria, individuate con decreto del Ministro della difesa, sentiti i Ministri degli affari esteri e della cooperazione internazionale, dell'interno e delle infrastrutture e dei trasporti, tenuto conto dei rapporti periodici dell'Organizzazione marittima internazionale (IMO), a protezione delle stesse.",
+          "navi: le navi mercantili battenti bandiera italiana che transitano nelle acque internazionali a rischio pirateria individuate dal decreto del Ministro della difesa adottato ai sensi dell'articolo 5, comma 4, del decreto-legge n.107 del 2011, convertito, con modificazioni, dalla legge n. 130 del 2011; l) procedure tecnico-amministrative relative all'imbarco delle guardie giurate: procedure tecnico-amministrative individuate dal comandante generale del Corpo delle capitanerie di porto in relazione all'imbarco delle guardie giurate a bordo delle navi mercantili nazionali, in conformita' alle linee guida sviluppate dall'IMO ed alla normativa nazionale, comunitaria ed internazionale di settore, con decreto 23 marzo 2015, n. 307; m) regolamento per l'esecuzione del T.U.L.P.S.: il regio decreto 6 maggio 1940, n. 635, recante «Approvazione del regolamento per l'esecuzione del testo unico 18 giugno 1931, n. 773, delle leggi di pubblica sicurezza»; n) servizi di protezione del naviglio mercantile: servizi, svolti dalle guardie giurate, ai sensi dell'articolo 5, comma 4, del decreto-legge n. 107 del 2011, convertito, con modificazioni dalla legge n. 130 del 2011, a tutela delle navi mercantili, nonche' delle merci e dei valori sulle stesse trasportati, battenti bandiera italiana che transitano in acque internazionali a rischio pirateria; o) T.U.L.P.S.: il testo unico delle leggi di pubblica sicurezza di cui al regio decreto 18 giugno 1931, n. 773; p) UAMA: l'unita' per le autorizzazioni dei materiali d'armamento del Ministero degli affari esteri e della cooperazione internazionale, di cui alla legge 9 luglio 1990, n. 185 e successive modificazioni, competente per il rilascio delle autorizzazioni per l'interscambio dei materiali di armamento e per il rilascio delle certificazioni per le imprese e per gli adempimenti connessi alla materia.",
+          "intese internazionali: protocolli, memorandum, intese, o altri documenti comunque denominati, posti in essere dalle Amministrazioni della difesa dell'Italia con uno o piu' Paesi terzi, o dell'Italia e di uno o piu' Stati membri con uno o piu' Paesi terzi, discendenti da accordi sottoposti a ratifica;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Luogo di Produzione",
+    "#": 56,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Luogo di Produzione: il luogo in cui si svolgono le attivita' di produzione, trasformazione, lavorazione o assemblaggio di beni o prodotti, compresi gli impianti, le strutture e le aree adibite a tali attivita', ai sensi del decreto legislativo 6 settembre 2005, n. 206, e successive modificazioni.",
+        "sources": [
+          "stabilimento: il luogo di produzione in cui si allevano polli;",
+          "produttore: la persona fisica o giuridica che, qualunque sia la tecnica di vendita utilizzata, compresa la comunicazione a distanza, ai sensi della Sezione II, del Capo I, del Titolo III deldecreto legislativo 6 settembre 2005, n. 206, riguardante la protezione dei consumatori in materia di contratti a distanza: 1) e' stabilita nel territorio nazionale e fabbrica AEE recanti il suo nome o marchio di fabbrica oppure commissiona la progettazione o la fabbricazione di AEE e le commercializza sul mercato nazionale apponendovi il proprio nome o marchio di fabbrica; 2) e' stabilita nel territorio nazionale e rivende sul mercato nazionale, con il suo nome o marchio di fabbrica, apparecchiature prodotte da altri fornitori; il rivenditore non viene considerato 'produttore', se l'apparecchiatura reca il marchio del produttore a norma del numero 1); 3) e' stabilita nel territorio nazionale ed immette sul mercato nazionale, nell'ambito di un'attivita' professionale, AEE di un Paese terzo o di un altro Stato membro dell'Unione europea; 4) e' stabilita in un altro Stato membro dell'Unione europea o in un paese terzo e vende sul mercato nazionale AEE mediante tecniche di comunicazione a distanza direttamente a nuclei domestici o a utilizzatori diversi dai nuclei domestici;",
+          "sito di produzione: il sito in cui sono generate le terre e rocce da scavo;",
+          "produttore: 1) la persona fisica o giuridica stabilita in uno Stato membro che fabbrica, riempie, vende o importa a titolo professionale, a prescindere dalla tecnica di vendita, anche attraverso contratti a distanza come definiti dall'articolo 45, comma 1, lettera g) del decreto legislativo 6 settembre 2005, n. 206 ed immette sul mercato nazionale prodotti di plastica monouso o prodotti di plastica monouso riempiti o attrezzi da pesca contenenti plastica, diverse dalle persone che esercitano l'attivita' di pesca di cui all'articolo 4, punto 28), del regolamento (UE) n. 1380/2013 del Parlamento europeo e del Consiglio, dell'11 dicembre 2013; ovvero 2) la persona fisica o giuridica stabilita in uno Stato membro o in un paese terzo che a titolo professionale vende in un altro Stato membro direttamente a nuclei domestici, o a utenti diversi dai nuclei domestici, tramite contratti a distanza come definiti dall'articolo 45, comma 1, lettera g) del decreto legislativo n. 206 del 2005, prodotti di plastica monouso, prodotti di plastica monouso riempiti o attrezzi da pesca contenenti plastica, a eccezione delle persone che esercitano l'attivita' di pesca di cui all'articolo 4, punto 28, del regolamento (UE) n. 1380/2013;",
+          "campo di produzione: appezzamento di terreno, dipendente da un centro aziendale e privo di strutture stabili, in cui avviene la produzione, anche temporanea;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Vendita internazionale a distanza",
+    "#": 57,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "La \"Vendita internazionale a distanza\" e' una vendita di beni o servizi effettuata tra un venditore stabilito nel territorio italiano e un acquirente stabilito in un altro Stato, mediante l'utilizzo di tecniche di comunicazione a distanza, come definite nella Sezione II, del Capo I, del Titolo III del decreto legislativo 6 settembre 2005, n. 206, riguardante la protezione dei consumatori in materia di contratti a distanza.",
+        "sources": [
+          "operazione internazionale: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato non appartenente all'Unione europea;",
+          "l'«opera audiovisiva di produzione internazionale»: e' l'opera di cui all'articolo 2, comma 1, lettera i), della legge 14 novembre 2016, n. 220, e all'articolo 2, comma 2, lettera h), del decreto del Ministro dei beni e delle attivita' culturali e del turismo 31 luglio 2017;\n\nReferences: \ni) «opera audiovisiva di produzione internazionale» : l'opera audiovisiva originata da una impresa di produzione cinematografica o audiovisiva italiana e realizzata in collaborazione con imprese audiovisive europee ovvero non europee e avente gli ulteriori requisiti stabiliti nel decreto previsto dall'articolo 5, comma 2;",
+          "produttore: la persona fisica o giuridica che, qualunque sia la tecnica di vendita utilizzata, compresa la comunicazione a distanza, ai sensi della Sezione II, del Capo I, del Titolo III deldecreto legislativo 6 settembre 2005, n. 206, riguardante la protezione dei consumatori in materia di contratti a distanza: 1) e' stabilita nel territorio nazionale e fabbrica AEE recanti il suo nome o marchio di fabbrica oppure commissiona la progettazione o la fabbricazione di AEE e le commercializza sul mercato nazionale apponendovi il proprio nome o marchio di fabbrica; 2) e' stabilita nel territorio nazionale e rivende sul mercato nazionale, con il suo nome o marchio di fabbrica, apparecchiature prodotte da altri fornitori; il rivenditore non viene considerato 'produttore', se l'apparecchiatura reca il marchio del produttore a norma del numero 1); 3) e' stabilita nel territorio nazionale ed immette sul mercato nazionale, nell'ambito di un'attivita' professionale, AEE di un Paese terzo o di un altro Stato membro dell'Unione europea; 4) e' stabilita in un altro Stato membro dell'Unione europea o in un paese terzo e vende sul mercato nazionale AEE mediante tecniche di comunicazione a distanza direttamente a nuclei domestici o a utilizzatori diversi dai nuclei domestici;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Autorità sui Consumatori Competente",
+    "#": 58,
+    "response": {
+      "generated_definition": "L'Autorità sui Consumatori Competente è l'autorità amministrativa italiana che, ai sensi della legislazione vigente, è incaricata di garantire la tutela e la protezione dei diritti dei consumatori, assicurando l'applicazione delle norme a tutela dei consumatori e vigilando sul rispetto delle disposizioni in materia di consumo.",
+      "sources": []
+    }
+  },
+  {
+    "term": "Stabilità Finanziaria",
+    "#": 59,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Per \"Stabilità Finanziaria\" si intende la condizione di equilibrio e di sostenibilità del sistema finanziario, caratterizzato dall'assenza di squilibri economici e finanziari che possano compromettere la stabilità dei mercati finanziari, la solidità delle istituzioni finanziarie e la fiducia degli operatori economici, come definito dal Testo Unico Bancario (decreto legislativo 1° settembre 1993, n. 385) e dal Testo Unico della Finanza (decreto legislativo 24 febbraio 1998, n. 58), nonché dalle disposizioni dell'Unione europea in materia di stabilità finanziaria.",
+        "sources": [
+          "societa' finanziarie: le societa' di cui all'articolo 59, comma 1, lettera b), del Testo Unico Bancario; lll) «societa' veicolo per la gestione delle attivita'»: una societa' di capitali costituita ai sensi del Titolo IV, Capo IV, Sezione II, Sottosezione III,direttiva 2006/48/CE del Parlamento europeo e del Consiglio e relative disposizioni di attuazione; direttiva 2006/48/CE del Parlamento europeo e del Consiglio e relative disposizioni di attuazione; articolo 51, paragrafo 1, della direttiva 2013/36/UE; sss) «Testo Unico Bancario»: il decreto legislativo 1° settembre 1993, n. 385; uuu) «Testo Unico della Finanza»: il decreto legislativo 24 febbraio 1998, n. 58; vvv) «titoli di debito»: le obbligazioni e altre forme di debito trasferibile, gli strumenti che creano o riconoscono un debito e quelli che conferiscono diritti di acquistare titoli di debito.",
+          "Legge di stabilita' 2015: lalegge 23 dicembre 2014, n. 190, recante disposizioni per la formazione del bilancio annuale e pluriennale dello Stato (Legge di stabilita' 2015);",
+          "investitore: la persona fisica, l'imprenditore individuale, anche agricolo, e il coltivatore diretto, o il suo successore mortis causa, che ha acquistato gli strumenti finanziari subordinati indicati nell'articolo 1, comma 855, della legge 28 dicembre 2015, n. 208 (di seguito: «Legge di stabilita' per il 2016»), nell'ambito di un rapporto negoziale diretto con la Banca in liquidazione che li ha emessi",
+          "sistema di tutela istituzionale: un sistema, istituito per legge o sulla base di un accordo contrattuale, mediante il quale le banche aderenti, allo scopo di prevenire o evitare la crisi di ciascuna di esse, si proteggono reciprocamente contro i rischi di illiquidita' e di insolvenza, quando sono rispettate le condizioni stabilite all'articolo 113, paragrafo 7, del regolamento (UE) n. 575/2013 del Parlamento europeo e del Consiglio del 26 giugno 2013 relativo ai requisiti prudenziali per gli enti creditizi e le imprese di investimento e che modifica il regolamento (UE) n. 648/2012;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Analisi del rischio creditizio",
+    "#": 60,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Analisi del rischio creditizio: un processo che consente di identificare e valutare i fattori di rischio creditizio di un soggetto, valutandone la probabilità di inadempimento e l'impatto potenziale sulla stabilità finanziaria, ai sensi del Testo Unico Bancario di cui al Decreto Legislativo 1° settembre 1993, n. 385.",
+        "sources": [
+          "analisi del rischio: un processo che consente di identificare i fattori di rischio di un incidente, valutandone la probabilita' e l'impatto potenziale sulla continuita', sulla sicurezza o sulla efficacia della funzione essenziale o del servizio essenziale, e conseguentemente di trattare tale rischio individuando ed implementando idonee misure di sicurezza;",
+          "analisi del rischio: un processo che consente di identificare i fattori di rischio di un incidente, valutandone la probabilita' e l'impatto potenziale sulla continuita', sulla sicurezza o sulla efficacia della funzione essenziale o del servizio essenziale, e conseguentemente di trattare tale rischio individuando ed implementando idonee misure di sicurezza."
+        ]
+      }
+    }
+  },
+  {
+    "term": "Valutazione del Rischio creditizio",
+    "#": 61,
+    "response": {
+      "generated_definition": "La valutazione del rischio creditizio è l'attività di analisi e valutazione del rischio che un soggetto, in quanto debitore, non adempia alle proprie obbligazioni creditizie, ai sensi dell'articolo 88-bis del Testo Unico delle Leggi in materia bancaria e creditizia (TUB), come modificato dal Decreto Legislativo 1° settembre 1993, n. 385.",
+      "sources": []
+    }
+  },
+  {
+    "term": "Investimento Internazionale",
+    "#": 62,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Investimento Internazionale: un investimento effettuato da un soggetto residente in Italia in un Paese non appartenente all'Unione europea o da un soggetto non residente in Italia in un'impresa o attività economica situata in Italia, ai sensi dell'articolo 1 del decreto legislativo 22 maggio 1997, n. 237, e successive modificazioni.",
+        "sources": [
+          "operazione internazionale: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato non appartenente all'Unione europea;",
+          "investimenti: gli investimenti previsti dall'articolo 9 del decreto 22/4/2022; in particolare: investimenti in beni strumentali: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di macchinari, impianti, beni strumentali di impresa, attrezzature nuovi di fabbrica ad uso produttivo e hardware classificabili, nell'attivo dello stato patrimoniale, alle voci B.II.2, B.II.3 e B.II.4, dell'articolo 2424 del codice civile, nonche' di software e tecnologie digitali destinati a strutture produttive gia' esistenti o da impiantare, ovunque localizzate nel territorio nazionale; investimenti 4.0: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di beni materiali nuovi di fabbrica e immateriali, aventi come finalita' la realizzazione di investimenti in tecnologie, compresi gli investimenti in big data, cloud computing, banda ultralarga, cybersecurity, robotica avanzata e meccatronica, realta' aumentata, manifattura 4D, Radio frequency identification (RFID) e sistemi di tracciamento e pesatura dei rifiuti, come elencati, rispettivamente, negli allegati A e B alla legge n. 232/2016; investimenti green: l'acquisto, o l'acquisizione nel caso di operazioni di leasing finanziario, di macchinari, impianti e attrezzature nuovi di fabbrica ad uso produttivo, a basso impatto ambientale, nell'ambito di programmi finalizzati a migliorare l'ecosostenibilita' dei prodotti e dei processi produttivi;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Posizione Dominante",
+    "#": 63,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Posizione Dominante: la situazione in cui un'impresa, direttamente o indirettamente, ha la possibilità di esercitare un'influenza determinante sul mercato, ai sensi dell'articolo 3 della Legge 10 ottobre 1990, n. 287, e successive modificazioni, quando, alternativamente o cumulativamente: 1) detiene la maggioranza del capitale sottoscritto; 2) controlla la maggioranza dei voti cui danno diritto le azioni emesse dall'impresa; 3) puo' designare piu' della meta' dei membri del consiglio di amministrazione, di direzione o di vigilanza dell'impresa.",
+        "sources": [
+          "influenza dominante: l'influenza esercitata da un'impresa ferroviaria quando, direttamente o indirettamente, riguardo a un'impresa, alternativamente o cumulativamente: 1) detiene la maggioranza del capitale sottoscritto; 2) controlla la maggioranza dei voti cui danno diritto le azioni emesse dall'impresa; 3) puo' designare piu' della meta' dei membri del consiglio di amministrazione, di direzione o di vigilanza dell'impresa;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Decisione Automatizzata sul merito creditizio",
+    "#": 64,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Decisione Automatizzata sul merito creditizio: valutazione del merito creditizio di un soggetto effettuata attraverso l'utilizzo di sistemi informatici e algoritmi, senza l'intervento di un operatore umano, ai sensi dell'articolo 4, paragrafo 4, del Regolamento (UE) 2016/679 del Parlamento europeo e del Consiglio del 27 aprile 2016, relativo alla protezione delle persone fisiche con riguardo al trattamento dei dati personali, nonché alla libera circolazione di tali dati.",
+        "sources": [
+          "credito: unita' rilasciata a seguito della realizzazione di attivita' di riduzione delle emissioni realizzate a norma di accordi sottoscritti tra l'Unione e i Paesi terzi o di decisioni adottate dalla Conferenza delle Parti della Convenzione quadro delle Nazioni Unite sui cambiamenti climatici o del Protocollo di Kyoto e ammissibili per essere utilizzati nell'ambito del sistema comunitario;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Autorità Nazionale per i Titoli di Stato",
+    "#": 65,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "«Autorità Nazionale per i Titoli di Stato»: l'organismo nazionale, istituito e disciplinato dalla normativa vigente, operante come autorità nazionale preposta alla gestione, emissione e regolamentazione dei titoli di stato, ai sensi del decreto legislativo 24 febbraio 1997, n. 58, e successive modificazioni.",
+        "sources": [
+          "«Agenzia nazionale per la sicurezza delle ferrovie e delle infrastrutture stradali e autostradali» (ANSFISA): l'organismo nazionale, istituito daldecreto-legge 28 settembre 2018, n. 109, convertito, con modificazioni, dalla legge 16 novembre 2018, n. 130, operante come autorita' nazionale preposta alla sicurezza con riferimento ai compiti previsti dal presente decreto riguardanti la sicurezza ferroviaria e che sostituisce l'Agenzia nazionale per la sicurezza delle ferrovie (ANSF), quale precedente organismo nazionale istituito come autorita' nazionale preposta alla sicurezza dal decreto legislativo 10 agosto 2007, n. 162;",
+          "«Agenzia Nazionale per la Sicurezza delle Ferrovie e delle Infrastrutture Stradali e Autostradali» (ANSFISA): l'organismo nazionale, istituito daldecreto-legge 28 settembre 2018, n. 109, convertito, con modificazioni, dalla legge 16 novembre 2018, n. 130, operante come autorita' nazionale preposta alla sicurezza con riferimento ai compiti riguardanti la sicurezza ferroviaria assegnati dal decreto legislativo recante attuazione della direttiva (UE) 2016/798 del Parlamento europeo e del Consiglio dell'11 maggio 2016 sulla sicurezza delle ferrovie;",
+          "ente pubblico titolare: amministrazione pubblica, centrale, regionale e delle province autonome titolare, a norma di legge, della regolamentazione di servizi di individuazione e validazione e certificazione delle competenze. Nello specifico sono da intendersi enti pubblici titolari: 1) il Ministero dell'istruzione, dell'universita' e della ricerca, in materia di individuazione e validazione e certificazione delle competenze riferite ai titoli di studio del sistema scolastico e universitario; 2) le regioni e le province autonome di Trento e Bolzano, in materia di individuazione e validazione e certificazione di competenze riferite a qualificazioni rilasciate nell'ambito delle rispettive competenze; 3) il Ministero del lavoro e delle politiche sociali, in materia di individuazione e validazione e certificazione di competenze riferite a qualificazioni delle professioni non organizzate in ordini o collegi, salvo quelle comunque afferenti alle autorita' competenti di cui al successivo punto 4; 4) il Ministero dello sviluppo economico e le altre autorita' competenti ai sensi dell'articolo 5 del decreto legislativo 9 novembre 2007, n. 206, in materia di individuazione e validazione e certificazione di competenze riferite a qualificazioni delle professioni regolamentate a norma del medesimo decreto;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Crisi da Instabilità del Mercato",
+    "#": 66,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Crisi da Instabilità del Mercato: una situazione di squilibrio economico caratterizzata da una perdita di fiducia degli investitori, da una riduzione della liquidità dei mercati finanziari e da un aumento del rischio di insolvenza delle banche e delle imprese, che può compromettere la stabilità del sistema finanziario e richiedere l'intervento delle autorità di vigilanza e delle istituzioni finanziarie internazionali, come definite dal Testo Unico delle Leggi in materia bancaria e creditizia di cui al decreto legislativo 1 settembre 1993, n. 385, e successive modificazioni.",
+        "sources": [
+          "crisi: qualsiasi situazione in uno Stato membro o in un Paese terzo nella quale si e' verificato un evento dannoso che superi chiaramente la portata degli eventi dannosi della vita quotidiana e in tal modo metta seriamente in pericolo o comprometta la vita e la salute delle persone, o abbia un significativo impatto sui valori immobiliari ovvero richieda misure per approvvigionamenti vitali per la popolazione. Si considerano «crisi» anche le situazioni in cui il verificarsi di un siffatto evento dannoso e' considerato imminente. I conflitti armati e le guerre sono considerati «crisi»;",
+          "sistema di tutela istituzionale: un sistema, istituito per legge o sulla base di un accordo contrattuale, mediante il quale le banche aderenti, allo scopo di prevenire o evitare la crisi di ciascuna di esse, si proteggono reciprocamente contro i rischi di illiquidita' e di insolvenza, quando sono rispettate le condizioni stabilite all'articolo 113, paragrafo 7, del regolamento (UE) n. 575/2013 del Parlamento europeo e del Consiglio del 26 giugno 2013 relativo ai requisiti prudenziali per gli enti creditizi e le imprese di investimento e che modifica il regolamento (UE) n. 648/2012;",
+          "procedura di gestione della crisi: la procedura"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Videosorveglianza",
+    "#": 67,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Videosorveglianza: l'attività di sorveglianza effettuata mediante l'uso di sistemi di ripresa e registrazione di immagini, ai sensi del Codice in materia di protezione dei dati personali di cui al Decreto Legislativo 30 giugno 2003, n. 196.",
+        "sources": [
+          "autorita' di vigilanza: la Banca d'Italia, la CONSOB e l'IVASS;",
+          "organismi di vigilanza: la Banca d'Italia, l'Istituto per la vigilanza sulle assicurazioni (IVASS), la Commissione di vigilanza sui fondi pensione (Covip) e gli eventuali altri soggetti cui sia attribuita in forza della normativa vigente la vigilanza sull'operato degli intermediari abilitati di cui allalettera a).",
+          "organismi di vigilanza: la Banca d'Italia, l'Istituto per la vigilanza sulle assicurazioni (IVASS), la Commissione di vigilanza sui fondi pensione (Covip) e gli eventuali altri soggetti cui sia attribuita in forza della normativa vigente la vigilanza sull'operato degli intermediari abilitati di cui allalettera a).",
+          "COVIP: la Commissione di vigilanza sui fondi pensione;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Trojan",
+    "#": 68,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Trojan: un programma informatico progettato per eludere le misure di sicurezza di un sistema informatico, che consente l'accesso non autorizzato o la raccolta di informazioni sensibili, ai sensi del Codice dell'amministrazione digitale di cui al decreto legislativo 7 marzo 2005, n. 82.",
+        "sources": [
+          "navi: le navi mercantili battenti bandiera italiana che transitano nelle acque internazionali a rischio pirateria individuate dal decreto del Ministro della difesa adottato ai sensi dell'articolo 5, comma 4, del decreto-legge n.107 del 2011, convertito, con modificazioni, dalla legge n. 130 del 2011; l) procedure tecnico-amministrative relative all'imbarco delle guardie giurate: procedure tecnico-amministrative individuate dal comandante generale del Corpo delle capitanerie di porto in relazione all'imbarco delle guardie giurate a bordo delle navi mercantili nazionali, in conformita' alle linee guida sviluppate dall'IMO ed alla normativa nazionale, comunitaria ed internazionale di settore, con decreto 23 marzo 2015, n. 307; m) regolamento per l'esecuzione del T.U.L.P.S.: il regio decreto 6 maggio 1940, n. 635, recante «Approvazione del regolamento per l'esecuzione del testo unico 18 giugno 1931, n. 773, delle leggi di pubblica sicurezza»; n) servizi di protezione del naviglio mercantile: servizi, svolti dalle guardie giurate, ai sensi dell'articolo 5, comma 4, del decreto-legge n. 107 del 2011, convertito, con modificazioni dalla legge n. 130 del 2011, a tutela delle navi mercantili, nonche' delle merci e dei valori sulle stesse trasportati, battenti bandiera italiana che transitano in acque internazionali a rischio pirateria; o) T.U.L.P.S.: il testo unico delle leggi di pubblica sicurezza di cui al regio decreto 18 giugno 1931, n. 773; p) UAMA: l'unita' per le autorizzazioni dei materiali d'armamento del Ministero degli affari esteri e della cooperazione internazionale, di cui alla legge 9 luglio 1990, n. 185 e successive modificazioni, competente per il rilascio delle autorizzazioni per l'interscambio dei materiali di armamento e per il rilascio delle certificazioni per le imprese e per gli adempimenti connessi alla materia.",
+          "reati gravi: i reati che, ai sensi della legge penale italiana, integrano le fattispecie elencate nell'allegato II delladirettiva (UE) 2016/681, puniti con una pena detentiva o una misura di sicurezza privativa della liberta' personale non inferiore a tre anni;",
+          "tolleranza: la deviazione consentita del valore misurato del titolo dal suo valore dichiarato;",
+          "violazioni: comportamenti, atti od omissioni che ledono l'interesse pubblico o l'integrita' dell'amministrazione pubblica o dell'ente privato e che consistono in: 1) illeciti amministrativi, contabili, civili o penali che non rientrano nei numeri 3), 4), 5) e 6); 2) condotte illecite rilevanti ai sensi deldecreto legislativo 8 giugno 2001, n. 231, o violazioni dei modelli di organizzazione e gestione ivi previsti, che non rientrano nei numeri 3), 4), 5) e 6); 3) illeciti che rientrano nell'ambito di applicazione degli atti dell'Unione europea o nazionali indicati nell'allegato al presente decreto ovvero degli atti nazionali che costituiscono attuazione degli atti dell'Unione europea indicati nell'allegato alla direttiva (UE) 2019/1937, seppur non indicati nell'allegato al presente decreto, relativi ai seguenti settori: appalti pubblici; servizi, prodotti e mercati finanziari e prevenzione del riciclaggio e del finanziamento del terrorismo; sicurezza e conformita' dei prodotti; sicurezza dei trasporti; tutela dell'ambiente; radioprotezione e sicurezza nucleare; sicurezza degli alimenti e dei mangimi e salute e benessere degli animali; salute pubblica; protezione dei consumatori; tutela della vita privata e protezione dei dati personali e sicurezza delle reti e dei sistemi informativi; 4) atti od omissioni che ledono gli interessi finanziari dell'Unione di cui all'articolo 325 del Trattato sul funzionamento dell'Unione europea specificati nel diritto derivato pertinente dell'Unione europea; 5) atti od omissioni riguardanti il mercato interno, di cui all'articolo 26, paragrafo 2, del Trattato sul funzionamento dell'Unione europea, comprese le violazioni delle norme dell'Unione europea in materia di concorrenza e di aiuti di Stato, nonche' le violazioni riguardanti il mercato interno connesse ad atti che violano le norme in materia di imposta sulle societa' o i meccanismi il cui fine e' ottenere un vantaggio fiscale che vanifica l'oggetto o la finalita' della normativa applicabile in materia di imposta sulle societa'; 6) atti o comportamenti che vanificano l'oggetto o la finalita' delle disposizioni di cui agli atti dell'Unione nei settori indicati nei numeri 3), 4) e 5);",
+          "societa' italiana: societa' regolata dalla legge italiana;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Casellario Giudiziale Europeo",
+    "#": 69,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Casellario Giudiziale Europeo: registro in cui sono riportate le informazioni relative alle condanne e alle decisioni giudiziarie emesse dagli Stati membri dell'Unione europea, ai sensi del decreto legislativo 21 maggio 2018, n. 75, di attuazione della decisione quadro 2009/315/GAI del Consiglio, del 26 febbraio 2009, relativa all'organizzazione e al contenuto degli scambi di informazioni estratte dal casellario giudiziale tra Stati membri.",
+        "sources": [
+          "casellario giudiziale: registro nazionale in cui sono riportate le condanne;",
+          "destinatario: l'autorita' di un altro Stato membro dell'Unione europea competente per l'accertamento delle infrazioni;",
+          "codice unico europeo» o Single european code (SEC): il codice unico d'identificazione applicato ai tessuti e alle cellule distribuiti nell'Unione europea di cui all'articolo 15 del decreto legislativo 25 gennaio 2010, n. 16;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Traffico di Esseri Umani",
+    "#": 70,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Traffico di Esseri Umani: l'azione di reclutamento, trasporto, trasferimento, custodia o ricezione di persone, mediante la minaccia o l'uso della forza o di altre forme di coazione, mediante rapimento, frode, inganno, abuso di potere o di una posizione di vulnerabilità, o mediante l'offerta o la ricezione di pagamenti o benefici per ottenere il consenso di una persona avente controllo su un'altra persona, come definito dall'articolo 18 della legge 11 agosto 2003, n. 228, e successive modificazioni.",
+        "sources": [
+          "trasporto pubblico locale: i servizi di trasporto di persone, come definiti dall'articolo 1, comma 2, del decreto legislativo 19 novembre 1997, n. 422, con esclusione dei servizi non assoggettati ad obblighi di servizio pubblico e svolti in regime di libera concorrenza e senza l'attribuzione di diritti di esclusiva;",
+          "servizio di trasporto in transito: servizio di trasporto svolto attraversando il territorio di uno Stato membro senza effettuare operazioni di carico o scarico merci e senza far salire o scendere passeggeri;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Dati GPS",
+    "#": 71,
+    "response": {
+      "generated_definition": "Si intendono per 'Dati GPS' le informazioni generate o raccolte attraverso sistemi di navigazione satellitare, in particolare il Sistema di Posizionamento Globale (Global Positioning System), che forniscono dati sulla posizione geografica, sulla velocità e sulla direzione di un dispositivo o di un veicolo.",
+      "sources": []
+    }
+  },
+  {
+    "term": "Politica di Cooperazione Internazionale",
+    "#": 72,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Politica di Cooperazione Internazionale: l'insieme delle azioni, degli strumenti e delle strategie adottate dall'Italia per promuovere e sviluppare la cooperazione con altri Stati e organizzazioni internazionali, ai fini della promozione della pace, della stabilità e dello sviluppo sostenibile, nel rispetto dei principi e delle norme del diritto internazionale e della legislazione italiana.",
+        "sources": [
+          "operazione internazionale: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato non appartenente all'Unione europea;",
+          "operazione transfrontaliera: una trasformazione, fusione o scissione alla quale partecipano o dalla quale risultano una o piu' societa' regolate dalla legge italiana e almeno una societa' regolata dalla legge di uno Stato appartenente all'Unione europea;",
+          "cooperazione applicativa: l'interazione tra i sistemi informatici delle pubbliche amministrazioni regolamentata dalle regole tecniche SPCoop di cui alla lettera e), che avviene tramite le porte di dominio;",
+          "accordi internazionali: gli accordi vigenti in materia di cooperazione o di reciproca assistenza tecnico - militare nel settore della difesa, conclusi dall'Italia con uno o piu' Stati esteri;",
+          "cooperazione applicativa: l'interazione tra i sistemi informatici delle pubbliche amministrazioni disciplinata dalle regole tecniche SPC di cui alla lettera f), che avviene tramite le porte di dominio;",
+          "cooperazione regionale: cooperazione e coordinamento delle attivita' tra gli Stati membri e, ove possibile, tra i Paesi terzi che hanno in comune la stessa regione o sottoregione marina, ai fini dello sviluppo e dell'attuazione di strategie per l'ambiente marino;",
+          "convenzioni internazionali: le convenzioni di seguito indicate, unitamente ai protocolli, ai successivi emendamenti e relativi codici obbligatori, ad eccezione della parte 2, paragrafi 16.1, 18.1 e 19, del codice per l'applicazione degli strumenti dell'IMO, nonche' della parte 2, sezioni 1.1, 1.3, 3.9.3.1, 3.9.3.2 e 3.9.3.3, del codice IMO per gli organismi riconosciuti, nelle loro versioni aggiornate: 1) la Convenzione internazionale del 1° novembre 1974 per la salvaguardia della vita umana in mare (SOLAS 74), resa esecutiva conlegge 23 maggio 1980, n. 313, ad eccezione del capo XI-2 del relativo allegato; 2) la Convenzione internazionale del 5 aprile 1966 sulla linea di carico (LL66), resa esecutiva con decreto del Presidente della Repubblica 8 aprile 1968, n. 777, entrato in vigore il 21 luglio 1968; 3) la Convenzione internazionale del 2 novembre 1973 per la prevenzione dell'inquinamento causato da navi (MARPOL 73/78), ratificata con legge 29 settembre 1980, n. 662, entrata in vigore in Italia il 2 ottobre 1983;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Ente nazionale di controllo",
+    "#": 73,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Ente nazionale di controllo: ente designato e autorizzato dallo stato ai sensi della normativa vigente, che esercita un'attività di controllo e vigilanza su specifici settori o attività, assicurando il rispetto delle disposizioni di legge e delle norme regolamentari, in conformità con gli articoli 3 e 97 della Costituzione della Repubblica Italiana.",
+        "sources": [
+          "controllo: controllo esercitato a cura di un organismo indipendente designato dall'organizzazione ed autorizzato dal Ministero delle politiche agricole alimentari e forestali ai sensi dell'articolo 13 del regolamento (CE) n. 543/2008. Tale organismo indipendente deve essere riconosciuto rispondente ai criteri stabiliti dalla norma europea EN/45011 del 26 giugno 1989;"
+        ]
+      }
+    }
+  },
+  {
+    "term": "Condivisione di dati per le attività di contrasto",
+    "#": 74,
+    "response": {
+      "generated_definition": {
+        "generated_definition": "Condivisione di dati per le attività di contrasto: la messa a disposizione e l'accesso ai dati e alle informazioni tra le autorità competenti, ai sensi della legislazione vigente, per le finalità di prevenzione, accertamento, indagine e perseguimento dei reati, nonché per la tutela della sicurezza e dell'ordine pubblico.",
+        "sources": [
+          "informazioni in materia di contrasto: le informazioni o i dati gia' detenuti dalle autorita' di cui agli articoli 3 e 5, o alle stesse accessibili, nel contesto della prevenzione, dell'accertamento, dell'indagine o del perseguimento dei reati;",
+          "autorita' di contrasto: l'organo centrale del Ministero dell'interno per la sicurezza e per la regolarita' dei servizi di telecomunicazione, di cui all'articolo 7-bis del decreto-legge 27 luglio 2005, n. 144, convertito, con modificazioni, dalla legge 31 luglio 2005, n.155;",
+          "diritto della concorrenza: le disposizioni di cui agli articoli 101 o 102 del trattato sul funzionamento dell'Unione europea, le disposizioni di cui agliarticoli 2, 3 e 4 della legge 10 ottobre 1990, n. 287, applicate autonomamente, nonche' le disposizioni di altro Stato membro che perseguono principalmente lo stesso obiettivo degli articoli 101 e 102 del Trattato sul funzionamento dell'Unione europea e le predette disposizioni di cui agli articoli 2, 3 e 4 della legge 10 ottobre 1990, n. 287, applicate nello stesso caso e parallelamente al diritto della concorrenza dell'Unione ai sensi dell'articolo 3, paragrafo 1, del regolamento (CE) n. 1/2003, escluse le disposizioni che impongono sanzioni penali a persone fisiche, salvo qualora tali sanzioni penali costituiscano gli strumenti tramite i quali sono attuate le regole di concorrenza applicabili alle imprese;",
+          "DIS: il Dipartimento delle informazioni per la sicurezza;",
+          "Banca dati nazionale: la Banca dati nazionale unica della documentazione antimafia;",
+          "Banca dati nazionale dei contratti pubblici (BDNCP): la Banca Dati Nazionale gestita dall'Autorita' Nazionale Anticorruzione (ANAC), di cui all'articolo 213 del codice, nella quale confluiscono, oltre alle informazioni acquisite dalla stessa Autorita' tramite i propri sistemi informatizzati, tutte le informazioni contenute nelle banche dati esistenti, anche a livello territoriale, onde garantire accessibilita' unificata, trasparenza, pubblicita' e tracciabilita' delle procedure di gara e delle fasi a essa prodromiche e successive;",
+          "consultazione: l'operazione di trattamento elettronico che consente ai soggetti di cui all'articolo 83, commi 1 e 2, del Codice antimafia, attraverso il collegamento alla Banca dati nazionale, di richiedere e, se del caso, ottenere il rilascio immediato ed automatico della documentazione antimafia, senza avere visibilita' del dettaglio dei dati in essa contenuti;"
+        ]
+      }
+    }
+  }
+]
