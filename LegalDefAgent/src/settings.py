@@ -1,4 +1,5 @@
 from typing import Annotated, Any, List, Dict
+import os
 
 from dotenv import find_dotenv, load_dotenv
 from pydantic import BeforeValidator, HttpUrl, SecretStr, TypeAdapter
@@ -18,7 +19,7 @@ from .schema.models import (
 )
 
 
-load_dotenv(find_dotenv(raise_error_if_not_found=True))
+load_dotenv(find_dotenv(raise_error_if_not_found=True), override=True)
 
 
 def check_str_is_http(x: str) -> str:
@@ -146,7 +147,8 @@ class Settings(BaseSettings):
                     raise ValueError(f"Unknown provider: {provider}")
 
         if self.VLLM:
-            self.DEFAULT_MODEL = VLLMModelName.LLAMA_33_70B
+            if self.DEFAULT_MODEL is None:
+                self.DEFAULT_MODEL = VLLMModelName.LLAMA_33_70B
             self.AVAILABLE_MODELS.update(set(VLLMModelName))
 
     def is_dev(self) -> bool:

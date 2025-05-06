@@ -141,16 +141,28 @@ async def generate_definition(config: RunnableConfig, question: str, definendum:
         "model", settings.DEFAULT_MODEL))
     parser = JsonOutputParser(pydantic_object=GeneratedDefinition)
 
-    DEFAULT_ROLE = "You are a legal expert specialized in drafting legal definitions. Your job is to draft a legal definition for a specific term."
-    EU_ROLE = "You are a legal expert specialized in drafting legal definitions for European Union legislation. Your job is to draft a legal definition for a specific term to be inserted in a EU regulatory document."
-    IT_ROLE = "You are a legal expert specialized in drafting legal definitions for Italian legislation. Your job is to draft a legal definition for a specific term to be inserted in an Italian regulatory document."
+    DEFAULT_ROLE = "You are a legal expert specialized in drafting legal definitions. Your job is to draft a legally sound definition of a specified term suitable for use in legislation."
+    EU_ROLE = "You are a legal expert specialized in drafting legal definitions for European Union legislation. Your job is to draft a legally sound definition of a specified term suitable for use in legislation and consistent with the EU legal framework."
+    IT_ROLE = "You are a legal expert specialized in drafting legal definitions for Italian legislation. Your job is to draft a legally sound definition of a specified term suitable for use in legislation and consistent with the Italian legal framework."
 
     prompt = PromptTemplate(
         template="""
         {legislation_role}
+
         Provide a definition for the term "{definendum}".
-        Your definition should be clear, concise, and accurate. Use the examples provided to guide you in creating a definition that is relevant to the user's query.
-        Your generated definition has to follow the style, length and formatting of the definitions provided as examples.
+
+        ### IMPORTANT NOTES 
+
+        - Definitions are used to ensure legal clarity and avoid ambiguity. Your generated definition should be legally sound, non-contradictory and unambigous;  
+        - Your generated definition shall not impose an obligation; 
+        - Your generated definition shall not state information not directly part of clarifying the term itself; 
+        - Your generated definition shall be technologically neutral; 
+        - Your generated definition shall not contain examples;  
+        - Your generated definition may contain legal references, but be sure that these references are correct and precise; 
+        - If abbreviations are used for terms, their meaning should be clearly explained the first time they appear (e.g., "the European Central Bank (ECB)"); 
+        - Your generated definition has to follow the style, length and formatting of the definitions provided as examples; 
+        - Your generated defintion has to be in the same language of the user query 
+        - Use the examples provided to guide you in creating a definition that is relevant to the user's query. 
 
         User Query: {question}
 
@@ -158,7 +170,6 @@ async def generate_definition(config: RunnableConfig, question: str, definendum:
 
         Example definitions: 
         \n- {examples}\n
-
         """,
 
         input_variables=["legislation_role", "question", "definendum", "examples"],
@@ -195,7 +206,7 @@ async def pick_definition(
     parser = JsonOutputParser(pydantic_object=PickedDefinitions)
     prompt = PromptTemplate(
         template="""
-        You are a legal expert specialized in legal definitions. Your job is to find the correct definitions from a list of retrieved definitions.
+        You are a legal expert specialized in legal definitions. Your job is to find the correct definitions from a list of retrieved definitions. Your target user is a legal drafter.
         You will be provided with a list of legal definitions, along with associated metadata and a timeline of their modifications in the XML format.
         Your goal is to select the ids of the definitions that best match the user's query.
         Select the definitions that provide an explanation of the EXACT term the user is asking. If none of the provided definitions are fit to answer the user's question, you output an empty list.
