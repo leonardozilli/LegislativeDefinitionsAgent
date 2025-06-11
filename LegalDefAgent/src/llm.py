@@ -36,9 +36,9 @@ _MODEL_TABLE = {
     OpenAIModelName.GPT_4O_MINI: "gpt-4o-mini",
     OpenAIModelName.GPT_4O: "gpt-4o",
     GroqModelName.LLAMA_33_70B: "llama-3.3-70b-versatile",
-    GroqModelName.LLAMA_31_8B: "llama-3.1-8b-instant",
-    GroqModelName.GEMMA2_9B_IT: "gemma2-9b-it",
-    MistralModelName.NEMO_12B: "open-mistral-nemo",
+    #GroqModelName.LLAMA_31_8B: "llama-3.1-8b-instant",
+    #GroqModelName.GEMMA2_9B_IT: "gemma2-9b-it",
+    #MistralModelName.NEMO_12B: "open-mistral-nemo",
     OllamaModelName.LLAMA_32_3B: "llama3.2",
     DeepSeekModelName.DEEPSEEK_CHAT: "deepseek-chat",
     GoogleModelName.GEMINI_15_FLASH: "gemini-1.5-flash",
@@ -49,9 +49,9 @@ _MODEL_TABLE = {
     GoogleModelName.GEMMA2_27B_IT: "gemma2-27b-it",
     AnthropicModelName.HAIKU_35: "claude-3-5-haiku-20241022",
     AnthropicModelName.SONNET_35: "claude-3-5-sonnet-20241022",
-    TogetherModelName.LLAMA_33_70B: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
-    TogetherModelName.NEMOTRON_70B: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
-    TogetherModelName.LLAMA_31_8B: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+    TogetherModelName.LLAMA_33_70B: "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    TogetherModelName.LLAMA_33_70B_FREE: "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+    #TogetherModelName.LLAMA_31_8B: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
     VLLMModelName.LLAMA_33_70B: "meta-llama/Llama-3.3-70B-Instruct"
 }
 

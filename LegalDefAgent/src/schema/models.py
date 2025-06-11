@@ -48,16 +48,17 @@ class GroqModelName(StrEnum):
     """https://console.groq.com/docs/models"""
 
     LLAMA_33_70B = "groq-llama-3.3-70b-versatile"
-    LLAMA_31_8B = "groq-llama-3.1-8b-instant"
-    GEMMA2_9B_IT = "groq-gemma2-9b-it"
+    #LLAMA_31_8B = "groq-llama-3.1-8b-instant"
+    #GEMMA2_9B_IT = "groq-gemma2-9b-it"
 
 
 class TogetherModelName(StrEnum):
     """https://console.groq.com/docs/models"""
 
     LLAMA_33_70B = "together-llama-3.3-70B-Instruct-Turbo"
+    LLAMA_33_70B_FREE = "together-llama-3.3-70B-Instruct-Turbo-Free"
     LLAMA_31_8B = "together-llama-3.1-8b-Instruct-Turbo"
-    NEMOTRON_70B = "together-nemotron-70b-Instruct"
+    #NEMOTRON_70B = "together-nemotron-70b-Instruct"
 
 
 class MistralModelName(StrEnum):

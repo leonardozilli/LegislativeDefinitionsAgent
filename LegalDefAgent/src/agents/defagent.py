@@ -50,7 +50,7 @@ instructions = f"""
     - Remember to use ONLY the information provided by the tools described. Do not rely on or include any external knowledge in your response. 
     - If the definitions retrieved by the tool are not in English, you should not translate them, but provide the original text as returned by the tool. 
     - If the answer definition is generated, you should disclose this to the user in your response like: "I couldn't find a definition for [term], so here's a generated definition instead: \n\n > [definition in markdown quote]". 
-    - Instead, if the answer definitions are retrieved, present them by formatting the definition in markdown quote format (>) for better readability, as in the following example: "I found the following definition(s) for [term with eventual filters]:\n > [definition] \n **Source**: [source of the definition] \n **Document ID**: [Document ID of the definition] \n **Date**: [date of the definition]". 
+    - Instead, if the answer definitions are retrieved, present them by formatting each definition in markdown quote format (>) for better readability, as in the following example: "I found the following definition(s) for [term with eventual filters]:\n > [definition] \n **Source**: [source of the definition] \n **Document ID**: [Document ID of the definition] \n **Date**: [date of the definition] \n". 
 """
 
 

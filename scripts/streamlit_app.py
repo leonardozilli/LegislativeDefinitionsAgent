@@ -115,18 +115,22 @@ async def main() -> None:
                 #index=agent_idx,
             #)
             use_streaming = True#st.toggle("Stream results", value=True)
-            st.slider("Number of definitions retrieved", min_value=1, max_value=30, value=20, step=1, label_visibility="visible")
+            st.slider("Number of definitions retrieved", min_value=1, max_value=30, value=10, step=1, label_visibility="visible")
 
 
         @st.dialog("Agent Architecture")
         def architecture_dialog() -> None:
-            st.image(
-                "https://github.com/leonardozilli/LegalDefAgent/agent_architecture.png?raw=true"
-            )
-            "[View full size on Github](https://github.com/leonardozilli/LegalDefAgent/agent_architecture.png?)"
+            st.image("/home/leo/Desktop/dhdk/Master thesis/project/imgs/agent_architecture.png")
 
         if st.button(":material/schema: Architecture", use_container_width=True):
             architecture_dialog()
+
+        @st.dialog("Retrieval pipeline")
+        def pipeline_dialog() -> None:
+            st.image("/home/leo/Desktop/dhdk/Master thesis/project/imgs/definition_search_pipeline.png")
+
+        if st.button(":material/schema: Retrieval Pipeline", use_container_width=True):
+            pipeline_dialog()
 
         with st.popover(":material/policy: Privacy", use_container_width=True):
             st.write(
