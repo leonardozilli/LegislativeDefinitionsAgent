@@ -1,0 +1,45 @@
+name: legaldefagent
+services:
+  api:
+    container_name: legaldefagent-api
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.service
+    ports:
+      - "8000:8000"
+    environment:
+      - EXISTDB_HOST=host.docker.internal
+    env_file:
+      - .env
+    networks:
+      - legaldefagent-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/info"]
+      interval: 10s
+      start_period: 10s
+      timeout: 60s
+      retries: 10
+  app:
+    container_name: legaldefagent-app
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.app
+    ports:
+      - "3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
+    environment:
+      - API_HOST=api
+    env_file:
+      - .env
+    networks:
+      - legaldefagent-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+networks:
+  legaldefagent-network:
+    driver: bridge

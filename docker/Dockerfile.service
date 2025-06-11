@@ -1,0 +1,5 @@
+FROM legaldefagent-base:latest
+
+RUN python -c "from pymilvus.model.hybrid import BGEM3EmbeddingFunction; BGEM3EmbeddingFunction(model_name='BAAI/bge-m3')"
+
+CMD ["python", "-m", "legaldefagent.cli", "run-service"]
