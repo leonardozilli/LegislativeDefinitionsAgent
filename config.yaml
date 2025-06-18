@@ -1,0 +1,34 @@
+# Data collections to process, should match the names of the collections in eXistDB or local directories.
+collections:
+  EurLex:
+    namespace: "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    jurisdiction: "EU"
+  Normattiva:
+    namespace: "http://docs.oasis-open.org/legaldocml/ns/akn/3.0"
+    jurisdiction: "IT"
+  PDL:
+    namespace: "http://docs.oasis-open.org/legaldocml/ns/akn/3.0/WD17"
+    jurisdiction: "IT"
+
+# The collection name for consolidated documents, should match the name of the collection in eXistDB or local directory.
+consolidated_collection: "EurLex_Consolidated"
+
+existdb:
+  host: "localhost"
+  port: 8080
+
+api:
+  host: "localhost"
+  port: 8000
+
+ui:
+  host: "localhost"
+  port: 3000
+
+vllm:
+  enabled: true
+  host: "localhost"
+  port: 8001
+
+# LangSmith Tracing Configuration
+langchain_tracing: false

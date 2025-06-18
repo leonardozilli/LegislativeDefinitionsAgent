@@ -1,150 +1,188 @@
-from typing import Any, Dict, List
+from pathlib import Path
+from typing import Any, Dict, Set
 
+import yaml
 from dotenv import find_dotenv, load_dotenv
-from pydantic import HttpUrl, SecretStr, TypeAdapter, field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import BaseModel, Field, SecretStr
+from pydantic_settings import BaseSettings, PydanticBaseSettingsSource
 
-from legaldefagent.schema.models import (AllModelEnum, AnthropicModelName,
-                                         DeepSeekModelName, GoogleModelName,
-                                         GroqModelName, MistralModelName,
-                                         OpenAIModelName, Provider,
-                                         TogetherModelName, VLLMModelName)
+from legaldefagent.core.schema.models import (
+    AllModelEnum,
+    AnthropicModelName,
+    DeepSeekModelName,
+    GoogleModelName,
+    GroqModelName,
+    MistralModelName,
+    OpenAIModelName,
+    Provider,
+    TogetherModelName,
+    VLLMModelName,
+)
+from legaldefagent.core.utils import get_available_vllm_models
+
 
 load_dotenv(find_dotenv(raise_error_if_not_found=True), override=False)
 
 
-def check_str_is_http(x: str) -> str:
-    http_url_adapter = TypeAdapter(HttpUrl)
-    return str(http_url_adapter.validate_python(x))
+class CollectionConfig(BaseModel):
+    namespace: str | None = None
+    jurisdiction: str | None = None
 
 
-class eXistDBConfig(BaseSettings):
-    EXISTDB_HOST: str = "0.0.0.0"
-    EXISTDB_PORT: int = 8080
-    EXISTDB_USER: str | None = None
-    EXISTDB_PASSWORD: str | None = None
+class ExistDBConfig(BaseModel):
+    host: str = "0.0.0.0"
+    port: int = 8080
+    user: str | None = None
+    password: str | None = None
+
+
+class MilvusDBConfig(BaseModel):
+    path: str = "data/vdb/definitions.db"
+    collection_name: str = "Definitions"
+
+
+class APIConfig(BaseModel):
+    host: str = "0.0.0.0"
+    port: int = 8000
+
+
+class UIConfig(BaseModel):
+    host: str = "0.0.0.0"
+    port: int = 3000
+
+
+class VLLMConfig(BaseModel):
+    enabled: bool = False
+    host: str = "0.0.0.0"
+    port: int = 8001
+
+
+def yaml_config_settings_source() -> Dict[str, Any]:
+    """
+    Loads configuration from config.yaml.
+    Returns an empty dict if the file is missing.
+    """
+    yaml_file = Path("config.yaml")
+    if not yaml_file.exists():
+        return {}
+
+    with open(yaml_file, encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(
-        env_file=find_dotenv(),
-        env_file_encoding="utf-8",
-        env_ignore_empty=True,
-        extra="ignore",
-    )
+    collections: Dict[str, CollectionConfig] = {}
+    consolidated_collection: str | None = None
 
-    @field_validator("COLLECTIONS_NAMES", "COLLECTIONS_LEGID", "COLLECTIONS_NAMESPACES", mode="before")
+    existdb: ExistDBConfig = ExistDBConfig()
+    api: APIConfig = APIConfig()
+    ui: UIConfig = UIConfig()
+
+    langchain_tracing: bool = False
+
+    auth_secret: SecretStr | None = None
+
+    openai_api_key: SecretStr | None = None
+    groq_api_key: SecretStr | None = None
+    mistral_api_key: SecretStr | None = None
+    anthropic_api_key: SecretStr | None = None
+    google_api_key: SecretStr | None = None
+    deepseek_api_key: SecretStr | None = None
+    together_api_key: SecretStr | None = None
+
+    vllm: VLLMConfig = VLLMConfig()
+    milvusdb: MilvusDBConfig = MilvusDBConfig()
+
+    default_model: AllModelEnum | str | None = Field(default=None, alias="default_model")
+    available_models: Set[AllModelEnum] = set()
+
     @classmethod
-    def split_list(cls, v):
-        if v is None:
-            return []
-        if isinstance(v, str):
-            return [x.strip() for x in v.split(",") if x.strip()]
-        return v
+    def settings_customise_sources(
+        cls,
+        settings_cls: type[BaseSettings],
+        init_settings: PydanticBaseSettingsSource,
+        env_settings: PydanticBaseSettingsSource,
+        dotenv_settings: PydanticBaseSettingsSource,
+        file_secret_settings: PydanticBaseSettingsSource,
+    ) -> tuple:
+        """Defines the priority of config sources:
 
-    COLLECTIONS_NAMES: List[str] | None
-    COLLECTIONS_LEGID: List[str] | None
-    COLLECTIONS_NAMESPACES: List[str] | None
-    CONSOLIDATED_COLLECTION: str | None
-    COLLECTIONS: Dict | None = None
-
-    @field_validator("COLLECTIONS", mode="before")
-    @classmethod
-    def set_collections(cls, v, info):
-        collections = {}
-        collections_names = info.data.get("COLLECTIONS_NAMES")
-        for i, name in enumerate(collections_names):
-            collections[name] = {
-                "legid": info.data.get("COLLECTIONS_LEGID", [])[i] if info.data.get("COLLECTIONS_LEGID") else None,
-                "namespace": info.data.get("COLLECTIONS_NAMESPACES", [])[i]
-                if info.data.get("COLLECTIONS_NAMESPACES")
-                else None,
-            }
-        return collections
-
-    MILVUSDB_PATH: str = "data/vdb/definitions.db"
-    MILVUSDB_COLLECTION_NAME: str = "Definitions"
-
-    EXIST_CONFIG: eXistDBConfig = eXistDBConfig()
-
-    API_HOST: str = "0.0.0.0"
-    API_PORT: int = 8000
-
-    FRONTEND_HOST: str = "localhost"
-    FRONTEND_PORT: int = 3000
-
-    AUTH_SECRET: SecretStr | None = None
-
-    OPENAI_API_KEY: SecretStr | None = None
-    GROQ_API_KEY: SecretStr | None = None
-    MISTRAL_API_KEY: SecretStr | None = None
-    ANTHROPIC_API_KEY: SecretStr | None = None
-    GOOGLE_API_KEY: SecretStr | None = None
-    DEEPSEEK_API_KEY: SecretStr | None = None
-    TOGETHER_API_KEY: SecretStr | None = None
-
-    VLLM: bool | None = False
-
-    # If DEFAULT_MODEL is None, it will be set in model_post_init
-    DEFAULT_MODEL: AllModelEnum | None = None  # type: ignore[assignment]
-    AVAILABLE_MODELS: set[AllModelEnum] = set()  # type: ignore[assignment]
+        1. Constructor arguments (init)
+        2. Environment Variables (.env)
+        3. YAML Config file (config.yaml)
+        4. Defaults
+        """
+        return (
+            init_settings,
+            env_settings,
+            yaml_config_settings_source,
+            file_secret_settings,
+        )
 
     def model_post_init(self, __context: Any) -> None:
         api_keys = {
-            Provider.OPENAI: self.OPENAI_API_KEY,
-            Provider.GROQ: self.GROQ_API_KEY,
-            Provider.DEEPSEEK: self.DEEPSEEK_API_KEY,
-            Provider.MISTRAL: self.MISTRAL_API_KEY,
-            Provider.ANTHROPIC: self.ANTHROPIC_API_KEY,
-            Provider.GOOGLE: self.GOOGLE_API_KEY,
-            Provider.TOGETHER: self.TOGETHER_API_KEY,
+            Provider.OPENAI: self.openai_api_key,
+            Provider.GROQ: self.groq_api_key,
+            Provider.DEEPSEEK: self.deepseek_api_key,
+            Provider.MISTRAL: self.mistral_api_key,
+            Provider.ANTHROPIC: self.anthropic_api_key,
+            Provider.GOOGLE: self.google_api_key,
+            Provider.TOGETHER: self.together_api_key,
         }
+
         active_keys = [k for k, v in api_keys.items() if v]
-        if not active_keys:
-            raise ValueError("At least one LLM API key must be provided.")
+
+        if not active_keys and not self.vllm.enabled:
+            raise ValueError("At least one LLM API key must be provided unless VLLM is enabled.")
 
         for provider in active_keys:
             match provider:
                 case Provider.GROQ:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = GroqModelName.LLAMA_33_70B
-                    self.AVAILABLE_MODELS.update(set(GroqModelName))
+                    if self.default_model is None:
+                        self.default_model = GroqModelName.LLAMA_33_70B
+                    self.available_models.update(set(GroqModelName))
                 case Provider.TOGETHER:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = TogetherModelName.LLAMA_33_70B
-                    self.AVAILABLE_MODELS.update(set(TogetherModelName))
+                    if self.default_model is None:
+                        self.default_model = TogetherModelName.LLAMA_33_70B
+                    self.available_models.update(set(TogetherModelName))
                 case Provider.GOOGLE:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = GoogleModelName.GEMINI_15_FLASH
-                    self.AVAILABLE_MODELS.update(set(GoogleModelName))
+                    if self.default_model is None:
+                        self.default_model = GoogleModelName.GEMINI_15_FLASH
+                    self.available_models.update(set(GoogleModelName))
                 case Provider.OPENAI:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = OpenAIModelName.GPT_4O_MINI
-                    self.AVAILABLE_MODELS.update(set(OpenAIModelName))
+                    if self.default_model is None:
+                        self.default_model = OpenAIModelName.GPT_4O_MINI
+                    self.available_models.update(set(OpenAIModelName))
                 case Provider.DEEPSEEK:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = DeepSeekModelName.DEEPSEEK_CHAT
-                    self.AVAILABLE_MODELS.update(set(DeepSeekModelName))
+                    if self.default_model is None:
+                        self.default_model = DeepSeekModelName.DEEPSEEK_CHAT
+                    self.available_models.update(set(DeepSeekModelName))
                 case Provider.MISTRAL:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = MistralModelName.NEMO_12B
-                    self.AVAILABLE_MODELS.update(set(MistralModelName))
+                    if self.default_model is None:
+                        self.default_model = MistralModelName.NEMO_12B
+                    self.available_models.update(set(MistralModelName))
                 case Provider.ANTHROPIC:
-                    if self.DEFAULT_MODEL is None:
-                        self.DEFAULT_MODEL = AnthropicModelName.HAIKU_35
-                    self.AVAILABLE_MODELS.update(set(AnthropicModelName))
+                    if self.default_model is None:
+                        self.default_model = AnthropicModelName.HAIKU_35
+                    self.available_models.update(set(AnthropicModelName))
                 case _:
                     raise ValueError(f"Unknown provider: {provider}")
 
-        if self.VLLM:
-            if self.DEFAULT_MODEL is None:
-                self.DEFAULT_MODEL = VLLMModelName.LLAMA_33_70B
-            self.AVAILABLE_MODELS.update(set(VLLMModelName))
+        if self.vllm.enabled:
+            try:
+                available_vllm_models = get_available_vllm_models(self.vllm.host, self.vllm.port)
+            except RuntimeError as e:
+                raise ValueError(f"Failed to retrieve VLLM models: {e}") from e
+            if not available_vllm_models:
+                raise ValueError("No VLLM models are available from the VLLM endpoint.")
+
+            self.available_models.update(set(available_vllm_models))
+
+            if self.default_model is None:
+                self.default_model = available_vllm_models[0]
+
+        if self.default_model is None:
+            raise ValueError("No default model could be determined.")
 
 
 settings = Settings()
-
-
-if __name__ == "__main__":
-    for name in settings.COLLECTIONS:
-        print(name)
