@@ -28,12 +28,14 @@ dependencies = [
     "pydantic>=2.11.7",
     "pydantic-settings>=2.10.1",
     "pyexistdb>=1.0.1",
-    "pymilvus[model]>=2.6.1",
+    "pymilvus[milvus-lite,model]>=2.6.1",
+    "pyyaml>=6.0.3",
     "streamlit>=1.49.1",
     "tiktoken>=0.11.0",
     "tqdm>=4.67.1",
     "typer>=0.17.3",
     "uvicorn>=0.35.0",
+    "vllm>=0.15.1",
 ]
 
 [dependency-groups]
@@ -50,6 +52,9 @@ build-backend = "uv_build"
 
 [project.scripts]
 legaldefagent = "legaldefagent.cli:app"
+
+[tool.ruff]
+line-length = 120
 
 [tool.ruff.lint.isort]
 lines-after-imports = 2
